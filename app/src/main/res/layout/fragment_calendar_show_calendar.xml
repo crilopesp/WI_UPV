@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:orientation="vertical"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:id="@+id/calendarFragment">
+
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/textViewCalendarName"
+        android:textColor="#EEE"
+        android:padding="5dp"/>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/textViewCalendarGroup"
+        android:textColor="#EEE"
+        android:padding="5dp"/>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/textViewCalendarInfo"
+        android:gravity="center"
+        android:textColor="#c21b1b"/>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Events"
+        android:textSize="20dp"
+        android:background="#c21b1b"
+        android:gravity="center"
+        android:id="@+id/textViewEvents" />
+
+    <ListView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@android:id/list"
+        android:layout_gravity="center_horizontal"
+        android:divider="@null"
+        android:dividerHeight="0dp"/>
+</LinearLayout>

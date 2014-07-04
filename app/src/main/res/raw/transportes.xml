@@ -1,0 +1,37 @@
+
+	<valencia_comun>
+		<avion
+			descripcion="The international airport of Valencia (VLC) is based in the town of Manises which is about 8 kilometres west of the city. The airport offers daily flights to major Spanish cities and overseas. There are also a great number of flights which go to Barcelona and Madrid as a connection with other flights." 
+			telefono="963466266"
+			telefono2="961598500"
+			telefono3="963709500"
+			url="www.aena.es">
+		</avion>
+		<taxi
+			descripcion="From the city centre to the airport, it may cost you about 17 €, however this price varies, depending on the traffic or route taken, etc.">
+		</taxi>
+		<metro
+			descripcion="There is a new metro line (nº5) connecting the airport to the city centrewith a supplement in the price."
+			url="www.metrovalencia.com">
+		</metro>
+		<bus
+			descripcion="There is also a bus route that goes to the airport; it is the yellow bus service from the CVT Company, bus number 30, which runs every day except Sundays and bank holidays. It costs 1.70 € and connects the airport and the bus station which is situated in C/Menéndez Pidal 13."
+			telefono=" 963 466 266">
+		</bus>
+		<carreteras
+			descripcion="Valencia is connected with the rest of Europe through the Mediterranean highway (A-7 or E-15) and the national roads N-III (E- 901), N-332, N-340 and N-234 and the A3 Valencia-Madrid.">
+		</carreteras>
+		<autocar
+			descripcion="There are also daily bus services to the rest of Spain and Europe from the BUS station, which address is: Calle Menéndez Pidal 13, Valencia"
+			telefono=" 963 466 266">
+		</autocar>
+		<tren
+			descripcion="Valencia has two train stations, next to each other, each one for two types of trips, the station Valencia Joaquín Sorolla and the station Valencia Nord. The station Valencia Joaquín Sorolla has the following long distance routes: Madrid, Barcelona, Alicante, Castellón and Albacete. The Valencia Nord station attends the other routes and the ones of half distance and its sourrounding area. The AVE or train of High Speed joins Madrid and Valencia in one hour and a half from last December 2010. This train arrives to the station Joaquín Sorolla of Valencia located in the number 171 of the street of Saint Vicente Martir.The way between the two stations can be walked whithin 10 minutes or taking a Renfe bus for free only by showing the ticket of train. The Valencia Estación del Norte is found in the city centre in la Xativa Street, and Marqués de Sotelo Street. It offers daily train services to Spanish and European cities. The train service is run by RENFE company. You can get to different parts of the province by using the Valencian public railway line (FGV)."
+			url="www.renfe.es">
+		</tren>
+		<maritimo
+			descripcion="The port of Valencia is 4 km away from the city centre, it is very important in terms of trade and transport for travellers."
+			telefono="902 454 645"
+			url="902 454 645">
+		</maritimo>
+	</valencia_comun>

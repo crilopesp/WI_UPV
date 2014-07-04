@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EEE">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="5">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_gradient_black_shadow"
+            android:id="@+id/toFront">
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_nomTransport"
+                android:layout_gravity="left"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:paddingLeft="20dp"
+                android:textSize="22dp"
+                android:textColor="#ccc81f" />
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/scrollView"
+            android:layout_weight="5"
+            android:background="#ffa29f9b"
+            android:fillViewport="false" >
+
+            <FrameLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="5"
+                android:id="@+id/panelTransportes" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageView"
+                    android:background="@drawable/transporte"
+                    android:layout_weight="5" />
+            </FrameLayout>
+        </ScrollView>
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/scrollView2"
+        android:layout_weight="5"
+        android:background="#222">
+     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+         android:orientation="vertical"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:background="#222">
+    <Button
+        android:background="@drawable/button_custom_red"
+        android:textColor="#FFF"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btnAvion"
+        android:id="@+id/btnAvion"
+        android:layout_gravity="center_horizontal" />
+
+    <Button
+        android:background="@drawable/button_custom_red"
+        android:textColor="#FFF"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btnTaxi"
+        android:id="@+id/btnTaxi"
+        android:layout_gravity="center_horizontal" />
+
+    <Button
+        android:background="@drawable/button_custom_red"
+        android:textColor="#FFF"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btnMetro"
+        android:id="@+id/btnMetro"
+        android:layout_gravity="center_horizontal" />
+
+    <Button
+        android:background="@drawable/button_custom_red"
+        android:textColor="#FFF"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btnCarretera"
+        android:id="@+id/btnCarretera"
+        android:layout_gravity="center_horizontal" />
+
+    <Button
+        android:background="@drawable/button_custom_red"
+        android:textColor="#FFF"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btnBus"
+        android:id="@+id/btnBus"
+        android:layout_gravity="center_horizontal" />
+
+    <Button
+        android:background="@drawable/button_custom_red"
+        android:textColor="#FFF"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btnAutocar"
+        android:id="@+id/btnAutocar"
+        android:layout_gravity="center_horizontal" />
+
+    <Button
+        android:background="@drawable/button_custom_red"
+        android:textColor="#FFF"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btnTren"
+        android:id="@+id/btnTren"
+        android:layout_gravity="center_horizontal" />
+    <Button
+        android:background="@drawable/button_custom_red"
+        android:textColor="#FFF"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btnMar"
+        android:id="@+id/btnMar"
+        android:layout_gravity="center_horizontal" />
+    </LinearLayout>
+ </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,820 @@
+<asigingles>
+	<escuela nombre="SCHOOL OF ARCHITECTURE">
+        <asignatura	codigo="5359" nombre="GENERAL FORM OF A CITY: FROM THE HISTORICAL CENTRES TO THE BLURRED CITY" url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=5359ANDp_caca=act"	creditos="6,5" semestre=""/>
+		<asignatura	codigo="6260" nombre="PROJECTS IV" url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=6260ANDp_caca=act" creditos="8,5" semestre=""/>
+    	<asignatura	codigo="6327" nombre="THEMATIC ARCHITECTURE V" url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=6327ANDp_caca=act" creditos="6,5" semestre="A"/>
+	</escuela>
+	<escuela nombre="SCHOOL OF CIVIL ENGINEERING">
+		<asignatura codigo="3540" nombre="LANDSCAPE PLANNING" url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=3540ANDp_caca=act" creditos="4,5" semestre="B"/>
+		<asignatura	codigo="5342" nombre="ART AND AESTHETICS IN CIVIL ENGINEERING" url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=5342ANDp_caca=act"	creditos="4,5" semestre="A"/>
+		
+		<asignatura
+		
+			codigo="5611"
+			nombre="ROAD OPERATIONS AND SAFETY"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=5611ANDp_caca=act"
+			creditos="4,5"
+			semestre="B"/>
+		
+	</escuela>
+	<escuela nombre="SCHOOL OF INDUSTRIAL ENGINEERING">
+		<asignatura
+			codigo="11407"
+			nombre="CONTROL SYSTEMS"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=11407ANDp_caca=act"
+			creditos="4,5"
+			semestre="A"/>
+		
+		<asignatura
+			codigo="11409"
+			nombre="CIRCUITS ANALYSIS"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=11409ANDp_caca=act"
+			creditos="4,5"
+			semestre="B"/>
+		
+		<asignatura
+			codigo="11411"
+			nombre="MATERIALS SCIENCE"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=11411ANDp_caca=act"
+			creditos="4,5"
+			semestre="A"/>
+		
+		<asignatura
+			codigo="11413"
+			nombre="HEAT TRANSFER"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=11413ANDp_caca=act"
+			creditos="4,5"
+			semestre="B"/>
+		
+		<asignatura
+			codigo="11414"
+			nombre="FLUID MECHANICS"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=11414ANDp_caca=act"
+			creditos="4,5"
+			semestre="B"/>
+		
+		<asignatura
+			codigo="11415"
+			nombre="THERMODYNAMICS"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=11415ANDp_caca=act"
+			creditos="4,5"
+			semestre="A"/>
+		
+		<asignatura
+			codigo="11417"
+			nombre="FUNDAMENTALS OF BUSINESS ORGANIZATION"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=11417ANDp_caca=act"
+			creditos="4,5"
+			semestre="A"/>
+		
+		<asignatura
+			codigo="11420"
+			nombre="THERMAL MACHINES"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=11420ANDp_caca=act"
+			creditos="4,5"
+			semestre="B"/>
+		
+		<asignatura
+			codigo="11427"
+			nombre="ENERGICAL TECHNOLOGY"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=11427ANDp_caca=act"
+			creditos="4,5"
+			semestre="A"/>
+		
+		<asignatura
+			codigo="11430"
+			nombre="AUTOMATIC TECHNOLOGY"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=11430ANDp_caca=act"
+			creditos="6"
+			semestre="B"/>
+		
+		<asignatura
+			codigo="11431"
+			nombre="ELECTRONIC TECHNOLOGY"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=11431ANDp_caca=act"
+			creditos="6"
+			semestre="B"/>
+		
+		<asignatura
+			codigo="11434"
+			nombre="MATHEMATICAL METHODS"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=11434ANDp_caca=act"
+			creditos="6"
+			semestre="B"/>
+		
+	</escuela>
+	<escuela nombre="SCHOOL OF DESIGN ENGINEERING">
+		<asignatura
+			codigo="4205"
+			nombre="PHYSICAL CONCEPTS IN HISTORICAL AND CULTURAL PERSPECTIVE"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=4205ANDp_caca=act"
+			creditos="4,5"
+			semestre=" "/>
+		
+		<asignatura
+			codigo="11871"
+			nombre="MATHEMATICS I"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=11871ANDp_caca=act"
+			creditos="12"
+			semestre="T"/>
+		
+		<asignatura
+			codigo="11872"
+			nombre="MATHEMATICS II"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=11872ANDp_caca=act"
+			creditos="6"
+			semestre="A"/>
+		
+		<asignatura
+			codigo="11874"
+			nombre="PHYSICS"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=11874ANDp_caca=act"
+			creditos="12"
+			semestre="T"/>
+		
+		<asignatura
+			codigo="11875"
+			nombre="TECHNICAL DRAWING"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=11875ANDp_caca=act"
+			creditos="6"
+			semestre="A"/>
+		
+		<asignatura
+			codigo="11876"
+			nombre="COMPUTER SCIENCE"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=11876ANDp_caca=act"
+			creditos="6"
+			semestre="B"/>
+		
+		<asignatura
+			codigo="11878"
+			nombre="CHEMISTRY"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=11878ANDp_caca=act"
+			creditos="6"
+			semestre="A"/>
+		
+		<asignatura
+			codigo="11881"
+			nombre="MATERIALS SCIENCE"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=11881ANDp_caca=act"
+			creditos="6"
+			semestre="B"/>
+		
+		<asignatura
+			codigo="11889"
+			nombre="FLIGHT MECHANICS"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=11889ANDp_caca=act"
+			creditos="6"
+			semestre="A"/>
+		
+		<asignatura
+			codigo="11896"
+			nombre="ESTRUCTURAS AEROESPACIALES"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=11896ANDp_caca=act"
+			creditos="6"
+			semestre="B"/>
+		
+		<asignatura
+			codigo="11897"
+			nombre="AEROELASTICITY"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=11897ANDp_caca=act"
+			creditos="4,5"
+			semestre="A"/>
+		
+		<asignatura
+			codigo="11898"
+			nombre="AERODYNAMICS II"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=11898ANDp_caca=act"
+			creditos="6"
+			semestre="A"/>
+		
+		<asignatura
+			codigo="11900"
+			nombre="CÁLCULO DE AVIONES"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=11900ANDp_caca=act"
+			creditos="6"
+			semestre="A"/>
+		
+		<asignatura
+			codigo="11901"
+			nombre="FLIGHT MECHANICS - EXTENSION COURSE"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=11901ANDp_caca=act"
+			creditos="6"
+			semestre="B"/>
+		
+		<asignatura
+			codigo="12131"
+			nombre="MATHEMATICS I"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=12131ANDp_caca=act"
+			creditos="9"
+			semestre="T"/>
+		
+		<asignatura
+			codigo="12132"
+			nombre="MATHEMATICS II"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=12132ANDp_caca=act"
+			creditos="6"
+			semestre="A"/>
+		
+		<asignatura
+			codigo="12133"
+			nombre="STATISTICS"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=12133ANDp_caca=act"
+			creditos="6"
+			semestre="B"/>
+		
+		<asignatura
+			codigo="12134"
+			nombre="PHYSICS"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=12134ANDp_caca=act"
+			creditos="9"
+			semestre="T"/>
+		
+		<asignatura
+			codigo="12135"
+			nombre="ELECTRICITY"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=12135ANDp_caca=act"
+			creditos="6"
+			semestre="B"/>
+		
+		<asignatura
+			codigo="12136"
+			nombre="CHEMISTRY"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=12136ANDp_caca=act"
+			creditos="6"
+			semestre="B"/>
+		
+		<asignatura
+			codigo="12137"
+			nombre="TECHNICAL DRAWING"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=12137ANDp_caca=act"
+			creditos="6"
+			semestre="A"/>
+		
+		<asignatura
+			codigo="12138"
+			nombre="BUSINESS STUDIES I"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=12138ANDp_caca=act"
+			creditos="6"
+			semestre="B"/>
+		
+		<asignatura
+			codigo="12139"
+			nombre="COMPUTER SCIENCE"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=12139ANDp_caca=act"
+			creditos="6"
+			semestre="A"/>
+		
+		<asignatura
+			codigo="12140"
+			nombre="THERMODYNAMICS AND FLUID MECHANICS"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=12140ANDp_caca=act"
+			creditos="6"
+			semestre="A"/>
+		
+		<asignatura
+			codigo="12141"
+			nombre="MECHANICAL SYSTEMS AND MATERIALS RESISTANCE"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=12141ANDp_caca=act"
+			creditos="7,5"
+			semestre="B"/>
+		
+		<asignatura
+			codigo="12142"
+			nombre="BASIC CONTROL SYSTEMS"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=12142ANDp_caca=act"
+			creditos="9"
+			semestre="B"/>
+		
+		<asignatura
+			codigo="12143"
+			nombre="ELECTRONIC TECHNOLOGY"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=12143ANDp_caca=act"
+			creditos="9"
+			semestre="A"/>
+		
+		<asignatura
+			codigo="12144"
+			nombre="ELECTRICAL TECHNOLOGY"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=12144ANDp_caca=act"
+			creditos="9"
+			semestre="A"/>
+		
+		<asignatura
+			codigo="12145"
+			nombre="INDUSTRIAL PRODUCTION SYSTEMS"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=12145ANDp_caca=act"
+			creditos="4,5"
+			semestre="A"/>
+		
+		<asignatura
+			codigo="12146"
+			nombre="BUSINESS STUDIES II"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=12146ANDp_caca=act"
+			creditos="4,5"
+			semestre="B"/>
+		
+		<asignatura
+			codigo="12147"
+			nombre="TECHNICAL OFFICE"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=12147ANDp_caca=act"
+			creditos="6"
+			semestre="A"/>
+		
+		<asignatura
+			codigo="12148"
+			nombre="ENVIRONMENTAL TECHNOLOGY"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=12148ANDp_caca=act"
+			creditos="4,5"
+			semestre="B"/>
+		
+		<asignatura
+			codigo="12149"
+			nombre="DIGITAL ELECTRONIC"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=12149ANDp_caca=act"
+			creditos="7,5"
+			semestre="A"/>
+		
+		<asignatura
+			codigo="12150"
+			nombre="POWER ELECTRONICS"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=12150ANDp_caca=act"
+			creditos="7,5"
+			semestre="A"/>
+		
+		<asignatura
+			codigo="12151"
+			nombre="ANALOG ELECTRONICS"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=12151ANDp_caca=act"
+			creditos="7,5"
+			semestre="B"/>
+		
+		<asignatura
+			codigo="12152"
+			nombre="INDUSTRIAL AUTOMATION"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=12152ANDp_caca=act"
+			creditos="7,5"
+			semestre="B"/>
+		
+		<asignatura
+			codigo="12153"
+			nombre="CONTROL TECHNIQUES"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=12153ANDp_caca=act"
+			creditos="7,5"
+			semestre="A"/>
+		
+		<asignatura
+			codigo="12154"
+			nombre="INDUSTRIAL COMPUTING I"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=12154ANDp_caca=act"
+			creditos="6"
+			semestre="A"/>
+		
+		<asignatura
+			codigo="12155"
+			nombre="INDUSTRIAL COMPUTING II"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=12155ANDp_caca=act"
+			creditos="4,5"
+			semestre="B"/>
+		
+		<asignatura
+			codigo="12156"
+			nombre="ELECTRONIC INSTRUMENTATION"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=12156ANDp_caca=act"
+			creditos="6"
+			semestre="B"/>
+		
+		<asignatura
+			codigo="12157"
+			nombre="ROBOTISED SYSTEMS"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=12157ANDp_caca=act"
+			creditos="6"
+			semestre="A"/>
+		
+		<asignatura
+			codigo="32529"
+			nombre="INNOVATION AND DESIGN"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=32529ANDp_caca=act"
+			creditos="4,5"
+			semestre=" "/>
+		
+		<asignatura
+			codigo="32530"
+			nombre="MARKETING DESIGN"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=32530ANDp_caca=act"
+			creditos="4,5"
+			semestre=" "/>
+		
+		<asignatura
+			codigo="32531"
+			nombre="NEW PROMOTIONAL PLATFORMS"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=32531ANDp_caca=act"
+			creditos="3"
+			semestre=" "/>
+		
+		<asignatura
+			codigo="32532"
+			nombre="BUSINESS DESIGN AND ENTREPRENEURSHIP"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=32532ANDp_caca=act"
+			creditos="3"
+			semestre=" "/>
+		
+	</escuela>
+	<escuela nombre="HIGHER POLYTECHNIC SCHOOL OF ALCOY">
+		<asignatura
+			codigo="10360"
+			nombre="PROSPECTIVE AND DESIGN"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=10360ANDp_caca=act"
+			creditos="6"
+			semestre="B"/>
+		
+		<asignatura
+			codigo="10367"
+			nombre="CAD CAM FOR TEXTILE PRODUCTS"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=10367ANDp_caca=act"
+			creditos="6"
+			semestre="B"/>
+		
+		<asignatura
+			codigo="10368"
+			nombre="TEXTILE PRODUCT DESIGN"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=10368ANDp_caca=act"
+			creditos="6"
+			semestre="B"/>
+		
+		<asignatura
+			codigo="10369"
+			nombre="SPECIFICATION FOR TEXTILA PRODUCT DESIGN"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=10369ANDp_caca=act"
+			creditos="6"
+			semestre="B"/>
+		
+		<asignatura
+			codigo="11664"
+			nombre="INTRODUCTION TO COMPUTER SCIENCE AND PROGRAMMING"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=11664ANDp_caca=act"
+			creditos="6"
+			semestre="A"/>
+		
+		<asignatura
+			codigo="11666"
+			nombre="PROGRAMMING"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=11666ANDp_caca=act"
+			creditos="6"
+			semestre="A"/>
+		
+		<asignatura
+			codigo="11674"
+			nombre="DATA STRUCTURES AND ALGORITHMS"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=11674ANDp_caca=act"
+			creditos="6"
+			semestre="B"/>
+		
+		<asignatura
+			codigo="11678"
+			nombre="SOFTWARE ENGINEERING"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=11678ANDp_caca=act"
+			creditos="6"
+			semestre="A"/>
+		
+		<asignatura
+			codigo="11680"
+			nombre="LANGUAGES, TECHNOLOGIES AND PROGRAMMING PARADIGMS"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=10368ANDp_caca=act"
+			creditos="6"
+			semestre="A"/>
+		
+		<asignatura
+			codigo="11708"
+			nombre="COMPUTER SYSTEM DESIGN, CONFIGURATION, AND EVALUATIO"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=11708ANDp_caca=act"
+			creditos="4,5"
+			semestre="B"/>
+		
+		<asignatura
+			codigo="11710"
+			nombre="DESIGN AND CONFIGURATION OF LOCAL AREA NETWORKS"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=11710ANDp_caca=act"
+			creditos="4,5"
+			semestre="B"/>
+		
+		<asignatura
+			codigo="11713"
+			nombre="WEB DEVELOPMENT"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=11713ANDp_caca=act"
+			creditos="4,5"
+			semestre="B"/>
+		
+		<asignatura
+			codigo="11714"
+			nombre="SYSTEM ADMINISTRATION"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=11714ANDp_caca=act"
+			creditos="4,5"
+			semestre="B"/>
+		
+		<asignatura
+			codigo="11821"
+			nombre="COST ACCONGIN AND INTRODUCTION TO AUDITING"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=10368ANDp_caca=act"
+			creditos="6"
+			semestre="B"/>
+		
+		<asignatura
+			codigo="11829"
+			nombre="COMMERCIAL MANAGEMENT"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=11829ANDp_caca=act"
+			creditos="9"
+			semestre="B"/>
+		
+		<asignatura
+			codigo="11837"
+			nombre="QUANTITATIVE METHODS FOR SUPPORT IN DECISION MAKING"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=11837ANDp_caca=act"
+			creditos="6"
+			semestre="B"/>
+		
+		<asignatura
+			codigo="11839"
+			nombre="FOREIGN LANGUAGE FOR BUSINESS COMMUNICATION"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=11839p_caca=act"
+			creditos="4,5"
+			semestre="B"/>
+		
+	</escuela>
+	<escuela nombre="FACULTY OF BUSINESS ADMINISTRATION AND MANAGEMENT">
+		<asignatura
+			codigo="4622"
+			nombre="STRATEGIC MANAGEMENT AND BUSINESS POLICY"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=4622ANDp_caca=act"
+			creditos="9"
+			semestre="A"/>
+		
+		<asignatura
+			codigo="11736"
+			nombre="INTRODUCTION TO ACCOUNTING"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=11736ANDp_caca=act"
+			creditos="6"
+			semestre="B"/>
+		
+		<asignatura
+			codigo="11738"
+			nombre="MICROECONOMICS I"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=11738ANDp_caca=act"
+			creditos="6"
+			semestre="A"/>
+		
+		<asignatura
+			codigo="11740"
+			nombre="INTRODUCTION TO STATISTICS"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=11740p_caca=act"
+			creditos="6"
+			semestre="B"/>
+		
+		<asignatura
+			codigo="11741"
+			nombre="STATISTICAL METHODS IN ECONOMICS"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=11741ANDp_caca=act"
+			creditos="6"
+			semestre="A"/>
+		
+		<asignatura
+			codigo="11743"
+			nombre="MATHEMATICAL MODELS FOR BUSINESS ADMINISTRATION"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=11743ANDp_caca=act"
+			creditos="12"
+			semestre="AB"/>
+			
+		<asignatura
+			codigo="11747"
+			nombre="ORGANIZATION STRATEGY AND DESIGN"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=11747ANDp_caca=act"
+			creditos="6"
+			semestre="B"/>
+		
+		<asignatura
+			codigo="11749"
+			nombre="HUMAN RESOURCES MANAGEMENT"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=11749ANDp_caca=act"
+			creditos="6"
+			semestre="A"/>
+		
+		<asignatura
+			codigo="11750"
+			nombre="FINANCIAL MATHEMATICS"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=11750ANDp_caca=act"
+			creditos="6"
+			semestre="B"/>
+		
+		<asignatura
+			codigo="11751"
+			nombre="FINANCIAL MANAGEMENT"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=11751ANDp_caca=act"
+			creditos="6"
+			semestre="A"/>
+		
+		<asignatura
+			codigo="11752"
+			nombre="FINANCIAL ECONOMICS"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=11752ANDp_caca=act"
+			creditos="6"
+			semestre=" "/>
+		
+		<asignatura
+			codigo="11753"
+			nombre="MARKET RESEARCH"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=11753ANDp_caca=act"
+			creditos="6"
+			semestre="A"/>
+		
+		<asignatura
+			codigo="11754"
+			nombre="COMMERCIAL MANAGEMENT"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=11754ANDp_caca=act"
+			creditos="9"
+			semestre="B"/>
+		
+		<asignatura
+			codigo="11757"
+			nombre="WORLD ECONOMY"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=10757ANDp_caca=act"
+			creditos="4,5"
+			semestre="A"/>
+		
+		<asignatura
+			codigo="11758"
+			nombre="SPANISH ECONOMY"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=11758ANDp_caca=act"
+			creditos="4,5"
+			semestre="B"/>
+		
+		<asignatura
+			codigo="11759"
+			nombre="MICROECONOMICS II"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=11759ANDp_caca=act"
+			creditos="6"
+			semestre="B"/>
+		
+		<asignatura
+			codigo="11762"
+			nombre="ECONOMETRICS"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=11762p_caca=act"
+			creditos="9"
+			semestre="B"/>
+		
+			<asignatura
+			codigo="11764"
+			nombre="FOREIGN LANGUAGE FOR BUSINESS COMMUNICATION"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=11764p_caca=act"
+			creditos="4,5"
+			semestre="A"/>
+		
+	</escuela>
+	<escuela nombre="HIGHER POLYTECHNIC SCHOOL OF GANDIA">
+		<asignatura
+			codigo="10093"
+			nombre="WETLAND MANAGEMENT"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=10093ANDp_caca=act"
+			creditos="4,5"
+			semestre="A"/>
+		
+		<asignatura
+			codigo="10094"
+			nombre="MARINE POLLUTION"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=10094ANDp_caca=act"
+			creditos="4,5"
+			semestre="A"/>
+		
+		<asignatura
+			codigo="10095"
+			nombre="GROUNDWATER MANAGEMENT IN THE COASTAL ZONE"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=10095ANDp_caca=act"
+			creditos="4,5"
+			semestre="A"/>
+		
+		<asignatura
+			codigo="10099"
+			nombre="ECOTOURISM"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=10099ANDp_caca=act"
+			creditos="4,5"
+			semestre="B"/>
+		
+		<asignatura
+			codigo="10104"
+			nombre="DESIGN, DEVELOPMENT AND STATISTICAL ANALYSIS OF POLLS"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=10104ANDp_caca=act"
+			creditos="4,5"
+			semestre="B"/>
+		
+		<asignatura
+			codigo="10112"
+			nombre="ADAPTATION TO CLIMATE CHANGE IN ECOSYSTEMS"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=11743ANDp_caca=act"
+			creditos="4,5"
+			semestre="A"/>
+			
+		<asignatura
+			codigo="10114"
+			nombre="RIVER REHABILITATION AND RESTORATION"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=10114ANDp_caca=act"
+			creditos="4,5"
+			semestre="B"/>
+		
+		<asignatura
+			codigo="10115"
+			nombre="LANDSCAPE PROGRAMMES"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=10115ANDp_caca=act"
+			creditos="4,5"
+			semestre="A"/>
+		
+		<asignatura
+			codigo="10158"
+			nombre="INNOVATION MANAGEMENT AND ENTREPRENEURSHIP"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=10158ANDp_caca=act"
+			creditos="5"
+			semestre="A"/>
+		
+		<asignatura
+			codigo="10165"
+			nombre="COASTAL TOURISM MANAGEMENT"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=10165ANDp_caca=act"
+			creditos="5"
+			semestre="A"/>
+		
+		<asignatura
+			codigo="10167"
+			nombre="INTERCULTURAL COMMUNICATION"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=10167ANDp_caca=act"
+			creditos="5"
+			semestre="A"/>
+		
+		<asignatura
+			codigo="10168"
+			nombre="ECOTOURISM"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=10168ANDp_caca=act"
+			creditos="5"
+			semestre="A"/>
+		
+		<asignatura
+			codigo="10248"
+			nombre="EFFECTIVE ORAL PRESENTATIONS"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=10248ANDp_caca=act"
+			creditos="4,5"
+			semestre="B"/>
+		
+		<asignatura
+			codigo="10251"
+			nombre="FILM COMEDY"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=10251ANDp_caca=act"
+			creditos="4,5"
+			semestre="B"/>
+		
+		<asignatura
+			codigo="12995"
+			nombre="INTRODUCTION TO ECOLOGICAL AND ENVIRONMENTAL MODELING"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=12995ANDp_caca=act"
+			creditos="4,5"
+			semestre="A"/>
+		
+	</escuela>
+	<escuela nombre="School of Agricultural Engineering and Environment">
+		<asignatura
+			codigo="3901"
+			nombre="BREEDING FOR HORTICULTURAL CROPS"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=3901ANDp_caca=act"
+			creditos="4,5"
+			semestre="A"/>
+		
+		<asignatura
+			codigo="7550"
+			nombre="INTERNATIONAL SEMINARS IN LIFE SCIENCES I"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=7550ANDp_caca=act"
+			creditos="4,5"
+			semestre="A"/>
+		
+		<asignatura
+			codigo="7589"
+			nombre="INTERNATIONAL SEMINARS IN LIFE SCIENCES II"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=7589ANDp_caca=act"
+			creditos="4,5"
+			semestre="B"/>
+		
+	</escuela>
+	<escuela nombre="SCHOOL OF TELECOMMUNICATIONS ENGINEERING">
+		<asignatura
+			codigo="5333"
+			nombre="SECURITY OF CRYPTOGRAPHIC INFORMATION (V2)"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=5333ANDp_caca=act"
+			creditos="6"
+			semestre=" "/>
+		
+		<asignatura
+			codigo="7772"
+			nombre="THEORY OF RELATIVITY FOR TELECOMMUNICATIONS ENGINEERS"
+			url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=7772ANDp_caca=act"
+			creditos="4,5"
+			semestre=" "/>
+		
+	</escuela>
+</asigingles>
+
+	

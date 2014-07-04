@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">WelcomeIncoming</string>
+    <string name="title_section1">Seccion 1</string>
+    <string name="title_section2">Seccion 2</string>
+    <string name="title_section3">Seccion 3</string>
+    <string name="navigation_drawer_open">Abrir panel de navegacion</string>
+    <string name="navigation_drawer_close">Cerrar panel de navegacion</string>
+    <string name="action_example">Accion ejemplo</string>
+    <string name="action_settings">Opciones</string>
+    <string name="menu_option1">Inicio</string>
+    <string name="menu_option2">Calendario</string>
+    <string name="menu_option3">Info</string>
+    <string name="menu_option4">KitDev</string>
+    <string name="title_activity_translate">KitDEV</string>
+    <string name="btnSay">Di algo en ingles</string>
+    <string name="btnListen">Escuchar en espalol</string>
+    <string name="sinConn">Sin conexion. Configura tu movil.</string>
+    <string name="btn_OK">OK</string>
+    <string name="err_audio">Error de audio, intentalo de nuevo</string>
+    <string name="err_client">Error de cliente, intentalo de nuevo</string>
+    <string name="err_network">Error de red, intentalo de nuevo</string>
+    <string name="err_server">Error de servidor, intentalo de nuevo</string>
+    <string name="err_no_match">No match error, intentalo de nuevo</string>
+    <string name="err_no_TTS">Error de altavoz, intentalo de nuevo.</string>
+    <string name="err_no_text_TTS">No hay texto que traducir.</string>
+    <string name="err_install_TTS">Por favor, instala el servicio de traducción de android</string>
+    <string name="title_activity_speaker">Reproductor</string>
+    <string name="btnRepeat">Repeat</string>
+    <string name="btnBack">Go Back</string>
+    <string name="txt_1">¿Dónde está la escuela de informática?</string>
+    <string name="txt_1_en">Where is the computer science university?</string>
+    <string name="txt_2">¿Dónde está la cafetería más cercana?</string>
+    <string name="txt_2_en">Where is the school cafeteria near here?</string>
+    <string name="txt_3">¿Cuál es mi horario?</string>
+    <string name="txt_3_en">Which is my schedule?</string>
+    <string name="txt_4">¿Dónde está la parada de autobús?</string>
+    <string name="txt_4_en">Where is the bus stop near here?</string>
+    <string name="txt_5">¿Dónde está la parada de metro?</string>
+    <string name="txt_5_en">Where is the tram stop near here?</string>
+    <string name="txt_6">¿Dónde está secretaría?</string>
+    <string name="txt_6_en">Where is secretary office?</string>
+    <string name="txt_7">¿Dónde está la oficina de relaciones internacionales?</string>
+    <string name="txt_7_en">Where is International office?</string>
+    <string name="txt_8">¿Dónde está la oficina de Programas Internacionales de Intercambio?</string>
+    <string name="txt_8_en">Where is the Office of International Exchange Programs?</string>
+    <string name="btnAvion">Plane</string>
+    <string name="btnTaxi">Taxi</string>
+    <string name="btnMetro">Underground</string>
+    <string name="btnBus">Bus</string>
+    <string name="btnCarretera">Roads</string>
+    <string name="btnTren">Train</string>
+    <string name="btnMar">Sea</string>
+    <string name="title_activity_avion">Plane</string>
+    <string name="nomEscuela">Name</string>
+    <string name="urlP">Main url</string>
+    <string name="urlD">Teaching url</string>
+    <string name="mail">School mail</string>
+    <string name="fax">School fax</string>
+    <string name="nomCoor">Coordinator name</string>
+    <string name="mailCoor">Coordinator mail</string>
+    <string name="telfCoor">Coordinator phone</string>
+    <string name="nomTec">Tech name</string>
+    <string name="mailTec">Tech mail</string>
+    <string name="telfTec">Tech phone</string>
+    <string name="extTec">Tech extension</string>
+    <string name="transporte">Transport</string>
+    <string name="valencia">Valencia</string>
+    <string name="escuelas">Schools</string>
+    <string name="asignaturas">Subjects</string>
+    <string name="btnAutocar">Autocar</string>
+    <string name="contacto">Contact</string>
+    <string name="telefonos">Phone:</string>
+    <string name="sitioWeb">Web Site:</string>
+
+    <string name="selecInfo">Choose the building you want to find:</string>
+
+    <string-array name="edificios">
+        <item>Building 1B</item>
+        <!--subitem>School of informatics</subitem-->
+        <item>Building 1C</item>
+        <!--subitem>School of Building Engineering</subitem-->
+        <item>Building 1G</item>
+        <!--subitem>School of informatics</subitem-->
+        <item>Building 1H</item>
+        <!--subitem>School of informatics</subitem-->
+        <item>Building 2F</item>
+        <!--subitem>Physics Technology center</subitem-->
+        <item>Building 3H</item>
+        <!--subitem>Agronomist Engineering</subitem-->
+        <item>Building 3M</item>
+        <!--subitem>Fine Arts</subitem-->
+        <item>Building 3P</item>
+        <!--subitem>Agricultural and Natural Environment Engineering</subitem-->
+        <item>Building 4D</item>
+        <!--subitem>School of Telecommunications Engineering</subitem-->
+        <item>Building 4H</item>
+        <!--subitem>School of Civil Engineering</subitem-->
+        <item>Building 5F</item>
+        <!--subitem>School of Industrial Engineering</subitem-->
+        <item>Building 7B</item>
+        <!--subitem>School of Design Engineering</subitem-->
+        <item>Building 7I</item>
+        <!--subitem>School of Engineering in Geodesy, Cartography and Surveying</subitem-->
+        <item>Building 7J</item>
+        <!--subitem>Faculty of Business Administration and Management</subitem-->
+    </string-array>
+
+    <string name="title_activity_ra_activity">Augmented Reality</string>
+    <string name="txt_noticias">Noticias</string>
+    <string name="txt_noticia">Noticia</string>
+    <string name="loading">Loading...</string>
+
+</resources>

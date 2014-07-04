@@ -1,0 +1,212 @@
+<responsables>
+	<escuela
+			escuelanombre="EPSA Escuela Politécnica Superior de Alcoy"
+			urlprincipal="www.epsa.upv.es" 
+			urldocencia=""
+			escuelamail="api-epsa@upvnet.upv.es"
+			escuelafax="+34 966528533"
+			coordinadornombre="Pau Micó i Tormos"
+			coordinadormail="pabmitor@disca.upv.es"
+			coordinadortelefono="+34 966528459"
+			coordinadorextension=""
+			tecniconombre= "David Gutiérrez Vañó"
+			tecnicomail="dgutier@sie.upv.es"
+			tecnicotelefono="+34 966528499"
+			tecnicoextension=""/>
+
+	<escuela 
+			escuelanombre="EPSG. Escuela Politécnica Superior de Gandia" 
+			urlprincipal="www.epsg.upv.es" 
+			urldocencia="www.epsg.upv.es/index.php?idioma=c" 
+			escuelamail="relinter@epsg.upv.es"
+			escuelafax="+34 962849367"
+			coordinadornombre="Michaela Muszynski"
+			coordinadormail="mmus@idm.upv.es"
+			coordinadortelefono="+34 962849372"
+			coordinadorextension=""
+			tecniconombre="Michaela Muszynski" 
+			tecnicomail="mmus@idm.upv.es"
+			tecnicotelefono="+34 962849372"
+			tecnicoextension=""/>
+		
+	<escuela 
+			escuelanombre="Escuela Técnica Sup. de Ing. Agronómica y del Medio Natural"
+			urlprincipal="www.etsiamn.upv.es"
+			urldocencia="www.etsiamn.upv.es"
+			escuelamail="reinagr@etsmre.upv.es" 
+			escuelafax="+34 963877139" 
+			coordinadornombre="Vicente Castell Zeising" 
+			coordinadormail="vcastell@prv.upv.es"
+			coordinadortelefono="+34 963879132"
+			coordinadorextension=""		
+			tecniconombre="Claudio Benavent Montoliu" 
+			tecnicomail="cbenavent@upvnet.upv.es"
+			tecnicotelefono="+34 963879132"
+			tecnicoextension=""/>
+
+	<escuela 
+			escuelanombre="ETSIGCT. Escuela Técnica Sup. de Ing. Geodésica, Cartográfica y Topográfica"
+			urlprincipal="www.top.upv.es" 
+			urldocencia="www.top.upv.es"
+			escuelamail="intergeo@upvnet.upv.es" 
+			escuelafax="+34 963879469" 
+			coordinadornombre="Quintanilla García, Israel " 
+			coordinadormail="eegecs@upvnet.upv.es" 
+			coordinadortelefono="+34 963877557"
+			coordinadorextension=""			
+			tecniconombre="Inmaculada Tomás Estellés " 
+			tecnicomail="intergeo@upvnet.upv.es" 
+			tecnicotelefono="+34 963877165"
+			tecnicoextension=""/>		
+
+	<escuela 
+			escuelanombre="ETSA. Escuela Técnica Superior de Arquitectura" 
+			urlprincipal="www.arq.upv.es" 
+			urldocencia="www.arq.upv.es/?page_id=5"
+			escuelamail="int_etsav@upvnet.upv.es" 
+			escuelafax="+34 963877993" 
+			coordinadornombre="David Gallardo Llopis" 
+			coordinadormail="internacional@etsa.upv.es" 
+			coordinadortelefono="+34 963877110"
+			coordinadorextension=""		
+			tecniconombre="Paula Cardells Mosteiro " 
+			tecnicomail="paucarmo@upvnet.upv.es"
+			tecnicotelefono="+34 963877110"
+			tecnicoextension="71118"/>
+
+	<escuela 
+			escuelanombre="ETSGE. Escuela Técnica Superior de Ingeniería de Edificación" 
+			urlprincipal="www.etsie.upv.es" 
+			urldocencia="www.upv.es/entidades/ETSIE/ri/743738normali.html"
+			escuelamail="int_etsie@upvnet.upv.es" 
+			escuelafax="+34 963877129" 
+			coordinadornombre="Luis PALMERO IGLESIAS" 
+			coordinadormail="lpalmero@csa.upv.es" 
+			coordinadortelefono="+34 963877007" 
+			coordinadorextension="71215"
+			tecniconombre="Javier CALVO DÍAZ " 
+			tecnicomail="jacaldi@upvnet.upv.es"
+			tecnicotelefono="+34 963877007"
+			tecnicoextension="71205"/>
+
+	<escuela 
+			escuelanombre="ETSID. Escuela Técnica Superior de Ingeniería del Diseño" 
+			urlprincipal="relint.etsid.upv.es" 
+			urldocencia="www.etsid.upv.es/TITULACIONES/indextitul.htm"
+			escuelamail="int_etsid@upvnet.upv.es" 
+			escuelafax="+34 963877189" 
+			coordinadornombre="Sánchez Ruiz, Luis Manuel" 
+			coordinadormail="int_etsid@upvnet.upv.es" 
+			coordinadortelefono="+34 963877186" 
+			coordinadorextension=""
+			tecniconombre="Manuel Fernández Peña" 
+			tecnicomail="int_etsid@upvnet.upv.es"
+			tecnicotelefono="+34 963877007"
+			tecnicoextension="81815"/>
+ 
+	<escuela 
+			escuelanombre="ETSINF. Escuela Técnica Superior de Ingeniería Informática" 
+			urlprincipal="www.inf.upv.es" 
+			urldocencia="www.inf.upv.es"
+			escuelamail="int_inf@upvnet.upv.es " 
+			escuelafax="+34 963877215" 
+			coordinadornombre="Juan Carlos Ruiz García" 
+			coordinadormail="sri@inf.upv.es" 
+			coordinadortelefono="+34 963877204" 
+			coordinadorextension=""
+			tecniconombre="Pilar Agustí Campos" 
+			tecnicomail=""
+			tecnicotelefono="int_inf@upvnet.upv.es"
+			tecnicoextension="+34 963877204"/>
+
+	<escuela 
+			escuelanombre="ETSICCP. Escuela Técnica Superior de Ingenieros de Caminos, Canales y Puertos" 
+			urlprincipal="www.iccp.upv.es" 
+			urldocencia="www.iccp.upv.es/Web/?d=43"
+			escuelamail="int_etsiccp@upvnet.upv.es" 
+			escuelafax="+34 963879151" 
+			coordinadornombre="Juan B. MARCO SEGURA" 
+			coordinadormail="coordinator.civil.eng@cam.upv.es" 
+			coordinadortelefono="+34 963879151" 
+			coordinadorextension=""
+			tecniconombre="Javier CALVO DÍAZ" 
+			tecnicomail="jacaldi@upv.es"
+			tecnicotelefono="+34 963879150"
+			tecnicoextension=""/>
+ 
+	<escuela 
+			escuelanombre="ETSIT. Escuela Técnica Superior de Ingenieros de Telecomunicación" 
+			urlprincipal="www.etsit.upv.es" 
+			urldocencia="www.etsit.upv.es"
+			escuelamail="int_etsit@upvnet.upv.es" 
+			escuelafax="+34 963879199" 
+			coordinadornombre="Felipe Peñaranda Foix" 
+			coordinadormail="int_etsit@upvnet.upv.es" 
+			coordinadortelefono="+34 963877196" 
+			coordinadorextension=""
+			tecniconombre="Jesús Alonso Urbano" 
+			tecnicomail="int_etsit@upvnet.upv.es"
+			tecnicotelefono="+34 963877196"
+			tecnicoextension=""/>
+ 
+	<escuela 
+			escuelanombre="ETSII. Escuela Técnica Superior de Ingenieros Industriales" 
+			urlprincipal="www.etsii.upv.es/relint/" 
+			urldocencia="www.etsii.upv.es/relint/incom/newsing3.htm"
+			escuelamail="internacional@etsii.upv.es" 
+			escuelafax="+34 963879170" 
+			coordinadornombre="Arantxa Querol Monforte" 
+			coordinadormail="internacional@etsii.upv.es" 
+			coordinadortelefono="+34 963877172" 
+			coordinadorextension=""
+			tecniconombre="Arantxa Querol" 
+			tecnicomail="arquemon@upvnet.upv.es"
+			tecnicotelefono="+34 963877172"
+			tecnicoextension=""/>
+			
+	<escuela 
+			escuelanombre="FADE. Facultad de Administración y Dirección de Empresas" 
+			urlprincipal="www.ade.upv.es" 
+			urldocencia="www.ade.upv.es"
+			escuelamail="intade@ade.upv.es" 
+			escuelafax="+34 963879275" 
+			coordinadornombre="Mª del Mar Marín Sánchez" 
+			coordinadormail="mmarins@esp.upv.es" 
+			coordinadortelefono="+34 963877007" 
+			coordinadorextension="74711"
+			tecniconombre="Gisel Sanahuja Velez" 
+			tecnicomail="intade@ade.upv.es"
+			tecnicotelefono="+34 963879277"
+			tecnicoextension=""/>		
+	
+	<escuela 
+			escuelanombre="FBBAA. Facultad de Bellas Artes" 
+			urlprincipal="www.bbaa.upv.es" 
+			urldocencia="www.bbaa.upv.es"
+			escuelamail="int_bbaa@upvnet.upv.es" 
+			escuelafax="+34 963877941" 
+			coordinadornombre="Isabel Tristán Tristán" 
+			coordinadormail="itristan@pin.upv.es" 
+			coordinadortelefono="+34 963877225" 
+			coordinadorextension=""
+			tecniconombre="Alba Marina Ara Martín" 
+			tecnicomail="int_bbaa@upvnet.upv.es"
+			tecnicotelefono="+34 963877226"
+			tecnicoextension=""/>
+
+	<escuela 
+			escuelanombre="OIP. Oficina Intercambios de Postgrado" 
+			urlprincipal="www.opii.upv.es" 
+			urldocencia="www.upv.es/postgradooficial/index_e.htm"
+			escuelamail="opii@upvnet.upv.es" 
+			escuelafax="+34 963877719" 
+			coordinadornombre="María Boquera Matarredona" 
+			coordinadormail="opii@upvnet.upv.es" 
+			coordinadortelefono="+34 963877002" 
+			coordinadorextension=""
+			tecniconombre="Martínez Sánchez, Fco Javier" 
+			tecnicomail="opii@upvnet.upv.es"
+			tecnicotelefono="+34 963877002"
+			tecnicoextension=""/>
+			
+</responsables>			

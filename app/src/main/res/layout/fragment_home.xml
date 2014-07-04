@@ -1,0 +1,25 @@
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#EEE"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_noticias"
+        android:textSize="20dp"
+        android:background="#ffbc2121"
+        android:textColor="#EEE"
+        android:gravity="center"
+        android:id="@+id/txtNoticias" />
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@android:id/list"
+        android:listSelector="@drawable/list_item_selector"
+        android:dividerHeight="0dp"
+        android:divider="@null"/>
+</LinearLayout>

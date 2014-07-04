@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#222">
+
+
+    <TextView
+        android:layout_margin="10dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/selecInfo"
+        android:id="@+id/textView2"
+        android:textColor="#EEE"
+        android:layout_gravity="center_horizontal" />
+
+    <Spinner
+        android:padding="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinnerEdificios"
+        android:layout_gravity="right"
+        android:background="#EEE"
+        android:layout_margin="10dp"/>
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Find the building"
+        android:id="@+id/btn_enc"
+        android:background="@drawable/button_custom_red"
+        android:layout_margin="10dp"/>
+</LinearLayout>
