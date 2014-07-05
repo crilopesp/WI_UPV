@@ -3,10 +3,10 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <item
-        android:left="3dp"
-        android:right="3dp"
-        android:top="2dp">
-        <shape android:shape="rectangle" >
+        android:left="10dp"
+        android:right="10dp"
+        android:top="3dp">
+    <shape android:shape="rectangle" >
             <corners
                 android:radius="2dp"
                 android:bottomLeftRadius="0dp"

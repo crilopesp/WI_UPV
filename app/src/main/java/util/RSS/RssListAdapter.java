@@ -1,20 +1,12 @@
 package util.RSS;
 
 import android.content.Context;
-import android.database.DataSetObserver;
-import android.graphics.Typeface;
-import android.text.method.ScrollingMovementMethod;
-import android.text.util.Linkify;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.BaseExpandableListAdapter;
-import android.widget.ImageButton;
-import android.widget.ListAdapter;
 import android.widget.TextView;
 
-import java.util.HashMap;
 import java.util.List;
 
 import upv.welcomeincoming.app.R;
@@ -32,10 +24,12 @@ public class RssListAdapter extends ArrayAdapter<Message> {
         super(context, resource, items);
         messages = items;
     }
+
     @Override
-    public int getCount(){
+    public int getCount() {
         return messages.size();
     }
+
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
@@ -55,9 +49,8 @@ public class RssListAdapter extends ArrayAdapter<Message> {
             TextView title = (TextView) v.findViewById(R.id.textTitle);
 
             if (title != null) {
-                title.setTypeface(null, Typeface.BOLD);
                 title.setText(p.getTitle());
-               // title.setTypeface(Typeface.createFromAsset(_context.getAssets(), "fonts/futura_font.ttf"));
+                // title.setTypeface(Typeface.createFromAsset(_context.getAssets(), "fonts/futura_font.ttf"));
             }
         }
 
