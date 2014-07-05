@@ -6,6 +6,7 @@ import android.util.Log;
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.InputStreamReader;
+import java.io.StringWriter;
 import java.net.CookieHandler;
 import java.net.CookieManager;
 import java.net.URL;
@@ -76,20 +77,16 @@ public class IntranetCalendars extends AsyncTask<List<String>, Void, InputParams
 
             inputParamsIntranetConnection.setCookieList(params[0]);
 
-            BufferedReader in =
-                    new BufferedReader(new InputStreamReader(request.getInputStream()));
-            String inputLine;
-            StringBuffer response = new StringBuffer();
-
-            while ((inputLine = in.readLine()) != null) {
-                response.append(inputLine);
+            BufferedReader in = new BufferedReader(new InputStreamReader(request.getInputStream(),"ISO-8859-1"));
+            StringWriter sw = new StringWriter();
+            char[] buffer = new char[1024 * 4];
+            int n;
+            while (-1 != (n = in.read(buffer))) {
+                sw.write(buffer, 0, n);
             }
             in.close();
 
-            this.inputParamsIntranetConnection.setResult(response.toString());
-
-            //content debug...
-            Log.d( ((Object)this).getClass().getName(), "Code response: " + this.inputParamsIntranetConnection.getCodeResponse());
+            this.inputParamsIntranetConnection.setResult(sw.toString());
 
         } catch (Exception e) {
             inputParamsIntranetConnection.setException(e);

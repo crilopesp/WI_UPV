@@ -1,14 +1,10 @@
 package upv.welcomeincoming.app;
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Bundle;
-
-
 import android.support.v4.app.ListFragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,8 +24,9 @@ import util.Preferences;
 
 public class FragmentDiary extends ListFragment implements Observer {
 
-    public interface DiaryListener{
+    public interface DiaryListener {
         public void DiaryListenerOnClick(DiaryJSON diaryJSON);
+
         public void DiaryListenerError(String string);
     }
 
@@ -64,16 +61,15 @@ public class FragmentDiary extends ListFragment implements Observer {
 
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
-        this.diaryListener.DiaryListenerOnClick( diaryJSONList.get(position));
+        this.diaryListener.DiaryListenerOnClick(diaryJSONList.get(position));
     }
 
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
         try {
-                this.diaryListener = (DiaryListener) activity;
+            this.diaryListener = (DiaryListener) activity;
         } catch (ClassCastException e) {
-            Log.w(((Object) this).getClass().getName(),activity.toString() + " no implementa la interfaz");
         }
     }
 
@@ -89,7 +85,6 @@ public class FragmentDiary extends ListFragment implements Observer {
         //error?
         if (outPutParamsIntranetConnection.getException() != null) {
 
-            Log.d(((Object) this).getClass().getName(), outPutParamsIntranetConnection.getException().getMessage());
 
             if (outPutParamsIntranetConnection.isUserFail()) {
                 Preferences.setUser(this.getActivity(), "");
@@ -105,21 +100,18 @@ public class FragmentDiary extends ListFragment implements Observer {
         //no hay error...
         if (data.equals("login")) {
 
-            Log.d(((Object) this).getClass().getName(), "update -> login");
 
             progressDialog.setMessage(getString(R.string.obtainCalendars));
             intranetConnection.getCalendars();
 
         } else if (data.equals("calendars")) {
 
-            Log.d(((Object) this).getClass().getName(), "update -> calendars");
 
             diaryJSONList = outPutParamsIntranetConnection.getCalendars().getDiaries();
             ArrayAdapterCalendarDiaryList adapter = new ArrayAdapterCalendarDiaryList(this.getActivity(), diaryJSONList);
             setListAdapter(adapter);
 
         } else {
-            Log.w(((Object) this).getClass().getName(), "Yo no tengo que salir!");
         }
     }
 

@@ -21,6 +21,7 @@ android:id="@+id/calendarFragment">
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:id="@+id/textViewCalendarGroup"
         android:textColor="#EEE"
+        android:gravity="right"
         android:padding="5dp"/>
 
     <TextView
@@ -36,6 +37,7 @@ android:id="@+id/calendarFragment">
         android:layout_height="wrap_content"
         android:text="Events"
         android:textSize="20dp"
+        android:textColor="#EEE"
         android:background="#c21b1b"
         android:gravity="center"
         android:id="@+id/textViewEvents" />

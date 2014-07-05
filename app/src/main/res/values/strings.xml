@@ -121,5 +121,6 @@
     <string name="dni">Introduce your DNI/NIE</string>
     <string name="pin">Introduce your pin</string>
     <string name="downloading">Downloading events</string>
+    <string name="noevents">There is no events</string>
 
 </resources>

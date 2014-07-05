@@ -1,7 +1,6 @@
 package Intranet;
 
 import android.os.AsyncTask;
-import android.util.Log;
 
 import java.io.DataOutputStream;
 import java.net.URL;
@@ -20,13 +19,13 @@ public class IntranetLogin extends AsyncTask<String, Void, InputParamsIntranetCo
     private InputParamsIntranetConnection inputParamsIntranetConnection;
     private Observer observer;
 
-    public IntranetLogin(Observer observer){
+    public IntranetLogin(Observer observer) {
         this.cookieList = new ArrayList<String>();
         this.observer = observer;
     }
 
     @Override
-    protected void onPreExecute(){
+    protected void onPreExecute() {
 
         this.inputParamsIntranetConnection = new InputParamsIntranetConnection();
         this.inputParamsIntranetConnection.addObserver(this.observer);
@@ -37,8 +36,6 @@ public class IntranetLogin extends AsyncTask<String, Void, InputParamsIntranetCo
 
     @Override
     protected InputParamsIntranetConnection doInBackground(String... params) {
-
-        Log.d(((Object) this).getClass().getName(), "Conectando con: " + params[0] + ", " + params[1]);
 
         String urlPath = "https://www.upv.es/exp/aute_intranet";
         String data = "id=c&estilo=500&vista=&param=&cua=miupv&dni=" + params[0]
@@ -59,7 +56,7 @@ public class IntranetLogin extends AsyncTask<String, Void, InputParamsIntranetCo
 
             request.setInstanceFollowRedirects(false);
 
-            request.setRequestProperty("User-Agent","Mozilla/5.0");
+            request.setRequestProperty("User-Agent", "Mozilla/5.0");
             request.setRequestProperty("Host", "www.upv.es");
 
             for (String cookie : this.cookieList) {
@@ -67,7 +64,7 @@ public class IntranetLogin extends AsyncTask<String, Void, InputParamsIntranetCo
             }
 
             request.setRequestProperty("Referer", "http://www.upv.es");
-            request.setRequestProperty("Content-Type","application/x-www-form-urlencoded");
+            request.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
             request.setRequestProperty("Content-Length", Integer.toString(data.length()));
 
             request.setDoOutput(true);
@@ -80,55 +77,21 @@ public class IntranetLogin extends AsyncTask<String, Void, InputParamsIntranetCo
 
             inputParamsIntranetConnection.setCodeResponse(request.getResponseCode());
 
-            /*
-                debug
-             */
 
-            /*
-            if(outPutParams.getException()==null) {
-                BufferedReader in = new BufferedReader(new InputStreamReader(request.getInputStream()));
-                String inputLine;
-                StringBuffer response = new StringBuffer();
-
-                while ((inputLine = in.readLine()) != null) {
-                    response.append(inputLine);
-                }
-                in.close();
-                Log.d( ((Object)this).getClass().getName(), response.toString());
-            }else{
-                BufferedReader in = new BufferedReader(new InputStreamReader(request.getErrorStream()));
-                String inputLine;
-                StringBuffer response = new StringBuffer();
-
-                while ((inputLine = in.readLine()) != null) {
-                    response.append(inputLine);
-                }
-                in.close();
-                Log.d( ((Object)this).getClass().getName(), response.toString());
-            }
-            */
-
-            if(request.getHeaderFields().get("Set-Cookie")!=null){
+            if (request.getHeaderFields().get("Set-Cookie") != null) {
 
                 //tenemos la cookie! pero responden 302
                 this.inputParamsIntranetConnection.setCodeResponse(200);
 
                 cookieList.addAll(request.getHeaderFields().get("Set-Cookie"));
 
-            }else if(this.inputParamsIntranetConnection.getCodeResponse()==302){
+            } else if (this.inputParamsIntranetConnection.getCodeResponse() == 302) {
 
                 //al poner un usuario y contranya no validos deberia responder con http 401 pero responde con 302 que te manda a un recurso que responde 200
                 //una forma de comprobar si el login es correcto es ver si tenemos la cookie de session
 
                 this.inputParamsIntranetConnection.setCodeResponse(401);
             }
-
-            //content debug...
-            Log.d( ((Object)this).getClass().getName(), "Code response: " + this.inputParamsIntranetConnection.getCodeResponse());
-
-            for(String item : this.cookieList)
-                Log.d( ((Object)this).getClass().getName(), "Cookie: " + item);
-            //end content debug
 
 
         } catch (Exception e) {
@@ -139,7 +102,7 @@ public class IntranetLogin extends AsyncTask<String, Void, InputParamsIntranetCo
     }
 
     @Override
-    protected void onPostExecute(InputParamsIntranetConnection InputParamsIntranetConnection){
+    protected void onPostExecute(InputParamsIntranetConnection InputParamsIntranetConnection) {
         InputParamsIntranetConnection.setCookieList(this.cookieList);
         InputParamsIntranetConnection.notifyObservers("login");
     }

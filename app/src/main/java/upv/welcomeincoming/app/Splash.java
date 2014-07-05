@@ -8,9 +8,6 @@ import android.os.Handler;
 import android.view.Window;
 import android.widget.ImageView;
 
-import java.util.Timer;
-import java.util.TimerTask;
-
 public class Splash extends Activity {
 
     // Set the duration of the splash screen
@@ -41,13 +38,9 @@ public class Splash extends Activity {
                 {
                     Intent mainIntent = new Intent().setClass(
                             Splash.this, Home.class);
-                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                     startActivity(mainIntent);
-                    try {
-                        this.finalize();
-                    } catch (Throwable throwable) {
-                        throwable.printStackTrace();
-                    }
+                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                    finish();
                 }
                 if(i<imageArray.length)
                 handler.postDelayed(this, 300);  //for interval...

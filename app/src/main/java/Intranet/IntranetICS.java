@@ -64,23 +64,15 @@ public class IntranetICS extends AsyncTask<List<String>, Void, InputParamsIntran
 
             inputParamsIntranetConnection.setCookieList(params[0]);
 
-
             BufferedReader in =
-                    new BufferedReader(new InputStreamReader(request.getInputStream()));
+                    new BufferedReader(new InputStreamReader(request.getInputStream(),"UTF-8"));
             StringWriter sw = new StringWriter();
             char[] buffer = new char[1024 * 4];
             int n;
             while (-1 != (n = in.read(buffer))) {
                 sw.write(buffer, 0, n);
-
             }
             this.inputParamsIntranetConnection.setResult(sw.toString());
-
-            //Log.d( ((Object)this).getClass().getName(), "-> " + sw.toString());
-
-            //content debug...
-            Log.d( ((Object)this).getClass().getName(), "Code response: " + this.inputParamsIntranetConnection.getCodeResponse());
-
         } catch (Exception e) {
             inputParamsIntranetConnection.setException(e);
         }

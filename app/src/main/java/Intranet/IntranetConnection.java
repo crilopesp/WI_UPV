@@ -1,7 +1,5 @@
 package Intranet;
 
-import android.util.Log;
-
 import java.net.CookieHandler;
 import java.net.CookieManager;
 import java.util.List;
@@ -11,7 +9,6 @@ import java.util.Observer;
 import javax.net.ssl.HttpsURLConnection;
 
 import CalendarUPV.CalendarsJSON;
-import CalendarUPV.DiaryJSON;
 
 
 public class IntranetConnection implements Observer {
@@ -30,34 +27,31 @@ public class IntranetConnection implements Observer {
         CookieHandler.setDefault(new CookieManager());
     }
 
-    public void connect(){
+    public void connect() {
 
-        Log.d(((Object) this).getClass().getName(), " -> call connect");
 
-        if(this.outPutParamsIntranetConnection.getException()!=null)
-            return ;
+        if (this.outPutParamsIntranetConnection.getException() != null)
+            return;
 
         IntranetLogin login = new IntranetLogin(this);
-        login.execute(this.user,this.pass);
+        login.execute(this.user, this.pass);
     }
 
-    public void getCalendars(){
+    public void getCalendars() {
 
-        Log.d(((Object) this).getClass().getName(), " -> call calendars");
 
-        if(this.outPutParamsIntranetConnection.getException()!=null)
-            return ;
+        if (this.outPutParamsIntranetConnection.getException() != null)
+            return;
 
         IntranetCalendars calendars = new IntranetCalendars(this);
         calendars.execute(this.cookieList);
     }
 
-    public void getICS(String url){
+    public void getICS(String url) {
 
-        Log.d(((Object) this).getClass().getName(), " -> call ics!");
 
-        if(this.outPutParamsIntranetConnection.getException()!=null)
-            return ;
+        if (this.outPutParamsIntranetConnection.getException() != null)
+            return;
 
 
         IntranetICS Ics = new IntranetICS(this, url);
@@ -86,12 +80,12 @@ public class IntranetConnection implements Observer {
                 break;
 
             case HttpsURLConnection.HTTP_BAD_REQUEST:
-                returnException =  new Exception("Petición incorrecta");
+                returnException = new Exception("Petición incorrecta");
                 break;
 
             case HttpsURLConnection.HTTP_MOVED_PERM:
             case HttpsURLConnection.HTTP_MOVED_TEMP:
-                returnException =  new Exception("Han respondido una redirección");
+                returnException = new Exception("Han respondido una redirección");
                 break;
 
             case HttpsURLConnection.HTTP_OK:
@@ -100,7 +94,7 @@ public class IntranetConnection implements Observer {
                 break;
 
             default:
-                returnException =  new Exception("Error desconocido");
+                returnException = new Exception("Error desconocido");
         }
 
         return returnException;
@@ -111,16 +105,14 @@ public class IntranetConnection implements Observer {
 
         InputParamsIntranetConnection inputParamsIntranetConnection = (InputParamsIntranetConnection) observable;
 
-        if (inputParamsIntranetConnection.getException() != null || this.processCode(inputParamsIntranetConnection.getCodeResponse())!=null) {
+        if (inputParamsIntranetConnection.getException() != null || this.processCode(inputParamsIntranetConnection.getCodeResponse()) != null) {
             //error....
 
             this.outPutParamsIntranetConnection.setException(this.processCode(inputParamsIntranetConnection.getCodeResponse()));
-            Log.d(((Object) this).getClass().getName(), "Update -> error -> " + this.processCode(inputParamsIntranetConnection.getCodeResponse()).getMessage());
-           // Log.d(((Object) this).getClass().getName(), "Exception: ", outPutParamsIntranetConnection.getException());
 
-           if(inputParamsIntranetConnection.getCodeResponse()==401){
-               outPutParamsIntranetConnection.setUserFail(true);
-           }
+            if (inputParamsIntranetConnection.getCodeResponse() == 401) {
+                outPutParamsIntranetConnection.setUserFail(true);
+            }
 
             this.outPutParamsIntranetConnection.setChanged();
             this.outPutParamsIntranetConnection.notifyObservers();
@@ -129,32 +121,28 @@ public class IntranetConnection implements Observer {
 
         this.cookieList = inputParamsIntranetConnection.getCookieList();
 
-        if(data.equals("login")) {
+        if (data.equals("login")) {
             //login...
 
-                Log.d(((Object) this).getClass().getName(), "Update -> Login -> connected");
-                this.outPutParamsIntranetConnection.setChanged();
-                this.outPutParamsIntranetConnection.notifyObservers("login");
+            this.outPutParamsIntranetConnection.setChanged();
+            this.outPutParamsIntranetConnection.notifyObservers("login");
 
-        }else if (data.equals("calendars")){
+        } else if (data.equals("calendars")) {
             //calendars...
 
-                Log.d( ((Object)this).getClass().getName(), "Update -> Calendars -> ok");
 
-                this.outPutParamsIntranetConnection.setCalendars(new CalendarsJSON(inputParamsIntranetConnection.getResult()));
-                this.outPutParamsIntranetConnection.notifyObservers("calendars");
+            this.outPutParamsIntranetConnection.setCalendars(new CalendarsJSON(inputParamsIntranetConnection.getResult()));
+            this.outPutParamsIntranetConnection.notifyObservers("calendars");
 
-        }else if (data.equals("ics")){
+        } else if (data.equals("ics")) {
             //ics...
 
-            Log.d( ((Object)this).getClass().getName(), "Update -> ics -> ok");
 
             this.outPutParamsIntranetConnection.setIcsString(inputParamsIntranetConnection.getResult());
             this.outPutParamsIntranetConnection.notifyObservers("ics");
 
-        }else{
+        } else {
 
-            Log.w( ((Object)this).getClass().getName(), "Yo no tengo que salir!");
         }
 
 

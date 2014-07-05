@@ -4,10 +4,8 @@ import android.app.ActionBar;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,7 +36,7 @@ import util.Preferences;
 
 public class FragmentCalendar extends ListFragment implements Observer {
 
-    public interface CalendarListener{
+    public interface CalendarListener {
         public void CalendarListenerError(String string);
     }
 
@@ -63,14 +61,14 @@ public class FragmentCalendar extends ListFragment implements Observer {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        textViewName = (TextView)this.getView().findViewById(R.id.textViewCalendarName);
-        textViewGroup = (TextView)this.getView().findViewById(R.id.textViewCalendarGroup);
-        textViewInfo = (TextView)this.getView().findViewById(R.id.textViewCalendarInfo);
-        textViewEventos = (TextView)this.getView().findViewById(R.id.textViewEvents);
+        textViewName = (TextView) this.getView().findViewById(R.id.textViewCalendarName);
+        textViewGroup = (TextView) this.getView().findViewById(R.id.textViewCalendarGroup);
+        textViewInfo = (TextView) this.getView().findViewById(R.id.textViewCalendarInfo);
+        textViewEventos = (TextView) this.getView().findViewById(R.id.textViewEvents);
 
         listView = this.getListView();
 
-        progressDialog = ProgressDialog.show(this.getActivity(), "Loading...", "", true);
+        progressDialog = ProgressDialog.show(this.getActivity(), getString(R.string.loading), "", true);
 
         intranetConnection = new IntranetConnection(
                 Preferences.getUser(this.getActivity()),
@@ -78,7 +76,7 @@ public class FragmentCalendar extends ListFragment implements Observer {
                 this
         );
 
-        progressDialog.setMessage("Connecting to UPV");
+        progressDialog.setMessage(getString(R.string.connecting));
         intranetConnection.connect();
     }
 
@@ -100,7 +98,6 @@ public class FragmentCalendar extends ListFragment implements Observer {
         //error?
         if (outPutParamsIntranetConnection.getException() != null) {
 
-            Log.d(((Object) this).getClass().getName(), outPutParamsIntranetConnection.getException().getMessage());
 
             if (outPutParamsIntranetConnection.isUserFail()) {
                 Preferences.setUser(this.getActivity(), "");
@@ -121,7 +118,6 @@ public class FragmentCalendar extends ListFragment implements Observer {
 
         } else if (data.equals("ics")) {
 
-            Log.w(((Object) this).getClass().getName(), "update -> ics");
 
             try {
 
@@ -131,61 +127,57 @@ public class FragmentCalendar extends ListFragment implements Observer {
                 CalendarBuilder builder = new CalendarBuilder();
                 Calendar calendar = builder.build(sin);
 
-                calendarICAL = new CalendarICAL(calendar,this.diaryJSON.getUid());
-
-                Log.w(((Object) this).getClass().getName(), "Objecto ->" + this.diaryJSON);
-
-                Log.w(((Object) this).getClass().getName(), "Objecto ->" + calendarICAL);
+                calendarICAL = new CalendarICAL(calendar, this.diaryJSON.getUid());
 
                 textViewName.setText(this.diaryJSON.getNombre());
                 textViewGroup.setText(this.diaryJSON.getGrupo());
 
-                if(calendarICAL.getEvents().size()>0) {
+                if (calendarICAL.getEvents().size() > 0) {
 
-                    this.adapter = new ArrayAdapterCalendarDiaryItemList(this.getActivity(),calendarICAL.getEvents());
-                    this.adapter.setVisibleValues(calendarICAL.getEvents().size() > 20 ? 20 : calendarICAL.getEvents().size()-1);
+                    this.adapter = new ArrayAdapterCalendarDiaryItemList(this.getActivity(), calendarICAL.getEvents());
+                    this.adapter.setVisibleValues(calendarICAL.getEvents().size() > 20 ? 20 : calendarICAL.getEvents().size() - 1);
                     this.setListAdapter(adapter);
 
                     listView.setOnScrollListener(new AbsListView.OnScrollListener() {
 
                         @Override
-                        public void onScrollStateChanged(AbsListView view, int scrollState) {}
+                        public void onScrollStateChanged(AbsListView view, int scrollState) {
+                        }
 
                         @Override
                         public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
 
-                            if(firstVisibleItem + visibleItemCount >= totalItemCount) {
-                                adapter.setVisibleValues(adapter.getVisibleValues()+visibleItemCount > calendarICAL.getEvents().size()-1 ? calendarICAL.getEvents().size()-1 : adapter.getVisibleValues()+visibleItemCount);
+                            if (firstVisibleItem + visibleItemCount >= totalItemCount) {
+                                adapter.setVisibleValues(adapter.getVisibleValues() + visibleItemCount > calendarICAL.getEvents().size() - 1 ? calendarICAL.getEvents().size() - 1 : adapter.getVisibleValues() + visibleItemCount);
                                 adapter.notifyDataSetChanged();
                             }
                         }
                     });
 
 
-                }else{
-                    textViewEventos.setText("There is no events");
+                } else {
+                    textViewEventos.setText(getString(R.string.noevents));
                 }
 
-                if(progressDialog!=null)
+                if (progressDialog != null)
                     progressDialog.dismiss();
 
             } catch (Exception e) {
-                Log.w(((Object) this).getClass().getName(), "Exception", e);
             }
 
         } else {
-            Log.w(((Object) this).getClass().getName(), "Yo no tengo que salir!");
         }
     }
+
     private class ArrayAdapterCalendarDiaryItemList extends BaseAdapter {
 
         private Context context;
         private List<EventICAL> values;
         private int visibleValues = 20;
 
-        public ArrayAdapterCalendarDiaryItemList(Context context, List<EventICAL> values){
-            this.context=context;
-            this.values=values;
+        public ArrayAdapterCalendarDiaryItemList(Context context, List<EventICAL> values) {
+            this.context = context;
+            this.values = values;
         }
 
         public List<EventICAL> getValues() {
@@ -215,13 +207,19 @@ public class FragmentCalendar extends ListFragment implements Observer {
         private final SimpleDateFormat simpleDateFormatOriginal = new SimpleDateFormat("yyyyMMdd'T'HHmmss", Locale.getDefault());
 
         @Override
-        public Object getItem(int pos) { return values.get(pos); }
+        public Object getItem(int pos) {
+            return values.get(pos);
+        }
 
         @Override
-        public long getItemId(int pos) { return pos; }
+        public long getItemId(int pos) {
+            return pos;
+        }
 
         @Override
-        public int getCount() { return values.size(); }
+        public int getCount() {
+            return values.size();
+        }
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
@@ -230,7 +228,6 @@ public class FragmentCalendar extends ListFragment implements Observer {
 
             View rowView = inflater.inflate(R.layout.fragment_calendar_show_calendar_item, parent, false);
 
-            Log.e("fecha", "" + values.get(position).getDtstart());
             LinearLayout layEdif = (LinearLayout) rowView.findViewById(R.id.layoutEdificio);
             LinearLayout layEdifL = (LinearLayout) rowView.findViewById(R.id.layoutEdificioL);
             LinearLayout layEdifE = (LinearLayout) rowView.findViewById(R.id.layoutExtEdifi);
@@ -239,24 +236,24 @@ public class FragmentCalendar extends ListFragment implements Observer {
             TextView thirdLineRight = (TextView) rowView.findViewById(R.id.calendarThirdLine);
 
 
-            if(values.get(position).getDescription()!=null) {
+            if (values.get(position).getDescription() != null) {
                 firstLine.setText(values.get(position).getDescription());
             }
 
-            if(values.get(position).getLocation()!=null)
+            if (values.get(position).getLocation() != null)
                 secondLineLeft.setText(values.get(position).getLocation());
 
-            if(values.get(position).getDtstartFormat()!=null)
+            if (values.get(position).getDtstartFormat() != null)
                 thirdLineRight.setText(values.get(position).getDtstartFormat());
             String edificio = values.get(position).getBuilding();
-            if(edificio!=null
+            if (edificio != null
                     && edificio.equals("1B") || edificio.equals("1C") || edificio.equals("1G")
-                    || edificio.equals("1H") ||edificio.equals("2F")
-                    ||edificio.equals("3H") ||edificio.equals("3M")
-                    || edificio.equals("3P") ||edificio.equals("4D")
-                    || edificio.equals("4H") ||edificio.equals("5F")
-                    || edificio.equals("7B") ||edificio.equals("7I")
-                    || edificio.equals("7J")){
+                    || edificio.equals("1H") || edificio.equals("2F")
+                    || edificio.equals("3H") || edificio.equals("3M")
+                    || edificio.equals("3P") || edificio.equals("4D")
+                    || edificio.equals("4H") || edificio.equals("5F")
+                    || edificio.equals("7B") || edificio.equals("7I")
+                    || edificio.equals("7J")) {
                 final int positionV = position;
                 Button fourthLineRight = new Button(getActivity());
                 fourthLineRight.setText(values.get(position).getBuilding());
@@ -274,8 +271,7 @@ public class FragmentCalendar extends ListFragment implements Observer {
                     }
                 });
                 layEdif.addView(fourthLineRight);
-            }
-            else layEdifE.removeView(layEdifL);
+            } else layEdifE.removeView(layEdifL);
 
             return rowView;
         }
