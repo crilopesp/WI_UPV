@@ -12,7 +12,7 @@
     <string name="menu_option1">Home</string>
     <string name="menu_option2">Calendar</string>
     <string name="menu_option3">Info</string>
-    <string name="menu_option4">Kitdev</string>
+    <string name="menu_option4">Traduce</string>
     <string name="title_activity_translate">KitDEV</string>
     <string name="hello_world">Hello world!</string>
     <string name="btnSay">Say something in english</string>
@@ -113,5 +113,13 @@
     <string name="txt_noticia">New</string>
     <string name="loading">Loading...</string>
     <string name="connecting">Connecting to UPV...</string>
+    <string name="menu_option5">Locate</string>
+    <string name="menu_option6">Options</string>
+    <string name="menu_option7">Forum</string>
+    <string name="obtainCalendars">Getting calendars</string>
+    <string name="login">Log in</string>
+    <string name="dni">Introduce your DNI/NIE</string>
+    <string name="pin">Introduce your pin</string>
+    <string name="downloading">Downloading events</string>
 
 </resources>

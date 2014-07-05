@@ -29,7 +29,7 @@ public class DialogLogin extends DialogFragment{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view =  super.onCreateView(inflater, container, savedInstanceState);
-        getDialog().setTitle("Login...");
+        getDialog().setTitle(getString(R.string.login));
         return view;
     }
 
@@ -46,8 +46,6 @@ public class DialogLogin extends DialogFragment{
                 @Override
                 public void onClick(DialogInterface dialog, int id) {
 
-                    Log.d(((Object) this).getClass().getName(), "Ok");
-
                     String stringUser = ((EditText) view.findViewById(R.id.editTextUser)).getText().toString().trim();
                     String stringPass = ((EditText) view.findViewById(R.id.editTextPass)).getText().toString().trim();
 
@@ -56,14 +54,16 @@ public class DialogLogin extends DialogFragment{
                         Preferences.setPass(I.getActivity(), stringPass);
                         Preferences.setUser(I.getActivity(), stringUser);
 
-                        Log.d(((Object) this).getClass().getName(), "User: " + stringUser);
-                        Log.d(((Object) this).getClass().getName(), "Pass: " + stringPass);
-
                         EditDialogLoginListener activity = (EditDialogLoginListener) getActivity();
                         activity.EditDialogLoginListener(DialogInterface.BUTTON_POSITIVE);
                     }
+                    else{
+                        EditDialogLoginListener activity = (EditDialogLoginListener) getActivity();
+                        activity.EditDialogLoginListener(DialogInterface.BUTTON_NEUTRAL);
+                    }
                 }
             })
+
             .setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {

@@ -12,7 +12,9 @@
     <string name="menu_option1">Inicio</string>
     <string name="menu_option2">Calendario</string>
     <string name="menu_option3">Info</string>
-    <string name="menu_option4">KitDev</string>
+    <string name="menu_option4">Traduccion</string>
+    <string name="menu_option5">Localizacion</string>
+    <string name="menu_option6">Opciones</string>
     <string name="title_activity_translate">KitDEV</string>
     <string name="btnSay">Di algo en ingles</string>
     <string name="btnListen">Escuchar en espalol</string>
@@ -27,8 +29,8 @@
     <string name="err_no_text_TTS">No hay texto que traducir.</string>
     <string name="err_install_TTS">Por favor, instala el servicio de traducción de android</string>
     <string name="title_activity_speaker">Reproductor</string>
-    <string name="btnRepeat">Repeat</string>
-    <string name="btnBack">Go Back</string>
+    <string name="btnRepeat">Repetir</string>
+    <string name="btnBack">Ir atras</string>
     <string name="txt_1">¿Dónde está la escuela de informática?</string>
     <string name="txt_1_en">Where is the computer science university?</string>
     <string name="txt_2">¿Dónde está la cafetería más cercana?</string>
@@ -45,71 +47,77 @@
     <string name="txt_7_en">Where is International office?</string>
     <string name="txt_8">¿Dónde está la oficina de Programas Internacionales de Intercambio?</string>
     <string name="txt_8_en">Where is the Office of International Exchange Programs?</string>
-    <string name="btnAvion">Plane</string>
+    <string name="btnAvion">Avion</string>
     <string name="btnTaxi">Taxi</string>
-    <string name="btnMetro">Underground</string>
-    <string name="btnBus">Bus</string>
-    <string name="btnCarretera">Roads</string>
-    <string name="btnTren">Train</string>
-    <string name="btnMar">Sea</string>
-    <string name="title_activity_avion">Plane</string>
-    <string name="nomEscuela">Name</string>
-    <string name="urlP">Main url</string>
-    <string name="urlD">Teaching url</string>
-    <string name="mail">School mail</string>
-    <string name="fax">School fax</string>
-    <string name="nomCoor">Coordinator name</string>
-    <string name="mailCoor">Coordinator mail</string>
-    <string name="telfCoor">Coordinator phone</string>
-    <string name="nomTec">Tech name</string>
-    <string name="mailTec">Tech mail</string>
-    <string name="telfTec">Tech phone</string>
-    <string name="extTec">Tech extension</string>
-    <string name="transporte">Transport</string>
+    <string name="btnMetro">Metro</string>
+    <string name="btnBus">Autobus</string>
+    <string name="btnCarretera">Carreteras</string>
+    <string name="btnTren">Tren</string>
+    <string name="btnMar">Maritimo</string>
+    <string name="title_activity_avion">Avion</string>
+    <string name="nomEscuela">Nombre</string>
+    <string name="urlP">Url principal</string>
+    <string name="urlD">Docencia url</string>
+    <string name="mail">Email de escuela</string>
+    <string name="fax">Fax de escuela</string>
+    <string name="nomCoor">Nombre cordinador</string>
+    <string name="mailCoor">Email cordinador</string>
+    <string name="telfCoor">Tlf cordinador</string>
+    <string name="nomTec">Nombre del tecnico</string>
+    <string name="mailTec">Email tecnico</string>
+    <string name="telfTec">Tlf. tecnico</string>
+    <string name="extTec">Tecnico extension</string>
+    <string name="transporte">Transporte</string>
     <string name="valencia">Valencia</string>
-    <string name="escuelas">Schools</string>
-    <string name="asignaturas">Subjects</string>
+    <string name="escuelas">Escuelas</string>
+    <string name="asignaturas">Asignaturas</string>
     <string name="btnAutocar">Autocar</string>
-    <string name="contacto">Contact</string>
-    <string name="telefonos">Phone:</string>
-    <string name="sitioWeb">Web Site:</string>
+    <string name="contacto">Contacto</string>
+    <string name="telefonos">Telefono:</string>
+    <string name="sitioWeb">Web:</string>
 
-    <string name="selecInfo">Choose the building you want to find:</string>
+    <string name="selecInfo">Elige el edificio que deseas encontrar</string>
 
     <string-array name="edificios">
-        <item>Building 1B</item>
+        <item>Edificio 1B</item>
         <!--subitem>School of informatics</subitem-->
-        <item>Building 1C</item>
+        <item>Edificio 1C</item>
         <!--subitem>School of Building Engineering</subitem-->
-        <item>Building 1G</item>
+        <item>Edificio 1G</item>
         <!--subitem>School of informatics</subitem-->
-        <item>Building 1H</item>
+        <item>Edificio 1H</item>
         <!--subitem>School of informatics</subitem-->
-        <item>Building 2F</item>
+        <item>Edificio 2F</item>
         <!--subitem>Physics Technology center</subitem-->
-        <item>Building 3H</item>
+        <item>Edificio 3H</item>
         <!--subitem>Agronomist Engineering</subitem-->
-        <item>Building 3M</item>
+        <item>Edificio 3M</item>
         <!--subitem>Fine Arts</subitem-->
-        <item>Building 3P</item>
+        <item>Edificio 3P</item>
         <!--subitem>Agricultural and Natural Environment Engineering</subitem-->
-        <item>Building 4D</item>
+        <item>Edificio 4D</item>
         <!--subitem>School of Telecommunications Engineering</subitem-->
-        <item>Building 4H</item>
+        <item>Edificio 4H</item>
         <!--subitem>School of Civil Engineering</subitem-->
-        <item>Building 5F</item>
+        <item>Edificio 5F</item>
         <!--subitem>School of Industrial Engineering</subitem-->
-        <item>Building 7B</item>
+        <item>Edificio 7B</item>
         <!--subitem>School of Design Engineering</subitem-->
-        <item>Building 7I</item>
+        <item>Edificio 7I</item>
         <!--subitem>School of Engineering in Geodesy, Cartography and Surveying</subitem-->
-        <item>Building 7J</item>
+        <item>Edificio 7J</item>
         <!--subitem>Faculty of Business Administration and Management</subitem-->
     </string-array>
 
-    <string name="title_activity_ra_activity">Augmented Reality</string>
+    <string name="title_activity_ra_activity">Realidad aumentada</string>
     <string name="txt_noticias">Noticias</string>
     <string name="txt_noticia">Noticia</string>
-    <string name="loading">Loading...</string>
+    <string name="loading">Cargando...</string>
+    <string name="menu_option7">Foro</string>
+    <string name="obtainCalendars">Obteniendo calendarios...</string>
+    <string name="login">Iniciar sesion</string>
+    <string name="dni">Introduce tu DNI/NIE</string>
+    <string name="pin">Introduce tu pin</string>
+    <string name="downloading">Descargando eventos</string>
 
 </resources>

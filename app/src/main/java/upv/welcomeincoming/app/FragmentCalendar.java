@@ -115,7 +115,7 @@ public class FragmentCalendar extends ListFragment implements Observer {
 
         if (data.equals("login")) {
 
-            progressDialog.setMessage("Downloading content");
+            progressDialog.setMessage(getString(R.string.downloading));
 
             intranetConnection.getICS(this.diaryJSON.getUrl());
 

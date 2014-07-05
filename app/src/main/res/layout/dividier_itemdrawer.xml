@@ -3,8 +3,8 @@
 <ImageView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:paddingBottom="1dp"
-    android:paddingTop="1dp"
-    android:background="#222"
+    android:paddingBottom="0.5dp"
+    android:paddingTop="0.5dp"
+    android:background="#EEE"
     android:visibility="visible">
 </ImageView>

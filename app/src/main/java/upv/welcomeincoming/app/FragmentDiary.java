@@ -107,7 +107,7 @@ public class FragmentDiary extends ListFragment implements Observer {
 
             Log.d(((Object) this).getClass().getName(), "update -> login");
 
-            progressDialog.setMessage("Getting calendars");
+            progressDialog.setMessage(getString(R.string.obtainCalendars));
             intranetConnection.getCalendars();
 
         } else if (data.equals("calendars")) {

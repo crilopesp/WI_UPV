@@ -42,7 +42,7 @@ public class Home extends ActionBarActivity implements FragmentDiary.DiaryListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
-        opcionesMenu	=	new	String[]{getString(R.string.menu_option1),getString(R.string.menu_option2),getString(R.string.menu_option3),getString(R.string.menu_option4)};
+        opcionesMenu	=	new	String[]{getString(R.string.menu_option1),getString(R.string.menu_option2),getString(R.string.menu_option3),getString(R.string.menu_option4),getString(R.string.menu_option5),getString(R.string.menu_option7),getString(R.string.menu_option6)};
 
         drawerLayout	=	(DrawerLayout)	findViewById(R.id.drawer_layout);
         drawerList	=	(LinearLayout)	findViewById(R.id.home_drawer);
@@ -54,6 +54,8 @@ public class Home extends ActionBarActivity implements FragmentDiary.DiaryListen
         fragmentActual = 0;
         inicializarElementos();
 
+        Preferences.setPass(this,"");
+        Preferences.setUser(this,"");
 
     }
 
@@ -73,7 +75,7 @@ public class Home extends ActionBarActivity implements FragmentDiary.DiaryListen
         addDividier();
 
         //Find
-        View itemFind = generateItem(getString(R.string.menu_option2), R.drawable.ic_action_map);
+        View itemFind = generateItem(getString(R.string.menu_option2), R.drawable.ic_action_collections_go_to_today);
         itemFind.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -105,16 +107,50 @@ public class Home extends ActionBarActivity implements FragmentDiary.DiaryListen
         drawerList.addView(itemInfo);
         addDividier();
 
-        //KitDev
-        View itemKitDev = generateItem(getString(R.string.menu_option4), R.drawable.ic_action_select_all);
-        itemKitDev.setOnClickListener(new View.OnClickListener() {
+        //Traduccion
+        View itemTraduce = generateItem(getString(R.string.menu_option4), R.drawable.ic_action_device_access_mic);
+        itemTraduce.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 mostrarFragment(3);
             }
         });
-        drawerList.addView(itemKitDev);
+        drawerList.addView(itemTraduce);
         addDividier();
+
+        //Locate
+        View itemLocate = generateItem(getString(R.string.menu_option5), R.drawable.ic_action_location_map);
+        itemLocate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mostrarFragment(4);
+            }
+        });
+        drawerList.addView(itemLocate);
+        addDividier();
+        //Forum
+        View itemForum = generateItem(getString(R.string.menu_option7), R.drawable.ic_action_social_group);
+        itemForum.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mostrarFragment(6);
+            }
+        });
+        drawerList.addView(itemForum);
+        addDividier();
+
+        //Option
+        View itemOption = generateItem(getString(R.string.menu_option6), R.drawable.ic_action_action_settings);
+        itemOption.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mostrarFragment(5);
+            }
+        });
+        drawerList.addView(itemOption);
+        addDividier();
+
+
 
         /*   DrawerToggle  */
 
