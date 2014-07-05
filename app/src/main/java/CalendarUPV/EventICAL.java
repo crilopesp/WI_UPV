@@ -3,22 +3,19 @@ package CalendarUPV;
 
 import android.util.Log;
 
-
-import java.text.SimpleDateFormat;
-
 import net.fortuna.ical4j.model.Component;
 import net.fortuna.ical4j.model.DateTime;
 
-
 import org.jsoup.Jsoup;
 
-
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class EventICAL implements Comparable
-{
+public class EventICAL implements Comparable {
 
     //private final Pattern DATE_PATTERN = Pattern.compile("(\\d{4,})(\\d\\d)(\\d\\d)(?:T([0-1]\\d|2[0-3])([0-5]\\d)([0-5]\\d)(Z)?)?");
 
@@ -39,20 +36,22 @@ public class EventICAL implements Comparable
     private String dtstartFormat;
     private String dtendOriginal;
     private String dtstartOriginal;
+    private Date date;
     private String summary;
     private String uid;
     private String description;
     private String location;
     private String building;
 
-    public EventICAL(Component component){
+    public EventICAL(Component component) {
         this.parseComponent(component);
     }
 
 
-    public EventICAL(){}
+    public EventICAL() {
+    }
 
-    private void parseComponent(Component component){
+    private void parseComponent(Component component) {
 
         try {
 
@@ -68,10 +67,11 @@ public class EventICAL implements Comparable
             this.dtendOriginal = component.getProperty("DTEND").getValue();
             this.dtstartOriginal = component.getProperty("DTSTART").getValue();
 
-            if(this.isAllDay) {
+
+            if (this.isAllDay) {
                 this.dtstartFormat = simpleDateFormatDate.format(new DateTime(this.dtstart));
                 this.dtendFormat = simpleDateFormatDate.format(new DateTime(this.dtend));
-            }else{
+            } else {
                 this.dtstartFormat = simpleDateFormatDateTime.format(new DateTime(this.dtstart));
                 this.dtendFormat = simpleDateFormatDateTime.format(new DateTime(this.dtend));
             }
@@ -84,23 +84,23 @@ public class EventICAL implements Comparable
         }
     }
 
-    private boolean isAllDay(){
+    private boolean isAllDay() {
 
         //Matcher matcherStart = DATE_PATTERN.matcher(this.dtstartFormat);
         //Matcher matcherEnd = DATE_PATTERN.matcher(this.dtendFormat);
 
-        if (this.dtstartOriginal.contains("T000000") && this.dtendOriginal.contains("T000000")){
+        if (this.dtstartOriginal.contains("T000000") && this.dtendOriginal.contains("T000000")) {
             return true;
         }
 
         return false;
     }
 
-    private String parseBuilding(String string){
+    private String parseBuilding(String string) {
 
         Matcher matcher = this.BUILDING_PATTERN.matcher(string);
 
-        if(matcher.find()){
+        if (matcher.find()) {
             return matcher.group(1);
         }
         return string;
@@ -234,30 +234,27 @@ public class EventICAL implements Comparable
     @Override
     public int compareTo(Object o) {
         EventICAL eventICAL = (EventICAL) o;
-        int tYear = Integer.valueOf(this.dtstartOriginal.substring(0,4));
-        int oYear = Integer.valueOf(eventICAL.dtstartOriginal.substring(0,4));
-        int tMonth = Integer.valueOf(this.dtstartOriginal.substring(4,6));
-        int oMonth = Integer.valueOf(eventICAL.dtstartOriginal.substring(4,6));
-        int tDay = Integer.valueOf(this.dtstartOriginal.substring(6,8));
-        int oDay = Integer.valueOf(eventICAL.dtstartOriginal.substring(6,8));
-        int tTime = Integer.valueOf(this.dtstartOriginal.substring(9,13));
-        int oTime = Integer.valueOf(eventICAL.dtstartOriginal.substring(9,13));
-        Log.e("date",tYear+"-"+oYear);
-        if (tYear>oYear) return 1;
-        else if (tYear<oYear) return -1;
-        else{
-            if (tMonth>oMonth) return 1;
-            else if (tMonth<oMonth) return -1;
-            else{
-                if (tDay>oDay) return 1;
-                else if (tDay<oDay) return -1;
-                else{
-                    if (tTime>oTime) return 1;
-                    else if (tTime<oTime) return -1;
-                }
-                }
-
-            }
+        int tYear = Integer.valueOf(this.dtstartOriginal.substring(0, 4));
+        int oYear = Integer.valueOf(eventICAL.dtstartOriginal.substring(0, 4));
+        int tMonth = Integer.valueOf(this.dtstartOriginal.substring(4, 6));
+        int oMonth = Integer.valueOf(eventICAL.dtstartOriginal.substring(4, 6));
+        int tDay = Integer.valueOf(this.dtstartOriginal.substring(6, 8));
+        int oDay = Integer.valueOf(eventICAL.dtstartOriginal.substring(6, 8));
+        int tTime = Integer.valueOf(this.dtstartOriginal.substring(9, 13));
+        int oTime = Integer.valueOf(eventICAL.dtstartOriginal.substring(9, 13));
+        //2013 05 14  0930
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy MM dd HHmm");
+        String tDate = tYear + " " + tMonth + " " + tDay + " " + tTime;
+        String oDate = oYear + " " + oMonth + " " + oDay + " " + oTime;
+        try {
+            this.date = simpleDateFormat.parse(tDate);
+            ((EventICAL) o).date = simpleDateFormat.parse(oDate);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        if (this.date != null || ((EventICAL) o).date != null) {
+            return this.date.compareTo(((EventICAL) o).date);
+        }
         return 0;
     }
 }

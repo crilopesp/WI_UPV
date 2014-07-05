@@ -1,22 +1,31 @@
-<?xml version="1.0" encoding="utf-8"?>
-
-<LinearLayout
-    android:orientation="horizontal"
+<FrameLayout
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <FrameLayout
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:id="@+id/diaryFragment" >
+        android:background="#fffff6f6"
+        android:id="@+id/linearLayout">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_calendarios"
+            android:textSize="20dp"
+            android:background="#ffbc2121"
+            android:textColor="#EEE"
+            android:gravity="center"
+            android:id="@+id/txtCalendars" />
 
         <ListView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:id="@android:id/list"
-            android:divider="@null"
-            android:dividerHeight="0dp" />
-    </FrameLayout>
-
-</LinearLayout>
+            android:listSelector="@drawable/list_item_selector"
+            android:dividerHeight="2dp"
+            android:divider="@drawable/div" />
+    </LinearLayout>
+</FrameLayout>

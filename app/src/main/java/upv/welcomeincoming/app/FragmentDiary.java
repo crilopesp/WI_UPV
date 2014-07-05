@@ -133,10 +133,8 @@ public class FragmentDiary extends ListFragment implements Observer {
             View rowView = inflater.inflate(R.layout.fragment_calendar_show_diary_item, parent, false);
 
             TextView name = (TextView) rowView.findViewById(R.id.firstLine);
-            TextView comment = (TextView) rowView.findViewById(R.id.secondLine);
 
             name.setText(values.get(position).getNombre());
-            comment.setText(values.get(position).getGrupo());
 
             return rowView;
         }

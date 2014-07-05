@@ -62,8 +62,6 @@ public class FragmentCalendar extends ListFragment implements Observer {
         super.onActivityCreated(savedInstanceState);
 
         textViewName = (TextView) this.getView().findViewById(R.id.textViewCalendarName);
-        textViewGroup = (TextView) this.getView().findViewById(R.id.textViewCalendarGroup);
-        textViewInfo = (TextView) this.getView().findViewById(R.id.textViewCalendarInfo);
         textViewEventos = (TextView) this.getView().findViewById(R.id.textViewEvents);
 
         listView = this.getListView();
@@ -130,7 +128,6 @@ public class FragmentCalendar extends ListFragment implements Observer {
                 calendarICAL = new CalendarICAL(calendar, this.diaryJSON.getUid());
 
                 textViewName.setText(this.diaryJSON.getNombre());
-                textViewGroup.setText(this.diaryJSON.getGrupo());
 
                 if (calendarICAL.getEvents().size() > 0) {
 

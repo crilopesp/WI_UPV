@@ -5,6 +5,5 @@
     android:layout_height="wrap_content"
     android:paddingBottom="0.5dp"
     android:paddingTop="0.5dp"
-    android:background="#EEE"
-    android:visibility="visible">
-</ImageView>
+    android:src="@drawable/div"
+    android:visibility="visible"></ImageView>

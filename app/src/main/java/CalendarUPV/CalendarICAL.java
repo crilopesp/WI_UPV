@@ -9,7 +9,6 @@ import net.fortuna.ical4j.model.Component;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
@@ -23,12 +22,12 @@ public class CalendarICAL {
     private String comment;
     private List<EventICAL> events;
 
-    public CalendarICAL(net.fortuna.ical4j.model.Calendar calendar, String uid){
+    public CalendarICAL(net.fortuna.ical4j.model.Calendar calendar, String uid) {
         this.uid = uid;
-        this. parseCalendar(calendar);
+        this.parseCalendar(calendar);
     }
 
-    public CalendarICAL(String uid){
+    public CalendarICAL(String uid) {
         this.uid = uid;
     }
 
@@ -43,10 +42,10 @@ public class CalendarICAL {
         events = this.getEvetsAfterToday(calendar.getComponents());
     }
 
-    private List<EventICAL> getEvetsAfterToday(List<Component> componentList){
+    private List<EventICAL> getEvetsAfterToday(List<Component> componentList) {
 
         java.util.Calendar calendar = java.util.Calendar.getInstance();
-        calendar.setTimeInMillis( System.currentTimeMillis());
+        calendar.setTimeInMillis(System.currentTimeMillis());
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyyMMdd", Locale.getDefault());
         String today = simpleDateFormat.format(calendar.getTime());
 
@@ -56,25 +55,23 @@ public class CalendarICAL {
 
         EventICAL eventICAL = null;
 
-        Log.w(((Object) this).getClass().getName(), "Today: " + today);
-
-        while(iterator.hasNext()){
+        while (iterator.hasNext()) {
 
             eventICAL = new EventICAL(iterator.next());
-            today = "20130901";
-            if(eventICAL.getDtstartOriginal().compareTo(today)>0){
+            today = "20131201";
+            if (eventICAL.getDtstartOriginal().compareTo(today) > 0) {
                 returnEventICALList1.add(eventICAL);
-                Log.e("date",""+eventICAL.getDtstart()+"-"+eventICAL.getDtstartFormat()+"-"+eventICAL.getDtstartOriginal());
             }
         }
-        Collections.sort(returnEventICALList1,new comparatorEvent());
+        Collections.sort(returnEventICALList1, new comparatorEvent());
 
         return returnEventICALList1;
     }
-    private List<EventICAL> getEvetsToday(List<Component> componentList){
+
+    private List<EventICAL> getEvetsToday(List<Component> componentList) {
 
         java.util.Calendar calendar = java.util.Calendar.getInstance();
-        calendar.setTimeInMillis( System.currentTimeMillis());
+        calendar.setTimeInMillis(System.currentTimeMillis());
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyyMMdd", Locale.getDefault());
         String today = simpleDateFormat.format(calendar.getTime());
 
@@ -86,11 +83,11 @@ public class CalendarICAL {
 
         Log.w(((Object) this).getClass().getName(), "Today: " + today);
 
-        while(iterator.hasNext()){
+        while (iterator.hasNext()) {
 
             eventICAL = new EventICAL(iterator.next());
 
-            if(eventICAL.getDtstartOriginal()==today){
+            if (eventICAL.getDtstartOriginal() == today) {
                 returnEventICALList1.add(eventICAL);
             }
         }
@@ -149,8 +146,8 @@ public class CalendarICAL {
     public String toString() {
 
         String string = "";
-        for(EventICAL item : this.events)
-            string+=item.toString();
+        for (EventICAL item : this.events)
+            string += item.toString();
 
         return "ICal{" +
                 "uid='" + uid + '\'' +

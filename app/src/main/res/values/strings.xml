@@ -122,5 +122,6 @@
     <string name="pin">Introduce your pin</string>
     <string name="downloading">Downloading events</string>
     <string name="noevents">There is no events</string>
+    <string name="txt_calendarios">Calendars</string>
 
 </resources>

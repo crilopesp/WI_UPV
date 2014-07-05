@@ -4,7 +4,8 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/calendarFragment">
+    android:id="@+id/calendarFragment"
+    android:background="#222">
 
 
     <TextView
@@ -14,23 +15,6 @@
         android:id="@+id/textViewCalendarName"
         android:textColor="#EEE"
         android:padding="5dp" />
-
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:id="@+id/textViewCalendarGroup"
-        android:textColor="#EEE"
-        android:gravity="right"
-        android:padding="5dp" />
-
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:id="@+id/textViewCalendarInfo"
-        android:gravity="center"
-        android:textColor="#c21b1b" />
 
     <TextView
         android:layout_width="fill_parent"
@@ -47,7 +31,7 @@
         android:layout_height="fill_parent"
         android:id="@android:id/list"
         android:layout_gravity="center_horizontal"
-        android:divider="@android:color/transparent"
-        android:dividerHeight="10dp"
+        android:divider="@drawable/div"
+        android:dividerHeight="2dp"
         android:background="#FEFEFE" />
 </LinearLayout>
