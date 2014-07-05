@@ -43,6 +43,11 @@ public class Splash extends Activity {
                             Splash.this, Home.class);
                     overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                     startActivity(mainIntent);
+                    try {
+                        this.finalize();
+                    } catch (Throwable throwable) {
+                        throwable.printStackTrace();
+                    }
                 }
                 if(i<imageArray.length)
                 handler.postDelayed(this, 300);  //for interval...
