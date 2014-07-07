@@ -5,6 +5,10 @@
     android:layout_height="wrap_content"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/multiexpandableListView"
-    android:background="#DDD"
-    android:childDivider="#c21b1b">
-    </ExpandableListView>
+    android:background="@color/light_pink"
+    android:divider="@drawable/div"
+    android:childDivider="@drawable/div"
+    android:paddingBottom="5dp"
+    android:paddingTop="5dp">
+
+</ExpandableListView>

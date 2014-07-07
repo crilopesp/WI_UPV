@@ -13,10 +13,9 @@ import java.util.HashMap;
 import java.util.List;
 
 import upv.welcomeincoming.app.R;
+import util.Escuela;
 import util.ExpandableListAdapter;
 import util.XML_parser;
-import util.school;
-import util.valencia;
 
 /**
  * Created by Marcos on 30/04/14.
@@ -27,9 +26,10 @@ public class info_Escuelas_fragment extends Fragment {
     ExpandableListView expListView;
     List<String> listDataHeader;
     HashMap<String, List<String>> listDataChild;
+
     @Override
-    public View onCreateView( LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_info_escuelas, container,false);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_info_escuelas, container, false);
 
         expListView = (ExpandableListView) view.findViewById(R.id.expandableListView);
 
@@ -42,6 +42,7 @@ public class info_Escuelas_fragment extends Fragment {
         expListView.setAdapter(listAdapter);
         return view;
     }
+
     private void prepareListData() {
         listDataHeader = new ArrayList<String>();
         listDataChild = new HashMap<String, List<String>>();
@@ -49,10 +50,10 @@ public class info_Escuelas_fragment extends Fragment {
 
         InputStream fichero = this.getResources().openRawResource(R.raw.telefonos);
         XML_parser parseador = new XML_parser("telefonos");
-        List<school> lista = parseador.parseando(fichero);
+        List<Escuela> lista = parseador.parseando(fichero);
         String mostrar = "";
-        for( int i = 0 ; i < lista.size() ; i++ ){
-            school escuela = lista.get(i);
+        for (int i = 0; i < lista.size(); i++) {
+            Escuela escuela = lista.get(i);
             listDataHeader.add(escuela.getEscuelanombre());
             List<String> info = new ArrayList<String>();
             info.add(escuela.getUrlprincipal());
@@ -66,7 +67,7 @@ public class info_Escuelas_fragment extends Fragment {
             info.add(escuela.getTecnicomail());
             info.add(escuela.getTecnicotelefono());
             info.add(escuela.getTecnicoextension());
-            listDataChild.put(listDataHeader.get(i),info);
+            listDataChild.put(listDataHeader.get(i), info);
         }
 
     }

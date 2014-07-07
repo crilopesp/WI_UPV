@@ -2,7 +2,6 @@ package upv.welcomeincoming.app.infoFragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,11 +13,10 @@ import java.util.HashMap;
 import java.util.List;
 
 import upv.welcomeincoming.app.R;
-import util.ExpandableListAdapter;
+import util.Asignatura;
+import util.Escuela;
 import util.MultiExpandableListAdapter;
 import util.XML_parser;
-import util.asignatura;
-import util.school;
 
 /**
  * Created by Marcos on 30/04/14.
@@ -28,10 +26,11 @@ public class info_Asignaturas_fragment extends Fragment {
     MultiExpandableListAdapter listAdapter;
     ExpandableListView expListView;
     List<String> listDataHeader;
-    HashMap<String, List<asignatura>> listDataChild;
+    HashMap<String, List<Asignatura>> listDataChild;
+
     @Override
-    public View onCreateView( LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_info_asignaturas, container,false);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_info_asignaturas, container, false);
 
         expListView = (ExpandableListView) view.findViewById(R.id.multiexpandableListView);
 
@@ -44,24 +43,25 @@ public class info_Asignaturas_fragment extends Fragment {
         expListView.setAdapter(listAdapter);
         return view;
     }
+
     private void prepareListData() {
         listDataHeader = new ArrayList<String>();
-        listDataChild = new HashMap<String, List<asignatura>>();
+        listDataChild = new HashMap<String, List<Asignatura>>();
 
 
         InputStream fichero = this.getResources().openRawResource(R.raw.asignaturas);
         XML_parser parseador = new XML_parser("asignaturas");
-        List<school> lista = parseador.parseando(fichero);
+        List<Escuela> lista = parseador.parseando(fichero);
         String mostrar = "";
-        for( int i = 0 ; i < lista.size() ; i++ ){
-            school escuela = lista.get(i);
+        for (int i = 0; i < lista.size(); i++) {
+            Escuela escuela = lista.get(i);
             listDataHeader.add(escuela.getEscuelanombre());
-            List<asignatura> info = new ArrayList<asignatura>();
-            List<asignatura> asig = escuela.getAsignaturas();
-            for(int j = 0;j< asig.size();j++){
+            List<Asignatura> info = new ArrayList<Asignatura>();
+            List<Asignatura> asig = escuela.getAsignaturas();
+            for (int j = 0; j < asig.size(); j++) {
                 info.add(asig.get(j));
             }
-            listDataChild.put(listDataHeader.get(i),info);
+            listDataChild.put(listDataHeader.get(i), info);
         }
 
     }

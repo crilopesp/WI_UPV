@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Created by joaquin on 26/04/14.
  */
-public class school {
+public class Escuela {
 
     String escuelanombre;
     String urlprincipal;
@@ -21,9 +21,9 @@ public class school {
     String tecnicomail;
     String tecnicotelefono;
     String tecnicoextension;
-    List asignaturas = new ArrayList<asignatura>();
+    List asignaturas = new ArrayList<Asignatura>();
 
-    public school () {
+    public Escuela() {
 
     }
 

@@ -109,6 +109,11 @@
         <!--subitem>Faculty of Business Administration and Management</subitem-->
     </string-array>
 
+    <string-array name="lenguages">
+        <item>English</item>
+        <item>Español</item>
+    </string-array>
+
     <string name="title_activity_ra_activity">Realidad aumentada</string>
     <string name="txt_noticias">Noticias</string>
     <string name="txt_noticia">Noticia</string>
@@ -119,7 +124,18 @@
     <string name="dni">Introduce tu DNI/NIE</string>
     <string name="pin">Introduce tu pin</string>
     <string name="downloading">Descargando eventos</string>
-    <string name="noevents">There is no events</string>
-    <string name="txt_calendarios">Calendars</string>
+    <string name="noevents">No hay eventos</string>
+    <string name="txt_calendarios">Calendarios</string>
+    <string name="txt_opciones">Opciones</string>
+    <string name="acercade">Acerca de</string>
+    <string name="idioma">Idioma</string>
+    <string name="sesion">Sesión</string>
+    <string name="alertas">Notificaciones</string>
+    <string name="perfil">Perfil</string>
+    <string name="alertaCalendar">Alertas del calendario</string>
+    <string name="nosesion">No has iniciado sesión</string>
+    <string name="sisesion">Sesión iniciada como:</string>
+    <string name="alertaForum">Alertas del foro</string>
+    <string name="profile">Perfil</string>
 
 </resources>

@@ -108,6 +108,11 @@
         <!--subitem>Faculty of Business Administration and Management</subitem-->
     </string-array>
 
+    <string-array name="lenguages">
+        <item>English</item>
+        <item>Español</item>
+    </string-array>
+
     <string name="title_activity_ra_activity">Augmented Reality</string>
     <string name="txt_noticias">News</string>
     <string name="txt_noticia">New</string>
@@ -123,5 +128,17 @@
     <string name="downloading">Downloading events</string>
     <string name="noevents">There is no events</string>
     <string name="txt_calendarios">Calendars</string>
+    <string name="txt_opciones">Options</string>
+    <string name="acercade">About</string>
+    <string name="idioma">Lenguage</string>
+    <string name="sesion">Session</string>
+    <string name="alertas">Notifications</string>
+    <string name="perfil">Profile</string>
+    <string name="alertaCalendar">Calendar notifications</string>
+    <string name="idiomaseleccionado">Selected language</string>
+    <string name="nosesion">You are not logged in</string>
+    <string name="sisesion">Logged as:</string>
+    <string name="alertaForum">Forum notification</string>
+    <string name="profile">Profile</string>
 
 </resources>

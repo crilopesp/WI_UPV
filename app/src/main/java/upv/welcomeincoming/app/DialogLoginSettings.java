@@ -13,11 +13,11 @@ import android.widget.EditText;
 import util.Preferences;
 
 
-public class DialogLogin extends DialogFragment {
+public class DialogLoginSettings extends DialogFragment {
 
-    private DialogLogin I = this;
+    private DialogLoginSettings I = this;
 
-    public DialogLogin() {
+    public DialogLoginSettings() {
         // Empty constructor required for DialogFragment
     }
 

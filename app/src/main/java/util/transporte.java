@@ -3,14 +3,14 @@ package util;
 /**
  * Created by joaquin on 27/04/14.
  */
-public class transporte {
+public class Transporte {
 
     private String nombre;
     private String descripcion;
     private String[] telefono;
     private String url;
 
-    public transporte () {
+    public Transporte() {
 
     }
 

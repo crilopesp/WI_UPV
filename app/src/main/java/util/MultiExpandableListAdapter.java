@@ -2,12 +2,8 @@ package util;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.net.Uri;
 import android.text.Html;
-import android.text.method.ScrollingMovementMethod;
-import android.text.util.Linkify;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,11 +21,11 @@ public class MultiExpandableListAdapter extends BaseExpandableListAdapter {
     private Context _context;
     private List<String> _listDataHeader; // header titles
     // child data in format of header title, child title
-    private HashMap<String, List<asignatura>> _listDataChild;
-    private String[] nombres = {"Nombre","Codigo","URL", "Creditos","Semestre"};
+    private HashMap<String, List<Asignatura>> _listDataChild;
+    private String[] nombres = {"Nombre", "Codigo", "URL", "Creditos", "Semestre"};
 
     public MultiExpandableListAdapter(Context context, List<String> listDataHeader,
-                                      HashMap<String, List<asignatura>> listChildData) {
+                                      HashMap<String, List<Asignatura>> listChildData) {
         this._context = context;
         this._listDataHeader = listDataHeader;
         this._listDataChild = listChildData;
@@ -60,23 +56,23 @@ public class MultiExpandableListAdapter extends BaseExpandableListAdapter {
         TextView tv_nombre = (TextView) convertView.findViewById(R.id.tv_nombre);
         TextView tv_desc = (TextView) convertView.findViewById(R.id.tv_description);
         ImageButton btn_url = (ImageButton) convertView.findViewById(R.id.im_url);
-        asignatura asig = (asignatura) getChild(groupPosition, childPosition);
+        Asignatura asig = (Asignatura) getChild(groupPosition, childPosition);
 
-        String nCodigo = "Code"; String nSemestre = "Semestre"; String nCredits= "Credits";
+        String nCodigo = "Code";
+        String nSemestre = "Semestre";
+        String nCredits = "Credits";
         String codigo = asig.getCodigo();
         String semestre = asig.getSemestre();
-        final String url = "http://"+asig.getUrl();
+        final String url = "http://" + asig.getUrl();
         String creditos = asig.getCreditos();
 
-        String separator= "<br></br>"; //<br></br> para nueva linea
-        String descripcion = "<font color=#444444><b>"+nCodigo+": </b></font>" + "<font color=#808080>"+codigo+"</font>"+separator
-                            +"<font color=#444444><b>"+nSemestre+": </b></font>" + "<font color=#808080>"+semestre+"</font>"+separator
-                            +"<font color=#444444><b>"+nCredits+": </b></font>" + "<font color=#808080>"+creditos+"</font>";
+        String separator = "<br></br>"; //<br></br> para nueva linea
+        String descripcion = "<font color=#444444>" + nCodigo + ": </font>" + "<font color=#808080>" + codigo + "</font>" + separator
+                + "<font color=#444444>" + nSemestre + ": </font>" + "<font color=#808080>" + semestre + "</font>" + separator
+                + "<font color=#444444>" + nCredits + ": </font>" + "<font color=#808080>" + creditos + "</font>";
 
         tv_desc.setText(Html.fromHtml(descripcion));
         tv_nombre.setText(asig.getNombre());
-        tv_desc.setTypeface(Typeface.createFromAsset(_context.getAssets(), "fonts/futura_font.ttf"));
-        tv_nombre.setTypeface(Typeface.createFromAsset(_context.getAssets(), "fonts/futura_font.ttf"));
         btn_url.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -121,9 +117,7 @@ public class MultiExpandableListAdapter extends BaseExpandableListAdapter {
 
         TextView lblListHeader = (TextView) convertView
                 .findViewById(R.id.lblListHeader);
-        lblListHeader.setTypeface(null, Typeface.BOLD);
         lblListHeader.setText(headerTitle);
-        lblListHeader.setTypeface(Typeface.createFromAsset(_context.getAssets(), "fonts/futura_font.ttf"));
 
         return convertView;
     }

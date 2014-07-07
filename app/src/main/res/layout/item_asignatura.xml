@@ -1,38 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<RelativeLayout
-    android:layout_width="fill_parent"
+<LinearLayout
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="#c21b1b">
+    android:weightSum="10"
+    android:background="@color/light_pink">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:layout_weight="1"
+        android:src="@drawable/ic_action_navigation_next_item"
+        android:layout_gravity="center"
+        android:layout_marginLeft="30dp" />
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:background="#EEE"
-        android:layout_margin="10dp">
+        android:layout_margin="10dp"
+        android:id="@+id/linearLayout"
+        android:layout_weight="9">
 
         <RelativeLayout
             android:orientation="horizontal"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:background="#222">
+            android:layout_height="wrap_content">
 
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="New Text"
                 android:id="@+id/tv_nombre"
-                android:layout_weight="10"
                 android:layout_alignParentLeft="false"
                 android:layout_marginLeft="10dp"
                 android:layout_alignParentTop="false"
                 android:layout_marginTop="0dp"
                 android:layout_alignParentStart="false"
-                android:textColor="@android:color/white"
-                android:textStyle="bold"
-                android:textSize="16dp"
+                android:textColor="#333"
                 android:layout_centerVertical="true"
                 android:layout_marginRight="10dp" />
 
@@ -40,42 +47,39 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/im_url"
-                android:layout_weight="8"
                 android:layout_alignParentLeft="false"
                 android:layout_marginLeft="740dp"
                 android:layout_alignParentTop="true"
                 android:layout_marginTop="0dp"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
-                android:src="@drawable/ic_url"
-                android:background="@drawable/abc_list_selector_holo_dark" />
+                android:src="@drawable/ic_action_location_web_site"
+                android:background="@drawable/list_item_selector" />
         </RelativeLayout>
 
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/background_item_subject">
+            android:layout_height="wrap_content">
 
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp">
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="New Text"
+                    android:textColor="@color/light_grey"
+                    android:textStyle="italic"
                     android:id="@+id/tv_description"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp" />
-
             </LinearLayout>
-
         </LinearLayout>
-
     </LinearLayout>
 
-</RelativeLayout>
+</LinearLayout>

@@ -1,19 +1,17 @@
 package util;
 
-import java.util.HashMap;
-import java.util.List;
-
 import android.content.Context;
-import android.graphics.Typeface;
 import android.text.method.ScrollingMovementMethod;
 import android.text.util.Linkify;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.ImageButton;
 import android.widget.TextView;
+
+import java.util.HashMap;
+import java.util.List;
 
 import upv.welcomeincoming.app.R;
 
@@ -23,7 +21,7 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
     private List<String> _listDataHeader; // header titles
     // child data in format of header title, child title
     private HashMap<String, List<String>> _listDataChild;
-    private String[] nombres = {"Main URL","Teaching URL","School mail","School fax","Coordinator name","Coordinator mail","Coordinator phone","Tech name","Tech mail","Tech phone","Tech extension"};
+    private String[] nombres = {"Main URL", "Teaching URL", "School mail", "School fax", "Coordinator name", "Coordinator mail", "Coordinator phone", "Tech name", "Tech mail", "Tech phone", "Tech extension"};
 
     public ExpandableListAdapter(Context context, List<String> listDataHeader,
                                  HashMap<String, List<String>> listChildData) {
@@ -47,7 +45,7 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
     public View getChildView(int groupPosition, final int childPosition,
                              boolean isLastChild, View convertView, ViewGroup parent) {
 
-       // final String childText = (String) getChild(groupPosition, childPosition);
+        // final String childText = (String) getChild(groupPosition, childPosition);
 
         if (convertView == null) {
             LayoutInflater infalInflater = (LayoutInflater) this._context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -60,33 +58,40 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
 
         tv_nombre.setText(nombres[childPosition]);
         tv_descripcion.setText((String) getChild(groupPosition, childPosition));
-        tv_nombre.setTypeface(Typeface.createFromAsset(_context.getAssets(), "fonts/futura_font.ttf"));
-        tv_descripcion.setTypeface(Typeface.createFromAsset(_context.getAssets(), "fonts/futura_font.ttf"));
         btn_url.setVisibility(View.GONE);
-        switch (childPosition){
-            default: break;
-            case 0: tv_descripcion.setAutoLinkMask(Linkify.WEB_URLS);
+        switch (childPosition) {
+            default:
+                break;
+            case 0:
+                tv_descripcion.setAutoLinkMask(Linkify.WEB_URLS);
                 tv_descripcion.setMovementMethod(new ScrollingMovementMethod());
                 break;
-            case 1: tv_descripcion.setAutoLinkMask(Linkify.WEB_URLS);
+            case 1:
+                tv_descripcion.setAutoLinkMask(Linkify.WEB_URLS);
                 tv_descripcion.setMovementMethod(new ScrollingMovementMethod());
                 break;
-            case 2: tv_descripcion.setAutoLinkMask(Linkify.EMAIL_ADDRESSES);
+            case 2:
+                tv_descripcion.setAutoLinkMask(Linkify.EMAIL_ADDRESSES);
                 tv_descripcion.setMovementMethod(new ScrollingMovementMethod());
                 break;
-            case 3: tv_descripcion.setAutoLinkMask(Linkify.PHONE_NUMBERS);
+            case 3:
+                tv_descripcion.setAutoLinkMask(Linkify.PHONE_NUMBERS);
                 tv_descripcion.setMovementMethod(new ScrollingMovementMethod());
                 break;
-            case 5: tv_descripcion.setAutoLinkMask(Linkify.EMAIL_ADDRESSES);
+            case 5:
+                tv_descripcion.setAutoLinkMask(Linkify.EMAIL_ADDRESSES);
                 tv_descripcion.setMovementMethod(new ScrollingMovementMethod());
                 break;
-            case 6: tv_descripcion.setAutoLinkMask(Linkify.PHONE_NUMBERS);
+            case 6:
+                tv_descripcion.setAutoLinkMask(Linkify.PHONE_NUMBERS);
                 tv_descripcion.setMovementMethod(new ScrollingMovementMethod());
                 break;
-            case 8: tv_descripcion.setAutoLinkMask(Linkify.EMAIL_ADDRESSES);
+            case 8:
+                tv_descripcion.setAutoLinkMask(Linkify.EMAIL_ADDRESSES);
                 tv_descripcion.setMovementMethod(new ScrollingMovementMethod());
                 break;
-            case 9: tv_descripcion.setAutoLinkMask(Linkify.PHONE_NUMBERS);
+            case 9:
+                tv_descripcion.setAutoLinkMask(Linkify.PHONE_NUMBERS);
                 tv_descripcion.setMovementMethod(new ScrollingMovementMethod());
                 break;
 
@@ -127,9 +132,7 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
         }
 
         TextView lblListHeader = (TextView) convertView.findViewById(R.id.lblListHeader);
-        lblListHeader.setTypeface(null, Typeface.BOLD);
         lblListHeader.setText(headerTitle);
-        lblListHeader.setTypeface(Typeface.createFromAsset(_context.getAssets(), "fonts/futura_font.ttf"));
 
         return convertView;
     }

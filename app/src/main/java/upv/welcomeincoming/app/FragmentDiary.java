@@ -46,8 +46,8 @@ public class FragmentDiary extends ListFragment implements Observer {
         //internet
 
         intranetConnection = new IntranetConnection(
-                Preferences.getUser(this.getActivity()),
-                Preferences.getPass(this.getActivity()),
+                Preferences.getDNI(this.getActivity()),
+                Preferences.getPIN(this.getActivity()),
                 this
         );
         progressDialog.setMessage(getString(R.string.connecting));
@@ -87,8 +87,8 @@ public class FragmentDiary extends ListFragment implements Observer {
 
 
             if (outPutParamsIntranetConnection.isUserFail()) {
-                Preferences.setUser(this.getActivity(), "");
-                Preferences.setPass(this.getActivity(), "");
+                Preferences.setDNI(this.getActivity(), "");
+                Preferences.setPIN(this.getActivity(), "");
             }
 
             DiaryListener activity = (DiaryListener) getActivity();

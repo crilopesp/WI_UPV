@@ -14,10 +14,11 @@ public class Preferences {
     private static final String APP_LENGUAGE = "LENGUAGE";
     private static final String APP_CALENDAR_ALERTS = "CALENDAR_ALERTS";
     private static final String APP_FORUM_ALERTS = "FORUM_ALERTS";
+    private static final String USER_USERNAME = "USERNAME";
 
 
     //USER PREFERENCES
-    public static String getUser(Context context) {
+    public static String getDNI(Context context) {
         try {
             return context.getSharedPreferences(USER_FILE, Activity.MODE_PRIVATE).getString(USER_DNI, "");
         } catch (Exception e) {
@@ -26,7 +27,7 @@ public class Preferences {
         return null;
     }
 
-    public static String getPass(Context context) {
+    public static String getPIN(Context context) {
         try {
             return context.getSharedPreferences(USER_FILE, Activity.MODE_PRIVATE).getString(USER_PIN, "");
         } catch (Exception e) {
@@ -35,7 +36,7 @@ public class Preferences {
         return null;
     }
 
-    public static void setPass(Context context, String pass) {
+    public static void setPIN(Context context, String pass) {
         try {
             SharedPreferences.Editor editor = context.getSharedPreferences(USER_FILE, Activity.MODE_PRIVATE).edit();
             editor.putString(USER_PIN, pass);
@@ -45,7 +46,7 @@ public class Preferences {
         }
     }
 
-    public static void setUser(Context context, String user) {
+    public static void setDNI(Context context, String user) {
         try {
             SharedPreferences.Editor editor = context.getSharedPreferences(USER_FILE, Activity.MODE_PRIVATE).edit();
             editor.putString(USER_DNI, user);
@@ -55,4 +56,12 @@ public class Preferences {
         }
     }
 
+    public static String getUsername(Context context) {
+        try {
+            return context.getSharedPreferences(USER_FILE, Activity.MODE_PRIVATE).getString(USER_USERNAME, "");
+        } catch (Exception e) {
+            Log.d(Preferences.class.getSimpleName(), "Exception", e);
+        }
+        return null;
+    }
 }

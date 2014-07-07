@@ -69,8 +69,8 @@ public class FragmentCalendar extends ListFragment implements Observer {
         progressDialog = ProgressDialog.show(this.getActivity(), getString(R.string.loading), "", true);
 
         intranetConnection = new IntranetConnection(
-                Preferences.getUser(this.getActivity()),
-                Preferences.getPass(this.getActivity()),
+                Preferences.getDNI(this.getActivity()),
+                Preferences.getPIN(this.getActivity()),
                 this
         );
 
@@ -98,8 +98,8 @@ public class FragmentCalendar extends ListFragment implements Observer {
 
 
             if (outPutParamsIntranetConnection.isUserFail()) {
-                Preferences.setUser(this.getActivity(), "");
-                Preferences.setPass(this.getActivity(), "");
+                Preferences.setDNI(this.getActivity(), "");
+                Preferences.setPIN(this.getActivity(), "");
             }
 
             CalendarListener activity = (CalendarListener) getActivity();

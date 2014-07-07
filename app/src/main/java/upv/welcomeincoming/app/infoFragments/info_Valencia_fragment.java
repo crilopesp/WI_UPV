@@ -1,7 +1,5 @@
 package upv.welcomeincoming.app.infoFragments;
 
-import android.graphics.Color;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -23,24 +21,22 @@ public class info_Valencia_fragment extends Fragment {
 
 
     @Override
-    public View onCreateView( LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_info_valencia, container,false);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_info_valencia, container, false);
         TextView tv = (TextView) view.findViewById(R.id.textView);
         parsearTexto(tv);
         return view;
     }
 
-    private void parsearTexto(TextView tv){
+    private void parsearTexto(TextView tv) {
         InputStream fichero = this.getResources().openRawResource(R.raw.valencia_intro);
         XML_parser parseador = new XML_parser("valencia_intro");
         List<valencia> lista = parseador.parseando(fichero);
         String mostrar = "";
-        for( int i = 0 ; i < lista.size() ; i++ ){
+        for (int i = 0; i < lista.size(); i++) {
             valencia objeto = lista.get(i);
             mostrar = mostrar + objeto.getDescripcion();
         }
         tv.setText(mostrar);
-        tv.setTextColor(Color.BLACK);
-        tv.setTypeface(Typeface.createFromAsset(getActivity().getAssets(), "fonts/futura_font.ttf"));
     }
 }
