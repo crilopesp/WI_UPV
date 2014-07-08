@@ -3,44 +3,49 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="upv.welcomeincoming.app.SpeakerActivity"
-    tools:ignore="MergeRootFrame" >
+    tools:context="upv.welcomeincoming.app.Activity_Speaker"
+    tools:ignore="MergeRootFrame">
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent">
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_weight="1">
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/imageView"
-            android:src="@drawable/mic"
-            android:layout_weight="1"/>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView"
+                android:src="@drawable/icon_traductor"
+                android:layout_weight="1" />
         </LinearLayout>
+
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_weight="4">
+
             <Button
-                android:background="@drawable/button_custom_red"
+                android:background="@drawable/selector_listarosaminimalista"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/btnRepeat"
                 android:id="@+id/idListen"
                 android:onClick="gotoRepeat"
                 android:layout_gravity="right" />
+
             <Button
-                android:background="@drawable/button_custom_red"
+                android:background="@drawable/selector_listarosaminimalista"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/btnBack"
-                android:id="@+id/idListen"
+                android:id="@+id/goBack"
                 android:layout_gravity="left"
                 android:onClick="goBack" />
 

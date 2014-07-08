@@ -1,4 +1,4 @@
-package CalendarUPV;
+package calendarupv;
 
 
 import android.util.Log;
@@ -63,7 +63,7 @@ public class CalendarICAL {
                 returnEventICALList1.add(eventICAL);
             }
         }
-        Collections.sort(returnEventICALList1, new comparatorEvent());
+        Collections.sort(returnEventICALList1, new ComparadorEventos());
 
         return returnEventICALList1;
     }

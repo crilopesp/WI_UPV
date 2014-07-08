@@ -15,36 +15,37 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 
-import CalendarUPV.*;
+import calendarupv.CalendarICAL;
+import calendarupv.EventICAL;
 
 public class CalendarICALDataSource {
 
-    private final String[] calendarColumns = { "id", "uid", "name", "timeZone", "comment" };
-    private final String[] eventColumns = { "id", "uid", "dtend", "dtstart", "dtendFormat", "dtstartFormat", "dtendOriginal", "dtstartOriginal", "summary", "description", "location", "building", "allDay" };
+    private final String[] calendarColumns = {"id", "uid", "name", "timeZone", "comment"};
+    private final String[] eventColumns = {"id", "uid", "dtend", "dtstart", "dtendFormat", "dtstartFormat", "dtendOriginal", "dtstartOriginal", "summary", "description", "location", "building", "allDay"};
 
     private final CalendarICALHelper diaryHelper;
     private SQLiteDatabase database;
 
-    public CalendarICALDataSource(Context context){
+    public CalendarICALDataSource(Context context) {
 
         diaryHelper = new CalendarICALHelper(context);
 
     }
 
-    public void close(){
+    public void close() {
         this.diaryHelper.close();
     }
 
     public void open() throws SQLException {
-        if(this.database==null)
+        if (this.database == null)
             this.database = this.diaryHelper.getWritableDatabase();
     }
 
-    public CalendarICAL insertCalendar(CalendarICAL calendarICAL){
+    public CalendarICAL insertCalendar(CalendarICAL calendarICAL) {
 
         CalendarICAL returnCalendar = calendarICAL;
 
-        try{
+        try {
 
             open();
 
@@ -56,36 +57,36 @@ public class CalendarICALDataSource {
             contentValues.put("comment", returnCalendar.getComment());
 
             returnCalendar.setId(
-                    this.database.insert("Calendar", null, contentValues)
+                    this.database.insert("calendar", null, contentValues)
             );
 
             //events
             Iterator<EventICAL> iterator = returnCalendar.getEvents().iterator();
 
-            while(iterator.hasNext()) {
+            while (iterator.hasNext()) {
                 this.insertEventICAL(
                         iterator.next(),
                         returnCalendar
                 );
             }
 
-        }catch (SQLException e){
+        } catch (SQLException e) {
             Log.w(((Object) this).getClass().getName(), "Exception", e);
         }
 
         return returnCalendar;
     }
 
-    public CalendarICAL getCalendarThisDayEvents(String uid){
+    public CalendarICAL getCalendarThisDayEvents(String uid) {
 
         CalendarICAL calendarICAL = new CalendarICAL(uid);
 
-        try{
+        try {
 
             open();
-            Cursor cursor = this.database.query("Calendar", this.calendarColumns, "uid='" + uid + "'", null, null, null, null);
+            Cursor cursor = this.database.query("calendar", this.calendarColumns, "uid='" + uid + "'", null, null, null, null);
 
-            if(cursor.moveToFirst()){
+            if (cursor.moveToFirst()) {
 
                 calendarICAL.setId(cursor.getLong(cursor.getColumnIndex("id")));
                 calendarICAL.setUid(cursor.getString(cursor.getColumnIndex("uid")));
@@ -95,29 +96,29 @@ public class CalendarICALDataSource {
 
                 calendarICAL.setEvents(this.getEventsThisDayEvents(calendarICAL));
 
-            }else{
+            } else {
                 calendarICAL = null;
             }
 
-        }catch (Exception e){
+        } catch (Exception e) {
             Log.w(((Object) this).getClass().getName(), "Exception", e);
         }
 
         return calendarICAL;
     }
 
-    public List<CalendarICAL> getInfoCalendars(){
+    public List<CalendarICAL> getInfoCalendars() {
 
         List<CalendarICAL> calendarICALList = new ArrayList<CalendarICAL>();
 
-        try{
+        try {
 
             open();
-            Cursor cursor = this.database.query("Calendar", this.calendarColumns, null, null, null, null, null);
+            Cursor cursor = this.database.query("calendar", this.calendarColumns, null, null, null, null, null);
 
             CalendarICAL calendarICAL;
 
-            while(cursor.moveToNext()) {
+            while (cursor.moveToNext()) {
 
                 calendarICAL = new CalendarICAL(cursor.getString(cursor.getColumnIndex("uid")));
                 calendarICAL.setId(cursor.getLong(cursor.getColumnIndex("id")));
@@ -128,23 +129,23 @@ public class CalendarICALDataSource {
                 calendarICALList.add(calendarICAL);
             }
 
-        }catch (Exception e){
+        } catch (Exception e) {
             Log.w(((Object) this).getClass().getName(), "Exception", e);
         }
 
         return calendarICALList;
     }
 
-    public CalendarICAL getCalendar(String uid){
+    public CalendarICAL getCalendar(String uid) {
 
         CalendarICAL calendarICAL = new CalendarICAL(uid);
 
-        try{
+        try {
 
             open();
-            Cursor cursor = this.database.query("Calendar", this.calendarColumns, "uid='" + uid + "'", null, null, null, null);
+            Cursor cursor = this.database.query("calendar", this.calendarColumns, "uid='" + uid + "'", null, null, null, null);
 
-            if(cursor.moveToFirst()){
+            if (cursor.moveToFirst()) {
 
                 calendarICAL.setId(cursor.getLong(cursor.getColumnIndex("id")));
                 calendarICAL.setUid(cursor.getString(cursor.getColumnIndex("uid")));
@@ -154,25 +155,25 @@ public class CalendarICALDataSource {
 
                 calendarICAL.setEvents(this.getEvents(calendarICAL));
 
-            }else{
+            } else {
                 calendarICAL = null;
             }
 
-        }catch (Exception e){
+        } catch (Exception e) {
             Log.w(((Object) this).getClass().getName(), "Exception", e);
         }
 
         return calendarICAL;
     }
 
-    private List<EventICAL> getEvents(CalendarICAL calendarICAL){
+    private List<EventICAL> getEvents(CalendarICAL calendarICAL) {
 
         List<EventICAL> eventICALs = new ArrayList<EventICAL>();
 
         Cursor cursor = this.database.query("Event", this.eventColumns, "calendar_id=" + calendarICAL.getId(), null, null, null, null);
         EventICAL eventICAL;
 
-        while(cursor.moveToNext()){
+        while (cursor.moveToNext()) {
 
             eventICAL = new EventICAL();
 
@@ -195,10 +196,10 @@ public class CalendarICALDataSource {
         return eventICALs;
     }
 
-    private List<EventICAL> getEventsThisDayEvents(CalendarICAL calendarICAL){
+    private List<EventICAL> getEventsThisDayEvents(CalendarICAL calendarICAL) {
 
         Calendar calendar = Calendar.getInstance();
-        calendar.setTimeInMillis( System.currentTimeMillis());
+        calendar.setTimeInMillis(System.currentTimeMillis());
 
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyMMdd", Locale.getDefault());
         String today = simpleDateFormat.format(calendar.getTime());
@@ -208,7 +209,7 @@ public class CalendarICALDataSource {
         Cursor cursor = this.database.rawQuery("SELECT e.id, e.uid, e.dtend, e.dtstart, e.dtendFormat, e.dtstartFormat, e.dtendOriginal, e.dtstartOriginal, e.summary, e.description, e.location, e.building, e.allDay FROM Event AS e INNER JOIN Calendar AS c ON (e.calendar_id = c.id) WHERE dtstart" + "<" + today + "000000 AND " + "dtend" + ">" + today + "246060 ORDER BY " + "dtstart" + " ASC", null);
         EventICAL eventICAL;
 
-        while(cursor.moveToNext()){
+        while (cursor.moveToNext()) {
 
             eventICAL = new EventICAL();
 
@@ -231,7 +232,7 @@ public class CalendarICALDataSource {
         return eventICALs;
     }
 
-    private EventICAL insertEventICAL(EventICAL eventICAL, CalendarICAL calendarICAL){
+    private EventICAL insertEventICAL(EventICAL eventICAL, CalendarICAL calendarICAL) {
 
         EventICAL returnEventICAL = eventICAL;
 

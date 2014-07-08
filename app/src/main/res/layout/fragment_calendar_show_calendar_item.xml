@@ -3,14 +3,13 @@
 <RelativeLayout
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    >
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/list_item_selector"
+        android:background="@drawable/selector_listarosaminimalista"
         android:id="@+id/layoutExtEdifi">
 
         <RelativeLayout
@@ -68,6 +67,7 @@
             </LinearLayout>
 
         </LinearLayout>
+
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="fill_parent"
@@ -102,6 +102,7 @@
             </LinearLayout>
 
         </LinearLayout>
+
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="fill_parent"

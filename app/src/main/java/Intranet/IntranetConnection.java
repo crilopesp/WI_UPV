@@ -1,4 +1,4 @@
-package Intranet;
+package intranet;
 
 import java.net.CookieHandler;
 import java.net.CookieManager;
@@ -8,7 +8,7 @@ import java.util.Observer;
 
 import javax.net.ssl.HttpsURLConnection;
 
-import CalendarUPV.CalendarsJSON;
+import calendarupv.CalendarsJSON;
 
 
 public class IntranetConnection implements Observer {
@@ -132,6 +132,7 @@ public class IntranetConnection implements Observer {
 
 
             this.outPutParamsIntranetConnection.setCalendars(new CalendarsJSON(inputParamsIntranetConnection.getResult()));
+
             this.outPutParamsIntranetConnection.notifyObservers("calendars");
 
         } else if (data.equals("ics")) {

@@ -1,12 +1,11 @@
-package CalendarUPV;
+package calendarupv;
 
 import android.util.Log;
-
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class DiaryJSON{
+public class DiaryJSON {
 
     private long id;
     private String uid;
@@ -14,7 +13,7 @@ public class DiaryJSON{
     private String grupo;
     private String url;
 
-    public DiaryJSON(JSONObject element){
+    public DiaryJSON(JSONObject element) {
         try {
             this.uid = element.getString("uid");
             this.nombre = element.getString("nombre");

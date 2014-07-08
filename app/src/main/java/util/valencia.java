@@ -3,11 +3,11 @@ package util;
 /**
  * Created by joaquin on 27/04/14.
  */
-public class valencia {
+public class Valencia {
 
     String descripcion;
 
-    public valencia(){
+    public Valencia() {
 
     }
 

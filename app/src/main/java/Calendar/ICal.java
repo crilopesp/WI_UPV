@@ -1,26 +1,22 @@
-package Calendar;
+package calendar;
 
-
-import android.util.Log;
 
 import net.fortuna.ical4j.model.Calendar;
 import net.fortuna.ical4j.model.Component;
-import net.fortuna.ical4j.model.PropertyList;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.TimeZone;
 
 public class ICal {
 
     private String name;
     private String timeZone;
     private String comment;
-    private List<Event> events;
+    private List<Evento> eventos;
 
-    public ICal(Calendar calendar){
-        this. parseCalendar(calendar);
+    public ICal(Calendar calendar) {
+        this.parseCalendar(calendar);
     }
 
     private void parseCalendar(Calendar calendar) {
@@ -31,11 +27,11 @@ public class ICal {
         this.comment = calendar.getProperty("COMMENT").getValue();
 
         //events....
-        events = new ArrayList<Event>();
-        Iterator<Component> iterator =  calendar.getComponents().iterator();
-        while(iterator.hasNext()){
-            events.add(
-                    new Event(iterator.next())
+        eventos = new ArrayList<Evento>();
+        Iterator<Component> iterator = calendar.getComponents().iterator();
+        while (iterator.hasNext()) {
+            eventos.add(
+                    new Evento(iterator.next())
             );
         }
 
@@ -65,20 +61,20 @@ public class ICal {
         this.comment = comment;
     }
 
-    public List<Event> getEvents() {
-        return events;
+    public List<Evento> getEventos() {
+        return eventos;
     }
 
-    public void setEvents(List<Event> events) {
-        this.events = events;
+    public void setEventos(List<Evento> eventos) {
+        this.eventos = eventos;
     }
 
     @Override
     public String toString() {
 
         String string = "";
-        for(Event item : this.events)
-            string+=item.toString();
+        for (Evento item : this.eventos)
+            string += item.toString();
 
         return "ICal{" +
                 "name='" + name + '\'' +

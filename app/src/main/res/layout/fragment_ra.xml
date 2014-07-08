@@ -25,13 +25,13 @@
         android:id="@+id/spinnerEdificios"
         android:layout_gravity="right"
         android:background="#EEE"
-        android:layout_margin="10dp"/>
+        android:layout_margin="10dp" />
 
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Find the building"
         android:id="@+id/btn_enc"
-        android:background="@drawable/button_custom_red"
-        android:layout_margin="10dp"/>
+        android:background="@drawable/selector_listarosaminimalista"
+        android:layout_margin="10dp" />
 </LinearLayout>

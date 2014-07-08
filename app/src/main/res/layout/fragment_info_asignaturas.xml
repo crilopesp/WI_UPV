@@ -6,8 +6,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/multiexpandableListView"
     android:background="@color/light_pink"
-    android:divider="@drawable/div"
-    android:childDivider="@drawable/div"
+    android:divider="@drawable/divisor"
+    android:childDivider="@drawable/divisor"
     android:paddingBottom="5dp"
     android:paddingTop="5dp">
 

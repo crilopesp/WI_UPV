@@ -4,7 +4,7 @@
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="@drawable/back_card">
+    android:background="@color/light_pink">
 
     <LinearLayout
         android:orientation="vertical"
@@ -75,6 +75,7 @@
             </LinearLayout>
 
         </LinearLayout>
+
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="fill_parent"

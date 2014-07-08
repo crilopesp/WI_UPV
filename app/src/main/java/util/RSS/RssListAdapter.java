@@ -39,7 +39,7 @@ public class RssListAdapter extends ArrayAdapter<Message> {
 
             LayoutInflater vi;
             vi = LayoutInflater.from(getContext());
-            v = vi.inflate(R.layout.row_list_news, null);
+            v = vi.inflate(R.layout.item_lista_noticias, null);
 
         }
 

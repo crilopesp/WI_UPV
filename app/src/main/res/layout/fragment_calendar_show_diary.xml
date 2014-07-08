@@ -24,8 +24,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@android:id/list"
-            android:listSelector="@drawable/list_item_selector"
+            android:listSelector="@drawable/selector_listarosaminimalista"
             android:dividerHeight="2dp"
-            android:divider="@drawable/div" />
+            android:divider="@drawable/divisor" />
     </LinearLayout>
 </FrameLayout>

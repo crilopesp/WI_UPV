@@ -1,6 +1,7 @@
-package Intranet;
+package intranet;
 
 import android.os.AsyncTask;
+import android.util.Log;
 
 import java.io.DataOutputStream;
 import java.net.URL;
@@ -97,7 +98,7 @@ public class IntranetLogin extends AsyncTask<String, Void, InputParamsIntranetCo
         } catch (Exception e) {
             inputParamsIntranetConnection.setException(e);
         }
-
+        Log.e("cockie", cookieList.toString());
         return inputParamsIntranetConnection;
     }
 

@@ -1,21 +1,19 @@
-package Intranet;
-
-
+package intranet;
 
 
 import java.util.Observable;
 
-import CalendarUPV.CalendarsJSON;
+import calendarupv.CalendarsJSON;
 
 
-public class OutPutParamsIntranetConnection extends Observable{
+public class OutPutParamsIntranetConnection extends Observable {
 
     private boolean UserFail = false;
     private Exception exception = null;
     private CalendarsJSON calendars;
     private String icsString;
 
-    public void setChanged(){
+    public void setChanged() {
         super.setChanged();
     }
 
@@ -31,6 +29,7 @@ public class OutPutParamsIntranetConnection extends Observable{
     public CalendarsJSON getCalendars() {
         return calendars;
     }
+
 
     public void setCalendars(CalendarsJSON calendars) {
         this.setChanged();

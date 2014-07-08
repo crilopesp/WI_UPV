@@ -1,22 +1,19 @@
-package Calendar;
+package calendar;
 
 import android.util.Log;
-
-
-import net.fortuna.ical4j.model.Calendar;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.List;
 
-public class Agenda{
+public class Agenda {
 
     private String uid;
     private String nombre;
     private String grupo;
     private String url;
-    private List<Event> events;
+    private List<Evento> eventos;
 
     public Agenda(JSONObject element) {
         try {
@@ -24,7 +21,7 @@ public class Agenda{
             this.nombre = element.getString("nombre");
             this.url = element.getString("url");
             this.grupo = element.getString("grupo");
-            this.events = null;
+            this.eventos = null;
         } catch (JSONException e) {
             Log.w(((Object) this).getClass().getName(), "Exception", e);
         }
@@ -62,12 +59,12 @@ public class Agenda{
         this.url = url;
     }
 
-    public List<Event> getEvents() {
-        return events;
+    public List<Evento> getEventos() {
+        return eventos;
     }
 
-    public void setEvents(List<Event> events) {
-        this.events = events;
+    public void setEventos(List<Evento> eventos) {
+        this.eventos = eventos;
     }
 
     @Override

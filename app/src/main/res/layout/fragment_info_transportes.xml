@@ -5,6 +5,6 @@
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@android:id/list"
-    android:listSelector="@drawable/list_item_selector"
+    android:listSelector="@drawable/selector_listarosaminimalista"
     android:background="@color/light_pink"
-    android:divider="@drawable/div"></ListView>
+    android:divider="@drawable/divisor"></ListView>

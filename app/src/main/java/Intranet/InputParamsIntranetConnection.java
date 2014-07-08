@@ -1,4 +1,4 @@
-package Intranet;
+package intranet;
 
 import java.util.List;
 import java.util.Observable;

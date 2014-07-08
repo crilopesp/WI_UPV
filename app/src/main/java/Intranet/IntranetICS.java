@@ -1,7 +1,6 @@
-package Intranet;
+package intranet;
 
 import android.os.AsyncTask;
-import android.util.Log;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -11,8 +10,6 @@ import java.net.URL;
 import java.util.List;
 import java.util.Observer;
 
-import CalendarUPV.DiaryJSON;
-
 
 public class IntranetICS extends AsyncTask<List<String>, Void, InputParamsIntranetConnection> {
 
@@ -20,13 +17,13 @@ public class IntranetICS extends AsyncTask<List<String>, Void, InputParamsIntran
     private InputParamsIntranetConnection inputParamsIntranetConnection;
     private Observer observer;
 
-    public IntranetICS(Observer observer, String url){
-        this.url=url;
+    public IntranetICS(Observer observer, String url) {
+        this.url = url;
         this.observer = observer;
     }
 
     @Override
-    protected void onPreExecute(){
+    protected void onPreExecute() {
         this.inputParamsIntranetConnection = new InputParamsIntranetConnection();
         this.inputParamsIntranetConnection.addObserver(this.observer);
     }
@@ -44,7 +41,7 @@ public class IntranetICS extends AsyncTask<List<String>, Void, InputParamsIntran
 
             request.setInstanceFollowRedirects(true);
 
-            request.setRequestProperty("User-Agent","Mozilla/5.0");
+            request.setRequestProperty("User-Agent", "Mozilla/5.0");
             request.setRequestProperty("Host", "www.upv.es");
 
             for (String cookie : params[0]) {
@@ -58,14 +55,14 @@ public class IntranetICS extends AsyncTask<List<String>, Void, InputParamsIntran
 
             inputParamsIntranetConnection.setCodeResponse(request.getResponseCode());
 
-            if(request.getHeaderFields().get("Set-Cookie")!=null){
+            if (request.getHeaderFields().get("Set-Cookie") != null) {
                 params[0].addAll(request.getHeaderFields().get("Set-Cookie"));
             }
 
             inputParamsIntranetConnection.setCookieList(params[0]);
 
             BufferedReader in =
-                    new BufferedReader(new InputStreamReader(request.getInputStream(),"UTF-8"));
+                    new BufferedReader(new InputStreamReader(request.getInputStream(), "UTF-8"));
             StringWriter sw = new StringWriter();
             char[] buffer = new char[1024 * 4];
             int n;
@@ -81,7 +78,7 @@ public class IntranetICS extends AsyncTask<List<String>, Void, InputParamsIntran
     }
 
     @Override
-    protected void onPostExecute(InputParamsIntranetConnection inputParamsIntranetConnection){
+    protected void onPostExecute(InputParamsIntranetConnection inputParamsIntranetConnection) {
         inputParamsIntranetConnection.notifyObservers("ics");
     }
 

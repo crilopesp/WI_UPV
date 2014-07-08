@@ -1,4 +1,4 @@
-package CalendarUPV;
+package calendarupv;
 
 
 import android.util.Log;
@@ -10,17 +10,17 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CalendarsJSON{
+public class CalendarsJSON {
 
     private String username;
     private List<DiaryJSON> diaries;
 
-    public CalendarsJSON(String data){
+    public CalendarsJSON(String data) {
         diaries = new ArrayList<DiaryJSON>();
         this.parseJson(data);
     }
 
-    private void parseJson(String data){
+    private void parseJson(String data) {
 
         try {
 
@@ -28,11 +28,11 @@ public class CalendarsJSON{
 
             //username
             this.username = jObject.getString("username");
+            Log.e("username", username);
 
             //agendas...
             JSONArray agendasArray = jObject.getJSONArray("agendas");
-            for (int i=0; i < agendasArray.length(); i++)
-            {
+            for (int i = 0; i < agendasArray.length(); i++) {
                 try {
 
                     this.diaries.add(new DiaryJSON(agendasArray.getJSONObject(i)));
@@ -67,7 +67,7 @@ public class CalendarsJSON{
 
         StringBuilder stringBuilder = new StringBuilder();
 
-        for (DiaryJSON item : this.diaries){
+        for (DiaryJSON item : this.diaries) {
             stringBuilder.append(item.toString());
         }
 

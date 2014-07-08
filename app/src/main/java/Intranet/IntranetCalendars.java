@@ -1,18 +1,12 @@
-package Intranet;
+package intranet;
 
 import android.os.AsyncTask;
-import android.util.Log;
 
 import java.io.BufferedReader;
-import java.io.DataOutputStream;
 import java.io.InputStreamReader;
 import java.io.StringWriter;
-import java.net.CookieHandler;
-import java.net.CookieManager;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Observable;
 import java.util.Observer;
 
 import javax.net.ssl.HttpsURLConnection;
@@ -26,12 +20,12 @@ public class IntranetCalendars extends AsyncTask<List<String>, Void, InputParams
     private InputParamsIntranetConnection inputParamsIntranetConnection;
     private Observer observer;
 
-    public IntranetCalendars(Observer observer){
+    public IntranetCalendars(Observer observer) {
         this.observer = observer;
     }
 
     @Override
-    protected void onPreExecute(){
+    protected void onPreExecute() {
         this.inputParamsIntranetConnection = new InputParamsIntranetConnection();
         this.inputParamsIntranetConnection.addObserver(this.observer);
     }
@@ -57,7 +51,7 @@ public class IntranetCalendars extends AsyncTask<List<String>, Void, InputParams
             request.setFollowRedirects(true);
             request.setInstanceFollowRedirects(true);
 
-            request.setRequestProperty("User-Agent","Mozilla/5.0");
+            request.setRequestProperty("User-Agent", "Mozilla/5.0");
             request.setRequestProperty("Host", "www.upv.es");
 
             for (String cookie : params[0]) {
@@ -71,13 +65,13 @@ public class IntranetCalendars extends AsyncTask<List<String>, Void, InputParams
 
             inputParamsIntranetConnection.setCodeResponse(request.getResponseCode());
 
-            if(request.getHeaderFields().get("Set-Cookie")!=null){
+            if (request.getHeaderFields().get("Set-Cookie") != null) {
                 params[0].addAll(request.getHeaderFields().get("Set-Cookie"));
             }
 
             inputParamsIntranetConnection.setCookieList(params[0]);
 
-            BufferedReader in = new BufferedReader(new InputStreamReader(request.getInputStream(),"ISO-8859-1"));
+            BufferedReader in = new BufferedReader(new InputStreamReader(request.getInputStream(), "ISO-8859-1"));
             StringWriter sw = new StringWriter();
             char[] buffer = new char[1024 * 4];
             int n;
@@ -96,7 +90,7 @@ public class IntranetCalendars extends AsyncTask<List<String>, Void, InputParams
     }
 
     @Override
-    protected void onPostExecute(InputParamsIntranetConnection inputParamsIntranetConnection){
+    protected void onPostExecute(InputParamsIntranetConnection inputParamsIntranetConnection) {
         inputParamsIntranetConnection.notifyObservers("calendars");
     }
 
