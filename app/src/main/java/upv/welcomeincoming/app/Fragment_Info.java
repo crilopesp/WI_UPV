@@ -13,7 +13,7 @@ import upv.welcomeincoming.app.infoFragments.FragmentPagerAdapter_Info;
 import upv.welcomeincoming.app.infoFragments.Fragment_Asignaturas;
 import upv.welcomeincoming.app.infoFragments.Fragment_Escuelas;
 import upv.welcomeincoming.app.infoFragments.Fragment_Transportes;
-import upv.welcomeincoming.app.infoFragments.Fragment_Valencia;
+import upv.welcomeincoming.app.infoFragments.Fragment_Upv;
 
 
 public class Fragment_Info extends Fragment {
@@ -35,7 +35,7 @@ public class Fragment_Info extends Fragment {
             }
         });
         pagerAdapter = new FragmentPagerAdapter_Info(getActivity().getSupportFragmentManager(), getActivity().getApplicationContext());
-        pagerAdapter.addFragment(new Fragment_Valencia());
+        pagerAdapter.addFragment(new Fragment_Upv());
         pagerAdapter.addFragment(new Fragment_Transportes());
         pagerAdapter.addFragment(new Fragment_Escuelas());
         pagerAdapter.addFragment(new Fragment_Asignaturas());

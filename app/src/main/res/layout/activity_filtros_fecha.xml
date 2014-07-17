@@ -1,0 +1,52 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:paddingBottom="2dp"
+    android:background="@drawable/background_progressdialog"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/selecFecha"
+        android:gravity="center"
+        android:background="@color/redly"
+        android:textColor="#FFF"
+        android:textSize="20dp"
+        android:layout_marginBottom="20dp"
+        android:id="@+id/txtAsignaturas" />
+
+    <DatePicker
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:id="@+id/datePicker" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:background="@color/light_grey"
+        android:layout_height="wrap_content"
+        android:minHeight="50dp"
+        android:weightSum="2">
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="@string/aceptar"
+            android:id="@+id/btnAceptar"
+            android:background="#fff"
+            android:layout_marginRight="0.2dp"
+            android:layout_weight="1" />
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="@string/cancelar"
+            android:id="@+id/btnCancelar"
+            android:layout_marginLeft="0.2dp"
+            android:background="#fff"
+            android:layout_weight="1" />
+    </LinearLayout>
+</LinearLayout>

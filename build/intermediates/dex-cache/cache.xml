@@ -2,58 +2,48 @@
 <pre-dex-items>
 
     <item
-        dex="D:\WelcomeIncomingApp\app\build\intermediates\pre-dexed\debug\support-v4-19.0.1-2429eced5af5bdb0f7f0e08dc579596ec47bc440.jar"
-        jar="C:\Users\Cristian\AppData\Local\Android\android-studio\sdk\extras\android\m2repository\com\android\support\support-v4\19.0.1\support-v4-19.0.1.jar"
-        jumboMode="false"
-        revision="19.1.0"
-        sha1="587da9a481ffd341d2fa091704489b89845ddacd"/>
-    <item
-        dex="D:\WelcomeIncomingApp\app\build\intermediates\pre-dexed\debug\commons-logging-1.1.3-d425119b4e409eca9dafb5aef32cfe249259ff3e.jar"
-        jar="D:\WelcomeIncomingApp\app\src\main\libs\commons-logging-1.1.3.jar"
-        jumboMode="false"
-        revision="19.1.0"
-        sha1="f6f66e966c70a83ffbdb6f17a0919eaf7c8aca7f"/>
-    <item
-        dex="D:\WelcomeIncomingApp\app\build\intermediates\pre-dexed\debug\classes-bd865ab76d203cba51bd4378d1a5dbb3ad01c87e.jar"
-        jar="D:\WelcomeIncomingApp\build\intermediates\exploded-aar\com.android.support\appcompat-v7\19.0.1\classes.jar"
-        jumboMode="false"
-        revision="19.1.0"
-        sha1="f71a6822470c9eb659d4f4a6cb57b780b35f058b"/>
-    <item
-        dex="D:\WelcomeIncomingApp\app\build\intermediates\pre-dexed\debug\gson-2.2.4-9d284b62465c63cf2750584551f0b6f8ae0f8433.jar"
-        jar="D:\WelcomeIncomingApp\app\src\main\libs\gson-2.2.4.jar"
-        jumboMode="false"
-        revision="19.1.0"
-        sha1="973e832af433b44c3ed11c426f2f390b29f3f3f8"/>
+        dex="D:\WelcomeIncomingApp\app\build\intermediates\pre-dexed\debug\support-v4-19.0.1-a28c415a50578e3857e8ef1c829fe74bb98ea447.jar"
+        jar="C:\Users\Cristian\AppData\Local\Android\android-studio1\sdk\extras\android\m2repository\com\android\support\support-v4\19.0.1\support-v4-19.0.1.jar"
+        jumboMode="false" revision="19.1.0" sha1="587da9a481ffd341d2fa091704489b89845ddacd" />
     <item
         dex="D:\WelcomeIncomingApp\app\build\intermediates\pre-dexed\debug\backport-util-concurrent-3.1-90a618426db59b9e62d0bdf39c6fdc03e8bb82b3.jar"
         jar="D:\WelcomeIncomingApp\app\src\main\libs\backport-util-concurrent-3.1.jar"
-        jumboMode="false"
-        revision="19.1.0"
-        sha1="682f7ac17fed79e92f8e87d8455192b63376347b"/>
+        jumboMode="false" revision="19.1.0" sha1="682f7ac17fed79e92f8e87d8455192b63376347b" />
     <item
         dex="D:\WelcomeIncomingApp\app\build\intermediates\pre-dexed\debug\commons-codec-1.8-160db940482d7b9f9346affc7ae4721a4c8725a2.jar"
-        jar="D:\WelcomeIncomingApp\app\src\main\libs\commons-codec-1.8.jar"
-        jumboMode="false"
-        revision="19.1.0"
-        sha1="af3be3f74d25fc5163b54f56a0d394b462dafafd"/>
+        jar="D:\WelcomeIncomingApp\app\src\main\libs\commons-codec-1.8.jar" jumboMode="false"
+        revision="19.1.0" sha1="af3be3f74d25fc5163b54f56a0d394b462dafafd" />
+    <item
+        dex="D:\WelcomeIncomingApp\app\build\intermediates\pre-dexed\debug\classes-e131d7137484870563c816550ca0f63ea9e894c6.jar"
+        jar="D:\WelcomeIncomingApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\4.3.23\classes.jar"
+        jumboMode="false" revision="19.1.0" sha1="7676c0cb230efa6ac41c47867d372ed5913029d4" />
+    <item
+        dex="D:\WelcomeIncomingApp\app\build\intermediates\pre-dexed\debug\commons-logging-1.1.3-d425119b4e409eca9dafb5aef32cfe249259ff3e.jar"
+        jar="D:\WelcomeIncomingApp\app\src\main\libs\commons-logging-1.1.3.jar" jumboMode="false"
+        revision="19.1.0" sha1="f6f66e966c70a83ffbdb6f17a0919eaf7c8aca7f" />
     <item
         dex="D:\WelcomeIncomingApp\app\build\intermediates\pre-dexed\debug\wikitudesdk-9fecf55d443176b92d73b66a191843a770b395be.jar"
-        jar="D:\WelcomeIncomingApp\app\src\main\libs\wikitudesdk.jar"
-        jumboMode="false"
-        revision="19.1.0"
-        sha1="5c233569b0360e5ef7542bb707ddbd18979c934b"/>
+        jar="D:\WelcomeIncomingApp\app\src\main\libs\wikitudesdk.jar" jumboMode="false"
+        revision="19.1.0" sha1="5c233569b0360e5ef7542bb707ddbd18979c934b" />
     <item
         dex="D:\WelcomeIncomingApp\app\build\intermediates\pre-dexed\debug\commons-lang-2.6-b021913ee3f88937471916e6ce29abc1cedca461.jar"
-        jar="D:\WelcomeIncomingApp\app\src\main\libs\commons-lang-2.6.jar"
-        jumboMode="false"
-        revision="19.1.0"
-        sha1="0ce1edb914c94ebc388f086c6827e8bdeec71ac2"/>
+        jar="D:\WelcomeIncomingApp\app\src\main\libs\commons-lang-2.6.jar" jumboMode="false"
+        revision="19.1.0" sha1="0ce1edb914c94ebc388f086c6827e8bdeec71ac2" />
     <item
         dex="D:\WelcomeIncomingApp\app\build\intermediates\pre-dexed\debug\ical4j-1.0.5-81a3e34e06b06277db2b59bb09fece8858a3a8db.jar"
-        jar="D:\WelcomeIncomingApp\app\src\main\libs\ical4j-1.0.5.jar"
-        jumboMode="false"
-        revision="19.1.0"
-        sha1="7c2ddc98bda6e0838cca0129fda095a716a7d9dd"/>
+        jar="D:\WelcomeIncomingApp\app\src\main\libs\ical4j-1.0.5.jar" jumboMode="false"
+        revision="19.1.0" sha1="7c2ddc98bda6e0838cca0129fda095a716a7d9dd" />
+    <item
+        dex="D:\WelcomeIncomingApp\app\build\intermediates\pre-dexed\debug\classes-bd865ab76d203cba51bd4378d1a5dbb3ad01c87e.jar"
+        jar="D:\WelcomeIncomingApp\build\intermediates\exploded-aar\com.android.support\appcompat-v7\19.0.1\classes.jar"
+        jumboMode="false" revision="19.1.0" sha1="f71a6822470c9eb659d4f4a6cb57b780b35f058b" />
+    <item
+        dex="D:\WelcomeIncomingApp\app\build\intermediates\pre-dexed\debug\json_simple-1.1-e0d0490d7ab25fe21b689afd576c3dd7cdbe8256.jar"
+        jar="D:\WelcomeIncomingApp\app\src\main\libs\json_simple-1.1.jar" jumboMode="false"
+        revision="19.1.0" sha1="5e303a03d04e6788dddfa3655272580ae0fc13bb" />
+    <item
+        dex="D:\WelcomeIncomingApp\app\build\intermediates\pre-dexed\debug\gson-2.2.4-9d284b62465c63cf2750584551f0b6f8ae0f8433.jar"
+        jar="D:\WelcomeIncomingApp\app\src\main\libs\gson-2.2.4.jar" jumboMode="false"
+        revision="19.1.0" sha1="973e832af433b44c3ed11c426f2f390b29f3f3f8" />
 
 </pre-dex-items>

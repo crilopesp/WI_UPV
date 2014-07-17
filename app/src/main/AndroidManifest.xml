@@ -12,6 +12,7 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_GPS" />
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
 
     <uses-feature
         android:name="android.hardware.camera"
@@ -30,19 +31,20 @@
         android:required="true" />
 
     <uses-sdk
-        android:minSdkVersion="9"
+        android:minSdkVersion="14"
         android:targetSdkVersion="19" />
 
     <application
         android:allowBackup="true"
+
         android:icon="@drawable/icon_aplicacion"
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
         <activity
             android:name=".Activity_Splash"
             android:label="Welcome Incoming"
-            android:theme="@style/NoActionBar"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBar">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
 
@@ -52,7 +54,7 @@
         <activity
             android:name=".Activity_Home"
             android:label="@string/app_name"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Activity_Traduccion"
             android:label="@string/title_activity_translate"
@@ -83,8 +85,25 @@
         <activity
             android:name=".Activity_RealidadAumentada"
             android:label="Augmented Reality"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity_Filtros"
+            android:label="@string/title_activity_activity_filtros_asignatura"
+            android:theme="@android:style/Theme.Dialog"></activity>
+        <activity
+            android:name=".Activity_Filtros_Fecha"
+            android:label="@string/title_activity_activity_filtros_fecha"
+            android:theme="@android:style/Theme.Dialog"></activity>
+        <activity
+            android:name=".Activity_Localizacion"
+            android:label="@string/location_client_powered_by_google"></activity>
 
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyBuQDlF7-ORfBnUwTN_Fl74Qy94-HLiuhQ" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
     </application>
 
 </manifest>

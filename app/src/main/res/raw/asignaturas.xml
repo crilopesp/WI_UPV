@@ -11,7 +11,7 @@
             url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=6327ANDp_caca=act"
             creditos="6,5" semestre="A" />
     </escuela>
-    <escuela nombre="School of civil engineering">
+    <escuela nombre="School of civil enginering">
         <asignatura codigo="3540" nombre="LANDSCAPE PLANNING"
             url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=3540ANDp_caca=act"
             creditos="4,5" semestre="B" />
@@ -19,14 +19,10 @@
             url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=5342ANDp_caca=act"
             creditos="4,5" semestre="A" />
 
-        <asignatura
-
-            codigo="5611" nombre="Road operations and safety"
+        <asignatura codigo="5611" nombre="Road operations and safety"
             url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=5611ANDp_caca=act"
             creditos="4,5" semestre="B" />
 
-    </escuela>
-    <escuela nombre="School of civil engineering">
         <asignatura codigo="11407" nombre="Control systems"
             url="www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA=iANDp_codi=11407ANDp_caca=act"
             creditos="4,5" semestre="A" />

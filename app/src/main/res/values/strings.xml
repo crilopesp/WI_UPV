@@ -74,40 +74,38 @@
     <string name="contacto">Contact</string>
     <string name="telefonos">Phone:</string>
     <string name="sitioWeb">Web Site:</string>
-
     <string name="selecInfo">Choose the building you want to find:</string>
 
     <string-array name="edificios">
         <item>Building 1B</item>
-        <!--subitem>School of informatics</subitem-->
+        <!-- subitem>School of informatics</subitem -->
         <item>Building 1C</item>
-        <!--subitem>School of Building Engineering</subitem-->
+        <!-- subitem>School of Building Engineering</subitem -->
         <item>Building 1G</item>
-        <!--subitem>School of informatics</subitem-->
+        <!-- subitem>School of informatics</subitem -->
         <item>Building 1H</item>
-        <!--subitem>School of informatics</subitem-->
+        <!-- subitem>School of informatics</subitem -->
         <item>Building 2F</item>
-        <!--subitem>Physics Technology center</subitem-->
+        <!-- subitem>Physics Technology center</subitem -->
         <item>Building 3H</item>
-        <!--subitem>Agronomist Engineering</subitem-->
+        <!-- subitem>Agronomist Engineering</subitem -->
         <item>Building 3M</item>
-        <!--subitem>Fine Arts</subitem-->
+        <!-- subitem>Fine Arts</subitem -->
         <item>Building 3P</item>
-        <!--subitem>Agricultural and Natural Environment Engineering</subitem-->
+        <!-- subitem>Agricultural and Natural Environment Engineering</subitem -->
         <item>Building 4D</item>
-        <!--subitem>School of Telecommunications Engineering</subitem-->
+        <!-- subitem>School of Telecommunications Engineering</subitem -->
         <item>Building 4H</item>
-        <!--subitem>School of Civil Engineering</subitem-->
+        <!-- subitem>School of Civil Engineering</subitem -->
         <item>Building 5F</item>
-        <!--subitem>School of Industrial Engineering</subitem-->
+        <!-- subitem>School of Industrial Engineering</subitem -->
         <item>Building 7B</item>
-        <!--subitem>School of Design Engineering</subitem-->
+        <!-- subitem>School of Design Engineering</subitem -->
         <item>Building 7I</item>
-        <!--subitem>School of Engineering in Geodesy, Cartography and Surveying</subitem-->
+        <!-- subitem>School of Engineering in Geodesy, Cartography and Surveying</subitem -->
         <item>Building 7J</item>
-        <!--subitem>Faculty of Business Administration and Management</subitem-->
+        <!-- subitem>Faculty of Business Administration and Management</subitem -->
     </string-array>
-
     <string-array name="lenguages">
         <item>English</item>
         <item>Español</item>
@@ -140,5 +138,38 @@
     <string name="sisesion">Logged as:</string>
     <string name="alertaForum">Forum notification</string>
     <string name="profile">Profile</string>
+    <string name="telefonoUPV1">(+34) 96 387 70 00</string>
+    <string name="faxUPV">(+34) 96 387 90 09</string>
+    <string name="direccionUPV">Camino de Vera, s/n 46022 Valencia</string>
+    <string name="web">Web</string>
+    <string name="webUPV">www.upv.es</string>
+    <string name="emailUPV">informacion@upv.es</string>
+    <string name="email">Email</string>
+    <string name="direccion">Dirección</string>
+    <string name="upv">UPV</string>
+    <string name="actualizar">Refresh</string>
+    <string name="downloading_news">Downloading news</string>
+    <string name="filtro">Sort</string>
+    <string name="ordenarAsignaturas">Sort by subjetcs</string>
+    <string name="ordenarFecha">Sort by date</string>
+
+    <integer-array name="gplus_colors">
+        <item>@color/redly</item>
+        <item>@color/blackly</item>
+        <item>@color/light_grey</item>
+        <item>@color/yellowly</item>
+    </integer-array>
+
+    <string name="title_activity_activity__filtros">Filtro</string>
+    <string name="selecAsignatura">Select a subject</string>
+    <string name="aceptar">Ok</string>
+    <string name="cancelar">Cancel</string>
+    <string name="quitarFiltro">Remove filter</string>
+    <string name="selecFecha">Select a date</string>
+    <string name="title_activity_activity_filtros_asignatura">Filtrar por asignaturas</string>
+    <string name="title_activity_activity_filtros_fecha">Filtrar por fecha</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="mapa_upv">UPV Map</string>
+    <string name="info">Information</string>
 
 </resources>

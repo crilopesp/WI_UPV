@@ -1,7 +1,7 @@
 package upv.welcomeincoming.app.infoFragments;
 
 import android.os.Bundle;
-import android.support.v4.app.ListFragment;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +13,6 @@ import java.io.InputStream;
 import java.util.List;
 
 import upv.welcomeincoming.app.R;
-import util.ListAdapter_Transportes;
 import util.Parser_XML;
 import util.Transporte;
 
@@ -21,7 +20,7 @@ import util.Transporte;
 /**
  * Created by Marcos on 30/04/14.
  */
-public class Fragment_Transportes extends ListFragment {
+public class Fragment_Transportes extends Fragment {
 
     List<Transporte> listaTransportes;
     FrameLayout panelLayout;
@@ -44,7 +43,6 @@ public class Fragment_Transportes extends ListFragment {
         listaTransportes.remove(0);
         arreglarTransportes();
 
-        getListView().setAdapter(new ListAdapter_Transportes(getActivity(), 0, listaTransportes));
     }
 
     private String firsToUpper(String nombre) {

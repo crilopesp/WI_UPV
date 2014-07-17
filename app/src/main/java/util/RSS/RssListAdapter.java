@@ -11,23 +11,23 @@ import java.util.List;
 
 import upv.welcomeincoming.app.R;
 
-public class RssListAdapter extends ArrayAdapter<Message> {
+public class RssListAdapter extends ArrayAdapter<Noticia> {
     private Context _context;
-    private List<Message> messages;
+    private List<Noticia> noticias;
 
     public RssListAdapter(Context context, int textViewResourceId) {
         super(context, textViewResourceId);
         _context = context;
     }
 
-    public RssListAdapter(Context context, int resource, List<Message> items) {
+    public RssListAdapter(Context context, int resource, List<Noticia> items) {
         super(context, resource, items);
-        messages = items;
+        noticias = items;
     }
 
     @Override
     public int getCount() {
-        return messages.size();
+        return noticias.size();
     }
 
     @Override
@@ -43,7 +43,7 @@ public class RssListAdapter extends ArrayAdapter<Message> {
 
         }
 
-        Message p = getItem(position);
+        Noticia p = getItem(position);
 
         if (p != null) {
             TextView title = (TextView) v.findViewById(R.id.textTitle);

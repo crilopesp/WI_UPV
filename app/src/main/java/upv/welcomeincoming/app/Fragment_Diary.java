@@ -1,10 +1,12 @@
 package upv.welcomeincoming.app;
 
 import android.app.Activity;
-import android.app.ProgressDialog;
 import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,46 +14,72 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
 
-import calendarupv.DiaryJSON;
+import calendarupv.Calendario;
 import intranet.IntranetConnection;
 import intranet.OutPutParamsIntranetConnection;
 import util.Preferencias;
+import util.ProgressDialog_Custom;
 
 
 public class Fragment_Diary extends ListFragment implements Observer {
 
     public interface DiaryListener {
-        public void DiaryListenerOnClick(DiaryJSON diaryJSON);
+        public void DiaryListenerOnClick(Calendario diaryJSON);
 
         public void DiaryListenerError(String string);
     }
 
-    private List<DiaryJSON> diaryJSONList;
-    private ProgressDialog progressDialog;
+    private SQLiteDatabase db;
+    private List<Calendario> diaryJSONList;
+    private ProgressDialog_Custom progressDialog;
     private IntranetConnection intranetConnection;
     private DiaryListener diaryListener;
 
-    public Fragment_Diary() {
+    public Fragment_Diary(SQLiteDatabase db) {
+        this.db = db;
     }
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
 
         super.onActivityCreated(savedInstanceState);
-        progressDialog = ProgressDialog.show(this.getActivity(), getString(R.string.loading), "", true);
-        //internet
+        if (!estaVaciaDB()) {
+            progressDialog = new ProgressDialog_Custom(this.getActivity(), getString(R.string.loading));
+            progressDialog.getWindow().setGravity(Gravity.BOTTOM);
+            progressDialog.show();
+            //internet
 
-        intranetConnection = new IntranetConnection(
-                Preferencias.getDNI(this.getActivity()),
-                Preferencias.getPIN(this.getActivity()),
-                this
-        );
-        progressDialog.setMessage(getString(R.string.connecting));
-        intranetConnection.connect();
+            intranetConnection = new IntranetConnection(
+                    Preferencias.getDNI(this.getActivity()),
+                    Preferencias.getPIN(this.getActivity()),
+                    this
+            );
+            progressDialog.setMessage(getString(R.string.connecting));
+            intranetConnection.connect();
+        } else {
+            diaryJSONList = obtenerCalendarios();
+            ArrayAdapterCalendarDiaryList adapter = new ArrayAdapterCalendarDiaryList(this.getActivity(), diaryJSONList);
+            setListAdapter(adapter);
+        }
+
+    }
+
+    private List<Calendario> obtenerCalendarios() {
+        String sql = "SELECT * FROM Horario;";
+        Cursor cursor = db.rawQuery(sql, null);
+        List<Calendario> calendarios = new ArrayList<Calendario>();
+        while (cursor.moveToNext()) {
+            Calendario calendario = new Calendario(cursor.getString(cursor.getColumnIndex("id")), cursor.getString(cursor.getColumnIndex("Nombre")), cursor.getString(cursor.getColumnIndex("Url")));
+            calendarios.add(calendario);
+        }
+        cursor.close();
+        return calendarios;
     }
 
     @Override
@@ -107,19 +135,28 @@ public class Fragment_Diary extends ListFragment implements Observer {
         } else if (data.equals("calendars")) {
 
 
-            diaryJSONList = outPutParamsIntranetConnection.getCalendars().getDiaries();
+            diaryJSONList = outPutParamsIntranetConnection.getCalendars().getCalendarios();
+            Iterator<Calendario> itCal = diaryJSONList.iterator();
+            Calendario calendario = null;
+            while (itCal.hasNext()) {
+                calendario = itCal.next();
+                calendario.insertarCalendariosDB(db);
+            }
             ArrayAdapterCalendarDiaryList adapter = new ArrayAdapterCalendarDiaryList(this.getActivity(), diaryJSONList);
             setListAdapter(adapter);
 
         } else {
         }
+
+
     }
 
-    private class ArrayAdapterCalendarDiaryList extends ArrayAdapter<DiaryJSON> {
-        private final Context context;
-        private final List<DiaryJSON> values;
 
-        public ArrayAdapterCalendarDiaryList(Context context, List<DiaryJSON> values) {
+    private class ArrayAdapterCalendarDiaryList extends ArrayAdapter<Calendario> {
+        private final Context context;
+        private final List<Calendario> values;
+
+        public ArrayAdapterCalendarDiaryList(Context context, List<Calendario> values) {
             super(context, R.layout.fragment_calendar_show_diary_item, values);
             this.context = context;
             this.values = values;
@@ -140,4 +177,14 @@ public class Fragment_Diary extends ListFragment implements Observer {
         }
     }
 
+    public boolean estaVaciaDB() {
+        String sql = "SELECT * FROM Horario;";
+        Cursor cursor = db.rawQuery(sql, null);
+        if (cursor.getCount() <= 0) {
+            cursor.close();
+            return false;
+        }
+        cursor.close();
+        return true;
+    }
 }

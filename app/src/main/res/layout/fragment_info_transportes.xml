@@ -1,10 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ListView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@android:id/list"
-    android:listSelector="@drawable/selector_listarosaminimalista"
-    android:background="@color/light_pink"
-    android:divider="@drawable/divisor"></ListView>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/linearLayout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/imAvion"
+                android:layout_width="fill_parent"
+                android:layout_height="80dp"
+                android:adjustViewBounds="true"
+                android:background="@drawable/avionback"
+                android:text="@string/btnAvion"
+                android:textAlignment="center"
+                android:textColor="#FFF"
+                android:textSize="50dp" />
+
+            <Button
+                android:id="@+id/imTaxi"
+                android:layout_width="fill_parent"
+                android:layout_height="80dp"
+                android:adjustViewBounds="true"
+                android:background="@drawable/taxiback"
+                android:text="@string/btnTaxi"
+                android:textAlignment="center"
+                android:textColor="#FFF"
+                android:textSize="50dp" />
+
+            <Button
+                android:id="@+id/imMetro"
+                android:layout_width="fill_parent"
+                android:layout_height="80dp"
+                android:adjustViewBounds="true"
+                android:background="@drawable/metroback"
+                android:text="@string/btnMetro"
+                android:textAlignment="center"
+                android:textColor="#FFF"
+                android:textSize="50dp" />
+
+            <Button
+                android:id="@+id/imMar"
+                android:layout_width="fill_parent"
+                android:layout_height="80dp"
+                android:adjustViewBounds="true"
+                android:background="@drawable/metroback"
+                android:text="@string/btnMar"
+                android:textAlignment="center"
+                android:textColor="#FFF"
+                android:textSize="50dp" />
+
+            <Button
+                android:id="@+id/imBus"
+                android:layout_width="fill_parent"
+                android:layout_height="80dp"
+                android:adjustViewBounds="true"
+                android:background="@drawable/metroback"
+                android:text="@string/btnBus"
+                android:textAlignment="center"
+                android:textColor="#FFF"
+                android:textSize="50dp" />
+
+        </ScrollView>
+    </LinearLayout>
+
+</LinearLayout>

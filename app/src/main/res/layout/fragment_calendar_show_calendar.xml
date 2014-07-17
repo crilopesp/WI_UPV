@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/calendarFragment"
-    android:background="#222">
+    android:background="@color/light_pink">
 
 
     <TextView
@@ -13,25 +13,17 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:id="@+id/textViewCalendarName"
+        android:background="#c21b1b"
         android:textColor="#EEE"
         android:padding="5dp" />
 
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="Events"
-        android:textSize="20dp"
-        android:textColor="#EEE"
-        android:background="#c21b1b"
-        android:gravity="center"
-        android:id="@+id/textViewEvents" />
-
     <ListView
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_height="wrap_content"
         android:id="@android:id/list"
         android:layout_gravity="center_horizontal"
         android:divider="@drawable/divisor"
         android:dividerHeight="2dp"
-        android:background="#FEFEFE" />
+        android:background="@color/light_pink" />
+
 </LinearLayout>

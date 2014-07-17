@@ -3,12 +3,11 @@ apply plugin: 'android'
 android {
     compileSdkVersion 19
     buildToolsVersion '19.1.0'
-
     defaultConfig {
         minSdkVersion 10
         targetSdkVersion 19
         versionCode 1
-        versionName "1.0"
+        versionName '1.0'
     }
     buildTypes {
         release {
@@ -16,7 +15,6 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }
-
     packagingOptions {
         exclude 'META-INF/DEPENDENCIES'
         exclude 'META-INF/LICENSE'
@@ -29,11 +27,13 @@ android {
         exclude 'META-INF/dependencies.txt'
         exclude 'META-INF/LGPL2.1'
     }
+    productFlavors {
+    }
 }
-
+repositories {
+    mavenCentral()
+}
 dependencies {
-    compile 'com.android.support:support-v4:19.0.1'
-    compile 'com.android.support:appcompat-v7:19.0.1'
     compile files('src/main/libs/gson-2.2.4.jar')
     compile files('src/main/libs/ical4j-1.0.5.jar')
     compile files('src/main/libs/commons-logging-1.1.3.jar')
@@ -41,4 +41,10 @@ dependencies {
     compile files('src/main/libs/commons-codec-1.8.jar')
     compile files('src/main/libs/backport-util-concurrent-3.1.jar')
     compile files('src/main/libs/wikitudesdk.jar')
+    compile files('src/main/libs/json_simple-1.1.jar')
+    // You must install or update the Support Repository through the SDK manager to use this dependency.
+    // You must install or update the Support Repository through the SDK manager to use this dependency.
+    compile 'com.android.support:support-v4:19.0.1'
+    compile 'com.android.support:appcompat-v7:19.0.1'
+    compile 'com.google.android.gms:play-services:4.3.23'
 }

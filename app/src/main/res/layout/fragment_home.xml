@@ -8,7 +8,8 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:background="#fffff6f6"
-        android:id="@+id/linearLayout">
+        android:id="@+id/linearLayout"
+        android:weightSum="5">
 
         <TextView
             android:layout_width="match_parent"
@@ -27,5 +28,6 @@
             android:listSelector="@drawable/selector_listarosaminimalista"
             android:dividerHeight="2dp"
             android:divider="@drawable/divisor" />
+
     </LinearLayout>
 </FrameLayout>

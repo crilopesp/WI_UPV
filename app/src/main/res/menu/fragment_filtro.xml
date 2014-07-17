@@ -1,0 +1,29 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:welcome="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/actualizar_action"
+        android:icon="@drawable/ic_action_navigation_refresh"
+        welcome:showAsAction="always"
+        android:title="@string/actualizar"></item>
+
+    <item
+        android:id="@+id/filtro_action"
+        android:icon="@drawable/ic_action_collections_sort_by_size"
+        welcome:showAsAction="always"
+        android:title="@string/filtro">
+        <menu>
+            <item
+                android:id="@+id/menuSortAsignaturas"
+                android:title="@string/ordenarAsignaturas" />
+            <item
+                android:id="@+id/menuSortFecha"
+                android:title="@string/ordenarFecha" />
+            <item
+                android:id="@+id/menuDeleteSo"
+                android:title="@string/quitarFiltro" />
+        </menu>
+    </item>
+
+
+</menu>

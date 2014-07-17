@@ -3,7 +3,9 @@ package upv.welcomeincoming.app;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.res.Configuration;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
@@ -21,7 +23,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import calendarupv.DiaryJSON;
+import calendarupv.Calendario;
+import util.DBHandler_Horarios;
 import util.Preferencias;
 
 public class Activity_Home extends ActionBarActivity implements Fragment_Diary.DiaryListener, Dialog_Login.EditDialogLoginListener, Fragment_Calendar.CalendarListener {
@@ -32,29 +35,31 @@ public class Activity_Home extends ActionBarActivity implements Fragment_Diary.D
     private LinearLayout panelDrawer;
     private int fragmentActual;
     private String tituloApp;
+    private String asignatura;
     ActionBarDrawerToggle drawerToggle;
     FragmentTransaction tx;
+    DBHandler_Horarios helper;
+    SQLiteDatabase db;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        helper = new DBHandler_Horarios(this);
+        db = helper.getWritableDatabase();
         setContentView(R.layout.activity_home);
         overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
         opcionesMenu = new String[]{getString(R.string.menu_option1), getString(R.string.menu_option2), getString(R.string.menu_option3), getString(R.string.menu_option4), getString(R.string.menu_option5), getString(R.string.menu_option6), getString(R.string.menu_option7)};
-
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawerList = (LinearLayout) findViewById(R.id.home_drawer);
         panelDrawer = (LinearLayout) findViewById(R.id.panel_drawer);
 
         tx = getSupportFragmentManager().beginTransaction();
-        tx.replace(R.id.contenedor_fragment, new Fragment_Home());
+        tx.replace(R.id.contenedor_fragment, new Fragment_Home(db));
         tx.commit();
         fragmentActual = 0;
         inicializarElementos();
-
-        Preferencias.setPIN(this, "");
-        Preferencias.setDNI(this, "");
+        //Aqui borrar preferencias para probar el log in
 
     }
 
@@ -192,16 +197,20 @@ public class Activity_Home extends ActionBarActivity implements Fragment_Diary.D
         Fragment fragment = null;
         switch (position) {
             case 0:
-                fragment = new Fragment_Home();
+                fragment = new Fragment_Home(db);
                 break;
             case 1:
-                fragment = new Fragment_Diary();
+                fragment = new Fragment_Diary(db);
                 break;
             case 2:
                 fragment = new Fragment_Info();
                 break;
             case 3:
                 fragment = new Fragment_Traduccion();
+                break;
+            case 4:
+                Intent i = new Intent(this, Activity_Localizacion.class);
+                startActivity(i);
                 break;
             case 5:
                 fragment = new Fragment_Opciones();
@@ -251,10 +260,12 @@ public class Activity_Home extends ActionBarActivity implements Fragment_Diary.D
     }
 
     @Override
-    public void DiaryListenerOnClick(DiaryJSON diaryJSON) {
+    public void DiaryListenerOnClick(Calendario calendario) {
 
         //usamos el fragment simple
-        Fragment_Calendar fragmentCalendar = new Fragment_Calendar(diaryJSON);
+        boolean existe = calendario.existeEnDB(db);
+        Log.e("db existe", existe + "");
+        Fragment_Calendar fragmentCalendar = new Fragment_Calendar(calendario, existe, db);
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.contenedor_fragment, fragmentCalendar);
         transaction.addToBackStack(null);
@@ -286,7 +297,7 @@ public class Activity_Home extends ActionBarActivity implements Fragment_Diary.D
 
             Log.d(((Object) this).getClass().getName(), "Aceptar pulsado...");
 
-            Fragment_Diary fragmentCalendarDiaryList = new Fragment_Diary();
+            Fragment_Diary fragmentCalendarDiaryList = new Fragment_Diary(db);
 
             getSupportFragmentManager()
                     .beginTransaction()

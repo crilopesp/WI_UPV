@@ -19,7 +19,7 @@ public class Activity_RealidadAumentada extends ActionBarActivity {
         setContentView(R.layout.fragment_ra);
         final Spinner spinner = (Spinner) findViewById(R.id.spinnerEdificios);
         Button btn_enc = (Button) findViewById(R.id.btn_enc);
-        ArrayAdapter adapter = ArrayAdapter.createFromResource(this, R.array.edificios, R.layout.item_spinner);
+        ArrayAdapter adapter = ArrayAdapter.createFromResource(this, R.array.edificios, R.layout.item_lista_spinner_filtros);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
