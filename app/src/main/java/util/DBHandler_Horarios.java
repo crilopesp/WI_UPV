@@ -18,6 +18,7 @@ public class DBHandler_Horarios extends SQLiteOpenHelper {
         db.execSQL("CREATE  TABLE main.Horario (id VARCHAR PRIMARY KEY  NOT NULL  UNIQUE , Nombre VARCHAR NOT NULL , Url VARCHAR NOT NULL );");
         db.execSQL("CREATE  TABLE \"main\".\"Evento\" (\"id\" INTEGER PRIMARY KEY  NOT NULL  UNIQUE , \"nombre\" VARCHAR, \"profesor\" VARCHAR, \"ubicacion\" VARCHAR, \"fecha\" DATETIME, \"alertado\" INTEGER, \"idHorario\" VARCHAR NOT NULL );");
         db.execSQL("CREATE  TABLE \"main\".\"Noticia\" (\"id\" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL  UNIQUE , \"titulo\" VARCHAR, \"url\" VARCHAR NOT NULL, \"fecha\" VARCHAR);");
+        db.execSQL("CREATE  TABLE \"main\".\"Valenbisi\" (\"num\" INTEGER PRIMARY KEY NOT NULL UNIQUE , \"direccion\" VARCHAR, \"longitud\" VARCHAR NOT NULL, \"latitud\" VARCHAR NOT NULL, \"numPlazas\" INTEGER NOT NULL, \"plazasDisponibles\" INTEGER NOT NULL);");
     }
 
     @Override

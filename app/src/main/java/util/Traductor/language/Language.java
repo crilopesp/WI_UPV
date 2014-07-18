@@ -15,6 +15,15 @@
  */
 package util.Traductor.language;
 
+import android.content.Context;
+import android.graphics.drawable.Drawable;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
+
+import upv.welcomeincoming.app.R;
+
 /**
  * Language - an enum of language codes supported by the Yandex API
  */
@@ -54,6 +63,12 @@ public enum Language {
     TURKISH("tr"),
     UKRAINIAN("uk");
 
+    private static String[] ArrayNameLanguage = {"CATALAN", "ENGLISH", "FRENCH", "GERMAN", "ITALIAN", "PORTUGUESE", "SPANISH"};
+    private static String[] ArrayLanguageCode = {"ca", "en", "fr", "de", "it", "pt", "es"};
+    private static int[] ArrayLanguageDrawable = {R.drawable.ca, R.drawable.en, R.drawable.fr, R.drawable.de, R.drawable.it, R.drawable.pt, R.drawable.es};
+    private static Locale[] ArrayLocaleLanguage = {new Locale("ca", "ES"), new Locale("en", "GB"), new Locale("fr", "FR"), new Locale("de", "DE"), new Locale("it", "IT"), new Locale("pt", "PT"), new Locale("es", "ES")};
+
+
     /**
      * String representation of this language.
      */
@@ -87,4 +102,55 @@ public enum Language {
         return language;
     }
 
+    //Devuelve un array de strings con los nombres de los lenguajes que puede traducir el traductor
+    public static List<String> getArrayStringNameLanguages() {
+        List<String> list = new ArrayList<String>();
+        for (int i = 0; i < ArrayNameLanguage.length; i++) {
+            list.add(ArrayNameLanguage[i]);
+        }
+        return list;
+    }
+
+
+    public static String getCodeByName(String name) {
+        String res = "es";
+        for (int i = 0; i < ArrayNameLanguage.length; i++) {
+            if (ArrayNameLanguage[i].equals(name)) return ArrayLanguageCode[i];
+        }
+        return res;
+    }
+
+    public static String getNameByCode(String code) {
+        String res = "ENGLISH";
+        for (int i = 0; i < ArrayNameLanguage.length; i++) {
+            if (ArrayLanguageCode[i].equals(code)) return ArrayNameLanguage[i];
+        }
+        return res;
+    }
+
+    public static Locale getLocaleByName(String name) {
+        Locale res = new Locale("en", "GB");
+        for (int i = 0; i < ArrayNameLanguage.length; i++) {
+            if (ArrayNameLanguage[i].equals(name)) return ArrayLocaleLanguage[i];
+        }
+        return res;
+    }
+
+
+    public static Drawable getFlagResourcebyName(String selection, Context mContext) {
+        Drawable res = mContext.getResources().getDrawable(R.drawable.en);
+        for (int i = 0; i < ArrayNameLanguage.length; i++) {
+            if (ArrayNameLanguage[i].equals(selection))
+                return mContext.getResources().getDrawable(ArrayLanguageDrawable[i]);
+        }
+        return res;
+    }
+
+    public static Locale getLocaleByCode(String code) {
+        Locale res = new Locale("en", "GB");
+        for (int i = 0; i < ArrayLanguageCode.length; i++) {
+            if (ArrayLanguageCode[i].equals(code)) return ArrayLocaleLanguage[i];
+        }
+        return res;
+    }
 }

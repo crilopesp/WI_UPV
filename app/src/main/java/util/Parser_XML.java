@@ -180,7 +180,7 @@ public class Parser_XML {
 
             }
         } catch (Exception e) {
-            Log.e("wellcomeincoming", "Error lejendo XML desde fichero");
+            Log.e("WelcomeIncoming", "Error leyendo XML desde fichero");
         }
 
         return resultado;

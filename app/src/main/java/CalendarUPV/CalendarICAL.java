@@ -1,7 +1,7 @@
 package calendarupv;
 
 
-import android.util.Log;
+import android.database.sqlite.SQLiteDatabase;
 
 import net.fortuna.ical4j.model.Calendar;
 import net.fortuna.ical4j.model.Component;
@@ -20,7 +20,7 @@ public class CalendarICAL {
     private String name;
     private String timeZone;
     private String comment;
-    private List<EventICAL> events;
+    private List<Evento> events;
 
     public CalendarICAL(net.fortuna.ical4j.model.Calendar calendar, String uid) {
         this.uid = uid;
@@ -39,60 +39,40 @@ public class CalendarICAL {
         this.comment = calendar.getProperty("COMMENT").getValue();
 
         //events....
-        events = this.getEvetsAfterToday(calendar.getComponents());
+        events = this.getEventsAfterToday(calendar.getComponents());
+
     }
 
-    private List<EventICAL> getEvetsAfterToday(List<Component> componentList) {
+    private List<Evento> getEventsAfterToday(List<Component> componentList) {
 
         java.util.Calendar calendar = java.util.Calendar.getInstance();
         calendar.setTimeInMillis(System.currentTimeMillis());
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyyMMdd", Locale.getDefault());
         String today = simpleDateFormat.format(calendar.getTime());
 
-        List<EventICAL> returnEventICALList1 = new ArrayList<EventICAL>();
+        List<Evento> returnEventList = new ArrayList<Evento>();
 
         Iterator<Component> iterator = componentList.iterator();
-
         EventICAL eventICAL = null;
+        Evento evento = null;
 
         while (iterator.hasNext()) {
 
             eventICAL = new EventICAL(iterator.next());
             today = "20131201";
+            String descripcion = eventICAL.getDescription();
+            String nombreAsig = descripcion.substring(0, descripcion.indexOf(")") + 1);
+            descripcion = descripcion.substring(descripcion.indexOf(":") + 1);
+            String profesor = descripcion.substring(descripcion.indexOf(":") + 1, descripcion.indexOf("Grupo"));
+            evento = new Evento(nombreAsig, profesor, eventICAL.getLocation(), eventICAL.getDtstartFormat(), 0, eventICAL.getBuilding());
             if (eventICAL.getDtstartOriginal().compareTo(today) > 0) {
-                returnEventICALList1.add(eventICAL);
+                returnEventList.add(evento);
             }
         }
-        Collections.sort(returnEventICALList1, new ComparadorEventos());
-
-        return returnEventICALList1;
+        Collections.sort(returnEventList, new ComparadorEventos());
+        return returnEventList;
     }
 
-    private List<EventICAL> getEvetsToday(List<Component> componentList) {
-
-        java.util.Calendar calendar = java.util.Calendar.getInstance();
-        calendar.setTimeInMillis(System.currentTimeMillis());
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyyMMdd", Locale.getDefault());
-        String today = simpleDateFormat.format(calendar.getTime());
-
-        List<EventICAL> returnEventICALList1 = new ArrayList<EventICAL>();
-
-        Iterator<Component> iterator = componentList.iterator();
-
-        EventICAL eventICAL = null;
-
-        Log.w(((Object) this).getClass().getName(), "Today: " + today);
-
-        while (iterator.hasNext()) {
-
-            eventICAL = new EventICAL(iterator.next());
-
-            if (eventICAL.getDtstartOriginal() == today) {
-                returnEventICALList1.add(eventICAL);
-            }
-        }
-        return returnEventICALList1;
-    }
 
     public long getId() {
         return id;
@@ -126,11 +106,11 @@ public class CalendarICAL {
         this.comment = comment;
     }
 
-    public List<EventICAL> getEvents() {
+    public List<Evento> getEvents() {
         return events;
     }
 
-    public void setEvents(List<EventICAL> events) {
+    public void setEvents(List<Evento> events) {
         this.events = events;
     }
 
@@ -142,14 +122,25 @@ public class CalendarICAL {
         this.uid = uid;
     }
 
+    public void insertarCalendariosDB(SQLiteDatabase db) {
+        Iterator<Evento> itCal = getEvents().iterator();
+        Evento evento = null;
+        while (itCal.hasNext()) {
+            evento = itCal.next();
+            String sqlEvento = "INSERT OR IGNORE INTO \"main\".\"Evento\" (\"nombre\",\"profesor\",\"ubicacion\",\"fecha\",\"alertado\",\"idHorario\") VALUES (\"" + evento.getNombre() + "\",\"" + evento.getProfesor() + "\",\"" + evento.getUbicacion() + "\",\"" + evento.getFecha() + "\"," + 1 + ",\"" + uid + "\")";
+            db.execSQL(sqlEvento);
+        }
+    }
+
     @Override
     public String toString() {
 
         String string = "";
-        for (EventICAL item : this.events)
+        for (Evento item : this.events)
             string += item.toString();
 
         return "ICal{" +
+                "id='" + id + '\'' +
                 "uid='" + uid + '\'' +
                 ", name='" + name + '\'' +
                 ", timeZone=" + timeZone +

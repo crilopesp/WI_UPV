@@ -1,8 +1,12 @@
 package upv.welcomeincoming.app;
 
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.util.Log;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,71 +23,48 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import util.DBHandler_Horarios;
 import util.MarcadorUPV;
+import util.MarcadorValenbisi;
 
 
 public class Activity_Localizacion extends FragmentActivity {
     private GoogleMap mMap;
-    private ArrayList<MarcadorUPV> mMyMarkersArray = new ArrayList<MarcadorUPV>();
-    private HashMap<Marker, MarcadorUPV> mMarkersHashMap;
+    private ArrayList<MarcadorUPV> UpvMarkersArray = new ArrayList<MarcadorUPV>();
+    private HashMap<Marker, MarcadorUPV> UpvMarkersHashMap;
+    private ArrayList<MarcadorValenbisi> VBMarkersArray = new ArrayList<MarcadorValenbisi>();
+    private HashMap<Marker, MarcadorValenbisi> VBMarkersHashMap;
+    private LinearLayout linear;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_localizacion);
 
+        linear = (LinearLayout) findViewById(R.id.lineaerlayout_info_valenbisi);
         // Initialize the HashMap for Markers and MyMarker object
-        mMarkersHashMap = new HashMap<Marker, MarcadorUPV>();
+        VBMarkersHashMap = new HashMap<Marker, MarcadorValenbisi>();
 
-        mMyMarkersArray.add(new MarcadorUPV("Brasil", Double.parseDouble("-28.5971788"), Double.parseDouble("-52.7309824")));
-        mMyMarkersArray.add(new MarcadorUPV("United States", Double.parseDouble("33.7266622"), Double.parseDouble("-87.1469829")));
-        mMyMarkersArray.add(new MarcadorUPV("Canada", Double.parseDouble("51.8917773"), Double.parseDouble("-86.0922954")));
-        mMyMarkersArray.add(new MarcadorUPV("England", Double.parseDouble("52.4435047"), Double.parseDouble("-3.4199249")));
-        mMyMarkersArray.add(new MarcadorUPV("España", Double.parseDouble("41.8728262"), Double.parseDouble("-0.2375882")));
-        mMyMarkersArray.add(new MarcadorUPV("Portugal", Double.parseDouble("40.8316649"), Double.parseDouble("-4.936009")));
-        mMyMarkersArray.add(new MarcadorUPV("Deutschland", Double.parseDouble("51.1642292"), Double.parseDouble("10.4541194")));
-        mMyMarkersArray.add(new MarcadorUPV("Atlantic Ocean", Double.parseDouble("-13.1294607"), Double.parseDouble("-19.9602353")));
-
+        DBHandler_Horarios helper = new DBHandler_Horarios(this);
+        SQLiteDatabase db = helper.getWritableDatabase();
+        VBMarkersArray = obtenerMarcadoresVB(db);
         setUpMap();
-
-        plotMarkers(mMyMarkersArray);
+        plotMarkers(VBMarkersArray);
     }
 
-    private void plotMarkers(ArrayList<MarcadorUPV> markers) {
+    private void plotMarkers(ArrayList<MarcadorValenbisi> markers) {
         if (markers.size() > 0) {
-            for (MarcadorUPV myMarker : markers) {
+            for (MarcadorValenbisi myMarker : markers) {
 
                 // Create user marker with custom icon and other options
-                MarkerOptions markerOption = new MarkerOptions().position(new LatLng(myMarker.getmLatitude(), myMarker.getmLongitude()));
-                markerOption.icon(BitmapDescriptorFactory.fromResource(R.drawable.icon1));
+                MarkerOptions markerOption = new MarkerOptions().position(new LatLng(Double.parseDouble(myMarker.getLatitud()), (Double.parseDouble(myMarker.getLongitud()))));
+                markerOption.icon(BitmapDescriptorFactory.fromResource(R.drawable.marker_valenbici));
 
                 Marker currentMarker = mMap.addMarker(markerOption);
-                mMarkersHashMap.put(currentMarker, myMarker);
-
-                mMap.setInfoWindowAdapter(new MarkerInfoWindowAdapter());
+                VBMarkersHashMap.put(currentMarker, myMarker);
             }
         }
     }
-
-    private int manageMarkerIcon(String markerIcon) {
-        if (markerIcon.equals("icon1"))
-            return R.drawable.icon1;
-        else if (markerIcon.equals("icon2"))
-            return R.drawable.icon2;
-        else if (markerIcon.equals("icon3"))
-            return R.drawable.icon3;
-        else if (markerIcon.equals("icon4"))
-            return R.drawable.icon4;
-        else if (markerIcon.equals("icon5"))
-            return R.drawable.icon5;
-        else if (markerIcon.equals("icon6"))
-            return R.drawable.icon6;
-        else if (markerIcon.equals("icon7"))
-            return R.drawable.icon7;
-        else
-            return R.drawable.icondefault;
-    }
-
     private void setUpMap() {
         // Do a null check to confirm that we have not already instantiated the map.
         if (mMap == null) {
@@ -99,7 +80,16 @@ public class Activity_Localizacion extends FragmentActivity {
                 mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
                     @Override
                     public boolean onMarkerClick(com.google.android.gms.maps.model.Marker marker) {
-                        marker.showInfoWindow();
+                        linear.removeAllViews();
+                        Log.e("marker", VBMarkersHashMap.get(marker).toString());
+                        View view = getLayoutInflater().inflate(R.layout.layout_info_valenbisi, null);
+                        TextView textDireccion = (TextView) view.findViewById(R.id.txtDireccion);
+                        textDireccion.setText(VBMarkersHashMap.get(marker).getDireccion());
+                        TextView textTotal = (TextView) view.findViewById(R.id.txtNumplazas);
+                        textTotal.setText(VBMarkersHashMap.get(marker).getNumeroPlazas() + "");
+                        TextView textDisponibles = (TextView) view.findViewById(R.id.txtPlazasdisponibles);
+                        textDisponibles.setText(VBMarkersHashMap.get(marker).getPlazasDisponibles() + "");
+                        linear.addView(view);
                         return true;
                     }
                 });
@@ -108,25 +98,15 @@ public class Activity_Localizacion extends FragmentActivity {
         }
     }
 
-    public class MarkerInfoWindowAdapter implements GoogleMap.InfoWindowAdapter {
-        public MarkerInfoWindowAdapter() {
+    private ArrayList<MarcadorValenbisi> obtenerMarcadoresVB(SQLiteDatabase db) {
+        String sql = "SELECT * FROM Valenbisi;";
+        Cursor cursor = db.rawQuery(sql, null);
+        ArrayList<MarcadorValenbisi> markers = new ArrayList<MarcadorValenbisi>();
+        while (cursor.moveToNext()) {
+            MarcadorValenbisi marker = new MarcadorValenbisi(cursor.getInt(cursor.getColumnIndex("num")), cursor.getString(cursor.getColumnIndex("direccion")), cursor.getString(cursor.getColumnIndex("longitud")), cursor.getString(cursor.getColumnIndex("latitud")), cursor.getInt(cursor.getColumnIndex("numPlazas")), cursor.getInt(cursor.getColumnIndex("plazasDisponibles")));
+            markers.add(marker);
         }
-
-        @Override
-        public View getInfoWindow(Marker marker) {
-            return null;
-        }
-
-        @Override
-        public View getInfoContents(Marker marker) {
-            View v = getLayoutInflater().inflate(R.layout.infowindow_layout, null);
-
-            MarcadorUPV myMarker = mMarkersHashMap.get(marker);
-
-            TextView markerLabel = (TextView) v.findViewById(R.id.marker_label);
-            markerLabel.setText(myMarker.getmLabel());
-
-            return v;
-        }
+        cursor.close();
+        return markers;
     }
 }

@@ -13,29 +13,28 @@ import java.util.List;
 public class CalendarsJSON {
 
     private String username;
-    private List<DiaryJSON> diaries;
+    private List<Calendario> calendarios;
 
     public CalendarsJSON(String data) {
-        diaries = new ArrayList<DiaryJSON>();
+        calendarios = new ArrayList<Calendario>();
         this.parseJson(data);
     }
 
     private void parseJson(String data) {
-
         try {
 
             JSONObject jObject = new JSONObject(data);
 
             //username
             this.username = jObject.getString("username");
-            Log.e("username", username);
 
             //agendas...
             JSONArray agendasArray = jObject.getJSONArray("agendas");
             for (int i = 0; i < agendasArray.length(); i++) {
                 try {
 
-                    this.diaries.add(new DiaryJSON(agendasArray.getJSONObject(i)));
+                    DiaryJSON diaryJSON = new DiaryJSON(agendasArray.getJSONObject(i));
+                    calendarios.add(new Calendario(diaryJSON.getUid(), diaryJSON.getNombre(), diaryJSON.getUrl()));
 
                 } catch (JSONException e) {
                     Log.w(((Object) this).getClass().getName(), "Exception", e);
@@ -46,8 +45,8 @@ public class CalendarsJSON {
         }
     }
 
-    public void setDiaries(List<DiaryJSON> diaries) {
-        this.diaries = diaries;
+    public void setCalendarios(List<Calendario> calendarios) {
+        this.calendarios = calendarios;
     }
 
     public String getUsername() {
@@ -58,8 +57,8 @@ public class CalendarsJSON {
         this.username = username;
     }
 
-    public List<DiaryJSON> getDiaries() {
-        return diaries;
+    public List<Calendario> getCalendarios() {
+        return calendarios;
     }
 
     @Override
@@ -67,7 +66,7 @@ public class CalendarsJSON {
 
         StringBuilder stringBuilder = new StringBuilder();
 
-        for (DiaryJSON item : this.diaries) {
+        for (Calendario item : this.calendarios) {
             stringBuilder.append(item.toString());
         }
 

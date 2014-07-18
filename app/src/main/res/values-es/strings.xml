@@ -159,6 +159,8 @@
     <string name="title_activity_activity_filtros_fecha">Filtrar por fecha</string>
     <string name="mapa_upv">UPV Map</string>
     <string name="info">Information</string>
+    <string name="bicistotal">Total bicis</string>
+    <string name="bicisdisponibles">Bicis disponibles</string>
 
     <integer-array name="gplus_colors">
         <item>@color/redly</item>

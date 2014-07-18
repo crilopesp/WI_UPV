@@ -2,26 +2,235 @@
 
 <LinearLayout
     android:orientation="vertical"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:background="@color/light_pink">
 
-    <EditText
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/etTrad" />
+        android:layout_height="match_parent"
+        android:layout_weight="1">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="New Text"
-        android:id="@+id/tvTrad" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/edit_text_background_text"
+            android:layout_marginBottom="0dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp">
 
-    <Button
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="35dp">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingRight="5dp">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/iv_top_altavoz"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentEnd="false"
+                            android:src="@drawable/ic_action_altavoz_hueco"
+                            android:background="@drawable/abc_list_selector_holo_dark" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/iv_top_mic"
+                            android:src="@drawable/ic_action_mic_grey_hueco"
+                            android:background="@drawable/abc_list_selector_holo_dark" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/iv_top_clear"
+                            android:src="@android:drawable/ic_menu_close_clear_cancel"
+                            android:background="@drawable/abc_list_selector_holo_dark" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/iv_top_flag"
+                        android:layout_alignParentEnd="true"
+                        android:background="@drawable/es"
+                        android:layout_centerVertical="true" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/etTrad"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="vertical"
+                android:textColor="@color/table_text"
+                android:padding="2dp"
+                android:textCursorDrawable="@drawable/edit_text_cursor"
+                android:textSize="16sp"
+                android:background="@drawable/edit_text_background_text"
+                android:inputType="textMultiLine" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:background="@drawable/translate_spinner_to_background"
+                    android:layout_marginTop="5dp">
+
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/spinner_language_to"
+                        android:layout_marginLeft="10dp"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="20dp" />
+
+                </RelativeLayout>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/button_change_language"
+                    android:layout_weight="2"
+                    android:background="@drawable/selector_button_change_language" />
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:background="@drawable/translate_spinner_from_background"
+                    android:layout_marginBottom="5dp">
+
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/spinner_language_from"
+                        android:layout_marginLeft="10dp"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="20dp" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/edit_text_background_text"
+            android:layout_marginTop="0dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp">
+
+
+            <EditText
+                android:id="@+id/tvTrad"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="vertical"
+                android:textColor="@color/table_text"
+                android:padding="2dp"
+                android:editable="false"
+                android:textCursorDrawable="@drawable/edit_text_cursor"
+                android:textSize="16sp"
+                android:background="@drawable/edit_text_background_text"
+                android:layout_weight="1" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="35dp">
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:paddingLeft="5dp">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/iv_bottom_altavoz"
+                            android:background="@drawable/abc_list_selector_holo_dark"
+                            android:src="@drawable/ic_action_altavoz_hueco" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/iv_bottom_copy"
+                            android:src="@drawable/ic_action_content_copy_grey"
+                            android:background="@drawable/abc_list_selector_holo_dark" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/iv_bottom_share"
+                            android:src="@drawable/ic_action_share_grey_hueco"
+                            android:background="@drawable/abc_list_selector_holo_dark" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/iv_bottom_flag"
+                        android:background="@drawable/en"
+                        android:layout_margin="2dp"
+                        android:layout_centerVertical="true" />
+                </RelativeLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <ImageButton
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="New Button"
-        android:id="@+id/btn_speech" />
+        android:layout_height="match_parent"
+        android:id="@+id/button_translate"
+        android:layout_weight="8"
+        android:src="@drawable/ic_action_translate_upv"
+        android:enabled="false" />
+
 
 </LinearLayout>

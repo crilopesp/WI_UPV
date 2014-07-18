@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Typeface;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.app.DialogFragment;
@@ -23,8 +24,13 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import org.xmlpull.v1.XmlPullParserException;
+
+import java.io.IOException;
+
 import calendarupv.Calendario;
 import util.DBHandler_Horarios;
+import util.Parser_XML_valenbisi;
 import util.Preferencias;
 
 public class Activity_Home extends ActionBarActivity implements Fragment_Diary.DiaryListener, Dialog_Login.EditDialogLoginListener, Fragment_Calendar.CalendarListener {
@@ -47,6 +53,7 @@ public class Activity_Home extends ActionBarActivity implements Fragment_Diary.D
         super.onCreate(savedInstanceState);
         helper = new DBHandler_Horarios(this);
         db = helper.getWritableDatabase();
+        new RetrieveFeedTask().execute();
         setContentView(R.layout.activity_home);
         overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
         opcionesMenu = new String[]{getString(R.string.menu_option1), getString(R.string.menu_option2), getString(R.string.menu_option3), getString(R.string.menu_option4), getString(R.string.menu_option5), getString(R.string.menu_option6), getString(R.string.menu_option7)};
@@ -354,4 +361,31 @@ public class Activity_Home extends ActionBarActivity implements Fragment_Diary.D
             }
         };
     }
+
+    class RetrieveFeedTask extends AsyncTask<String, Void, Void> {
+
+        @Override
+        protected void onPostExecute(Void v) {
+            super.onPostExecute(v);
+        }
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+        }
+
+        @Override
+        protected Void doInBackground(String... strings) {
+            Parser_XML_valenbisi parser_xml_valenbisi = new Parser_XML_valenbisi();
+            try {
+                parser_xml_valenbisi.parsear(db);
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (XmlPullParserException e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+    }
+
 }

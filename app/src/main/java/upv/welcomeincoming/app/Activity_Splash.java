@@ -44,7 +44,7 @@ public class Activity_Splash extends Activity {
                     finish();
                 }
                 if (i < imageArray.length)
-                    handler.postDelayed(this, 300);  //for interval...
+                    handler.postDelayed(this, 200);  //for interval...
             }
         };
         handler.postDelayed(runnable, 50); //for initial delay..

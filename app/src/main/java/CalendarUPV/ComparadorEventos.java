@@ -7,8 +7,8 @@ import java.util.Comparator;
  */
 public class ComparadorEventos implements Comparator {
     public int compare(Object o1, Object o2) {
-        EventICAL event1 = (EventICAL) o1;
-        EventICAL event2 = (EventICAL) o2;
+        Evento event1 = (Evento) o1;
+        Evento event2 = (Evento) o2;
         return event1.compareTo(event2);
     }
 }

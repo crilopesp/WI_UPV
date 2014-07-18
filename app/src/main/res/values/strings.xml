@@ -171,5 +171,11 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="mapa_upv">UPV Map</string>
     <string name="info">Information</string>
-
+    <string name="bicistotal">Total bicis</string>
+    <string name="bicisdisponibles">Bicis disponibles</string>
+    <string name="detectar_idioma">DETECT LANGUAGE</string>
+    <string name="noText">No hay texto</string>
+    <string name="textCopyToClipboard">Texto copiado al portapapeles</string>
+    <string name="compartirTraduccion">Compartir traducción</string>
+    <string name="idiomaNoDetectado">Idioma no detectado</string>
 </resources>

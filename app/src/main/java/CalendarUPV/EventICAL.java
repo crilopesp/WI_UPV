@@ -21,7 +21,7 @@ public class EventICAL implements Comparable {
 
     private final Pattern BUILDING_PATTERN = Pattern.compile("([0-9][A-Za-z])");
 
-    private final SimpleDateFormat simpleDateFormatDateTime = new SimpleDateFormat("EEE, dd MMM yyyy - HH:mm", Locale.getDefault());
+    private final SimpleDateFormat simpleDateFormatDateTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
     private final SimpleDateFormat simpleDateFormatDate = new SimpleDateFormat("EEE, dd MMM yyyy", Locale.getDefault());
 
     private final SimpleDateFormat simpleDateFormatOriginal = new SimpleDateFormat("yyyyMMdd'T'HHmmss", Locale.getDefault());

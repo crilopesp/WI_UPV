@@ -6,6 +6,18 @@
         jar="C:\Users\Cristian\AppData\Local\Android\android-studio1\sdk\extras\android\m2repository\com\android\support\support-v4\19.0.1\support-v4-19.0.1.jar"
         jumboMode="false" revision="19.1.0" sha1="587da9a481ffd341d2fa091704489b89845ddacd" />
     <item
+        dex="D:\WelcomeIncomingApp\app\build\intermediates\pre-dexed\debug\classes-a535eb619c7c87fee028994a01b12047c55de7e3.jar"
+        jar="D:\WelcomeIncomingApp\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\19.0.1\classes.jar"
+        jumboMode="false" revision="19.1.0" sha1="f71a6822470c9eb659d4f4a6cb57b780b35f058b" />
+    <item
+        dex="D:\WelcomeIncomingApp\app\build\intermediates\pre-dexed\debug\commons-logging-1.1.3-d425119b4e409eca9dafb5aef32cfe249259ff3e.jar"
+        jar="D:\WelcomeIncomingApp\app\src\main\libs\commons-logging-1.1.3.jar" jumboMode="false"
+        revision="19.1.0" sha1="f6f66e966c70a83ffbdb6f17a0919eaf7c8aca7f" />
+    <item
+        dex="D:\WelcomeIncomingApp\app\build\intermediates\pre-dexed\debug\gson-2.2.4-9d284b62465c63cf2750584551f0b6f8ae0f8433.jar"
+        jar="D:\WelcomeIncomingApp\app\src\main\libs\gson-2.2.4.jar" jumboMode="false"
+        revision="19.1.0" sha1="973e832af433b44c3ed11c426f2f390b29f3f3f8" />
+    <item
         dex="D:\WelcomeIncomingApp\app\build\intermediates\pre-dexed\debug\backport-util-concurrent-3.1-90a618426db59b9e62d0bdf39c6fdc03e8bb82b3.jar"
         jar="D:\WelcomeIncomingApp\app\src\main\libs\backport-util-concurrent-3.1.jar"
         jumboMode="false" revision="19.1.0" sha1="682f7ac17fed79e92f8e87d8455192b63376347b" />
@@ -14,13 +26,9 @@
         jar="D:\WelcomeIncomingApp\app\src\main\libs\commons-codec-1.8.jar" jumboMode="false"
         revision="19.1.0" sha1="af3be3f74d25fc5163b54f56a0d394b462dafafd" />
     <item
-        dex="D:\WelcomeIncomingApp\app\build\intermediates\pre-dexed\debug\classes-e131d7137484870563c816550ca0f63ea9e894c6.jar"
-        jar="D:\WelcomeIncomingApp\build\intermediates\exploded-aar\com.google.android.gms\play-services\4.3.23\classes.jar"
+        dex="D:\WelcomeIncomingApp\app\build\intermediates\pre-dexed\debug\classes-1366f25871519d8f892fea8b4307c0c64656b75a.jar"
+        jar="D:\WelcomeIncomingApp\app\build\intermediates\exploded-aar\com.google.android.gms\play-services\4.3.23\classes.jar"
         jumboMode="false" revision="19.1.0" sha1="7676c0cb230efa6ac41c47867d372ed5913029d4" />
-    <item
-        dex="D:\WelcomeIncomingApp\app\build\intermediates\pre-dexed\debug\commons-logging-1.1.3-d425119b4e409eca9dafb5aef32cfe249259ff3e.jar"
-        jar="D:\WelcomeIncomingApp\app\src\main\libs\commons-logging-1.1.3.jar" jumboMode="false"
-        revision="19.1.0" sha1="f6f66e966c70a83ffbdb6f17a0919eaf7c8aca7f" />
     <item
         dex="D:\WelcomeIncomingApp\app\build\intermediates\pre-dexed\debug\wikitudesdk-9fecf55d443176b92d73b66a191843a770b395be.jar"
         jar="D:\WelcomeIncomingApp\app\src\main\libs\wikitudesdk.jar" jumboMode="false"
@@ -34,16 +42,8 @@
         jar="D:\WelcomeIncomingApp\app\src\main\libs\ical4j-1.0.5.jar" jumboMode="false"
         revision="19.1.0" sha1="7c2ddc98bda6e0838cca0129fda095a716a7d9dd" />
     <item
-        dex="D:\WelcomeIncomingApp\app\build\intermediates\pre-dexed\debug\classes-bd865ab76d203cba51bd4378d1a5dbb3ad01c87e.jar"
-        jar="D:\WelcomeIncomingApp\build\intermediates\exploded-aar\com.android.support\appcompat-v7\19.0.1\classes.jar"
-        jumboMode="false" revision="19.1.0" sha1="f71a6822470c9eb659d4f4a6cb57b780b35f058b" />
-    <item
         dex="D:\WelcomeIncomingApp\app\build\intermediates\pre-dexed\debug\json_simple-1.1-e0d0490d7ab25fe21b689afd576c3dd7cdbe8256.jar"
         jar="D:\WelcomeIncomingApp\app\src\main\libs\json_simple-1.1.jar" jumboMode="false"
         revision="19.1.0" sha1="5e303a03d04e6788dddfa3655272580ae0fc13bb" />
-    <item
-        dex="D:\WelcomeIncomingApp\app\build\intermediates\pre-dexed\debug\gson-2.2.4-9d284b62465c63cf2750584551f0b6f8ae0f8433.jar"
-        jar="D:\WelcomeIncomingApp\app\src\main\libs\gson-2.2.4.jar" jumboMode="false"
-        revision="19.1.0" sha1="973e832af433b44c3ed11c426f2f390b29f3f3f8" />
 
 </pre-dex-items>

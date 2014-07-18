@@ -134,7 +134,7 @@ public class Fragment_Calendar extends ListFragment implements Observer {
             this.setListAdapter(adapter);
             textViewName.setText(this.calendario.getNombre());
         } else {
-            progressDialog = new ProgressDialog_Custom(getActivity(), getString(R.string.loading));
+            progressDialog = new ProgressDialog_Custom(getActivity(), getString(R.string.downloading));
             progressDialog.getWindow().setGravity(Gravity.BOTTOM);
             progressDialog.show();
             intranetConnection = new IntranetConnection(
@@ -162,7 +162,7 @@ public class Fragment_Calendar extends ListFragment implements Observer {
         switch (item.getItemId()) {
 
             case R.id.actualizar_action:
-                progressDialog = new ProgressDialog_Custom(getActivity(), getString(R.string.downloading));
+                progressDialog = new ProgressDialog_Custom(getActivity(), getString(R.string.loading));
                 progressDialog.getWindow().setGravity(Gravity.BOTTOM);
                 progressDialog.show();
                 borrarEventosDB(calendario.getUid());
@@ -257,7 +257,8 @@ public class Fragment_Calendar extends ListFragment implements Observer {
 
         if (calendarICAL.getEvents().size() > 0) {
             calendarICAL.insertarCalendariosDB(db);
-            this.adapter = new ArrayAdapterCalendarDiaryItemList(this.getActivity(), calendarICAL.getEvents());
+            this.eventos = calendarICAL.getEvents();
+            this.adapter = new ArrayAdapterCalendarDiaryItemList(this.getActivity(), eventos);
             this.setListAdapter(adapter);
 
         } else {
