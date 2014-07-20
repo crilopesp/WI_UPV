@@ -7,7 +7,13 @@
     tools:ignore="MergeRootFrame"
     android:weightSum="5">
 
-    <TextView
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="2">
+
+        <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/mapa_upv"
@@ -21,10 +27,16 @@
         android:id="@+id/map_view"
         android:name="com.google.android.gms.maps.MapFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="2" />
+        android:layout_height="match_parent" />
+    </LinearLayout>
 
-    <TextView
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="3">
+
+        <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -32,20 +44,20 @@
         android:textSize="15dp"
         android:textColor="#FFF"
         android:text="@string/info"
-        android:id="@+id/textView2" />
+            android:id="@+id/textView2" />
 
-    <ScrollView
+        <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/scrollView"
-        android:background="#ff10124a">
+            android:background="@color/light_pink">
 
-        <LinearLayout
+            <LinearLayout
             android:id="@+id/lineaerlayout_info_valenbisi"
             android:orientation="horizontal"
-            android:layout_width="fill_parent"
+                android:layout_width="match_parent"
             android:background="#ff10124a"
-            android:layout_height="fill_parent"></LinearLayout>
-    </ScrollView>
-
+                android:layout_height="match_parent"></LinearLayout>
+        </ScrollView>
+    </LinearLayout>
 </LinearLayout>
