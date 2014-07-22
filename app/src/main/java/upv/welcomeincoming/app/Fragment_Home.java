@@ -15,7 +15,6 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -133,10 +132,6 @@ public class Fragment_Home extends ListFragment {
         protected void onPreExecute() {
             super.onPreExecute();
             progress = new ProgressDialog_Custom(getActivity(), getString(R.string.downloading_news));
-            WindowManager.LayoutParams lp = progress.getWindow().getAttributes();
-            lp.dimAmount = 0.0f;
-            progress.getWindow().setAttributes(lp);
-            progress.getWindow().addFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
             progress.getWindow().setGravity(Gravity.BOTTOM);
             progress.show();
         }

@@ -5,6 +5,7 @@ import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Typeface;
 import android.os.AsyncTask;
@@ -18,6 +19,7 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -27,13 +29,16 @@ import android.widget.TextView;
 import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.IOException;
+import java.io.InputStream;
 
 import calendarupv.Calendario;
 import util.DBHandler_Horarios;
+import util.Parser_XML_edificios;
 import util.Parser_XML_valenbisi;
 import util.Preferencias;
+import util.ProgressDialog_Custom;
 
-public class Activity_Home extends ActionBarActivity implements Fragment_Diary.DiaryListener, Dialog_Login.EditDialogLoginListener, Fragment_Calendar.CalendarListener {
+public class Activity_Home extends ActionBarActivity implements Fragment_Diary.DiaryListener, Fragment_Calendar.CalendarListener {
 
     private String[] opcionesMenu;
     private DrawerLayout drawerLayout;
@@ -45,15 +50,16 @@ public class Activity_Home extends ActionBarActivity implements Fragment_Diary.D
     ActionBarDrawerToggle drawerToggle;
     FragmentTransaction tx;
     DBHandler_Horarios helper;
+    ProgressDialog_Custom progress;
     SQLiteDatabase db;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        progress = new ProgressDialog_Custom(this, getString(R.string.loading));
         helper = new DBHandler_Horarios(this);
         db = helper.getWritableDatabase();
-        new RetrieveFeedTask().execute();
         setContentView(R.layout.activity_home);
         overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
         opcionesMenu = new String[]{getString(R.string.menu_option1), getString(R.string.menu_option2), getString(R.string.menu_option3), getString(R.string.menu_option4), getString(R.string.menu_option5), getString(R.string.menu_option6), getString(R.string.menu_option7)};
@@ -68,6 +74,17 @@ public class Activity_Home extends ActionBarActivity implements Fragment_Diary.D
         inicializarElementos();
         //Aqui borrar preferencias para probar el log in
 
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (resultCode == RESULT_OK) {
+            mostrarFragment(1);
+        }
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
     }
 
     private void inicializarElementos() {
@@ -85,7 +102,7 @@ public class Activity_Home extends ActionBarActivity implements Fragment_Diary.D
         drawerList.addView(itemHome);
         addDividier();
 
-        //Find
+        //Calendar
         View itemFind = generateItem(getString(R.string.menu_option2), R.drawable.ic_action_collections_go_to_today);
         itemFind.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,13 +110,11 @@ public class Activity_Home extends ActionBarActivity implements Fragment_Diary.D
                 drawerLayout.closeDrawer(panelDrawer);
                 getSupportActionBar().setTitle(opcionesMenu[1]);
                 if (Preferencias.getDNI(getApplicationContext()).equals("") || Preferencias.getPIN(getApplicationContext()).equals("")) {
-
-                    Dialog_Login fragmentCalendarLogin = new Dialog_Login();
-                    FragmentManager fm = getSupportFragmentManager();
-                    fragmentCalendarLogin.show(fm, "Login");
-
+                    Intent login = new Intent(getApplicationContext(), Activity_login.class);
+                    startActivityForResult(login, 1);
+                } else {
+                    mostrarFragment(1);
                 }
-                mostrarFragment(1);
             }
         });
         drawerList.addView(itemFind);
@@ -216,12 +231,17 @@ public class Activity_Home extends ActionBarActivity implements Fragment_Diary.D
                 fragment = new Fragment_Traduccion();
                 break;
             case 4:
-                Intent i = new Intent(this, Activity_Localizacion.class);
-                startActivity(i);
+                if (valenbisiestaVacia())
+                    new parsearMarcadores().execute();
+                else {
+                    Intent i = new Intent(getApplicationContext(), Activity_Localizacion.class);
+                    startActivity(i);
+                }
                 break;
             case 5:
                 fragment = new Fragment_Opciones();
                 break;
+            case 6:
         }
 
 
@@ -229,7 +249,6 @@ public class Activity_Home extends ActionBarActivity implements Fragment_Diary.D
 
             FragmentManager fgm = getSupportFragmentManager();
             fgm.beginTransaction().replace(R.id.contenedor_fragment, fragment).commit();
-            //setItemChecked
             getSupportActionBar().setTitle(opcionesMenu[position]);
             drawerLayout.closeDrawer(panelDrawer);
             fragmentActual = position;
@@ -298,29 +317,6 @@ public class Activity_Home extends ActionBarActivity implements Fragment_Diary.D
 
     }
 
-    @Override
-    public void EditDialogLoginListener(int button) {
-        if (DialogInterface.BUTTON_POSITIVE == button) {
-
-            Log.d(((Object) this).getClass().getName(), "Aceptar pulsado...");
-
-            Fragment_Diary fragmentCalendarDiaryList = new Fragment_Diary(db);
-
-            getSupportFragmentManager()
-                    .beginTransaction()
-                    .add(R.id.contenedor_fragment, fragmentCalendarDiaryList)
-                    .commit();
-
-        } else if (DialogInterface.BUTTON_NEGATIVE == button) {
-
-            Log.d(((Object) this).getClass().getName(), "Cancelar pulsado...");
-            this.finish();
-
-        } else {
-
-            Log.w(((Object) this).getClass().getName(), "Algo esta jodido...");
-        }
-    }
 
     @Override
     public void CalendarListenerError(String string) {
@@ -362,30 +358,48 @@ public class Activity_Home extends ActionBarActivity implements Fragment_Diary.D
         };
     }
 
-    class RetrieveFeedTask extends AsyncTask<String, Void, Void> {
-
+    class parsearMarcadores extends AsyncTask<String, Void, Void> {
         @Override
         protected void onPostExecute(Void v) {
-            super.onPostExecute(v);
+            Intent i = new Intent(getApplicationContext(), Activity_Localizacion.class);
+            startActivity(i);
+            progress.dismiss();
         }
 
         @Override
         protected void onPreExecute() {
+
+            progress.getWindow().setGravity(Gravity.BOTTOM);
+            progress.show();
             super.onPreExecute();
         }
 
         @Override
         protected Void doInBackground(String... strings) {
+
+            InputStream fichero = getApplicationContext().getResources().openRawResource(R.raw.valenbisi);
             Parser_XML_valenbisi parser_xml_valenbisi = new Parser_XML_valenbisi();
+            Parser_XML_edificios parser_xml_edificios = new Parser_XML_edificios();
             try {
-                parser_xml_valenbisi.parsear(db);
+                parser_xml_valenbisi.parsear(fichero, db);
+                parser_xml_edificios.parsearEdificios(getResources().openRawResource(R.raw.edificios), db);
             } catch (IOException e) {
-                e.printStackTrace();
+                Log.e("error", e.getMessage());
             } catch (XmlPullParserException e) {
-                e.printStackTrace();
+                Log.e("error", e.getMessage() + " at " + e.getLineNumber() + "," + e.getColumnNumber());
             }
             return null;
         }
     }
 
+    private boolean valenbisiestaVacia() {
+        String sql = "SELECT * FROM Valenbisi";
+        Cursor cursor = db.rawQuery(sql, null);
+        if (cursor.getCount() <= 0) {
+            cursor.close();
+            return true;
+        }
+        cursor.close();
+        return false;
+    }
 }

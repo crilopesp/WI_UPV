@@ -1,0 +1,942 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<carto>
+    <markers>
+        <marker name="063_AVDA. DEL PUERTO I" number="63" address="Av Puerto 19 (Telefónica)"
+            fullAddress="Av Puerto 19 (Telefónica)  " lat="39.46774709189862"
+            lng="-0.358505044597536" open="1" bonus="0" />
+        <marker name="064_AVDA. DEL PUERTO II" number="64" address="Av. Puerto 61-63"
+            fullAddress="Av. Puerto 61-63  " lat="39.46648608901148" lng="-0.354286031274125"
+            open="1" bonus="0" />
+        <marker name="065_AVDA. DEL PUERTO III" number="65"
+            address="Av. Puerto - Doctor Manuel Candela"
+            fullAddress="Av. Puerto - Doctor Manuel Candela  " lat="39.46548408671991"
+            lng="-0.350928020671138" open="1" bonus="0" />
+        <marker name="066_GUILLEN DE ANGLESOLA" number="66"
+            address="Guillem de Anglesola - Av. Puerto"
+            fullAddress="Guillem de Anglesola - Av. Puerto  " lat="39.46423908400446"
+            lng="-0.346352006288128" open="1" bonus="0" />
+        <marker name="067_JUAN VERDEGUER" number="67" address="Juan Verdeguer - Toneleros"
+            fullAddress="Juan Verdeguer - Toneleros  " lat="39.45882806883267"
+            lng="-0.336888975014669" open="1" bonus="0" />
+        <marker name="068_AVDA. DEL PUERTO IV" number="68" address="Av. Puerto - José Aguilar"
+            fullAddress="Av. Puerto - José Aguilar  " lat="39.46277108052299"
+            lng="-0.341823991929563" open="1" bonus="0" />
+        <marker name="069_AVDA. DEL PUERTO" number="69" address="Av. Puerto - Serrería"
+            fullAddress="Av. Puerto - Serrería  " lat="39.46192007863096" lng="-0.338811982446624"
+            open="1" bonus="0" />
+        <marker name="071_AVDA DEL PUERTO VI" number="71"
+            address="Av. Puerto - Plaza Tribunal de les Aigües"
+            fullAddress="Av. Puerto - Plaza Tribunal de les Aigües  " lat="39.46034807501619"
+            lng="-0.333621966050435" open="1" bonus="0" />
+        <marker name="072_RAMIRO MAETZU" number="72" address="Ramiro de Maeztu - Peris Brell"
+            fullAddress="Ramiro de Maeztu - Peris Brell  " lat="39.46721209400214"
+            lng="-0.346399008039668" open="1" bonus="0" />
+        <marker name="073_JERONIMO MONSORIU" number="73" address="Jerónimo Monsoriu - Industria"
+            fullAddress="Jerónimo Monsoriu - Industria  " lat="39.46622709180114"
+            lng="-0.342969997228533" open="1" bonus="0" />
+        <marker name="074_PLAZA SAN FELIPE NERI" number="74"
+            address="Plaza San Felipe Neri (Mercado Algirós)"
+            fullAddress="Plaza San Felipe Neri (Mercado Algirós)  " lat="39.46991710072805"
+            lng="-0.353825031741888" open="1" bonus="0" />
+        <marker name="075_CAMPOAMOR I" number="75" address="República Argentina - Campoamor"
+            fullAddress="República Argentina - Campoamor  " lat="39.47208110868038"
+            lng="-0.351792026815861" open="1" bonus="0" />
+        <marker name="076_CAMPOAMOR II" number="76" address="Campoamor - Músico Ginés"
+            fullAddress="Campoamor - Músico Ginés  " lat="39.4700511045018" lng="-0.343552001034738"
+            open="1" bonus="0" />
+        <marker name="078_AVDA. ARAGÓN I" number="78" address="Aragón - Vicente Sancho Tello"
+            fullAddress="Aragón - Vicente Sancho Tello  " lat="39.46991309911343"
+            lng="-0.358779046585651" open="1" bonus="0" />
+        <marker name="079_AVDA. ARAGON II" number="79" address="Aragón - Ernesto Ferrer"
+            fullAddress="Aragón - Ernesto Ferrer  " lat="39.47274710913562" lng="-0.357333043778256"
+            open="1" bonus="0" />
+        <marker name="080_AMADEO SAVOIA" number="80"
+            address="Amadeo de Saboya (frente Ayuntamiento)"
+            fullAddress="Amadeo de Saboya (frente Ayuntamiento)  " lat="39.47371011075012"
+            lng="-0.362389059448826" open="1" bonus="0" />
+        <marker name="081_DOCTOR FORNOS" number="81" address="Micer Mascó - Rodriguez Fornos"
+            fullAddress="Micer Mascó - Rodriguez Fornos  " lat="39.47509611584928"
+            lng="-0.361069056238335" open="1" bonus="0" />
+        <marker name="085_AVDA_BLASCO IBAÑEZ 1" number="85" address="Blasco Ibañez - Jaime Roig"
+            fullAddress="Blasco Ibañez - Jaime Roig  " lat="39.47943212926333"
+            lng="-0.364806069768998" open="1" bonus="0" />
+        <marker name="87_AVDA BLASCO IBAÑEZ 2" number="87"
+            address="Blasco Ibañez - Doctor Gómez Ferrer (Clínico)"
+            fullAddress="Blasco Ibañez - Doctor Gómez Ferrer (Clínico)  " lat="39.47848612698768"
+            lng="-0.361971060764256" open="1" bonus="0" />
+        <marker name="088_AVDA. BLASCO IBAÑEZ 3" number="88"
+            address="Blasco Ibañez, 28 (F. Geografía e Historia)"
+            fullAddress="Blasco Ibañez, 28 (F. Geografía e Historia)  " lat="39.47748012383395"
+            lng="-0.361233058011854" open="1" bonus="0" />
+        <marker name="092_AVDA. DE ARAGON, 4 - ESQ AVDA BLASCO IBAÑEZ" number="92"
+            address="Blasco Ibañez - Aragón" fullAddress="Blasco Ibañez - Aragón  "
+            lat="39.47582811993382" lng="-0.356059041618514" open="1" bonus="0" />
+        <marker name="094_AVDA. BLASCO IBAÑEZ 5" number="94" address="Blasco Ibañez - Clariano"
+            fullAddress="Blasco Ibañez - Clariano  " lat="39.47534611972441"
+            lng="-0.351674028220146" open="1" bonus="0" />
+        <marker name="096_AVDA. BLASCO IBAÑEZ 6" number="96" address="Blasco Ibañez - Yecla"
+            fullAddress="Blasco Ibañez - Yecla  " lat="39.47352211466433" lng="-0.348305017144382"
+            open="1" bonus="0" />
+        <marker name="097_AVDA. BLASCO IBAÑEZ 7" number="97" address="Blasco Ibañez 121"
+            fullAddress="Blasco Ibañez 121  " lat="39.47303611466866" lng="-0.343223001657882"
+            open="1" bonus="0" />
+        <marker name="098_SANTOS JUSTO Y PASTOR" number="98"
+            address="Justo y Pastor - Duque de Gaeta"
+            fullAddress="Justo y Pastor - Duque de Gaeta  " lat="39.46964810153237"
+            lng="-0.348533015740284" open="1" bonus="0" />
+        <marker name="099_AVDA. BLASCO IBAÑEZ 8" number="99"
+            address="Blasco Ibañez - Pintor José Mongrell"
+            fullAddress="Blasco Ibañez - Pintor José Mongrell  " lat="39.47131210971465"
+            lng="-0.34057499279659" open="1" bonus="0" />
+        <marker name="100_AVDA. BLASCO IBAÑEZ 9" number="100"
+            address="Blasco Ibañez - Mestre Ripoll" fullAddress="Blasco Ibañez - Mestre Ripoll  "
+            lat="39.47160211144683" lng="-0.33824098596173" open="1" bonus="0" />
+        <marker name="101_AVDA. BLASCO IBAÑEZ 10" number="101"
+            address="Marino Blas de Lezo (estación Cabañal Adif)"
+            fullAddress="Marino Blas de Lezo (estación Cabañal Adif)  " lat="39.47003610739571"
+            lng="-0.334451973768557" open="1" bonus="0" />
+        <marker name="102_AVDA.RAMON LLUL" number="102" address="Ramón Llull - Serpis"
+            fullAddress="Ramón Llull - Serpis  " lat="39.47580112282824" lng="-0.346811013895548"
+            open="1" bonus="0" />
+        <marker name="103_RUBEN DARIO" number="103" address="Rubén Darío - Plaza Fray Luis Colomer"
+            fullAddress="Rubén Darío - Plaza Fray Luis Colomer  " lat="39.47842112983494"
+            lng="-0.35246203223541" open="1" bonus="0" />
+        <marker name="108_ LUIS PEIXO" number="108" address="Luís Peixó 20"
+            fullAddress="Luís Peixó 20  " lat="39.47365411982902" lng="-0.333702973476317" open="1"
+            bonus="0" />
+        <marker name="109_AVDA. NARANJOS" number="109" address="Naranjos - Ingeniero Fausto Elio"
+            fullAddress="Naranjos - Ingeniero Fausto Elio  " lat="39.47678713041781"
+            lng="-0.333600974859012" open="1" bonus="0" />
+        <marker name="117_PRIMADO REIG" number="117" address="Gascó Oliag - Primado Reig"
+            fullAddress="Gascó Oliag - Primado Reig  " lat="39.47921913101099"
+            lng="-0.357156046729095" open="1" bonus="0" />
+        <marker name="150_DR. MANUEL CANDELA" number="150"
+            address="Manuel Candela - Rodriguez de Cepeda"
+            fullAddress="Manuel Candela - Rodriguez de Cepeda  " lat="39.4676890942275"
+            lng="-0.350700021177111" open="1" bonus="0" />
+        <marker name="151_JERONIMO MONSORIU" number="151"
+            address="Jerónimo Monsoriu - Alcalde Cano Coloma"
+            fullAddress="Jerónimo Monsoriu - Alcalde Cano Coloma  " lat="39.46463708827678"
+            lng="-0.337207979114133" open="1" bonus="0" />
+        <marker name="154_PESCADORES" number="154" address="Pescadores - Progreso"
+            fullAddress="Pescadores - Progreso  " lat="39.46984410830488" lng="-0.329644959268791"
+            open="1" bonus="0" />
+        <marker name="158_DR.LLUNCH" number="158" address="Doctor Lluch - Virgen del Sufragio"
+            fullAddress="Doctor Lluch - Virgen del Sufragio  " lat="39.46666609819163"
+            lng="-0.327809952057852" open="1" bonus="0" />
+        <marker name="159_FRANCISCO CUBELLS" number="159"
+            address="Francisco Cubells - San José de la Vega"
+            fullAddress="Francisco Cubells - San José de la Vega  " lat="39.46341708497314"
+            lng="-0.334812971276553" open="1" bonus="0" />
+        <marker name="160_JOSE MARIA DE HARO" number="160"
+            address="José María de Haro - Justo y Pastor"
+            fullAddress="José María de Haro - Justo y Pastor  " lat="39.46730409669327"
+            lng="-0.33907198613268" open="1" bonus="0" />
+        <marker name="161_MEDITERRANEO" number="161"
+            address="Mediterráneo - Plaza Cruz de Cañamelar"
+            fullAddress="Mediterráneo - Plaza Cruz de Cañamelar  " lat="39.46793710117598"
+            lng="-0.331816964744236" open="1" bonus="0" />
+        <marker name="162_PZA. ARMADA ESPAÑOLA" number="162"
+            address="Armada Española - Mariano Cuber"
+            fullAddress="Armada Española - Mariano Cuber  " lat="39.46357208709311"
+            lng="-0.32988595660341" open="1" bonus="0" />
+        <marker name="163_PASEO NEPTUNO" number="163" address="Paseo Neptuno 32-34"
+            fullAddress="Paseo Neptuno 32-34  " lat="39.46440509197379" lng="-0.323491937905993"
+            open="1" bonus="0" />
+        <marker name="164_PAVIA 1" number="164" address="Pavía - Columbretes"
+            fullAddress="Pavía - Columbretes  " lat="39.46842810512786" lng="-0.324724943771547"
+            open="1" bonus="0" />
+        <marker name="165_PAVIA 2" number="165" address="Pavía - Espadán"
+            fullAddress="Pavía - Espadán  " lat="39.47137711508329" lng="-0.324660945171817"
+            open="1" bonus="0" />
+        <marker name="166_PROGRESO" number="166" address="Don Vicente Guillot - Progreso"
+            fullAddress="Don Vicente Guillot - Progreso  " lat="39.47331712024639"
+            lng="-0.328901958917283" open="1" bonus="0" />
+        <marker name="167_PAVIA 3" number="167" address="Pavía - Acequia de la Cadena"
+            fullAddress="Pavía - Acequia de la Cadena  " lat="39.4748761268572"
+            lng="-0.324700947178956" open="1" bonus="0" />
+        <marker name="168_AVDA. MALVARROSA" number="168" address="Malvarrosa - Río Tajo"
+            fullAddress="Malvarrosa - Río Tajo  " lat="39.47683913241012" lng="-0.327977958049006"
+            open="1" bonus="0" />
+        <marker name="169_PAVIA 4" number="169" address="Pavía (Instituto Isabel de Villena)"
+            fullAddress="Pavía (Instituto Isabel de Villena)  " lat="39.47875313990507"
+            lng="-0.324735949373236" open="1" bonus="0" />
+        <marker name="170_PAVIA 5" number="170" address="Isabel de Villena - Mendizábal"
+            fullAddress="Isabel de Villena - Mendizábal  " lat="39.48294115378812"
+            lng="-0.325424953690914" open="1" bonus="0" />
+        <marker name="171_CALLE GRAN CANARIA" number="171"
+            address="Gran Canaria - Ingeniero Manuel Maese"
+            fullAddress="Gran Canaria - Ingeniero Manuel Maese  " lat="39.48302815289556"
+            lng="-0.329098964737767" open="1" bonus="0" />
+        <marker name="057_CALLE PINTOR MONLEON" number="57" address="Alameda - Pintor Monleón"
+            fullAddress="Alameda - Pintor Monleón  " lat="39.46444408081199" lng="-0.35834704234339"
+            open="1" bonus="0" />
+        <marker name="54_PASEO ALAMEDA" number="54" address="Plaza de Europa"
+            fullAddress="Plaza de Europa  " lat="39.45974606677287" lng="-0.352781023126671"
+            open="1" bonus="0" />
+        <marker name="059_AVDA. DE BALEARES I" number="59" address="Baleares - Río Escalona"
+            fullAddress="Baleares - Río Escalona  " lat="39.46305607733176" lng="-0.354640030484729"
+            open="1" bonus="0" />
+        <marker name="060_AVDA.BALEARES II" number="60" address="Baleares - Lebón"
+            fullAddress="Baleares - Lebón  " lat="39.46219907534027" lng="-0.351867021712218"
+            open="1" bonus="0" />
+        <marker name="061_VICENTE VIDAL" number="61" address="Vicent Vidal - Pintor Maella"
+            fullAddress="Vicent Vidal - Pintor Maella  " lat="39.46126107345635"
+            lng="-0.347921009381426" open="1" bonus="0" />
+        <marker name="062_MENORCA" number="62" address="Menorca - Baleares"
+            fullAddress="Menorca - Baleares  " lat="39.45977907030124" lng="-0.342242991568314"
+            open="1" bonus="0" />
+        <marker name="031_CALLE SALAMANCA" number="31" address="Salamanca - Conde Altea"
+            fullAddress="Salamanca - Conde Altea  " lat="39.46733308836422" lng="-0.365119064198398"
+            open="1" bonus="0" />
+        <marker name="032_C/ CONDE DE ALTEA" number="32" address="Conde Altea - Almirante Cadarso"
+            fullAddress="Conde Altea - Almirante Cadarso  " lat="39.4659740827401"
+            lng="-0.368338073115823" open="1" bonus="0" />
+        <marker name="34_AVDA. ANTIGUO REINO DE VALENCIA" number="34"
+            address="Regne de Valencia - Doctor Sumsi"
+            fullAddress="Regne de Valencia - Doctor Sumsi  " lat="39.46409007583113"
+            lng="-0.370052077239064" open="1" bonus="0" />
+        <marker name="35_C/ DUQUE DE CALABRIA" number="35"
+            address="Regne de Valencia - Almirante Cadarso"
+            fullAddress="Regne de Valencia - Almirante Cadarso  " lat="39.46371707553277"
+            lng="-0.367085068143159" open="1" bonus="0" />
+        <marker name="37_AVDA. PERIS Y VALERO" number="37" address="Peris y Valero - Luis Santángel"
+            fullAddress="Peris y Valero - Luis Santángel  " lat="39.46090558239442"
+            lng="-0.366531327258963" open="1" bonus="0" />
+        <marker name="38_AVDA. PERIS Y VALERO" number="38" address="Peris y Valero - Cabo Jubi"
+            fullAddress="Peris y Valero - Cabo Jubi  " lat="39.45936982867725"
+            lng="-0.370340076012569" open="1" bonus="0" />
+        <marker name="39_AVDA. PERIS Y VALERO" number="39" address="Peris y Valero - Cuba"
+            fullAddress="Peris y Valero - Cuba  " lat="39.45782205340102" lng="-0.374022085762198"
+            open="1" bonus="0" />
+        <marker name="41_AVDA. GRAL. URRUTIA" number="41" address="General Urrutia - Granada"
+            fullAddress="General Urrutia - Granada  " lat="39.45888005993559"
+            lng="-0.364867058884755" open="1" bonus="0" />
+        <marker name="42_AVDA. DE LA PLATA" number="42" address="Av. de la Plata (Museo Fallero)"
+            fullAddress="Av. de la Plata (Museo Fallero)  " lat="39.45874906147631"
+            lng="-0.358749040474832" open="1" bonus="0" />
+        <marker name="43_C/ DE ORIENTE" number="43" address="Escultor José Capuz - Oriente"
+            fullAddress="Escultor José Capuz - Oriente  " lat="39.45944506301512"
+            lng="-0.361244048329219" open="1" bonus="0" />
+        <marker name="44_AVDA. GRAL. URRUTIA" number="44"
+            address="General Urrutia - Av. de la Plata"
+            fullAddress="General Urrutia - Av. de la Plata  " lat="39.45639705213127"
+            lng="-0.363105052261891" open="1" bonus="0" />
+        <marker name="45_AVDA. GRAL. URRUTIA" number="45"
+            address="Hermanos Maristas - General Urrutia"
+            fullAddress="Hermanos Maristas - General Urrutia  " lat="39.45378704370325"
+            lng="-0.361946047377204" open="1" bonus="0" />
+        <marker name="46_AVDA. INSTITUTO OBRERO DE VALENCIA" number="46"
+            address="Pintor Luis Arcas - Inst. Obrero Valenciano"
+            fullAddress="Pintor Luis Arcas - Inst. Obrero Valenciano  " lat="39.45547705039899"
+            lng="-0.358878039093959" open="1" bonus="0" />
+        <marker name="47_AVDA. AUTOPISTA DEL SALER" number="47"
+            address="Autopista del Saler - Puente Monteolivete"
+            fullAddress="Autopista del Saler - Puente Monteolivete  " lat="39.45648005487459"
+            lng="-0.355509029538065" open="1" bonus="0" />
+        <marker name="48_AVDA. ANTONIO FERRANDIS" number="48"
+            address="Antonio Ferrandis - General Urrutia"
+            fullAddress="Antonio Ferrandis - General Urrutia  " lat="39.45077514200509"
+            lng="-0.358643429344464" open="1" bonus="0" />
+        <marker name="49_C/ RICARDO MUÑOZ SUAY" number="49"
+            address="Ricardo Muñoz Suay - María José Victoria Fuster (C.C. El Saler)"
+            fullAddress="Ricardo Muñoz Suay - María José Victoria Fuster (C.C. El Saler)  "
+            lat="39.45295472217668" lng="-0.35720111550767" open="1" bonus="0" />
+        <marker name="50_AVDA. AUTOPISTA DEL SALER" number="50"
+            address="Autopista del Saler - Antonio Ferrandis (C.C. El Saler)"
+            fullAddress="Autopista del Saler - Antonio Ferrandis (C.C. El Saler)  "
+            lat="39.45328604493341" lng="-0.352950020141597" open="1" bonus="0" />
+        <marker name="51_PSO. DE LAS MORERAS" number="51" address="Moreras (Oceanográfico)"
+            fullAddress="Moreras (Oceanográfico)  " lat="39.45215104293519" lng="-0.347318002649104"
+            open="1" bonus="0" />
+        <marker name="52_C/ LUIS GARCIA BERLANGA" number="52"
+            address="Luis García Berlanga Martí - Menorca"
+            fullAddress="Luis García Berlanga Martí - Menorca  " lat="39.45600205620843"
+            lng="-0.346431002074561" open="1" bonus="0" />
+        <marker name="53_C/ LUIS GARCIA BERLANGA" number="53" address="Alameda - Pintor Maella"
+            fullAddress="Alameda - Pintor Maella  " lat="39.456732058086" lng="-0.348230007860048"
+            open="1" bonus="0" />
+        <marker name="55_AVDA. DE FRANCIA" number="55" address="Francia - Pintor Maella"
+            fullAddress="Francia - Pintor Maella  " lat="39.45931106660426" lng="-0.348777010892994"
+            open="1" bonus="0" />
+        <marker name="56_AVDA. DE FRANCIA" number="56" address="Francia - Menorca"
+            fullAddress="Francia - Menorca  " lat="39.45838906488428" lng="-0.344495997567289"
+            open="1" bonus="0" />
+        <marker name="77_C/ MOLINELL" number="77" address="Molinell - Calderón de la Barca"
+            fullAddress="Molinell - Calderón de la Barca  " lat="39.48494114752994"
+            lng="-0.365758075579642" open="1" bonus="0" />
+        <marker name="83_PZA. DE LA LEGIÓN ESPAÑOLA" number="83"
+            address="General Elio - Llano del Real" fullAddress="General Elio - Llano del Real  "
+            lat="39.47755312220108" lng="-0.367061075518166" open="1" bonus="0" />
+        <marker name="89_AVDA. BLASCO IBAÑEZ" number="89"
+            address="Blasco Ibañez, 23 (F. Filosofía y Psicología)"
+            fullAddress="Blasco Ibañez, 23 (F. Filosofía y Psicología)  " lat="39.47777012539991"
+            lng="-0.359409052701581" open="1" bonus="0" />
+        <marker name="90_AVDA. BLASCO IBAÑEZ" number="90" address="Blasco Ibañez, 32 (F. Filología)"
+            fullAddress="Blasco Ibañez, 32 (F. Filología)  " lat="39.47670212191253"
+            lng="-0.35905805107551" open="1" bonus="0" />
+        <marker name="95_AVDA. DE LOS NARANJOS" number="95" address="Naranjos (Magisterio)"
+            fullAddress="Naranjos (Magisterio)  " lat="39.47980313650945" lng="-0.34621001424835"
+            open="1" bonus="0" />
+        <marker name="104_ALBALAT DELS TARONGERS" number="104"
+            address="Albalat dels Tarongers - Paseo Facultades"
+            fullAddress="Albalat dels Tarongers - Paseo Facultades  " lat="39.47835413125328"
+            lng="-0.34736601693197" open="1" bonus="0" />
+        <marker name="105_AVDA. DE LOS NARANJOS" number="105"
+            address="Aularios Universidad de Valencia"
+            fullAddress="Aularios Universidad de Valencia  " lat="39.47765812979686"
+            lng="-0.344611008304436" open="1" bonus="0" />
+        <marker name="106_AVDA. DE LOS NARANJOS" number="106"
+            address="Albalat dels Tarongers - Professor Ernest Lluch"
+            fullAddress="Albalat dels Tarongers - Professor Ernest Lluch  " lat="39.47671212762051"
+            lng="-0.341477998410525" open="1" bonus="0" />
+        <marker name="107_C/ CAMPILLO ALTO BUEY" number="107"
+            address="Campillo de Altobuey (Polideportivo)"
+            fullAddress="Campillo de Altobuey (Polideportivo)  " lat="39.47521312423745"
+            lng="-0.336314982139155" open="1" bonus="0" />
+        <marker name="112_AVDA. DE LOS NARANJOS" number="112"
+            address="Manuel Broseta i Pont - Naranjos"
+            fullAddress="Manuel Broseta i Pont - Naranjos  " lat="39.47854813352072"
+            lng="-0.342366002058633" open="1" bonus="0" />
+        <marker name="115_C/ DR. VICENTE ZARAGOZA" number="115"
+            address="Cataluña - Doctor Vicente Zaragozá"
+            fullAddress="Cataluña - Doctor Vicente Zaragozá  " lat="39.48153014038569"
+            lng="-0.352239033238509" open="1" bonus="0" />
+        <marker name="116_C/ DR. VICENTE ZARAGOZA" number="116"
+            address="Doctor Vicente Zaragozá - Ramón Asensio"
+            fullAddress="Doctor Vicente Zaragozá - Ramón Asensio  " lat="39.48322114434121"
+            lng="-0.357652050365347" open="1" bonus="0" />
+        <marker name="118_C/ DR. GOMEZ FERRER" number="118" address="Gómez Ferrer - Álvaro de Bazán"
+            fullAddress="Gómez Ferrer - Álvaro de Bazán  " lat="39.4804341340267"
+            lng="-0.360507057423573" open="1" bonus="0" />
+        <marker name="119_C/ JAIME ROIG" number="119" address="Jaime Roig - Bachiller"
+            fullAddress="Jaime Roig - Bachiller  " lat="39.48248814004604" lng="-0.363317066947724"
+            open="1" bonus="0" />
+        <marker name="120_C_DR VICENTE ZARAGOZA" number="120"
+            address="Doctor Vicente Zaragozá - Emilio Baró"
+            fullAddress="Doctor Vicente Zaragozá - Emilio Baró  " lat="39.48484814838159"
+            lng="-0.362137064678155" open="1" bonus="0" />
+        <marker name="121_C_MURTA" number="121" address="Murta - Sant Eperit"
+            fullAddress="Murta - Sant Eperit  " lat="39.48615015382428" lng="-0.358862055563278"
+            open="1" bonus="0" />
+        <marker name="122_C_MÚSICO HIPÓLITO MARTÍNEZ" number="122"
+            address="Músico Hipólito Martínez - Diógenes López Mecho"
+            fullAddress="Músico Hipólito Martínez - Diógenes López Mecho  " lat="39.48445314961921"
+            lng="-0.354157040555065" open="1" bonus="0" />
+        <marker name="123_C_ALBOCACER" number="123" address="Albocácer - Vinaroz"
+            fullAddress="Albocácer - Vinaroz  " lat="39.48763915689091" lng="-0.364932074551232"
+            open="1" bonus="0" />
+        <marker name="124_C/ AZAGADOR DE ALBORAYA" number="124"
+            address="Azagador de Alboraya - Dolores Marqués"
+            fullAddress="Azagador de Alboraya - Dolores Marqués  " lat="39.48846916061659"
+            lng="-0.362046066347782" open="1" bonus="0" />
+        <marker name="125_C/ MASQUEFA" number="125" address="Masquefa, 42 - 44"
+            fullAddress="Masquefa, 42 - 44  " lat="39.48966116570713" lng="-0.358709056987903"
+            open="1" bonus="0" />
+        <marker name="126_C/ ALFAUIR" number="126" address="Alfahuir - José Chabas Bordehore"
+            fullAddress="Alfahuir - José Chabas Bordehore  " lat="39.49306617670531"
+            lng="-0.36019506326505" open="1" bonus="0" />
+        <marker name="127_C/ DUQUE DE MANDAS" number="127" address="Alfahuir - Duque de Mandas"
+            fullAddress="Alfahuir - Duque de Mandas  " lat="39.49055916686075"
+            lng="-0.36453707493258" open="1" bonus="0" />
+        <marker name="128_C/ ALFAUIR" number="128" address="Alfahuir - Peñiscola"
+            fullAddress="Alfahuir - Peñiscola  " lat="39.48873415971327" lng="-0.367635083238739"
+            open="1" bonus="0" />
+        <marker name="129_C_ALMAZORA" number="129" address="Almazora - Benimuslem"
+            fullAddress="Almazora - Benimuslem  " lat="39.48594314953203" lng="-0.37003608893869"
+            open="1" bonus="0" />
+        <marker name="130_C/ CONVENTO CARMELITAS" number="130"
+            address="Convento Carmelitas - Alboraya" fullAddress="Convento Carmelitas - Alboraya  "
+            lat="39.48320614021858" lng="-0.370301088264948" open="1" bonus="0" />
+        <marker name="131_C/ ALBORAYA" number="131" address="Alboraya - Flora"
+            fullAddress="Alboraya - Flora  " lat="39.48062113119549" lng="-0.371254089734112"
+            open="1" bonus="0" />
+        <marker name="132_C/ RUAYA" number="132" address="Platero Suárez - Milagrosa"
+            fullAddress="Platero Suárez - Milagrosa  " lat="39.48525414608695"
+            lng="-0.373525099027208" open="1" bonus="0" />
+        <marker name="133_C/ ALFAMBRA" number="133" address="Alfambra - Poeta Monmeneu"
+            fullAddress="Alfambra - Poeta Monmeneu  " lat="39.48272413676827"
+            lng="-0.375973105008805" open="1" bonus="0" />
+        <marker name="134_C/ MAXIMILIANO THOUS" number="134"
+            address="Maximiliano Thous - Luz Casanova"
+            fullAddress="Maximiliano Thous - Luz Casanova  " lat="39.48762415410862"
+            lng="-0.373430100012801" open="1" bonus="0" />
+        <marker name="135_AVDA. CONSTITUCIÓN" number="135" address="Constitución - Reus"
+            fullAddress="Constitución - Reus  " lat="39.48567014586083" lng="-0.378592114439778"
+            open="1" bonus="0" />
+        <marker name="139_C/ REUS" number="139" address="Reus - Alquería de la Estrella"
+            fullAddress="Reus - Alquería de la Estrella  " lat="39.48567414446925"
+            lng="-0.382964127549696" open="1" bonus="0" />
+        <marker name="141_C/ GREGORIO GEA (PEATONAL)" number="141"
+            address="Gregorio Gea - Padre Ferris" fullAddress="Gregorio Gea - Padre Ferris  "
+            lat="39.48323613551247" lng="-0.385247133088568" open="1" bonus="0" />
+        <marker name="142_C/ GREGORIO GEA (PEATONAL)" number="142"
+            address="Gregorio Gea - Profesor Beltrán Báguena"
+            fullAddress="Gregorio Gea - Profesor Beltrán Báguena  " lat="39.48188812951767"
+            lng="-0.389750145869399" open="1" bonus="0" />
+        <marker name="143_AVDA. MENENDEZ PIDAL" number="143"
+            address="Pio XII - Menéndez PIdal (Nuevo Centro)"
+            fullAddress="Pio XII - Menéndez PIdal (Nuevo Centro)  " lat="39.47950512106764"
+            lng="-0.391027148421504" open="1" bonus="0" />
+        <marker name="146_AVDA. CAMPANAR" number="146" address="Av. Campanar (La Fe)"
+            fullAddress="Av. Campanar (La Fe)  " lat="39.48507813986351" lng="-0.391043151456223"
+            open="1" bonus="0" />
+        <marker name="149_AVDA. PERIS Y VALERO" number="149" address="Peris y Valero - Salamanca"
+            fullAddress="Peris y Valero - Salamanca  " lat="39.46290207446641"
+            lng="-0.361886052119026" open="1" bonus="0" />
+        <marker name="152_C/ LITERATO AZORÍN" number="152" address="Reina Doña María - Cádiz"
+            fullAddress="Reina Doña María - Cádiz  " lat="39.46089306415877"
+            lng="-0.372796083742631" open="1" bonus="0" />
+        <marker name="153_C/ LLANO DE ZAIDA" number="153"
+            address="Llano de la Zaidía - Doctor Olóriz"
+            fullAddress="Llano de la Zaidía - Doctor Olóriz  " lat="39.48313013675752"
+            lng="-0.380263118087985" open="1" bonus="0" />
+        <marker name="155_C/ SALAMANCA" number="155" address="Salamanca - Reina Doña Germana"
+            fullAddress="Salamanca - Reina Doña Germana  " lat="39.46492108086036"
+            lng="-0.363169057053421" open="1" bonus="0" />
+        <marker name="156_C/ CUBA" number="156" address="Puerto Rico - Cuba"
+            fullAddress="Puerto Rico - Cuba  " lat="39.46093206311247" lng="-0.376436094678165"
+            open="1" bonus="0" />
+        <marker name="029_PLAZA AMERICA" number="29" address="Plaza América - Cirilo Amorós - Sorní"
+            fullAddress="Plaza América - Cirilo Amorós - Sorní  " lat="39.47008009754055"
+            lng="-0.36539006649012" open="1" bonus="0" />
+        <marker name="009_PLAZA_TETUAN_4" number="9" address="Plaza de Tetuán"
+            fullAddress="Plaza de Tetuán  " lat="39.47432311035458" lng="-0.370021082654504"
+            open="1" bonus="0" />
+        <marker name="013_PZA. ALFONSO MAGNANIMO_CON_CALLE_LA_NAVE" number="13"
+            address="Alfonso el Magnánimo - Nave" fullAddress="Alfonso el Magnánimo - Nave  "
+            lat="39.47203010231691" lng="-0.370965084251257" open="1" bonus="0" />
+        <marker name="014_BARÓN CARCER" number="14" address="Huesca - Barón de Cárcer"
+            fullAddress="Huesca - Barón de Cárcer  " lat="39.46893508902061"
+            lng="-0.379815109120643" open="1" bonus="0" />
+        <marker name="015_RIBERA" number="15" address="Ribera - Plaza Ayuntamiento"
+            fullAddress="Ribera - Plaza Ayuntamiento  " lat="39.46905609068855"
+            lng="-0.375728096943875" open="1" bonus="0" />
+        <marker name="016_COLON I" number="16" address="Colón, 60" fullAddress="Colón, 60  "
+            lat="39.47006009581504" lng="-0.370524081869223" open="1" bonus="0" />
+        <marker name="018_COLON II" number="18" address="Colón 20-22" fullAddress="Colón 20-22  "
+            lat="39.46815908853249" lng="-0.373220088928677" open="1" bonus="0" />
+        <marker name="028_NAVARRO REVERTE" number="28" address="Navarro Reverter - Grabador Esteve"
+            fullAddress="Navarro Reverter - Grabador Esteve  " lat="39.47155010170615"
+            lng="-0.367842074631205" open="1" bonus="0" />
+        <marker name="148_ESTACION RENFE" number="148" address="Estación del Norte"
+            fullAddress="Estación del Norte  " lat="39.46576307890842" lng="-0.377991101943858"
+            open="1" bonus="0" />
+        <marker name="017_ESTACION RENFE I" number="17"
+            address="Xátiva - Bailén (Estación del Norte)"
+            fullAddress="Xátiva - Bailén (Estación del Norte)  " lat="39.46743608475953"
+            lng="-0.377350100922523" open="1" bonus="0" />
+        <marker name="030_CIRILO AMOROS" number="30"
+            address="Cirilo Amorós - Jorge Juan (Mercado Colón)"
+            fullAddress="Cirilo Amorós - Jorge Juan (Mercado Colón)  " lat="39.46856909141103"
+            lng="-0.368590075268948" open="1" bonus="0" />
+        <marker name="011_PZA_AYTO_CON_CALLE_COTANDA" number="11"
+            address="Plaza Ayuntamiento - Cotanda" fullAddress="Plaza Ayuntamiento - Cotanda  "
+            lat="39.47115409745501" lng="-0.376875101498657" open="1" bonus="0" />
+        <marker name="005_PINTOR_LOPEZ_PZA_POETA_LLORENTE" number="5" address="Plaza Poeta Llorente"
+            fullAddress="Plaza Poeta Llorente  " lat="39.47686311853029" lng="-0.371231087646942"
+            open="1" bonus="0" />
+        <marker name="006_GUILLEN_CASTRO_CON_CALLE_SAN_PEDRO_PASCUAL" number="6"
+            address="Guillem de Castro - San Pedro Pascual"
+            fullAddress="Guillem de Castro - San Pedro Pascual  " lat="39.47276610053889"
+            lng="-0.384174124251856" open="1" bonus="0" />
+        <marker name="036_PZA_LOS_FUEROS_CONDE_TRENOR" number="36"
+            address="Plaza de los Fueros - Conde Trenor"
+            fullAddress="Plaza de los Fueros - Conde Trenor  " lat="39.47904012448793"
+            lng="-0.375527101694727" open="1" bonus="0" />
+        <marker name="001_GUILLEN_DE_CASTRO" number="1" address="Guillem de Castro (Beneficiencia)"
+            fullAddress="Guillem de Castro (Beneficiencia)  " lat="39.47817811900004"
+            lng="-0.383541125260106" open="1" bonus="0" />
+        <marker name="002_CALLE_SALVADOR_GINER_CALLE_MUSEO" number="2"
+            address="Salvador Giner - C. Museo" fullAddress="Salvador Giner - C. Museo  "
+            lat="39.4798571258551" lng="-0.379839115061075" open="1" bonus="0" />
+        <marker name="007_PZA_DEL_MERCADO_TAULA_DE_CANVIS" number="7"
+            address="Plaza del Mercado - Taula de Canvis"
+            fullAddress="Plaza del Mercado - Taula de Canvis  " lat="39.47484010911423"
+            lng="-0.379276110679168" open="1" bonus="0" />
+        <marker name="010_CALLE_DEL_HOSPITAL_FRENTE_CALLE_HORNO_DEL_HOSP" number="10"
+            address="Hospital - Horno del Hospital" fullAddress="Hospital - Horno del Hospital  "
+            lat="39.47078409432719" lng="-0.382701118769287" open="1" bonus="0" />
+        <marker name="082_GUILLEN_DE_CASTRO_TORRES_DE_QUART" number="82"
+            address="Guillem de Castro (Torres de Quart)"
+            fullAddress="Guillem de Castro (Torres de Quart)  " lat="39.47602411158443"
+            lng="-0.384005125495213" open="1" bonus="0" />
+        <marker name="147_CALLE_PIE_DE_LA_CRUZ_CALLE_DE_LA_REJA" number="147"
+            address="Pie de la Cruz - Rejas" fullAddress="Pie de la Cruz - Rejas  "
+            lat="39.47316910314809" lng="-0.38029811284559" open="1" bonus="0" />
+        <marker name="020_FERNANDO_EL_CATOLICO_CALLE_QUART" number="20"
+            address="Quart - Fernando el Católico" fullAddress="Quart - Fernando el Católico  "
+            lat="39.47500210686962" lng="-0.387938136740957" open="1" bonus="0" />
+        <marker name="003_PLAZA_MUSICO_LOPEZ_CHAVARRI" number="3"
+            address="Plaza del Musico López Chavarri"
+            fullAddress="Plaza del Musico López Chavarri  " lat="39.47680311538018"
+            lng="-0.38037911504075" open="1" bonus="0" />
+        <marker name="004_PLAZA_DE_LA_VIRGEN_CALLE_BAILIA" number="4"
+            address="Plaza de la Virgen - Bailía" fullAddress="Plaza de la Virgen - Bailía  "
+            lat="39.47671511667689" lng="-0.375433100164395" open="1" bonus="0" />
+        <marker name="008_PLAZA_DE_LA_REINA_ESQUINA_CALLE_DEL_MAR" number="8"
+            address="Plaza de la Reina - Mar" fullAddress="Plaza de la Reina - Mar  "
+            lat="39.47428810857441" lng="-0.375175098086736" open="1" bonus="0" />
+        <marker name="058_PLAZA DE ESPAÑA" number="58" address="Plaza España"
+            fullAddress="Plaza España  " lat="39.46618607914484" lng="-0.381677113224894" open="1"
+            bonus="0" />
+        <marker name="033_GRAN_VIA_GERMANIAS_ESQ_CALLE_RUZAFA" number="33"
+            address="Germanías - Ruzafa" fullAddress="Germanías - Ruzafa  " lat="39.46478607687619"
+            lng="-0.37408108969372" open="1" bonus="0" />
+        <marker name="110_KISSHOMARU" number="110" address="UPV Trinquet"
+            fullAddress="UPV Trinquet  " lat="39.48070814260447" lng="-0.336770986463246" open="1"
+            bonus="0" />
+        <marker name="111_COLEGIO MAYOR" number="111" address="UPV Galileo"
+            fullAddress="UPV Galileo  " lat="39.48018413958651" lng="-0.340651997804929" open="1"
+            bonus="0" />
+        <marker name="113_ETS CAMINOS" number="113" address="UPV Caminos"
+            fullAddress="UPV Caminos  " lat="39.48124414217441" lng="-0.343702007510602" open="1"
+            bonus="0" />
+        <marker name="114_ADOLFO SUAREZ" number="114" address="UPV Informática"
+            fullAddress="UPV Informática  " lat="39.48177214299267" lng="-0.346682016720988"
+            open="1" bonus="0" />
+        <marker name="019_JUAN_LLORENS" number="19" address="Juan Llorens - Quart"
+            fullAddress="Juan Llorens - Quart  " lat="39.47433710342028" lng="-0.391681147609965"
+            open="1" bonus="0" />
+        <marker name="021_JUAN_LLORENS_29" number="21"
+            address="Juan Llorens - Literato Gabriel Miró"
+            fullAddress="Juan Llorens - Literato Gabriel Miró  " lat="39.4723390971218"
+            lng="-0.390305142409828" open="1" bonus="0" />
+        <marker name="022_JUAN_LLORENS_57" number="22" address="Angel Guimerá - Juan Llorens"
+            fullAddress="Angel Guimerá - Juan Llorens  " lat="39.46975508900285"
+            lng="-0.388444135439494" open="1" bonus="0" />
+        <marker name="023_GRAN_VIA_FERNANDO_EL_CATOLICO" number="23"
+            address="Fernando el Católico - Erudito Orellana"
+            fullAddress="Fernando el Católico - Erudito Orellana  " lat="39.47159609591605"
+            lng="-0.3862691299059" open="1" bonus="0" />
+        <marker name="024_GRAN_VIA_RAMON_Y_CAJAL" number="24"
+            address="Fernando el Católico - Cuenca" fullAddress="Fernando el Católico - Cuenca  "
+            lat="39.46904508800291" lng="-0.384118122083548" open="1" bonus="0" />
+        <marker name="025_CALLE_DEL_ALBERIC" number="25" address="Alberique, 18 (Abastos)"
+            fullAddress="Alberique, 18 (Abastos)  " lat="39.46769708197544" lng="-0.388701135103807"
+            open="1" bonus="0" />
+        <marker name="026_CALLE_SAN_JOSE_DE_CALASANZ" number="26"
+            address="San José de Calasanz - Salas Quiroga"
+            fullAddress="San José de Calasanz - Salas Quiroga  " lat="39.46616307762487"
+            lng="-0.386143126606345" open="1" bonus="0" />
+        <marker name="027_CALLE_SAN_VICENTE_MARTIR_129" number="27"
+            address="San Vicente Martir - Doctor Vilá Barberá"
+            fullAddress="San Vicente Martir - Doctor Vilá Barberá  " lat="39.46333006942278"
+            lng="-0.381942112481819" open="1" bonus="0" />
+        <marker name="136_CALLE_ECONOMISTA_GAY" number="136" address="Economista Gay - Constitución"
+            fullAddress="Economista Gay - Constitución  " lat="39.4899091610835"
+            lng="-0.375701108044157" open="1" bonus="0" />
+        <marker name="137_CALLE_ECONOMISTA_GAY" number="137"
+            address="Economista Gay - Luis Crumiere" fullAddress="Economista Gay - Luis Crumiere  "
+            lat="39.48900115664549" lng="-0.379987120406342" open="1" bonus="0" />
+        <marker name="138_SAN_PANCRACIO" number="138" address="San Pancracio - Periodista Llorente"
+            fullAddress="San Pancracio - Periodista Llorente  " lat="39.48815815241352"
+            lng="-0.384313132924836" open="1" bonus="0" />
+        <marker name="140_AVENIDA_CAMPANAR" number="140" address="Campanar - Nicasio Benlloch"
+            fullAddress="Campanar - Nicasio Benlloch  " lat="39.48797215005971"
+            lng="-0.38969114895134" open="1" bonus="0" />
+        <marker name="144_CALLE_MARQUES_DE_SAN_JUAN" number="144"
+            address="Marqués de San Juan - Diputat Lluís Lucía"
+            fullAddress="Marqués de San Juan - Diputat Lluís Lucía  " lat="39.47874711704846"
+            lng="-0.395571161644053" open="1" bonus="0" />
+        <marker name="145_PLAZA_BADAJOZ" number="145" address="Plaza Badajoz"
+            fullAddress="Plaza Badajoz  " lat="39.48151512545125" lng="-0.398486171871458" open="1"
+            bonus="0" />
+        <marker name="157_AVENIDA_PEREZ_GALDOS" number="157"
+            address="Pérez Galdós - Marqués de Zenete"
+            fullAddress="Pérez Galdós - Marqués de Zenete  " lat="39.464020069969"
+            lng="-0.387457129393968" open="1" bonus="0" />
+        <marker name="172_AVENIDA_PIO_XII" number="172" address="Pío XII - Campanar"
+            fullAddress="Pío XII - Campanar  " lat="39.48143012678756" lng="-0.39343615667867"
+            open="1" bonus="0" />
+        <marker name="173_AVENIDA_PIO_XII_34" number="173" address="Pío XII - Monestir de Poblet"
+            fullAddress="Pío XII - Monestir de Poblet  " lat="39.48450913674717"
+            lng="-0.394769162326153" open="1" bonus="0" />
+        <marker name="174_CALLE_MONDUBER" number="174" address="Monduber - Peset Aleixandre"
+            fullAddress="Monduber - Peset Aleixandre  " lat="39.48940615584413"
+            lng="-0.386738140863954" open="1" bonus="0" />
+        <marker name="175_CALLE_JUAN_XXIII" number="175" address="Juan XXIII - Domingo Gómez"
+            fullAddress="Juan XXIII - Domingo Gómez  " lat="39.49255716773316"
+            lng="-0.382803130751858" open="1" bonus="0" />
+        <marker name="176_CAMINO_DE_MONCADA_52" number="176"
+            address="Cno. Moncada - Pedro Patricio Mey"
+            fullAddress="Cno. Moncada - Pedro Patricio Mey  " lat="39.49198516704239"
+            lng="-0.378944118876901" open="1" bonus="0" />
+        <marker name="177_CALLE_ALCUDIA" number="177"
+            address="Alcudia de Crespins - Pedro Patricio Mey"
+            fullAddress="Alcudia de Crespins - Pedro Patricio Mey  " lat="39.49351317391559"
+            lng="-0.373579103612918" open="1" bonus="0" />
+        <marker name="178_CALLE_REIG_GENOVES" number="178"
+            address="Reig Genovés - Ramón Contreras Mongrell"
+            fullAddress="Reig Genovés - Ramón Contreras Mongrell  " lat="39.49218417039226"
+            lng="-0.37059709396399" open="1" bonus="0" />
+        <marker name="179_AVENIDA_DE_LA_PLATA_45" number="179" address="Av. de la Plata - Zapadores"
+            fullAddress="Av. de la Plata - Zapadores  " lat="39.45544004779678"
+            lng="-0.366517061973888" open="1" bonus="0" />
+        <marker name="180_AVENIDA_DOCTOR_WAKSMAN" number="180" address="Doctor Waksman - Nieves"
+            fullAddress="Doctor Waksman - Nieves  " lat="39.45598904826899" lng="-0.370774075033782"
+            open="1" bonus="0" />
+        <marker name="181_CALLE_DEL_SALINAR" number="181" address="Zapadores, 23"
+            fullAddress="Zapadores, 23  " lat="39.45796705574948" lng="-0.368282068629998" open="1"
+            bonus="0" />
+        <marker name="012_CALLE_MINYANA" number="12" address="Miñana - Poeta Querol"
+            fullAddress="Miñana - Poeta Querol  " lat="39.47119409848577" lng="-0.374099093197231"
+            open="1" bonus="0" />
+        <marker name="194_ESTACION_AVE_JOAQUIN_SOROLLA" number="194"
+            address="Estación AVE Joaquín Sorolla" fullAddress="Estación AVE Joaquín Sorolla  "
+            lat="39.46098606179716" lng="-0.381065108588874" open="1" bonus="0" />
+        <marker name="195_CALLE_GIORGETA" number="195" address="Giorgeta - Roig de Corella"
+            fullAddress="Giorgeta - Roig de Corella  " lat="39.45935205521343"
+            lng="-0.384372117626406" open="1" bonus="0" />
+        <marker name="196_AVDA_GASPAR_AGUILAR" number="196"
+            address="Jerónimo Muñoz - Gaspar Aguilar"
+            fullAddress="Jerónimo Muñoz - Gaspar Aguilar  " lat="39.4595430546337"
+            lng="-0.388157129082296" open="1" bonus="0" />
+        <marker name="202_PASEO_PECHINA" number="202" address="Pechina - Teruel"
+            fullAddress="Pechina - Teruel  " lat="39.4761901091111" lng="-0.393425153835504"
+            open="1" bonus="0" />
+        <marker name="203_CALLE_REINA_VIOLANTE" number="203"
+            address="Reina Violante - Escultor García Mas"
+            fullAddress="Reina Violante - Escultor García Mas  " lat="39.48457713488814"
+            lng="-0.401273181871356" open="1" bonus="0" />
+        <marker name="204_AVDA_GENERAL_AVILES" number="204"
+            address="Corts Valencianes - General Avilés"
+            fullAddress="Corts Valencianes - General Avilés  " lat="39.48581114052686"
+            lng="-0.396678168748875" open="1" bonus="0" />
+        <marker name="205_CALLE_NICASIO_BENLLOCH" number="205"
+            address="Nicasio Benlloch - Amics dels Corpus"
+            fullAddress="Nicasio Benlloch - Amics dels Corpus  " lat="39.48925515326754"
+            lng="-0.393181160103781" open="1" bonus="0" />
+        <marker name="206_CALLE_PERIODISTA_GIL_SUMBIELA" number="206"
+            address="Periodista Gil Sumbiela - Poeta Serrano Clavero"
+            fullAddress="Periodista Gil Sumbiela - Poeta Serrano Clavero  " lat="39.49268016612935"
+            lng="-0.389098149691761" open="1" bonus="0" />
+        <marker name="183_AVDA_AUSIAS_MARCH" number="183" address="Ausias March - Av. de la Plata"
+            fullAddress="Ausias March - Av. de la Plata  " lat="39.452588036275"
+            lng="-0.372375077997377" open="1" bonus="0" />
+        <marker name="185_AVDA_AUSIAS_MARCH" number="185" address="Ebanista Caselles - Ausias March"
+            fullAddress="Ebanista Caselles - Ausias March  " lat="39.45001202816097"
+            lng="-0.37059407126453" open="1" bonus="0" />
+        <marker name="184_CALLE_BOMBER_RAMON_DUART" number="184"
+            address="Bombero Ramón Duart - Hermanos Maristas"
+            fullAddress="Bombero Ramón Duart - Hermanos Maristas  " lat="39.45275003899967"
+            lng="-0.365661057953976" open="1" bonus="0" />
+        <marker name="186_CALLE_INGENIERO_JOAQUIN_BENLLOCH" number="186"
+            address="Benifairó de Valldigna - Joaquín Benlloch"
+            fullAddress="Benifairó de Valldigna - Joaquín Benlloch  " lat="39.4503590281921"
+            lng="-0.374106081983545" open="1" bonus="0" />
+        <marker name="187_AVDA_AUSIAS_MARCH" number="187" address="Ángel Villena - Ausias March"
+            fullAddress="Ángel Villena - Ausias March  " lat="39.44792802167623"
+            lng="-0.368909065084874" open="1" bonus="0" />
+        <marker name="188_HOSPITAL_NUEVA_FE" number="188"
+            address="Hospital Nueva Fe (consultas externas)"
+            fullAddress="Hospital Nueva Fe (consultas externas)  " lat="39.44446300836761"
+            lng="-0.373882078122754" open="1" bonus="0" />
+        <marker name="189_HOSPITAL_NUEVA_FE" number="189"
+            address="Hospital Nueva Fe (administración)"
+            fullAddress="Hospital Nueva Fe (administración)  " lat="39.4446390082756"
+            lng="-0.37599308454911" open="1" bonus="0" />
+        <marker name="190_CTRA_MALILLA" number="190" address="Cra. Malilla - Bulevar Sur"
+            fullAddress="Cra. Malilla - Bulevar Sur  " lat="39.44605001161064"
+            lng="-0.380387098491455" open="1" bonus="0" />
+        <marker name="191_CTRA_MALILLA" number="191" address="Esparraguera - Cra. Malilla"
+            fullAddress="Esparraguera - Cra. Malilla  " lat="39.45029702640893"
+            lng="-0.378957096498364" open="1" bonus="0" />
+        <marker name="192_CTRA_MALILLA" number="192" address="Cra. Malilla - Oltá"
+            fullAddress="Cra. Malilla - Oltá  " lat="39.45260503424732" lng="-0.378805097289263"
+            open="1" bonus="0" />
+        <marker name="193_CALLE_CARTEROS" number="193" address="Uruguay - Carteros"
+            fullAddress="Uruguay - Carteros  " lat="39.4551140401216" lng="-0.38680912265075"
+            open="1" bonus="0" />
+        <marker name="197_CALLE_FONTANARS_DELS_AFORINS" number="197"
+            address="Fontanars dels Aforins - Jacinto Labaila"
+            fullAddress="Fontanars dels Aforins - Jacinto Labaila  " lat="39.4581520485586"
+            lng="-0.392424141132886" open="1" bonus="0" />
+        <marker name="198_CALLE_FONTANARS_DELS_AFORINS" number="198"
+            address="Fontanars dels Aforins - Vall d'Uixó"
+            fullAddress="Fontanars dels Aforins - Vall d'Uixó  " lat="39.46084805669447"
+            lng="-0.3954071515343" open="1" bonus="0" />
+        <marker name="199_CALLE_BEATO_NICOLAS_FACTOR" number="199"
+            address="Beato Nicolás Factor - Convento de Jesús"
+            fullAddress="Beato Nicolás Factor - Convento de Jesús  " lat="39.4615560602987"
+            lng="-0.391649140641673" open="1" bonus="0" />
+        <marker name="200_AVDA_DEL_CID" number="200" address="Av. del Cid - Julián Peña"
+            fullAddress="Av. del Cid - Julián Peña  " lat="39.4677050805168"
+            lng="-0.393305148918046" open="1" bonus="0" />
+        <marker name="201_AVDA_PEREZ_GALDOS" number="201" address="Perez Galdós - Nou Moles"
+            fullAddress="Perez Galdós - Nou Moles  " lat="39.47168009378495"
+            lng="-0.393759152416117" open="1" bonus="0" />
+        <marker name="182_AVDA_AUSIAS_MARCH" number="182"
+            address="Ausias March - Pianista Amparo Iturbi"
+            fullAddress="Ausias March - Pianista Amparo Iturbi  " lat="39.45540004489401"
+            lng="-0.375056087555512" open="1" bonus="0" />
+        <marker name="207_CALLE_MILLARES_ESQ_CALLE_FEDERICO_GARCA_LORCA" number="207"
+            address="Giorgeta, 64" fullAddress="Giorgeta, 64  " lat="39.45536104251403"
+            lng="-0.381996108347568" open="1" bonus="0" />
+        <marker name="208_CALLE_CARTEROS_ESQ_CALLE_MOSSEN_FEBRER" number="208"
+            address="Carteros - Mossen Febrer" fullAddress="Carteros - Mossen Febrer  "
+            lat="39.45166002786031" lng="-0.38866912636635" open="1" bonus="0" />
+        <marker name="209_AVDA_GASPAR_AGUILAR_ESQ_CALLE_MUSICO_PENELLA" number="209"
+            address="Gaspar Aguilar - Músico Penella"
+            fullAddress="Gaspar Aguilar - Músico Penella  " lat="39.45205002773928"
+            lng="-0.393106139888379" open="1" bonus="0" />
+        <marker name="210_CALLE_CAMPOS_CRESPO_ESQ_CALLE_JUAN_DE_GARAY" number="210"
+            address="Campos Crespo - Juan de Garay" fullAddress="Campos Crespo - Juan de Garay  "
+            lat="39.45552103825903" lng="-0.396807152864784" open="1" bonus="0" />
+        <marker name="211_CALLE_FRAY_JUNÍPERO_SERRA_ESQ_CALLE_VALL_D'UIX" number="211"
+            address="Fray Junípero Serra - Vall d'Uixó"
+            fullAddress="Fray Junípero Serra - Vall d'Uixó  " lat="39.45869404863428"
+            lng="-0.397848157697943" open="1" bonus="0" />
+        <marker name="212_CALLE_FRAY_JUANÍPERO_SERRA_ESQ_CALLE_TORRENTE" number="212"
+            address="Fray Juanípero Serra - Torrente"
+            fullAddress="Fray Juanípero Serra - Torrente  " lat="39.46145205709215"
+            lng="-0.40048716710112" open="1" bonus="0" />
+        <marker name="213_CALLE_ARCHIDUQUE_CARLOS_ESQ_CALLE_JOSE_MA_MOR" number="213"
+            address="Archiduque Carlos - José María Mortes Lerma"
+            fullAddress="Archiduque Carlos - José María Mortes Lerma  " lat="39.46313306387255"
+            lng="-0.397063157732616" open="1" bonus="0" />
+        <marker name="214_CALLE_SANTA_CRUZ_DE_TENERIFE_ESQ_CALLE_LLOMBA" number="214"
+            address="Santa Cruz de Tenerife, 21" fullAddress="Santa Cruz de Tenerife, 21  "
+            lat="39.46490006867376" lng="-0.400667169496185" open="1" bonus="0" />
+        <marker name="215_CALLE_MUSICO_AYLLON_ESQ_CALLE_FRANCISCO_DOLZ" number="215"
+            address="Músico Ayllón - Francisco Dolz" fullAddress="Músico Ayllón - Francisco Dolz  "
+            lat="39.46563907240366" lng="-0.39683915840866" open="1" bonus="0" />
+        <marker name="216_AVDA_DEL_CID_ESQ_CALLE_BURGOS" number="216" address="Av. del Cid - Burgos"
+            fullAddress="Av. del Cid - Burgos  " lat="39.4688460824582" lng="-0.399226167293882"
+            open="1" bonus="0" />
+        <marker name="217_CALLE_9_DE_OCTUBRE_ESQ_CALLE_PINTOR_STOLZ" number="217"
+            address="Pintor Stolz - Nueve de Octubre"
+            fullAddress="Pintor Stolz - Nueve de Octubre  " lat="39.47029608559258"
+            lng="-0.404687184457659" open="1" bonus="0" />
+        <marker name="218_CALLE_SALVADOR_FERRANDIS_LUNA_ESQ_CALLE_JUAN_B" number="218"
+            address="Salvador Ferrandis Luna - Juan Bautista Vives"
+            fullAddress="Salvador Ferrandis Luna - Juan Bautista Vives  " lat="39.47070808930705"
+            lng="-0.397475163041212" open="1" bonus="0" />
+        <marker name="219_CALLE_CASTAN_TOBEÑAS_ESQ_CALLE_VELAZQUEZ" number="219"
+            address="Castán Tobeñas - Rincon de Ademuz"
+            fullAddress="Castán Tobeñas - Rincon de Ademuz  " lat="39.47273109436028"
+            lng="-0.402984180655052" open="1" bonus="0" />
+        <marker name="220_CALLE_CASTAN_TOBEÑAS_ESQ_CALLE_DE_GOYA" number="220"
+            address="Castán Tobeñas - Patriques" fullAddress="Castán Tobeñas - Patriques  "
+            lat="39.47382309951806" lng="-0.398412167524643" open="1" bonus="0" />
+        <marker name="221_AVDA_MANUEL_DE_FALLA_ESQ_CALLE_HERNANDEZ_LAZAR" number="221"
+            address="Manuel de Falla - Hernández Lázaro"
+            fullAddress="Manuel de Falla - Hernández Lázaro  " lat="39.47523810283483"
+            lng="-0.40294418188015" open="1" bonus="0" />
+        <marker name="222_AVDA_MAESTRO_RODRIGO_ESQ_AVDA_MANUEL_DE_FALLA" number="222"
+            address="Maestro Rodrigo - Manuel de Falla"
+            fullAddress="Maestro Rodrigo - Manuel de Falla  " lat="39.47686111010473"
+            lng="-0.397373166037864" open="1" bonus="0" />
+        <marker name="223_CALLE_VALLE_BALLESTERA_ESQ_PLAZA_POLICIA_LOCAL" number="223"
+            address="Valle de la Ballestera - Hospital Nueve de Octubre"
+            fullAddress="Valle de la Ballestera - Hospital Nueve de Octubre  "
+            lat="39.47852611446744" lng="-0.40127817864509" open="1" bonus="0" />
+        <marker name="224_PLAZA_JOSE_MONFORTE_TUDELA_ESQ_CALLE_HERNANDEZ" number="224"
+            address="Jorge Comin (Metge) - Terrateig"
+            fullAddress="Jorge Comin (Metge) - Terrateig  " lat="39.48053612047894"
+            lng="-0.403679186925212" open="1" bonus="0" />
+        <marker name="225_CALLE_PADRE_BARRANCO_DESPUES_CALLE_BENIFAIRO" number="225"
+            address="Padre Barranco - Carlos Ruano Llopis (Pintor)"
+            fullAddress="Padre Barranco - Carlos Ruano Llopis (Pintor)  " lat="39.48807514670377"
+            lng="-0.401233183623003" open="1" bonus="0" />
+        <marker name="226_CALLE_SAFOR_ESQ_AVDA_DE_LAS_CORTES_VALENCIANAS" number="226"
+            address="Corts Valencianes - La Safor" fullAddress="Corts Valencianes - La Safor  "
+            lat="39.49083215673745" lng="-0.398950178249295" open="1" bonus="0" />
+        <marker name="227_CALLE_SAN_CLEMENTE_ENTRA_HOSPITAL_ARNAU_VILANO" number="227"
+            address="San Clemente - Hospital Arnau de Vilanova"
+            fullAddress="San Clemente - Hospital Arnau de Vilanova  " lat="39.49021615335393"
+            lng="-0.403022190134151" open="1" bonus="0" />
+        <marker name="228_AVDA_NICASIO_BENLLOCH_ESQ_CALLE_L'HORTA_SUD" number="228"
+            address="Doctor Nicasio Benlloch - L'Horta Sud"
+            fullAddress="Doctor Nicasio Benlloch - L'Horta Sud  " lat="39.49366016633798"
+            lng="-0.398762179196655" open="1" bonus="0" />
+        <marker name="229_CALLE_AITANA_ESQ_AVDA_BURJASSOT" number="229" address="Aitana - Florista"
+            fullAddress="Aitana - Florista  " lat="39.49307216559276" lng="-0.394897167291038"
+            open="1" bonus="0" />
+        <marker name="230_CALLE_POETA_SERRANO_CLAVERO_EQ_GENERAL_LLORENS" number="230"
+            address="Poeta Serrano Clavero - General Llorens"
+            fullAddress="Poeta Serrano Clavero - General Llorens  " lat="39.49471817371506"
+            lng="-0.386875144115863" open="1" bonus="0" />
+        <marker name="231_CALLE_DE_ALCAÑIZ_ESQ_CALLE_CAMBRILS" number="231"
+            address="Alcañiz - Cambrils" fullAddress="Alcañiz - Cambrils  " lat="39.49504017741737"
+            lng="-0.378712119815713" open="1" bonus="0" />
+        <marker name="232_SAN_VICENTE_DE_PAUL_SANTIAGO_RUSIÑOL" number="232"
+            address="San Vicente Paul - Santiago Rusiñol"
+            fullAddress="San Vicente Paul - Santiago Rusiñol  " lat="39.49461218010229"
+            lng="-0.365844081019678" open="1" bonus="0" />
+        <marker name="233_SAN_JUAN_BOSCO_SANTIAGO_RUSIÑOL" number="233"
+            address="San Juan Bosco - Santiago Rusiñol"
+            fullAddress="San Juan Bosco - Santiago Rusiñol  " lat="39.497128187401"
+            lng="-0.369528093405798" open="1" bonus="0" />
+        <marker name="234_PLAZA MUSICO_ESPI_JOSE_ESTEVE" number="234" address="Plaza Músico Espí"
+            fullAddress="Plaza Músico Espí  " lat="39.49646718382403" lng="-0.373735105660714"
+            open="1" bonus="0" />
+        <marker name="235_CONDE_DE_TORREFIEL_CECILIO_PLA" number="235"
+            address="Conde Torrefiel - Cecilio Plá" fullAddress="Conde Torrefiel - Cecilio Plá  "
+            lat="39.49801318789519" lng="-0.377294117154526" open="1" bonus="0" />
+        <marker name="236_RIO_SEGRE_RAFAEL_COMPANY" number="236"
+            address="Rio Segre - Rafael Company" fullAddress="Rio Segre - Rafael Company  "
+            lat="39.49503417622483" lng="-0.382369130775341" open="1" bonus="0" />
+        <marker name="237_LEVANTE_UD_AVDA_ECUADOR" number="237" address="Levante U.D. - Ecuador"
+            fullAddress="Levante U.D. - Ecuador  " lat="39.4947261723789" lng="-0.391129156875508"
+            open="1" bonus="0" />
+        <marker name="238_SAN_JOSE_ARTESANO_FRANCISCO_MOROTE_GREUS" number="238"
+            address="San Jose Artesano - Francisco Morote Greus"
+            fullAddress="San Jose Artesano - Francisco Morote Greus  " lat="39.49741718038369"
+            lng="-0.394474168343446" open="1" bonus="0" />
+        <marker name="239_LA_FLORISTA_TRANVIA_PALACIO_CONGRESOS" number="239"
+            address="Florista - T4 (Palau de Congressos)"
+            fullAddress="Florista - T4 (Palau de Congressos)  " lat="39.49695317703247"
+            lng="-0.400055184833165" open="1" bonus="0" />
+        <marker name="240_CAMP_DEL_TURIA_AVDA_CORTES_VALENCIANAS" number="240"
+            address="Camp del Turia - Corts Valencianes"
+            fullAddress="Camp del Turia - Corts Valencianes  " lat="39.494972169843"
+            lng="-0.401638188523523" open="1" bonus="0" />
+        <marker name="241_VALL_DE_ALBAIDA_PEATONAL" number="241"
+            address="La Vall d'Albaida - Corts Valencianes"
+            fullAddress="La Vall d'Albaida - Corts Valencianes  " lat="39.49294616289816"
+            lng="-0.401981188470323" open="1" bonus="0" />
+        <marker name="242_LA_SAFOR_AVDA_MAESTRO_RODRIGO" number="242"
+            address="La Safor - Maestro Rodrigo" fullAddress="La Safor - Maestro Rodrigo  "
+            lat="39.48787514504915" lng="-0.404288192680299" open="1" bonus="0" />
+        <marker name="243_ALBACETE_ESQ_MALUQUER" number="243" address="Albacete - Maluquer"
+            fullAddress="Albacete - Maluquer  " lat="39.46278806672407" lng="-0.384633120260506"
+            open="1" bonus="0" />
+        <marker name="244_AVDA_PIO_BAROJA_VALLE_DE_LA_BALLESTERA" number="244"
+            address="Valle de la Ballestera - Pio Baroja"
+            fullAddress="Valle de la Ballestera - Pio Baroja  " lat="39.47847411270088"
+            lng="-0.406227193465013" open="1" bonus="0" />
+        <marker name="245_9_DE_OCTUBRE_CIEZA" number="245" address="Nueve de Octubre - Cieza"
+            fullAddress="Nueve de Octubre - Cieza  " lat="39.47202809113153"
+            lng="-0.405642188252898" open="1" bonus="0" />
+        <marker name="246_AVDA_TRES_CRUCES_ENTRADA_HOSPITAL_GENERAL" number="246"
+            address="Tres Cruces - Hospital General" fullAddress="Tres Cruces - Hospital General  "
+            lat="39.46905808079698" lng="-0.406600189533111" open="1" bonus="0" />
+        <marker name="247_AVDA_TRES_CRUCES_MUSICO_AYLLON" number="247"
+            address="Tres Cruces - Músico Ayllón" fullAddress="Tres Cruces - Músico Ayllón  "
+            lat="39.46737807542721" lng="-0.405664185821979" open="1" bonus="0" />
+        <marker name="248_AVDA_TRES_CRUCES_JOSE_MARIA_MORTES_LERMA" number="248"
+            address="Tres Cruces - Jose Maria Mortes Lerma"
+            fullAddress="Tres Cruces - Jose Maria Mortes Lerma  " lat="39.46280806019345"
+            lng="-0.40506018155276" open="1" bonus="0" />
+        <marker name="249_AVDA_TRES_CRUCES_SEGUNDA_REPUBLICA_ESPAÑOLA" number="249"
+            address="Tres Cruces - Segunda República Española"
+            fullAddress="Tres Cruces - Segunda República Española  " lat="39.45947404965703"
+            lng="-0.402831173069948" open="1" bonus="0" />
+        <marker name="250_AVDA_TRES_CRUCES_PIO_XI" number="250" address="Tres Cruces - Pio XI"
+            fullAddress="Tres Cruces - Pio XI  " lat="39.45604503881071" lng="-0.400570164438297"
+            open="1" bonus="0" />
+        <marker name="251_ARQUITECTO_SEGURA_LAGO_CAMINO_NUEVO_DE_PICAÑA" number="251"
+            address="Arquitecto Segura del Lago - Camino Nuevo de Picaña"
+            fullAddress="Arquitecto Segura del Lago - Camino Nuevo de Picaña  "
+            lat="39.45579803670432" lng="-0.404504176110588" open="1" bonus="0" />
+        <marker name="252_DE_LOS_GREMIOS_CAMPOS_CRESPO" number="252"
+            address="Dels Gremis - Campos Crespo" fullAddress="Dels Gremis - Campos Crespo  "
+            lat="39.45025601826153" lng="-0.4036651706049" open="1" bonus="0" />
+        <marker name="253_PLAZA_JOSE_MELIA_CASTELLO_CAMPOS_CRESPO" number="253"
+            address="José Meliá Castelló - Campos Crespo"
+            fullAddress="José Meliá Castelló - Campos Crespo  " lat="39.4526940272949"
+            lng="-0.401192164498328" open="1" bonus="0" />
+        <marker name="254_AVDA_DR_TOMAS_SALA_CARTEROS" number="254"
+            address="Doctor Tomás Sala - Carteros" fullAddress="Doctor Tomás Sala - Carteros  "
+            lat="39.44768201399717" lng="-0.39000812823506" open="1" bonus="0" />
+        <marker name="255_SAN_VICENTE_MARTIR_TOMAS_DE_VILLAROYA" number="255"
+            address="Tomas de Villarroya - San Vicente"
+            fullAddress="Tomas de Villarroya - San Vicente  " lat="39.44767101522146"
+            lng="-0.386120116565009" open="1" bonus="0" />
+        <marker name="256_AVDA_TRES_FORQUES_TURIS" number="256" address="Tres Forques - Turís"
+            fullAddress="Tres Forques - Turís  " lat="39.4639310680958" lng="-0.392326143951058"
+            open="1" bonus="0" />
+        <marker name="86_AVDA_GASPAR_AGUILAR_ESQ_VICENTE_PARRA" number="86"
+            address="Gaspar Aguilar - Vicente Parra" fullAddress="Gaspar Aguilar - Vicente Parra  "
+            lat="39.45520803898995" lng="-0.391284136125771" open="1" bonus="0" />
+        <marker name="258_PINTOR_RAFAEL_SOLVES_ESQ_JOSE_SOTO_MICO" number="258"
+            address="Pintor Rafael Solves - Jose Soto Mico"
+            fullAddress="Pintor Rafael Solves - Jose Soto Mico  " lat="39.43979598762512"
+            lng="-0.38922812163005" open="1" bonus="0" />
+        <marker name="262_AVDA_TRES_FORQUES_COLONIA_ESPANOLA_DE_MEXICO" number="262"
+            address="Tres Forques - Colonia Española de Mexico"
+            fullAddress="Tres Forques - Colonia Española de Mexico  " lat="39.46344006095387"
+            lng="-0.409316194664879" open="1" bonus="0" />
+        <marker name="263_PADRE ESTEBAN_PERNET_ANTES_CASA_MISERICORDIA" number="263"
+            address="Padre Esteban Pernet - Casa Misericordia"
+            fullAddress="Padre Esteban Pernet - Casa Misericordia  " lat="39.46701107287583"
+            lng="-0.409735197841415" open="1" bonus="0" />
+        <marker name="264_AVDA_CID_ANTES_MARCONI" number="264" address="Av. del Cid - Marconi"
+            fullAddress="Av. del Cid - Marconi  " lat="39.46912807848099" lng="-0.414523213347863"
+            open="1" bonus="0" />
+        <marker name="266_PLANA_ALTA_ESQ_AVDA_MAESTRO_RODRIGO" number="266"
+            address="Canal de Navarrés - Maestro Rodrigo"
+            fullAddress="Canal de Navarrés - Maestro Rodrigo  " lat="39.49025715238982"
+            lng="-0.406462200475517" open="1" bonus="0" />
+        <marker name="40_CALLE_BARCAS_FRENTE _TEATRO_PRINCIPAL" number="40" address="Barcas, 11"
+            fullAddress="Barcas, 11  " lat="39.47043409565897" lng="-0.374915095234885" open="1"
+            bonus="0" />
+        <marker name="70_CALLE_COLON_ESQ_ALMIRANTE_ROGER_DE_LAURIA" number="70" address="Colón, 27"
+            fullAddress="Colón, 27  " lat="39.46935809305045" lng="-0.371753085175853" open="1"
+            bonus="0" />
+        <marker name="091_CALLE_GRABADOR_JORDAN_46_PLAZA_ESCULTOR_PASTOR" number="91"
+            address="Grabador Jordan - Escultor Pastor"
+            fullAddress="Grabador Jordan - Escultor Pastor  " lat="39.44409300914037"
+            lng="-0.367664059275921" open="1" bonus="0" />
+        <marker name="93_AVADA_BLASCO_IBAÑEZ_DESP_C_POETA_DURAN_TORTAJAD" number="93"
+            address="Blasco Ibañez - Poeta Durán Tortajada"
+            fullAddress="Blasco Ibañez - Poeta Durán Tortajada  " lat="39.47225011180076"
+            lng="-0.34390000326249" open="1" bonus="0" />
+        <marker name="272_VICENTE_LA_RODA_C_INGENIERO_FAUSTO_ELIO" number="272"
+            address="Vicente la Roda - Ingeniero Fausto Elio"
+            fullAddress="Vicente la Roda - Ingeniero Fausto Elio  " lat="39.48059114365945"
+            lng="-0.332280972954351" open="1" bonus="0" />
+        <marker name="273_CALLE_MORAIRA_CALLE_DALT_DE_LA_MAR" number="273"
+            address="Moraira - Alta del Mar" fullAddress="Moraira - Alta del Mar  "
+            lat="39.4502730411407" lng="-0.33336295982062" open="1" bonus="0" />
+        <marker name="274_MANUEL_ANDRES_CASTELL_DE_POLOP" number="274"
+            address="San Francisco de Paula - Castell de Pop"
+            fullAddress="San Francisco de Paula - Castell de Pop  " lat="39.44803803363359"
+            lng="-0.333278958357397" open="1" bonus="0" />
+        <marker name="275_CAMINO_DE_LAS_MORERAS_ESQ_RONDA_DE_NAZARET" number="275"
+            address="Moreras - Rona de Nazaret" fullAddress="Moreras - Rona de Nazaret  "
+            lat="39.45227304729963" lng="-0.33515596627555" open="1" bonus="0" />
+        <marker name="257_PLAZA_SALVADOR_SORIA_ESQ_PIO_X" number="257"
+            address="Plaza Salvador Soria, 8" fullAddress="Plaza Salvador Soria, 8  "
+            lat="39.44521900594571" lng="-0.389195124464717" open="1" bonus="0" />
+        <marker name="270_CALLE_NINOT_ESQ_PZA_REGINO_MAS" number="270" address="Ninot - Regino Mas"
+            fullAddress="Ninot - Regino Mas  " lat="39.50004318971825" lng="-0.392980165265021"
+            open="1" bonus="0" />
+        <marker name="271_CALLE_SALVADOR_CERVERÓ_CALLE_CARLOS_CORTINA" number="271"
+            address="Salvador Cerveró - Carlos Cortina"
+            fullAddress="Salvador Cerveró - Carlos Cortina  " lat="39.49924718799308"
+            lng="-0.389982155850781" open="1" bonus="0" />
+        <marker name="259_CALLE_PIO_IX_POLIDEPORTIVO_RAMBLETA" number="259"
+            address="Pio IX - Músico Cabanilles" fullAddress="Pio IX - Músico Cabanilles  "
+            lat="39.44542800538199" lng="-0.393106136312086" open="1" bonus="0" />
+        <marker name="265_C_ALCASSER_POETA_ALBERTO_LISTA" number="265"
+            address="Alcasser - Poeta Alberto Lista" fullAddress="Alcasser - Poeta Alberto Lista  "
+            lat="39.47094108663578" lng="-0.408208195369257" open="1" bonus="0" />
+        <marker name="267_C_BENIFERRI_VICENTE_TOMAS_MARTI" number="267"
+            address="Beniferri - Vicent Tomás Martí" fullAddress="Beniferri - Vicent Tomás Martí  "
+            lat="39.4941361656198" lng="-0.406020201221407" open="1" bonus="0" />
+        <marker name="84_SERRERIA_ESQ_PINTOR FERRER CALATAYUD" number="84" address="Serrería, 67"
+            fullAddress="Serrería, 67  " lat="39.46726209778759" lng="-0.335255974679776" open="1"
+            bonus="0" />
+        <marker name="260_DELS_FERRERS_ESQ_TRAGINERS" number="260"
+            address="Traginers - Pedrapiquers" fullAddress="Traginers - Pedrapiquers  "
+            lat="39.45952404837945" lng="-0.407308186532079" open="1" bonus="0" />
+        <marker name="261_PZA_XUQUER_ESQ_VINALOPO" number="261" address="Plaza Xuquer - Vinalopó"
+            fullAddress="Plaza Xuquer - Vinalopó  " lat="39.47664412448885" lng="-0.350468025305313"
+            open="1" bonus="0" />
+        <marker name="268_PZA_LUIS_CANO_5" number="268" address="Plaza Luis Cano, 5"
+            fullAddress="Plaza Luis Cano, 5  " lat="39.50141318615774" lng="-0.418584242795808"
+            open="1" bonus="0" />
+        <marker name="269_CAMPAMENTO_81" number="269" address="Campamento, 81"
+            fullAddress="Campamento, 81  " lat="39.49987517848677" lng="-0.426354265293528" open="1"
+            bonus="0" />
+        <marker name="276_EDIFICIO_VELES_E_VENTS" number="276" address="Veles e Vents"
+            fullAddress="Veles e Vents  " lat="39.4619430835605" lng="-0.323855937664754" open="1"
+            bonus="0" />
+    </markers>
+    <arrondissements>
+        <arrondissement number="0" minLat="39.43979598762512" minLng="-0.426354265293528"
+            maxLat="39.50141318615774" maxLng="-0.323491937905993" />
+    </arrondissements>
+</carto>

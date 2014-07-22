@@ -1,376 +1,455 @@
 package upv.welcomeincoming.app;
 
-import android.app.AlertDialog;
+import android.app.Activity;
 import android.content.ActivityNotFoundException;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
 import android.speech.RecognizerIntent;
 import android.speech.tts.TextToSpeech;
-import android.support.v7.app.ActionBarActivity;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.speech.tts.UtteranceProgressListener;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-
-import org.apache.http.NameValuePair;
-import org.apache.http.client.utils.URLEncodedUtils;
-import org.apache.http.message.BasicNameValuePair;
-
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 
-import util.InternetConnectionChecker;
-import util.Traducir;
+import util.Traductor.ApiKeys;
+import util.Traductor.detect.Detect;
+import util.Traductor.language.Language;
+import util.Traductor.translate.Translate;
 
-public class Activity_Traduccion extends ActionBarActivity {
-    private static final String LOG_SPEECH = "LOG_SPEECH";
-    private static final String LOG_TRANS = "LOG_TRANS";
-    private int RESULT_SPEECH = 1;
-    private TextView tv_trans;
-    private TextToSpeech ttobj;
+public class Activity_Traduccion extends Activity {
+
+    protected static final int RESULT_SPEECH = 1;
+
+    EditText etTrad;
+    TextView tvTrad;
+    Spinner spinner_from;
+    Spinner spinner_to;
+    ImageView iv_top_flag;
+    ImageView iv_top_mic;
+    ImageView iv_top_altavoz;
+    ImageView iv_top_clear;
+    ImageView iv_bottom_copy;
+    ImageView iv_bottom_share;
+    ImageView iv_bottom_altavoz;
+    ImageView iv_bottom_flag;
+    ImageButton button_change_language;
+    ImageButton button_translate;
+
+    String spinnerTo_selection, spinnerFrom_selection;
+    private TextToSpeech ttobjTo;
+    private TextToSpeech ttobjFrom;
+    Handler mHandlerStart = new Handler();
+    Handler mHandlerDone = new Handler();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_translate);
+        setContentView(R.layout.activity_traductor);
+        Translate.setKey(ApiKeys.YANDEX_API_KEY);
+        initViews();
+        setListeners();
+    }
 
-        if (savedInstanceState == null) {
+    private void setListeners() {
+
+        etTrad.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if (etTrad.getText().toString().equals("")) {//Si cambia el texto a vacio
+                    button_translate.setEnabled(false);
+                } else {//Si se escribe texto
+                    button_translate.setEnabled(true);
+                }
+            }
+        });
+        List<String> list_spinner_from = Language.getArrayStringNameLanguages();
+        list_spinner_from.add(0, getString(R.string.detectar_idioma));//anyadimos el item de detectar idioma
+        ArrayAdapter<String> dataAdapter_from = new ArrayAdapter<String>(getApplicationContext(),
+                android.R.layout.simple_spinner_item, list_spinner_from);
+        dataAdapter_from.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner_from.setAdapter(dataAdapter_from);
+        spinner_from.setOnItemSelectedListener(new SpinnerHandlerFrom());
+
+        List<String> list_spinner_to = Language.getArrayStringNameLanguages();
+        ArrayAdapter<String> dataAdapter_to = new ArrayAdapter<String>(getApplicationContext(),
+                android.R.layout.simple_spinner_item, list_spinner_to);
+        dataAdapter_to.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner_to.setAdapter(dataAdapter_to);
+        spinner_to.setOnItemSelectedListener(new SpinnerHandlerTo());
+
+        button_translate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String texto = etTrad.getText().toString();
+                if (spinnerFrom_selection.equals(getString(R.string.detectar_idioma))) {
+                    new TraductorTask(texto, null, Language.fromString(Language.getCodeByName(spinnerTo_selection)), true, tvTrad).execute();
+                } else {
+                    new TraductorTask(texto, Language.fromString(Language.getCodeByName(spinnerFrom_selection)), Language.fromString(Language.getCodeByName(spinnerTo_selection)), false, tvTrad).execute();
+                }
+            }
+        });
+        //limpiar texto de ambos sitios
+        iv_top_clear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                etTrad.setText("");
+                tvTrad.setText("");
+            }
+        });
+        //copiar al portapapeles
+        iv_bottom_copy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String texto = tvTrad.getText().toString();
+                if (texto.equals("")) {
+                    Toast.makeText(getApplicationContext(), getString(R.string.noText), Toast.LENGTH_SHORT).show();
+                } else {
+                    android.content.ClipboardManager clipboard = (android.content.ClipboardManager) getApplicationContext().getSystemService(getApplicationContext().CLIPBOARD_SERVICE);
+                    android.content.ClipData clip = android.content.ClipData.newPlainText("text label", texto);
+                    clipboard.setPrimaryClip(clip);
+                    Toast.makeText(getApplicationContext(), getString(R.string.textCopyToClipboard), Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        });
+        //compartir traduccion
+        iv_bottom_share.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String texto = tvTrad.getText().toString();
+                if (texto.equals("")) {
+                    Toast.makeText(getApplicationContext(), getString(R.string.noText), Toast.LENGTH_SHORT).show();
+                } else {
+                    texto += "\n(Translated by upv welcomeincoming)";
+                    Intent sendIntent = new Intent();
+                    sendIntent.setAction(Intent.ACTION_SEND);
+                    sendIntent.putExtra(Intent.EXTRA_TEXT, texto);
+                    sendIntent.setType("text/plain");
+                    startActivity(Intent.createChooser(sendIntent, getResources().getText(R.string.compartirTraduccion)));
+                }
+
+            }
+        });
+
+        //reproducir texto
+        iv_top_altavoz.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String texto = etTrad.getText().toString();
+                if (texto.equals("")) {
+                    Toast.makeText(getApplicationContext(), getString(R.string.noText), Toast.LENGTH_SHORT).show();
+                } else {
+                    mHandlerStart = new Handler();
+                    mHandlerDone = new Handler();
+                    HashMap<String, String> map = new HashMap<String, String>();
+                    map.put(TextToSpeech.Engine.KEY_PARAM_UTTERANCE_ID, "messageID");
+                    ttobjFrom.setLanguage(Language.getLocaleByName(spinnerFrom_selection));
+                    ttobjFrom.speak(texto, TextToSpeech.QUEUE_FLUSH, map);
+                }
+
+            }
+        });
+
+        //reproducir traduccion
+        iv_bottom_altavoz.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String texto = tvTrad.getText().toString();
+                if (texto.equals("")) {
+                    Toast.makeText(getApplicationContext(), getString(R.string.noText), Toast.LENGTH_SHORT).show();
+                } else {
+                    mHandlerStart = new Handler();
+                    mHandlerDone = new Handler();
+                    HashMap<String, String> map = new HashMap<String, String>();
+                    map.put(TextToSpeech.Engine.KEY_PARAM_UTTERANCE_ID, "messageID");
+                    ttobjTo.setLanguage(Language.getLocaleByName(spinnerTo_selection));
+                    ttobjTo.speak(texto, TextToSpeech.QUEUE_FLUSH, map);
+                }
+
+            }
+        });
+
+        //intercambiar seleccion en los spinners
+        button_change_language.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (spinnerFrom_selection.equals(getString(R.string.detectar_idioma))) {
+                    Toast.makeText(getApplicationContext(), getString(R.string.seleccione_idioma), Toast.LENGTH_SHORT).show();
+                } else {
+                    int index_from = spinner_from.getSelectedItemPosition();
+                    int index_to = spinner_to.getSelectedItemPosition();
+                    spinner_from.setSelection(index_to + 1, true);//se suma uno por la posicion que ocupa DETECT LANGUAGE en el spinner
+                    spinner_to.setSelection(index_from - 1, true);//se resta uno por la posicion que ocupa DETECT LANGUAGE en el otro spinner
+                }
+            }
+        });
+
+
+        //action speach to text
+        iv_top_mic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (spinnerFrom_selection.equals(getString(R.string.detectar_idioma))) {
+                    Toast.makeText(getApplicationContext(), getString(R.string.seleccione_idioma), Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
+                intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, Language.getLocaleByName(spinnerFrom_selection).toString());
+                try {
+                    startActivityForResult(intent, RESULT_SPEECH);
+                    etTrad.setText("");
+                } catch (ActivityNotFoundException a) {
+                    Toast.makeText(getApplicationContext(), getString(R.string.noSoportaSpeechToText), Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+    }
+
+
+    @Override //metodo que se usa para la obtencion del texto traducido mediante el speech to text
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        switch (requestCode) {
+            case RESULT_SPEECH: {
+                if (resultCode == RESULT_OK && null != data) {
+
+                    ArrayList<String> text = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
+                    etTrad.setText(text.get(0));
+                    etTrad.selectAll();
+                }
+                break;
+            }
+
         }
+    }
 
-        ttobj = new TextToSpeech(getApplicationContext(),
+    private void initViews() {
+        etTrad = (EditText) findViewById(R.id.etTrad);
+        tvTrad = (TextView) findViewById(R.id.tvTrad);
+        spinner_from = (Spinner) findViewById(R.id.spinner_language_from);
+        spinner_to = (Spinner) findViewById(R.id.spinner_language_to);
+        iv_top_flag = (ImageView) findViewById(R.id.iv_top_flag);
+        iv_top_mic = (ImageView) findViewById(R.id.iv_top_mic);
+        iv_top_clear = (ImageView) findViewById(R.id.iv_top_clear);
+        iv_top_altavoz = (ImageView) findViewById(R.id.iv_top_altavoz);
+        iv_bottom_copy = (ImageView) findViewById(R.id.iv_bottom_copy);
+        iv_bottom_share = (ImageView) findViewById(R.id.iv_bottom_share);
+        iv_bottom_altavoz = (ImageView) findViewById(R.id.iv_bottom_altavoz);
+        iv_bottom_flag = (ImageView) findViewById(R.id.iv_bottom_flag);
+        button_change_language = (ImageButton) findViewById(R.id.button_change_language);
+        button_translate = (ImageButton) findViewById(R.id.button_translate);
+        button_translate.setEnabled(false);
+        ttobjTo = new TextToSpeech(getApplicationContext(),
                 new TextToSpeech.OnInitListener() {
                     @Override
                     public void onInit(int status) {
                         if (status != TextToSpeech.ERROR) {
-                            ttobj.setLanguage(new Locale("es", "ES"));//español de españa
-                            //ttobj.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
+                            ttobjTo.setLanguage(new Locale("es", "ES"));//español de españa
                         }
                     }
                 }
         );
-
-    }
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.translate, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
-    public void openSpeech(View view) {
-        //borramos si lo hubiera la traducción anterior
-        tv_trans = (TextView) findViewById(R.id.ShowTranslate);
-        tv_trans.setText("");
-
-        //shows dialog box to recognize speech input
-        Intent intent = new Intent(
-                RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
-
-        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, "en-US");
-        try {
-            startActivityForResult(intent, RESULT_SPEECH);
-        } catch (ActivityNotFoundException a) {
-
-            Toast t = Toast.makeText(getApplicationContext(),
-                    a.getMessage(),
-                    Toast.LENGTH_LONG);
-            t.show();
-            Log.d(LOG_SPEECH, a.getMessage());
-        }
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        if (requestCode == RESULT_SPEECH) {
-            switch (resultCode) {
-                case RESULT_OK: {
-                    if (null != data) {
-
-                        ArrayList<String> text = data
-                                .getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
-
-                        gotoTranslate(text.get(0));
+        ttobjTo.setOnUtteranceProgressListener(new UtteranceProgressListener() {//no funciona de momento
+            @Override
+            public void onStart(String s) {
+                Runnable run = new Runnable() {
+                    public void run() {
+                        iv_bottom_altavoz.setImageDrawable((getResources().getDrawable(R.drawable.ic_action_altavoz_solido)));
 
                     }
-                    break;
-                }
-
-                case RecognizerIntent.RESULT_AUDIO_ERROR: {
-                    alertInfo(getResources().getString(R.string.err_audio));
-                    break;
-                }
-
-                case RecognizerIntent.RESULT_CLIENT_ERROR: {
-                    alertInfo(getResources().getString(R.string.err_client));
-                    break;
-                }
-
-                case RecognizerIntent.RESULT_NETWORK_ERROR: {
-                    alertInfo(getResources().getString(R.string.err_network));
-                    break;
-                }
-
-                case RecognizerIntent.RESULT_NO_MATCH: {
-                    alertInfo(getResources().getString(R.string.err_no_match));
-                    break;
-                }
-
-                case RecognizerIntent.RESULT_SERVER_ERROR: {
-                    alertInfo(getResources().getString(R.string.err_server));
-                    break;
-                }
+                };
+                mHandlerStart.post(run);
 
             }
+
+            @Override
+            public void onDone(String s) {
+                Runnable run = new Runnable() {
+                    public void run() {
+                        iv_bottom_altavoz.setImageDrawable((getResources().getDrawable(R.drawable.ic_action_altavoz_hueco)));
+                    }
+                };
+                mHandlerDone.post(run);
+            }
+
+            @Override
+            public void onError(String s) {
+
+            }
+        });
+        ttobjFrom = new TextToSpeech(getApplicationContext(),
+                new TextToSpeech.OnInitListener() {
+                    @Override
+                    public void onInit(int status) {
+                        if (status != TextToSpeech.ERROR) {
+                            ttobjFrom.setLanguage(new Locale("es", "ES"));//español de españa
+                        }
+                    }
+                }
+        );
+        ttobjFrom.setOnUtteranceProgressListener(new UtteranceProgressListener() {
+            @Override
+            public void onStart(String s) {
+                Runnable run = new Runnable() {
+                    public void run() {
+                        iv_top_altavoz.setImageDrawable((getResources().getDrawable(R.drawable.ic_action_altavoz_solido)));
+                    }
+                };
+                mHandlerStart.post(run);
+            }
+
+            @Override
+            public void onDone(String s) {
+                Runnable run = new Runnable() {
+                    public void run() {
+                        iv_top_altavoz.setImageDrawable((getResources().getDrawable(R.drawable.ic_action_altavoz_hueco)));
+                    }
+                };
+                mHandlerDone.post(run);
+
+            }
+
+            @Override
+            public void onError(String s) {
+
+            }
+        });
+
+
+    }
+
+
+    private class TraductorTask extends AsyncTask<String, Void, Void> {
+        private String textoAtraducir;
+        private Language idiomaOrigen;
+        private Language idiomaDestino;
+        private boolean detectarIdioma;
+        private String textoTraducido;
+        private TextView tv;
+        Language idiomaDetectado;
+
+        private TraductorTask(String texto, Language idiomaOrigen, Language idiomaDestino, boolean detectarIdioma, TextView tv) {
+            textoAtraducir = texto;
+            this.idiomaDestino = idiomaDestino;
+            this.idiomaOrigen = idiomaOrigen;
+            this.detectarIdioma = detectarIdioma;
+            this.tv = tv;
+
         }
 
-    }
+        @Override
+        protected void onPreExecute() {
 
-    public void alertInfo(String mns) {
-        // Use the Builder class for convenient dialog construction
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage(mns)
-                .setPositiveButton(getResources().getString(R.string.btn_OK), new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        // FIRE ZE MISSILES!
-                    }
-                });
-        // Create the AlertDialog object and return it
-        builder.show();
-    }
-
-    private void gotoTranslate(String mns) {
-        new TranslateWS().execute(mns);
-    }
-
-    private void displayTranslate(String text) {
-        //mostramos la traducción actual
-        TextView tvShowTranslate = (TextView) findViewById(R.id.ShowTranslate);
-        tvShowTranslate.setText(text);
-    }
-
-
-    public void gotoSpeak(View view) {
-        String toSpeak = tv_trans.getText().toString();
-
-        if (toSpeak != "") {
-            Intent intent = new Intent(Activity_Traduccion.this, Activity_Speaker.class);
-            intent.putExtra("text", toSpeak);
-            Activity_Traduccion.this.startActivity(intent);
-        } else
-            alertInfo(getResources().getString(R.string.err_no_text_TTS));
-
-    }
-
-    public void gotoSpeak_txt_1(View view) {
-        final String toSpeak = getResources().getString(R.string.txt_1);
-
-        if (toSpeak != "") {
-
-            //ttobj.setLanguage(new Locale("es", "ES"));
-            ttobj.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
-            Intent intent = new Intent(Activity_Traduccion.this, Activity_Speaker.class);
-            intent.putExtra("text", toSpeak);
-            //TranslateActivity.this.startActivity(intent);
-        } else
-            alertInfo(getResources().getString(R.string.err_no_text_TTS));
-
-    }
-
-    public void gotoSpeak_txt_2(View view) {
-        String toSpeak = getResources().getString(R.string.txt_2);
-
-        if (toSpeak != "") {
-            ttobj.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
-            Intent intent = new Intent(Activity_Traduccion.this, Activity_Speaker.class);
-            intent.putExtra("text", toSpeak);
-            //TranslateActivity.this.startActivity(intent);
-        } else
-            alertInfo(getResources().getString(R.string.err_no_text_TTS));
-
-    }
-
-    public void gotoSpeak_txt_3(View view) {
-        String toSpeak = getResources().getString(R.string.txt_3);
-
-        if (toSpeak != "") {
-            ttobj.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
-            Intent intent = new Intent(Activity_Traduccion.this, Activity_Speaker.class);
-            intent.putExtra("text", toSpeak);
-            //TranslateActivity.this.startActivity(intent);
-        } else
-            alertInfo(getResources().getString(R.string.err_no_text_TTS));
-
-    }
-
-    public void gotoSpeak_txt_4(View view) {
-        String toSpeak = getResources().getString(R.string.txt_4);
-
-        if (toSpeak != "") {
-            ttobj.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
-            Intent intent = new Intent(Activity_Traduccion.this, Activity_Speaker.class);
-            intent.putExtra("text", toSpeak);
-            //TranslateActivity.this.startActivity(intent);
-        } else
-            alertInfo(getResources().getString(R.string.err_no_text_TTS));
-
-    }
-
-    public void gotoSpeak_txt_5(View view) {
-        String toSpeak = getResources().getString(R.string.txt_5);
-
-        if (toSpeak != "") {
-            ttobj.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
-            Intent intent = new Intent(Activity_Traduccion.this, Activity_Speaker.class);
-            intent.putExtra("text", toSpeak);
-            //TranslateActivity.this.startActivity(intent);
-        } else
-            alertInfo(getResources().getString(R.string.err_no_text_TTS));
-
-    }
-
-    public void gotoSpeak_txt_6(View view) {
-        String toSpeak = getResources().getString(R.string.txt_6);
-
-        if (toSpeak != "") {
-            ttobj.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
-            Intent intent = new Intent(Activity_Traduccion.this, Activity_Speaker.class);
-            intent.putExtra("text", toSpeak);
-            //TranslateActivity.this.startActivity(intent);
-        } else
-            alertInfo(getResources().getString(R.string.err_no_text_TTS));
-
-    }
-
-    public void gotoSpeak_txt_7(View view) {
-        String toSpeak = getResources().getString(R.string.txt_7);
-
-        if (toSpeak != "") {
-            ttobj.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
-            Intent intent = new Intent(Activity_Traduccion.this, Activity_Speaker.class);
-            intent.putExtra("text", toSpeak);
-            //TranslateActivity.this.startActivity(intent);
-        } else
-            alertInfo(getResources().getString(R.string.err_no_text_TTS));
-
-    }
-
-    public void gotoSpeak_txt_8(View view) {
-        String toSpeak = getResources().getString(R.string.txt_8);
-
-        if (toSpeak != "") {
-            ttobj.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
-            Intent intent = new Intent(Activity_Traduccion.this, Activity_Speaker.class);
-            intent.putExtra("text", toSpeak);
-            //TranslateActivity.this.startActivity(intent);
-        } else
-            alertInfo(getResources().getString(R.string.err_no_text_TTS));
-
-    }
-
-    private class TranslateWS extends AsyncTask<String, Void, String> {
+        }
 
         @Override
-        protected String doInBackground(String... strings) {
-            String _txtInput = strings[0];
-            String _txtOutput = "";
-            BufferedReader reader = null;
-            InternetConnectionChecker connCheck = new InternetConnectionChecker();
-
-            try {
-                if (connCheck.checkInternetConnection(getApplicationContext())) {
-                    //https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20140402T105859Z.4a17eb3e003ca70b.f0a5f0680f124bd00ae5ab4e781f4e1c16593dd2&
-                    // lang=en-es&text=To+be,+or+not+to+be%3F&text=That+is+the+question.
-                    //lang=es ->detecta automaticamente el idioma de entrada
-                    List<NameValuePair> data = new ArrayList<NameValuePair>();
-                    BasicNameValuePair pair = new BasicNameValuePair("key", "trnsl.1.1.20140402T105859Z.4a17eb3e003ca70b.f0a5f0680f124bd00ae5ab4e781f4e1c16593dd2");
-                    data.add(pair);
-                    pair = new BasicNameValuePair("lang", "es");
-                    data.add(pair);
-                    pair = new BasicNameValuePair("text", _txtInput);//luego pasarlo por parametro
-                    data.add(pair);
-
-                    URL url = new URL("https://translate.yandex.net/api/v1.5/tr.json/translate?" + URLEncodedUtils.format(data, "UTF-8"));
-                    HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-                    //con.setRequestMethod("GET"); //El metodo por defecto ya es GET
-                    conn.setDoOutput(false);//NO POST
-                    conn.setDoInput(true);//GET  vamos a recibir info
-                    Log.d(LOG_TRANS, "parametros: " + data);
-
-                    if (conn.getResponseCode() == 200) {
-
-                        reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-                        StringBuilder sb = new StringBuilder();
-
-                        GsonBuilder builder = new GsonBuilder();
-                        Gson gson = builder.create();
-                        Traducir response = gson.fromJson(reader, Traducir.class);
-                        Log.d(LOG_TRANS, "Traduccion obtenida");
-
-                        _txtOutput = response.getText();
-
-
-                    } else
-                        Log.d(LOG_TRANS, "Error in TranslateWS: " + conn.getResponseCode() + " : " + conn.getResponseMessage());
-
+        protected void onPostExecute(Void v) {
+            tv.setText(textoTraducido);
+            if (detectarIdioma) {
+                if (idiomaDetectado == null) {
+                    Toast.makeText(getApplicationContext(), getString(R.string.idiomaNoDetectado), Toast.LENGTH_SHORT).show();
                 } else {
-                    Log.d(LOG_TRANS, "without internet connection");
-                    Toast.makeText(getApplicationContext(),
-                            getResources().getString(R.string.sinConn), Toast.LENGTH_LONG).show();
-                }
-            } catch (Exception ex) {
-                ex.printStackTrace();//sin permisos en androidmanifest para acceso a internet ni red
-                Log.d(LOG_TRANS, "exception: " + ex.getMessage());
-            } finally {
-                try {
-
-                    reader.close();
-
-                } catch (Exception ex) {
-                    Log.d(LOG_TRANS, "finally: " + ex.getMessage());
+                    iv_top_flag.setImageDrawable(Language.getFlagResourcebyName(Language.getNameByCode(idiomaDetectado.toString()), getApplicationContext()));
+                    ttobjFrom.setLanguage(Language.getLocaleByCode(idiomaDetectado.toString()));
                 }
             }
-            return _txtOutput;
         }
-
 
         @Override
-        protected void onPostExecute(String text) {
-            Log.d(LOG_TRANS, "En onPostExecute de TranslateWS: respuesta del servidor " + text);
-            //alertInfo(text);
-            displayTranslate(text);
+        protected Void doInBackground(String... strings) {
+            try {
+                if (detectarIdioma) {
+                    idiomaDetectado = Detect.execute(textoAtraducir);
+                    textoTraducido = Translate.execute(textoAtraducir, idiomaDetectado, idiomaDestino);
+                } else {
+                    textoTraducido = Translate.execute(textoAtraducir, idiomaOrigen, idiomaDestino);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+    }
+
+    private class SpinnerHandlerTo implements AdapterView.OnItemSelectedListener {
+        /**
+         * This method will invoke when an entry is selected. Invoked once
+         * when Spinner is first displayed, then again for each time the user selects something
+         */
+        @Override
+        public void onItemSelected(AdapterView<?> spinner, View selectedView, int selectedIndex, long id) {
+            String selection = spinner.getItemAtPosition(selectedIndex).toString();
+            spinnerTo_selection = selection;
+            iv_bottom_flag.setImageDrawable(Language.getFlagResourcebyName(selection, getApplicationContext()));
+
+            //traducimos tambien si hay texto
+            if (spinnerFrom_selection == null) return;
+            String texto = etTrad.getText().toString();
+            if (texto.equals("")) return;
+            if (spinnerFrom_selection.equals(getString(R.string.detectar_idioma))) {
+                new TraductorTask(texto, null, Language.fromString(Language.getCodeByName(spinnerTo_selection)), true, tvTrad).execute();
+            } else {
+                new TraductorTask(texto, Language.fromString(Language.getCodeByName(spinnerFrom_selection)), Language.fromString(Language.getCodeByName(spinnerTo_selection)), false, tvTrad).execute();
+            }
+
 
         }
 
+        @Override
+        public void onNothingSelected(AdapterView<?> arg0) {
+            // TODO Auto-generated method stub
 
+        }
     }
+
+    private class SpinnerHandlerFrom implements AdapterView.OnItemSelectedListener {
+        /**
+         * This method will invoke when an entry is selected. Invoked once
+         * when Spinner is first displayed, then again for each time the user selects something
+         */
+        @Override
+        public void onItemSelected(AdapterView<?> spinner, View selectedView, int selectedIndex, long id) {
+            String selection = spinner.getItemAtPosition(selectedIndex).toString();
+            spinnerFrom_selection = selection;
+            if (!spinnerFrom_selection.equals(getString(R.string.detectar_idioma))) {
+                iv_top_flag.setImageDrawable(Language.getFlagResourcebyName(selection, getApplicationContext()));
+            } else {
+                iv_top_flag.setBackgroundResource(android.R.color.transparent);
+                iv_top_flag.setImageDrawable(null);
+            }
+        }
+
+        @Override
+        public void onNothingSelected(AdapterView<?> arg0) {
+            // TODO Auto-generated method stub
+
+        }
+    }
+
 
 }

@@ -1,5 +1,7 @@
 package upv.welcomeincoming.app;
 
+import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -10,6 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import util.DBHandler_Horarios;
 import util.Preferencias;
 
 
@@ -40,11 +43,12 @@ public class Fragment_Opciones extends Fragment {
             @Override
             public void onClick(View view) {
                 if (Preferencias.getDNI(getActivity()) == "") {
-                    Dialog_LoginSettings fragmentCalendarLogin = new Dialog_LoginSettings();
-                    fragmentCalendarLogin.show(getFragmentManager(), getString(R.string.login));
+                    Intent i = new Intent(getActivity(), Activity_login.class);
+                    startActivity(i);
                 } else {
                     Preferencias.setDNI(getActivity(), "");
                     Preferencias.setPIN(getActivity(), "");
+                    borrarDatosUsuario();
                     TextView tvi = (TextView) itemSesion.findViewById(R.id.textSesionInfo);
                     TextView tvv = (TextView) itemSesion.findViewById(R.id.textSesionValue);
                     tvi.setText(getString(R.string.nosesion));
@@ -137,5 +141,12 @@ public class Fragment_Opciones extends Fragment {
     private void addDividier() {
         View v = inflater.inflate(R.layout.dividier_itemdrawer, null);
         linearLista.addView(v);
+    }
+
+
+    private void borrarDatosUsuario() {
+        SQLiteDatabase db = new DBHandler_Horarios(getActivity()).getWritableDatabase();
+        db.execSQL("DELETE FROM Evento");
+        db.execSQL("DELETE FROM Horario");
     }
 }

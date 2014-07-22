@@ -178,4 +178,16 @@
     <string name="textCopyToClipboard">Texto copiado al portapapeles</string>
     <string name="compartirTraduccion">Compartir traducción</string>
     <string name="idiomaNoDetectado">Idioma no detectado</string>
+    <string name="seleccione_idioma">Por favor, seleccione un idioma</string>
+    <string name="noSoportaSpeechToText">Su dispositivo no soporta esta función</string>
+    <string name="title_activity_activity_login">Activity_login</string>
+    <string name="identificarse">Identificarse</string>
+    <string name="help_dni">- Los alumnos extranjeros consignarán el número de su pasaporte o NIE en lugar del DNI.</string>
+    <string name="help_PIN">- En la casilla del PIN, se incluirá el número pin de la automatrícula.</string>
+    <string name="incorrect_dni_pin">DNI o PIN incorrectos.</string>
+    <string name="error">Error</string>
+    <string name="errorlogin">An error ocurred while logging in. Check your log in data.</string>
+    <string name="updating">Updating...</string>
+    <string name="edificio">Building</string>
+
 </resources>

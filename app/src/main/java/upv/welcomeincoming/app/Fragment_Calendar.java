@@ -146,6 +146,7 @@ public class Fragment_Calendar extends ListFragment implements Observer {
             progressDialog.setMessage(getString(R.string.connecting));
             intranetConnection.connect();
         }
+        db.close();
         setHasOptionsMenu(true);
     }
 

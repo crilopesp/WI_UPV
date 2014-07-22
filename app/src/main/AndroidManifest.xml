@@ -89,14 +89,20 @@
         <activity
             android:name=".Activity_Filtros"
             android:label="@string/title_activity_activity_filtros_asignatura"
-            android:theme="@android:style/Theme.Dialog"></activity>
+
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"></activity>
         <activity
             android:name=".Activity_Filtros_Fecha"
             android:label="@string/title_activity_activity_filtros_fecha"
-            android:theme="@android:style/Theme.Dialog"></activity>
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"></activity>
         <activity
             android:name=".Activity_Localizacion"
             android:label="@string/location_client_powered_by_google"></activity>
+
+        <activity
+            android:name="upv.welcomeincoming.app.Activity_login"
+            android:label="@string/title_activity_activity_login"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
 
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"

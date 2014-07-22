@@ -5,15 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:ignore="MergeRootFrame"
-    android:weightSum="5">
+    android:weightSum="10">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_weight="2">
+        android:layout_weight="4">
 
-        <TextView
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/mapa_upv"
@@ -34,7 +34,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_weight="3">
+        android:fillViewport="true"
+        android:layout_weight="6">
 
         <TextView
         android:layout_width="match_parent"
@@ -50,13 +51,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/scrollView"
+            android:fillViewport="true"
             android:background="@color/light_pink">
 
             <LinearLayout
             android:id="@+id/lineaerlayout_info_valenbisi"
             android:orientation="horizontal"
                 android:layout_width="match_parent"
-            android:background="#ff10124a"
                 android:layout_height="match_parent"></LinearLayout>
         </ScrollView>
     </LinearLayout>

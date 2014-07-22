@@ -161,6 +161,10 @@
     <string name="info">Information</string>
     <string name="bicistotal">Total bicis</string>
     <string name="bicisdisponibles">Bicis disponibles</string>
+    <string name="error">Error</string>
+    <string name="errorlogin">An error ocurred while logging in. Check your log in data.</string>
+    <string name="updating">Updating...</string>
+    <string name="edificio">Building</string>
 
     <integer-array name="gplus_colors">
         <item>@color/redly</item>

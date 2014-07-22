@@ -10,8 +10,8 @@ import java.io.BufferedInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.List;
 
 
 /**
@@ -27,15 +27,11 @@ public class Parser_XML_valenbisi {
 
     /*Como resultado de parsear el fichero se devuelve una lista de objetos: asignatura,schooñ,transporte o valencia
     dependiendo del fichero pasado como arcgumento*/
-    public void parsear(SQLiteDatabase db) throws IOException, XmlPullParserException {
+    public void parsear(InputStream fichero, SQLiteDatabase db) throws IOException, XmlPullParserException {
 
         /*La lista que vamos a devolver*/
-        List resultado;
-        URL url = new URL("http://www.valenbisi.es/service/carto");
-        HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
-        InputStream in = new BufferedInputStream(urlConnection.getInputStream());
         XmlPullParser parseado = XmlPullParserFactory.newInstance().newPullParser();
-        parseado.setInput(in, null);
+        parseado.setInput(fichero, null);
         int tipoevento = parseado.getEventType();
         MarcadorValenbisi mvb = null;
 
@@ -50,8 +46,6 @@ public class Parser_XML_valenbisi {
                 int numeroPlazas = 0;
                 int plazasLibres = 0;
                 mvb = new MarcadorValenbisi(numero, direccion, longitud, latitud, numeroPlazas, plazasLibres);
-
-                mvb = parsearPlazas(mvb);
                 db.execSQL("INSERT OR IGNORE INTO Valenbisi (num,direccion,longitud,latitud,numPlazas,plazasDisponibles) VALUES (" + mvb.getNumero() + ",\"" + mvb.getDireccion() + "\"," + mvb.getLongitud() + "," + mvb.getLatitud() + "," + mvb.getNumeroPlazas() + "," + mvb.getPlazasDisponibles() + ");");
 
                 parseado.next();
@@ -63,26 +57,35 @@ public class Parser_XML_valenbisi {
         }
     }
 
-    private MarcadorValenbisi parsearPlazas(MarcadorValenbisi mvb) throws XmlPullParserException, IOException {
-        URL urlDatos = new URL("http://www.valenbisi.es/service/stationdetails/valence/" + mvb.getNumero());
-        HttpURLConnection urlConnection1 = (HttpURLConnection) urlDatos.openConnection();
-        InputStream in1 = new BufferedInputStream(urlConnection1.getInputStream());
-        XmlPullParser parseado1 = XmlPullParserFactory.newInstance().newPullParser();
-        parseado1.setInput(in1, null);
-        int tipoevento1 = parseado1.getEventType();
+    public void parsearPlazas(MarcadorValenbisi mvb, SQLiteDatabase db) {
+        URL urlDatos = null;
+        try {
+            urlDatos = new URL("http://www.valenbisi.es/service/stationdetails/valence/" + mvb.getNumero());
 
-        while (tipoevento1 != XmlPullParser.END_DOCUMENT) {
-
-            if ((tipoevento1 == XmlPullParser.START_TAG) && (parseado1.getName().equals("total"))) {
-                mvb.setNumeroPlazas(Integer.parseInt(parseado1.nextText()));
-            } else if ((tipoevento1 == XmlPullParser.START_TAG) && (parseado1.getName().equals("available"))) {
-                mvb.setPlazasDisponibles(Integer.parseInt(parseado1.nextText()));
+            HttpURLConnection urlConnection1 = (HttpURLConnection) urlDatos.openConnection();
+            InputStream in1 = new BufferedInputStream(urlConnection1.getInputStream());
+            XmlPullParser parseado1 = XmlPullParserFactory.newInstance().newPullParser();
+            parseado1.setInput(in1, null);
+            int tipoevento1 = parseado1.getEventType();
+            int plazasTotal = 0, plazasDisponibles = 0;
+            while (tipoevento1 != XmlPullParser.END_DOCUMENT) {
+                if ((tipoevento1 == XmlPullParser.START_TAG) && (parseado1.getName().equals("total"))) {
+                    plazasTotal = Integer.parseInt(parseado1.nextText());
+                } else if ((tipoevento1 == XmlPullParser.START_TAG) && (parseado1.getName().equals("available"))) {
+                    plazasDisponibles = Integer.parseInt(parseado1.nextText());
+                }
+                parseado1.next();
+                tipoevento1 = parseado1.getEventType();
             }
-            parseado1.next();
-            tipoevento1 = parseado1.getEventType();
-        }
-        return mvb;
-    }
+            db.execSQL("UPDATE Valenbisi SET numPlazas=" + plazasTotal + ", plazasDisponibles=" + plazasDisponibles + " WHERE num=" + mvb.getNumero() + ";");
 
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (XmlPullParserException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
 
