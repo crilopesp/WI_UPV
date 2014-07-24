@@ -5,10 +5,8 @@ import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Typeface;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.app.DialogFragment;
@@ -19,22 +17,14 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import org.xmlpull.v1.XmlPullParserException;
-
-import java.io.IOException;
-import java.io.InputStream;
-
 import calendarupv.Calendario;
 import util.DBHandler_Horarios;
-import util.Parser_XML_edificios;
-import util.Parser_XML_valenbisi;
 import util.Preferencias;
 import util.ProgressDialog_Custom;
 
@@ -231,12 +221,7 @@ public class Activity_Home extends ActionBarActivity implements Fragment_Diary.D
                 fragment = new Fragment_Traduccion();
                 break;
             case 4:
-                if (valenbisiestaVacia())
-                    new parsearMarcadores().execute();
-                else {
-                    Intent i = new Intent(getApplicationContext(), Activity_Localizacion.class);
-                    startActivity(i);
-                }
+                fragment = new Fragment_RealidadAumentada(db);
                 break;
             case 5:
                 fragment = new Fragment_Opciones();
@@ -356,50 +341,5 @@ public class Activity_Home extends ActionBarActivity implements Fragment_Diary.D
                 return builder.create();
             }
         };
-    }
-
-    class parsearMarcadores extends AsyncTask<String, Void, Void> {
-        @Override
-        protected void onPostExecute(Void v) {
-            Intent i = new Intent(getApplicationContext(), Activity_Localizacion.class);
-            startActivity(i);
-            progress.dismiss();
-        }
-
-        @Override
-        protected void onPreExecute() {
-
-            progress.getWindow().setGravity(Gravity.BOTTOM);
-            progress.show();
-            super.onPreExecute();
-        }
-
-        @Override
-        protected Void doInBackground(String... strings) {
-
-            InputStream fichero = getApplicationContext().getResources().openRawResource(R.raw.valenbisi);
-            Parser_XML_valenbisi parser_xml_valenbisi = new Parser_XML_valenbisi();
-            Parser_XML_edificios parser_xml_edificios = new Parser_XML_edificios();
-            try {
-                parser_xml_valenbisi.parsear(fichero, db);
-                parser_xml_edificios.parsearEdificios(getResources().openRawResource(R.raw.edificios), db);
-            } catch (IOException e) {
-                Log.e("error", e.getMessage());
-            } catch (XmlPullParserException e) {
-                Log.e("error", e.getMessage() + " at " + e.getLineNumber() + "," + e.getColumnNumber());
-            }
-            return null;
-        }
-    }
-
-    private boolean valenbisiestaVacia() {
-        String sql = "SELECT * FROM Valenbisi";
-        Cursor cursor = db.rawQuery(sql, null);
-        if (cursor.getCount() <= 0) {
-            cursor.close();
-            return true;
-        }
-        cursor.close();
-        return false;
     }
 }

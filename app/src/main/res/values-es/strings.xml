@@ -165,6 +165,13 @@
     <string name="errorlogin">An error ocurred while logging in. Check your log in data.</string>
     <string name="updating">Updating...</string>
     <string name="edificio">Building</string>
+    <string name="mapas">Maps</string>
+    <string name="encontrarEdificio">Find the building</string>
+    <string name="UPV_map">UPV building map</string>
+    <string name="valenbisi_map">Valenbisi map</string>
+    <string name="metro_map">Underground map</string>
+    <string name="emt_map">EMT map</string>
+    <string name="interes_map">Important sites map</string>
 
     <integer-array name="gplus_colors">
         <item>@color/redly</item>

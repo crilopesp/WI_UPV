@@ -19,6 +19,7 @@
 
     <LinearLayout
         android:id="@+id/linearEdificio"
+        android:fillViewport="true"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -37,12 +38,6 @@
             android:layout_gravity="center"
             android:layout_weight="10" />
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_action_street_view"
-            android:id="@+id/ibStreetview" />
-
     </LinearLayout>
 
     <LinearLayout
@@ -52,13 +47,14 @@
         android:layout_gravity="center_horizontal"
         android:id="@+id/linearLayout"
         android:layout_margin="10dp"
+        android:fillViewport="true"
         android:weightSum="2">
 
         <LinearLayout
 
             android:orientation="vertical"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:padding="5dp"
             android:background="@drawable/background_progressdialog">
@@ -67,6 +63,7 @@
                 android:fillViewport="true"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="#FFF"
                 android:id="@+id/listaInfor" />
         </LinearLayout>
 

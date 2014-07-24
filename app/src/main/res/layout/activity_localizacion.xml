@@ -1,6 +1,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     android:id="@+id/contenedor_fragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -11,19 +11,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_weight="4">
+        android:layout_weight="3">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/mapa_upv"
-        android:background="@color/redly"
-        android:textSize="15dp"
-        android:textColor="#FFF"
-        android:gravity="center"
-        android:id="@+id/textView" />
-
-    <fragment
+        <fragment
         android:id="@+id/map_view"
         android:name="com.google.android.gms.maps.MapFragment"
         android:layout_width="match_parent"
@@ -35,7 +25,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:fillViewport="true"
-        android:layout_weight="6">
+        android:layout_weight="7">
 
         <TextView
         android:layout_width="match_parent"
@@ -57,6 +47,7 @@
             <LinearLayout
             android:id="@+id/lineaerlayout_info_valenbisi"
             android:orientation="horizontal"
+                android:fillViewport="true"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"></LinearLayout>
         </ScrollView>
