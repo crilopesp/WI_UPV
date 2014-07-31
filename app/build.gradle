@@ -4,7 +4,7 @@ android {
     compileSdkVersion 19
     buildToolsVersion '19.1.0'
     defaultConfig {
-        minSdkVersion 10
+        minSdkVersion 14
         targetSdkVersion 19
         versionCode 1
         versionName '1.0'
@@ -42,10 +42,8 @@ dependencies {
     compile files('src/main/libs/backport-util-concurrent-3.1.jar')
     compile files('src/main/libs/wikitudesdk.jar')
     compile files('src/main/libs/json_simple-1.1.jar')
-    // You must install or update the Support Repository through the SDK manager to use this dependency.
-    // You must install or update the Support Repository through the SDK manager to use this dependency.
-    // You must install or update the Support Repository through the SDK manager to use this dependency.
     compile 'com.android.support:support-v4:19.0.1'
     compile 'com.android.support:appcompat-v7:19.0.1'
     compile 'com.google.android.gms:play-services:4.3.23'
+    compile 'com.github.amlcurran.showcaseview:library:5.0.0'
 }

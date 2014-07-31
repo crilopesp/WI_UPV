@@ -44,7 +44,7 @@
             android:label="Welcome Incoming"
             android:screenOrientation="portrait"
             android:theme="@style/NoActionBar">
-        <intent-filter>
+            <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
 
                 <action android:name="android.intent.action.MAIN" />
@@ -59,7 +59,7 @@
             android:label="@string/title_activity_translate"
             android:parentActivityName=".Activity_Home"
             android:screenOrientation="portrait">
-        <meta-data
+            <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="Home" />
         </activity>
@@ -68,7 +68,7 @@
             android:label="@string/title_activity_speaker"
             android:parentActivityName=".Activity_Traduccion"
             android:screenOrientation="portrait">
-        <meta-data
+            <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="TranslateActivity" />
         </activity>
@@ -77,7 +77,7 @@
             android:configChanges="screenSize|orientation"
             android:label="Augmented reality"
             android:parentActivityName=".Activity_Home">
-        <meta-data
+            <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="Home" />
         </activity>
@@ -91,19 +91,24 @@
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity
             android:name=".Activity_Localizacion_Valenbisi"
-            android:screenOrientation="landscape"
             android:label="@string/location_client_powered_by_google" />
+        <activity
+            android:name=".Activity_Info_Valenbisi"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity
             android:name=".Activity_Localizacion_UPV"
-            android:screenOrientation="landscape"
             android:label="@string/location_client_powered_by_google" />
         <activity
+            android:name=".Activity_Info_UPV"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
             android:name=".Activity_Localizacion_Interes"
-            android:screenOrientation="landscape"
             android:label="@string/location_client_powered_by_google" />
         <activity
             android:name=".Activity_Localizacion_EMT"
-            android:screenOrientation="landscape"
+            android:label="@string/location_client_powered_by_google" />
+        <activity
+            android:name=".Activity_Localizacion_Metro"
             android:label="@string/location_client_powered_by_google" />
         <activity
             android:name=".Activity_login"

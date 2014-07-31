@@ -23,12 +23,16 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.github.amlcurran.showcaseview.OnShowcaseEventListener;
+import com.github.amlcurran.showcaseview.ShowcaseView;
+import com.github.amlcurran.showcaseview.targets.ActionViewTarget;
+
 import calendarupv.Calendario;
 import util.DBHandler_Horarios;
 import util.Preferencias;
 import util.ProgressDialog_Custom;
 
-public class Activity_Home extends ActionBarActivity implements Fragment_Diary.DiaryListener, Fragment_Calendar.CalendarListener {
+public class Activity_Home extends ActionBarActivity implements Fragment_Diary.DiaryListener, Fragment_Calendar.CalendarListener, OnShowcaseEventListener {
 
     private String[] opcionesMenu;
     private DrawerLayout drawerLayout;
@@ -42,6 +46,7 @@ public class Activity_Home extends ActionBarActivity implements Fragment_Diary.D
     DBHandler_Horarios helper;
     ProgressDialog_Custom progress;
     SQLiteDatabase db;
+    ShowcaseView sv;
 
 
     @Override
@@ -63,7 +68,15 @@ public class Activity_Home extends ActionBarActivity implements Fragment_Diary.D
         fragmentActual = 0;
         inicializarElementos();
         //Aqui borrar preferencias para probar el log in
+        ActionViewTarget target = new ActionViewTarget(this, ActionViewTarget.Type.HOME);
 
+        sv = new ShowcaseView.Builder(this)
+                .setTarget(target)
+                .setContentTitle(R.string.tutorial_drawer_title)
+                .setContentText(R.string.tutorial_drawer_message)
+                .setStyle(R.style.ShowCaseTheme)
+                .hideOnTouchOutside()
+                .build();
     }
 
     @Override
@@ -177,6 +190,7 @@ public class Activity_Home extends ActionBarActivity implements Fragment_Diary.D
 
             public void onDrawerOpened(View drawerView) {
                 getSupportActionBar().setTitle(tituloApp);
+                sv.hide();
                 // ActivityCompat.invalidateOptionsMenu(MainActivity.this); //invoca a onPrepareOptionsMenu()
             }
         };
@@ -233,7 +247,7 @@ public class Activity_Home extends ActionBarActivity implements Fragment_Diary.D
         if (fragment != null) {
 
             FragmentManager fgm = getSupportFragmentManager();
-            fgm.beginTransaction().replace(R.id.contenedor_fragment, fragment).commit();
+            fgm.beginTransaction().replace(R.id.contenedor_fragment, fragment).addToBackStack("tag").commit();
             getSupportActionBar().setTitle(opcionesMenu[position]);
             drawerLayout.closeDrawer(panelDrawer);
             fragmentActual = position;
@@ -341,5 +355,20 @@ public class Activity_Home extends ActionBarActivity implements Fragment_Diary.D
                 return builder.create();
             }
         };
+    }
+
+    @Override
+    public void onShowcaseViewHide(ShowcaseView showcaseView) {
+
+    }
+
+    @Override
+    public void onShowcaseViewDidHide(ShowcaseView showcaseView) {
+
+    }
+
+    @Override
+    public void onShowcaseViewShow(ShowcaseView showcaseView) {
+
     }
 }

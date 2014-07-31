@@ -5,6 +5,18 @@
         <item name="spbStyle">@style/SmoothProgressBar</item>
     </style>
 
+    <style name="ShowCaseTheme" parent="ShowcaseView.Light">
+        <item name="sv_backgroundColor">#e1b90005</item>
+        <item name="sv_showcaseColor">#fff79c97</item>
+        <item name="sv_buttonText">@string/ocultar</item>
+        <item name="sv_tintButtonColor">true</item>
+        <item name="sv_titleTextAppearance">
+            @android:style/TextAppearance.DeviceDefault.DialogWindowTitle
+        </item>
+        <item name="sv_detailTextColor">#FDFDFD</item>
+        <item name="sv_detailTextAppearance">@android:style/TextAppearance.Holo.WindowTitle</item>
+    </style>
+
     <style name="GNowProgressBar" parent="SmoothProgressBar">
         <item name="spb_stroke_separator_length">0dp</item>
         <item name="spb_sections_count">2</item>
@@ -65,4 +77,5 @@
     </style>
 
 
+    <string name="ocultar">Hide</string>
 </resources>

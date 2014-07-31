@@ -1,5 +1,6 @@
 package upv.welcomeincoming.app;
 
+import android.app.Dialog;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -10,6 +11,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -46,11 +49,21 @@ public class Activity_Localizacion_Interes extends FragmentActivity {
 
         progress = new ProgressDialog_Custom(this, getString(R.string.loading));
         // Initialize the HashMap for Markers and MyMarker object
+        int status = GooglePlayServicesUtil.isGooglePlayServicesAvailable(getBaseContext());
 
-        MarkersHashMap = new HashMap<Marker, Interes>();
-        MarkersArray = obtenerMarcadores(db);
-        setUpMap();
-        plotMarkers(MarkersArray);
+        // Showing status
+        if (status != ConnectionResult.SUCCESS) { // Google Play Services are not available
+
+            int requestCode = 10;
+            Dialog dialog = GooglePlayServicesUtil.getErrorDialog(status, this, requestCode);
+            dialog.show();
+
+        } else {
+            MarkersHashMap = new HashMap<Marker, Interes>();
+            MarkersArray = obtenerMarcadores(db);
+            setUpMap();
+            plotMarkers(MarkersArray);
+        }
     }
 
     private void plotMarkers(ArrayList<Interes> markers) {
@@ -76,6 +89,7 @@ public class Activity_Localizacion_Interes extends FragmentActivity {
             CameraUpdate cameraUpdate = CameraUpdateFactory.newCameraPosition(new CameraPosition(posicionUPV, 15, 0, 20));
             mMap.animateCamera(cameraUpdate);
 
+            mMap.setMyLocationEnabled(true);
             // Check if we were successful in obtaining the map.
 
             if (mMap != null) {

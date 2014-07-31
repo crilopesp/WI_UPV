@@ -118,7 +118,7 @@ public class Fragment_RealidadAumentada extends Fragment {
                         e.printStackTrace();
                     }
                 }
-                Intent intent = new Intent(getActivity(), Acvitity_VistaRealidadAumentada.class);
+                Intent intent = new Intent(getActivity(), Activity_Localizacion_Metro.class);
                 startActivity(intent);
                 pg.dismiss();
             }

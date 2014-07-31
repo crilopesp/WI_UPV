@@ -1,16 +1,18 @@
 package upv.welcomeincoming.app;
 
+import android.app.Dialog;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.Gravity;
-import android.view.View;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -42,19 +44,30 @@ public class Activity_Localizacion_Valenbisi extends FragmentActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         DBHandler_Horarios helper = new DBHandler_Horarios(this);
         db = helper.getWritableDatabase();
-        setContentView(R.layout.activity_localizacion);
+        setContentView(R.layout.activity_localizacion_noinfo);
 
         progress = new ProgressDialog_Custom(this, getString(R.string.loading));
         linear = (LinearLayout) findViewById(R.id.lineaerlayout_info_valenbisi);
         // Initialize the HashMap for Markers and MyMarker object
+        int status = GooglePlayServicesUtil.isGooglePlayServicesAvailable(getBaseContext());
 
-        VBMarkersHashMap = new HashMap<Marker, MarcadorValenbisi>();
-        VBMarkersArray = obtenerMarcadoresVB(db);
-        setUpMap();
-        plotMarkers(VBMarkersArray);
+        // Showing status
+        if (status != ConnectionResult.SUCCESS) { // Google Play Services are not available
+
+            int requestCode = 10;
+            Dialog dialog = GooglePlayServicesUtil.getErrorDialog(status, this, requestCode);
+            dialog.show();
+
+        } else {
+            VBMarkersHashMap = new HashMap<Marker, MarcadorValenbisi>();
+            VBMarkersArray = obtenerMarcadoresVB(db);
+            setUpMap();
+            plotMarkers(VBMarkersArray);
+        }
     }
 
     private void plotMarkers(ArrayList<MarcadorValenbisi> markers) {
@@ -79,17 +92,13 @@ public class Activity_Localizacion_Valenbisi extends FragmentActivity {
             LatLng posicionUPV = new LatLng(39.4810811, -0.3421079);
             CameraUpdate cameraUpdate = CameraUpdateFactory.newCameraPosition(new CameraPosition(posicionUPV, 15, 0, 20));
             mMap.animateCamera(cameraUpdate);
-
+            mMap.setMyLocationEnabled(true);
             // Check if we were successful in obtaining the map.
 
             if (mMap != null) {
                 mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
                     @Override
                     public boolean onMarkerClick(final com.google.android.gms.maps.model.Marker marker) {
-                        linear.removeAllViews();
-                        LatLng posicionVB = new LatLng(Double.parseDouble(VBMarkersHashMap.get(marker).getLatitud()), Double.parseDouble(VBMarkersHashMap.get(marker).getLongitud()));
-                        CameraUpdate cameraUpdate = CameraUpdateFactory.newCameraPosition(new CameraPosition(posicionVB, 17, 0, 20));
-                        mMap.animateCamera(cameraUpdate);
                         current = marker;
                         if (new InternetConnectionChecker().checkInternetConnection(getApplicationContext())) {
                             RetrieveFeedTask plazas = new RetrieveFeedTask(marker, linear);
@@ -103,6 +112,7 @@ public class Activity_Localizacion_Valenbisi extends FragmentActivity {
                 Toast.makeText(getApplicationContext(), "Unable to create Maps", Toast.LENGTH_SHORT).show();
         }
     }
+
 
     private MarcadorValenbisi obtenerMarcadorVB(int numero) {
         String sql = "SELECT * FROM Valenbisi WHERE num=" + numero + ";";
@@ -137,18 +147,15 @@ public class Activity_Localizacion_Valenbisi extends FragmentActivity {
 
         @Override
         protected void onPostExecute(Void v) {
-            View view = getLayoutInflater().inflate(R.layout.layout_info_valenbisi, null);
-            TextView textDireccion = (TextView) view.findViewById(R.id.txtDireccion);
-            textDireccion.setText(VBMarkersHashMap.get(current).getDireccion());
             MarcadorValenbisi mvb = obtenerMarcadorVB(VBMarkersHashMap.get(current).getNumero());
             VBMarkersHashMap.remove(current);
             VBMarkersHashMap.put(current, mvb);
-            TextView textTotal = (TextView) view.findViewById(R.id.txtNumplazas);
-            textTotal.setText(VBMarkersHashMap.get(current).getNumeroPlazas() + "");
-            TextView textDisponibles = (TextView) view.findViewById(R.id.txtPlazasdisponibles);
-            textDisponibles.setText(VBMarkersHashMap.get(current).getPlazasDisponibles() + "");
-            linear.addView(view);
             progress.dismiss();
+            Intent intent = new Intent(getApplicationContext(), Activity_Info_Valenbisi.class);
+            intent.putExtra("nombre", mvb.getDireccion());
+            intent.putExtra("total", mvb.getNumeroPlazas());
+            intent.putExtra("disponible", mvb.getPlazasDisponibles());
+            startActivity(intent);
         }
 
         @Override
@@ -160,7 +167,6 @@ public class Activity_Localizacion_Valenbisi extends FragmentActivity {
 
         @Override
         protected Void doInBackground(String... strings) {
-
             Parser_XML_valenbisi parser_xml_valenbisi = new Parser_XML_valenbisi();
             parser_xml_valenbisi.parsearPlazas(VBMarkersHashMap.get(mvb), db);
             return null;

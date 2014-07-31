@@ -17,6 +17,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
+import com.github.amlcurran.showcaseview.OnShowcaseEventListener;
+import com.github.amlcurran.showcaseview.ShowcaseView;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -28,10 +31,11 @@ import util.RSS.Noticia;
 import util.RSS.ParserType;
 import util.RSS.RssListAdapter;
 
-public class Fragment_Home extends ListFragment {
+public class Fragment_Home extends ListFragment implements OnShowcaseEventListener {
     private Activity local;
     private SQLiteDatabase db;
     private List<Noticia> noticias = new ArrayList<Noticia>();
+    ShowcaseView sv;
 
     public Fragment_Home(SQLiteDatabase db) {
         this.db = db;
@@ -40,7 +44,6 @@ public class Fragment_Home extends ListFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
-
         if (estaVaciaNoticias()) {
             new RetrieveFeedTask().execute();
         } else {
@@ -113,6 +116,21 @@ public class Fragment_Home extends ListFragment {
         }
         cursor.close();
         return false;
+    }
+
+    @Override
+    public void onShowcaseViewHide(ShowcaseView showcaseView) {
+
+    }
+
+    @Override
+    public void onShowcaseViewDidHide(ShowcaseView showcaseView) {
+
+    }
+
+    @Override
+    public void onShowcaseViewShow(ShowcaseView showcaseView) {
+
     }
 
 

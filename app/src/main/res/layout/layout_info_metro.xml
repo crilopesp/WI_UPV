@@ -40,7 +40,7 @@
                     android:layout_height="wrap_content"
                     android:text="New Text"
                     android:textColor="@color/blackly"
-                    android:id="@+id/txtDireccion" />
+                    android:id="@+id/txtNombre" />
             </LinearLayout>
 
             <LinearLayout
@@ -61,14 +61,16 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/bicistotal"
+                        android:text="@string/lineas"
                         android:id="@+id/textView2" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/blackly"
-                        android:id="@+id/txtNumplazas" />
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="fill_parent"
+                        android:id="@+id/linearLineas"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_height="fill_parent"></LinearLayout>
                 </LinearLayout>
 
                 <LinearLayout
@@ -84,14 +86,15 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/bicisdisponibles"
+                        android:text="@string/informaciononline"
                         android:id="@+id/textView4" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/blackly"
-                        android:id="@+id/txtPlazasdisponibles" />
+                        android:id="@+id/txtDireccionWeb"
+                        android:autoLink="web" />
                 </LinearLayout>
 
                 <LinearLayout

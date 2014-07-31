@@ -12,6 +12,9 @@ import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.github.amlcurran.showcaseview.ShowcaseView;
+import com.github.amlcurran.showcaseview.targets.ViewTarget;
+
 import util.DBHandler_Horarios;
 import util.Preferencias;
 
@@ -23,6 +26,7 @@ public class Fragment_Opciones extends Fragment {
 
     private LinearLayout linearLista;
     private LayoutInflater inflater;
+    ShowcaseView sv;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -39,9 +43,12 @@ public class Fragment_Opciones extends Fragment {
         addDividier();
         //Sesion
         final View itemSesion = generateItemSesion(getString(R.string.sesion));
+        int idItemSesion = 213;
+        itemSesion.setId(R.id.sesion_opciones);
         itemSesion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                sv.hide();
                 if (Preferencias.getDNI(getActivity()) == "") {
                     Intent i = new Intent(getActivity(), Activity_login.class);
                     startActivity(i);
@@ -103,7 +110,6 @@ public class Fragment_Opciones extends Fragment {
         linearLista.addView(itemAbout);
         addDividier();
 
-
         return view;
 
     }
@@ -118,6 +124,14 @@ public class Fragment_Opciones extends Fragment {
         } else {
             tvi.setText(getString(R.string.sisesion));
         }
+        ViewTarget target = new ViewTarget(tvv);
+
+        sv = new ShowcaseView.Builder(getActivity())
+                .setTarget(target)
+                .setContentTitle(R.string.tutorial_options_title)
+                .setContentText(R.string.tutorial_options_message)
+                .setStyle(R.style.ShowCaseTheme)
+                .build();
         return item;
     }
 

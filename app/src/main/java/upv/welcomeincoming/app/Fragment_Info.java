@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.PagerTabStrip;
 import android.support.v4.view.ViewPager;
+import android.support.v4.view.ViewPager.PageTransformer;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,7 +28,7 @@ public class Fragment_Info extends Fragment {
         View view = inflater.inflate(R.layout.fragment_info, container, false);
         this.pager = (ViewPager) view.findViewById(R.id.pager);
         this.tabStrip = (PagerTabStrip) view.findViewById(R.id.pager_tab_strip);
-        pager.setPageTransformer(false, new ViewPager.PageTransformer() {
+        pager.setPageTransformer(false, new PageTransformer() {
             @Override
             public void transformPage(View page, float position) {
                 final float normalizedposition = Math.abs(Math.abs(position) - 1);

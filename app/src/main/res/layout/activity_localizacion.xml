@@ -14,10 +14,10 @@
         android:layout_weight="3">
 
         <fragment
-        android:id="@+id/map_view"
-        android:name="com.google.android.gms.maps.MapFragment"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+            android:id="@+id/map_view"
+            android:name="com.google.android.gms.maps.MapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
     </LinearLayout>
 
     <LinearLayout
@@ -28,28 +28,29 @@
         android:layout_weight="7">
 
         <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:background="@color/redly"
-        android:textSize="15dp"
-        android:textColor="#FFF"
-        android:text="@string/info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:background="@color/redly"
+            android:textSize="15dp"
+            android:textColor="#FFF"
+            android:text="@string/info"
             android:id="@+id/textView2" />
 
         <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/scrollView"
             android:fillViewport="true"
             android:background="@color/light_pink">
 
             <LinearLayout
-            android:id="@+id/lineaerlayout_info_valenbisi"
-            android:orientation="horizontal"
-                android:fillViewport="true"
+                android:id="@+id/lineaerlayout_info_valenbisi"
+                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"></LinearLayout>
+                android:layout_height="match_parent">
+
+            </LinearLayout>
         </ScrollView>
     </LinearLayout>
 </LinearLayout>

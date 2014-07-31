@@ -30,17 +30,21 @@
         jar="D:\WelcomeIncomingApp\app\build\intermediates\exploded-aar\com.google.android.gms\play-services\4.3.23\classes.jar"
         jumboMode="false" revision="19.1.0" sha1="7676c0cb230efa6ac41c47867d372ed5913029d4" />
     <item
+        dex="D:\WelcomeIncomingApp\app\build\intermediates\pre-dexed\debug\classes-b4776e1c9ab4dcdd3dfcd545418f6a5bdb9d5130.jar"
+        jar="D:\WelcomeIncomingApp\app\build\intermediates\exploded-aar\com.github.amlcurran.showcaseview\library\5.0.0\classes.jar"
+        jumboMode="false" revision="19.1.0" sha1="8b3d9a7b348d8bcfb4d740dfaf70bc374cdae9d6" />
+    <item
         dex="D:\WelcomeIncomingApp\app\build\intermediates\pre-dexed\debug\wikitudesdk-9fecf55d443176b92d73b66a191843a770b395be.jar"
         jar="D:\WelcomeIncomingApp\app\src\main\libs\wikitudesdk.jar" jumboMode="false"
         revision="19.1.0" sha1="5c233569b0360e5ef7542bb707ddbd18979c934b" />
     <item
-        dex="D:\WelcomeIncomingApp\app\build\intermediates\pre-dexed\debug\commons-lang-2.6-b021913ee3f88937471916e6ce29abc1cedca461.jar"
-        jar="D:\WelcomeIncomingApp\app\src\main\libs\commons-lang-2.6.jar" jumboMode="false"
-        revision="19.1.0" sha1="0ce1edb914c94ebc388f086c6827e8bdeec71ac2" />
-    <item
         dex="D:\WelcomeIncomingApp\app\build\intermediates\pre-dexed\debug\ical4j-1.0.5-81a3e34e06b06277db2b59bb09fece8858a3a8db.jar"
         jar="D:\WelcomeIncomingApp\app\src\main\libs\ical4j-1.0.5.jar" jumboMode="false"
         revision="19.1.0" sha1="7c2ddc98bda6e0838cca0129fda095a716a7d9dd" />
+    <item
+        dex="D:\WelcomeIncomingApp\app\build\intermediates\pre-dexed\debug\commons-lang-2.6-b021913ee3f88937471916e6ce29abc1cedca461.jar"
+        jar="D:\WelcomeIncomingApp\app\src\main\libs\commons-lang-2.6.jar" jumboMode="false"
+        revision="19.1.0" sha1="0ce1edb914c94ebc388f086c6827e8bdeec71ac2" />
     <item
         dex="D:\WelcomeIncomingApp\app\build\intermediates\pre-dexed\debug\json_simple-1.1-e0d0490d7ab25fe21b689afd576c3dd7cdbe8256.jar"
         jar="D:\WelcomeIncomingApp\app\src\main\libs\json_simple-1.1.jar" jumboMode="false"

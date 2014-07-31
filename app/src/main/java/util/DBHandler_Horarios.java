@@ -20,7 +20,7 @@ public class DBHandler_Horarios extends SQLiteOpenHelper {
         db.execSQL("CREATE  TABLE \"Noticia\" (\"id\" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL  UNIQUE , \"titulo\" VARCHAR, \"url\" VARCHAR NOT NULL, \"fecha\" VARCHAR);");
         db.execSQL("CREATE  TABLE \"Valenbisi\" (\"num\" INTEGER PRIMARY KEY NOT NULL UNIQUE , \"direccion\" VARCHAR, \"longitud\" VARCHAR NOT NULL, \"latitud\" VARCHAR NOT NULL, \"numPlazas\" INTEGER NOT NULL, \"plazasDisponibles\" INTEGER NOT NULL);");
         db.execSQL("CREATE  TABLE \"Edificio\" (\"id\" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE ,\"num\" VARCHAR NOT NULL, \"longitud\" VARCHAR NOT NULL, \"latitud\" VARCHAR NOT NULL, \"info\" VARCHAR);");
-        db.execSQL("CREATE  TABLE \"Metro\" (\"id\" INTEGER PRIMARY KEY NOT NULL UNIQUE ,\"nombre\" VARCHAR NOT NULL, \"latitud\" VARCHAR NOT NULL, \"longitud\" VARCHAR NOT NULL);");
+        db.execSQL("CREATE  TABLE \"Metro\" (\"id\" INTEGER PRIMARY KEY NOT NULL UNIQUE ,\"nombre\" VARCHAR NOT NULL, \"latitud\" VARCHAR NOT NULL, \"longitud\" VARCHAR NOT NULL, \"lineas\" VARCHAR NOT NULL);");
         db.execSQL("CREATE  TABLE \"Emt\" (\"id\" INTEGER PRIMARY KEY NOT NULL UNIQUE ,\"nombre\" VARCHAR NOT NULL, \"latitud\" VARCHAR NOT NULL, \"longitud\" VARCHAR NOT NULL);");
         db.execSQL("CREATE  TABLE \"Interes\" (\"id\" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE ,\"nombre\" VARCHAR NOT NULL, \"latitud\" VARCHAR NOT NULL, \"longitud\" VARCHAR NOT NULL);");
     }

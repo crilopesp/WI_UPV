@@ -11,12 +11,9 @@ import android.graphics.Canvas;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.util.DisplayMetrics;
-import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -35,14 +32,14 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import util.DBHandler_Horarios;
-import util.MarcadorEdificio;
+import util.Metro;
 import util.ProgressDialog_Custom;
 
 
-public class Activity_Localizacion_UPV extends FragmentActivity {
+public class Activity_Localizacion_Metro extends FragmentActivity {
     private GoogleMap mMap;
-    private ArrayList<MarcadorEdificio> UpvMarkersArray = new ArrayList<MarcadorEdificio>();
-    private HashMap<Marker, MarcadorEdificio> UpvMarkersHashMap;
+    private ArrayList<Metro> MarkersArray = new ArrayList<Metro>();
+    private HashMap<Marker, Metro> MarkersHashMap;
     private LinearLayout linear;
     private Marker current;
     ProgressDialog_Custom progress;
@@ -68,25 +65,21 @@ public class Activity_Localizacion_UPV extends FragmentActivity {
             dialog.show();
 
         } else {
-            UpvMarkersHashMap = new HashMap<Marker, MarcadorEdificio>();
-            UpvMarkersArray = obtenerMarcadoresEdificios(db);
+            MarkersHashMap = new HashMap<Marker, Metro>();
+            MarkersArray = obtenerMarcadoresMetro(db);
             setUpMap();
-            plotMarkers(UpvMarkersArray);
+            plotMarkers(MarkersArray);
         }
     }
 
-    private void plotMarkers(ArrayList<MarcadorEdificio> markers) {
+    private void plotMarkers(ArrayList<Metro> markers) {
         if (markers.size() > 0) {
-            for (MarcadorEdificio myMarker : markers) {
-                View view = ((LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.custom_marker_edificios, null);
-                TextView numTxt = (TextView) view.findViewById(R.id.num_txt);
-                numTxt.setText(myMarker.getNumero());
-                LatLng pos = new LatLng(Double.parseDouble(myMarker.getLongitud()), Double.parseDouble(myMarker.getLatitud()));
-                Marker marker = mMap.addMarker(new MarkerOptions()
-                        .position(pos)
-                        .title(myMarker.getNumero())
-                        .icon(BitmapDescriptorFactory.fromBitmap(createDrawableFromView(this, view))));
-                UpvMarkersHashMap.put(marker, myMarker);
+            for (Metro myMarker : markers) {
+                MarkerOptions markerOption = new MarkerOptions().position(new LatLng(Double.parseDouble(myMarker.getLatitud()), (Double.parseDouble(myMarker.getLongitud()))));
+                markerOption.icon(BitmapDescriptorFactory.fromResource(R.drawable.parada_metro));
+
+                Marker currentMarker = mMap.addMarker(markerOption);
+                MarkersHashMap.put(currentMarker, myMarker);
             }
         }
     }
@@ -107,15 +100,17 @@ public class Activity_Localizacion_UPV extends FragmentActivity {
                 mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
                     @Override
                     public boolean onMarkerClick(final Marker marker) {
-                        LatLng posicionUPV = new LatLng(Double.parseDouble(UpvMarkersHashMap.get(marker).getLongitud()), Double.parseDouble(UpvMarkersHashMap.get(marker).getLatitud()));
+                        LatLng posicionUPV = new LatLng(Double.parseDouble(MarkersHashMap.get(marker).getLongitud()), Double.parseDouble(MarkersHashMap.get(marker).getLatitud()));
                         CameraUpdate cameraUpdate = CameraUpdateFactory.newCameraPosition(new CameraPosition(posicionUPV, 17, 0, 20));
                         mMap.animateCamera(cameraUpdate);
 
-                        final String edificio = UpvMarkersHashMap.get(marker).getNumero();
-                        final String[] info = UpvMarkersHashMap.get(marker).getInformacion().split(";");
+                        String nombre = MarkersHashMap.get(marker).getNombre();
+                        String[] lineas = MarkersHashMap.get(marker).getLineasString();
+                        int id = MarkersHashMap.get(marker).getId();
                         Intent intent = new Intent(getApplicationContext(), Activity_Info_UPV.class);
-                        intent.putExtra("edificio", edificio);
-                        intent.putExtra("info", info);
+                        intent.putExtra("nombre", nombre);
+                        intent.putExtra("lineas", lineas);
+                        intent.putExtra("id", id);
                         startActivity(intent);
                         return true;
                     }
@@ -125,14 +120,13 @@ public class Activity_Localizacion_UPV extends FragmentActivity {
         }
     }
 
-    private ArrayList<MarcadorEdificio> obtenerMarcadoresEdificios(SQLiteDatabase db) {
-        String sql = "SELECT * FROM Edificio;";
+    private ArrayList<Metro> obtenerMarcadoresMetro(SQLiteDatabase db) {
+        String sql = "SELECT * FROM Metro";
         Cursor cursor = db.rawQuery(sql, null);
-        ArrayList<MarcadorEdificio> markers = new ArrayList<MarcadorEdificio>();
+        ArrayList<Metro> markers = new ArrayList<Metro>();
         while (cursor.moveToNext()) {
-            MarcadorEdificio marker = new MarcadorEdificio(cursor.getString(cursor.getColumnIndex("num")), cursor.getString(cursor.getColumnIndex("longitud")), cursor.getString(cursor.getColumnIndex("latitud")), cursor.getString(cursor.getColumnIndex("info")));
+            Metro marker = new Metro(cursor.getInt(cursor.getColumnIndex("id")), cursor.getString(cursor.getColumnIndex("nombre")), cursor.getString(cursor.getColumnIndex("latitud")), cursor.getString(cursor.getColumnIndex("longitud")), cursor.getString(cursor.getColumnIndex("lineas")));
             markers.add(marker);
-            Log.e("edificios MAP", marker.toString());
         }
         cursor.close();
         return markers;

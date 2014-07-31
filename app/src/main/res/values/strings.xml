@@ -197,5 +197,11 @@
     <string name="metro_map">Underground map</string>
     <string name="emt_map">EMT map</string>
     <string name="interes_map">Important sites map</string>
+    <string name="tutorial_drawer_title">Functions panel</string>
+    <string name="tutorial_drawer_message">Tap the icon to open the functions panel</string>
+    <string name="tutorial_options_title">Log in</string>
+    <string name="tutorial_options_message">This option allows you to log in or log out if you already logged</string>
+    <string name="lineas">Lines</string>
+    <string name="informaciononline">Station web:</string>
 
 </resources>
