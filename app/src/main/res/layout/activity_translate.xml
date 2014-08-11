@@ -17,7 +17,7 @@
             android:layout_height="match_parent">
 
             <Button
-                android:background="@drawable/selector_listarosaminimalista"
+                android:background="@drawable/selector_button_back"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/btnSay"
@@ -40,7 +40,7 @@
                     android:layout_marginBottom="10dp" />
 
                 <Button
-                    android:background="@drawable/selector_listarosaminimalista"
+                    android:background="@drawable/selector_button_back"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/btnListen"
@@ -88,7 +88,7 @@
                     android:layout_marginBottom="10dp" />
 
                 <Button
-                    android:background="@drawable/selector_listarosaminimalista"
+                    android:background="@drawable/selector_button_back"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="#222"
@@ -125,7 +125,7 @@
                     android:layout_marginBottom="10dp" />
 
                 <Button
-                    android:background="@drawable/selector_listarosaminimalista"
+                    android:background="@drawable/selector_button_back"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="#222"
@@ -162,7 +162,7 @@
                     android:layout_marginBottom="10dp" />
 
                 <Button
-                    android:background="@drawable/selector_listarosaminimalista"
+                    android:background="@drawable/selector_button_back"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/btnListen"
@@ -199,7 +199,7 @@
                     android:layout_marginBottom="10dp" />
 
                 <Button
-                    android:background="@drawable/selector_listarosaminimalista"
+                    android:background="@drawable/selector_button_back"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="#222"
@@ -236,7 +236,7 @@
                     android:layout_marginBottom="10dp" />
 
                 <Button
-                    android:background="@drawable/selector_listarosaminimalista"
+                    android:background="@drawable/selector_button_back"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/btnListen"
@@ -273,7 +273,7 @@
                     android:layout_marginBottom="10dp" />
 
                 <Button
-                    android:background="@drawable/selector_listarosaminimalista"
+                    android:background="@drawable/selector_button_back"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/btnListen"
@@ -310,7 +310,7 @@
                     android:layout_marginBottom="10dp" />
 
                 <Button
-                    android:background="@drawable/selector_listarosaminimalista"
+                    android:background="@drawable/selector_button_back"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="#222"
@@ -347,7 +347,7 @@
                     android:layout_marginBottom="10dp" />
 
                 <Button
-                    android:background="@drawable/selector_listarosaminimalista"
+                    android:background="@drawable/selector_button_back"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="#222"

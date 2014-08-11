@@ -8,7 +8,6 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -150,7 +149,7 @@ public class Fragment_Home extends ListFragment implements OnShowcaseEventListen
         protected void onPreExecute() {
             super.onPreExecute();
             progress = new ProgressDialog_Custom(getActivity(), getString(R.string.downloading_news));
-            progress.getWindow().setGravity(Gravity.BOTTOM);
+            progress.setCanceledOnTouchOutside(false);
             progress.show();
         }
 

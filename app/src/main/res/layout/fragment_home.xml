@@ -7,7 +7,7 @@
         android:orientation="vertical"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:background="#fffff6f6"
+        android:background="@color/text"
         android:id="@+id/linearLayout"
         android:weightSum="5">
 
@@ -25,9 +25,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@android:id/list"
-            android:listSelector="@drawable/selector_listarosaminimalista"
+            android:listSelector="@drawable/selector_button_back"
             android:dividerHeight="2dp"
             android:divider="@drawable/divisor" />
+
+        <TextView
+            android:id="@android:id/empty"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/noresults" />
 
     </LinearLayout>
 </FrameLayout>

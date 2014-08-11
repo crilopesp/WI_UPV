@@ -21,13 +21,14 @@ public class ExpandableListAdapter_Asignaturas extends BaseExpandableListAdapter
     private List<String> _listDataHeader; // header titles
     // child data in format of header title, child title
     private HashMap<String, List<String>> _listDataChild;
-    private String[] nombres = {"Main URL", "Teaching URL", "School mail", "School fax", "Coordinator name", "Coordinator mail", "Coordinator phone", "Tech name", "Tech mail", "Tech phone", "Tech extension"};
+    private String[] _nombres;
 
     public ExpandableListAdapter_Asignaturas(Context context, List<String> listDataHeader,
-                                             HashMap<String, List<String>> listChildData) {
+                                             HashMap<String, List<String>> listChildData, String[] nombres) {
         this._context = context;
         this._listDataHeader = listDataHeader;
         this._listDataChild = listChildData;
+        this._nombres = nombres;
     }
 
     @Override
@@ -56,7 +57,7 @@ public class ExpandableListAdapter_Asignaturas extends BaseExpandableListAdapter
         TextView tv_descripcion = (TextView) convertView.findViewById(R.id.tv_description);
         ImageButton btn_url = (ImageButton) convertView.findViewById(R.id.im_url);
 
-        tv_nombre.setText(nombres[childPosition]);
+        tv_nombre.setText(_nombres[childPosition]);
         tv_descripcion.setText((String) getChild(groupPosition, childPosition));
         btn_url.setVisibility(View.GONE);
         switch (childPosition) {

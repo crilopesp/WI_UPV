@@ -9,7 +9,7 @@
         android:orientation="vertical"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/selector_listarosaminimalista"
+        android:background="@color/text"
         android:id="@+id/layoutExtEdifi">
 
         <RelativeLayout
@@ -97,7 +97,15 @@
                     android:layout_gravity="center"
                     android:layout_marginRight="10dp"
                     android:textStyle="italic"
-                    android:textColor="@color/light_grey" />
+                    android:textColor="@color/light_grey"
+                    android:layout_weight="8" />
+
+                <Switch
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/alarm"
+                    android:id="@+id/switch1"
+                    android:background="@color/text" />
 
             </LinearLayout>
 

@@ -11,7 +11,6 @@ import android.graphics.Canvas;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
@@ -55,8 +54,12 @@ public class Activity_Localizacion_UPV extends FragmentActivity {
         db = helper.getWritableDatabase();
         setContentView(R.layout.activity_localizacion_noinfo);
 
+        getActionBar().setDisplayHomeAsUpEnabled(true);
+
         progress = new ProgressDialog_Custom(this, getString(R.string.loading));
-        linear = (LinearLayout) findViewById(R.id.lineaerlayout_info_valenbisi);
+        progress.setCanceledOnTouchOutside(false);
+        progress.show();
+
         // Initialize the HashMap for Markers and MyMarker object
         int status = GooglePlayServicesUtil.isGooglePlayServicesAvailable(getBaseContext());
 
@@ -73,6 +76,7 @@ public class Activity_Localizacion_UPV extends FragmentActivity {
             setUpMap();
             plotMarkers(UpvMarkersArray);
         }
+        progress.dismiss();
     }
 
     private void plotMarkers(ArrayList<MarcadorEdificio> markers) {
@@ -107,10 +111,6 @@ public class Activity_Localizacion_UPV extends FragmentActivity {
                 mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
                     @Override
                     public boolean onMarkerClick(final Marker marker) {
-                        LatLng posicionUPV = new LatLng(Double.parseDouble(UpvMarkersHashMap.get(marker).getLongitud()), Double.parseDouble(UpvMarkersHashMap.get(marker).getLatitud()));
-                        CameraUpdate cameraUpdate = CameraUpdateFactory.newCameraPosition(new CameraPosition(posicionUPV, 17, 0, 20));
-                        mMap.animateCamera(cameraUpdate);
-
                         final String edificio = UpvMarkersHashMap.get(marker).getNumero();
                         final String[] info = UpvMarkersHashMap.get(marker).getInformacion().split(";");
                         Intent intent = new Intent(getApplicationContext(), Activity_Info_UPV.class);
@@ -132,7 +132,6 @@ public class Activity_Localizacion_UPV extends FragmentActivity {
         while (cursor.moveToNext()) {
             MarcadorEdificio marker = new MarcadorEdificio(cursor.getString(cursor.getColumnIndex("num")), cursor.getString(cursor.getColumnIndex("longitud")), cursor.getString(cursor.getColumnIndex("latitud")), cursor.getString(cursor.getColumnIndex("info")));
             markers.add(marker);
-            Log.e("edificios MAP", marker.toString());
         }
         cursor.close();
         return markers;

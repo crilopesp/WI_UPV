@@ -7,7 +7,7 @@ public class Transporte {
 
     private String nombre;
     private String descripcion;
-    private String[] telefono;
+    private String telefono;
     private String url;
 
     public Transporte() {
@@ -30,11 +30,11 @@ public class Transporte {
         this.descripcion = descripcion;
     }
 
-    public String[] getTelefono() {
+    public String getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(String[] telefono) {
+    public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
 
@@ -46,7 +46,13 @@ public class Transporte {
         this.url = url;
     }
 
-
-
-
+    @Override
+    public String toString() {
+        return "Transporte{" +
+                "nombre='" + nombre + '\'' +
+                ", descripcion='" + descripcion + '\'' +
+                ", telefono=" + telefono +
+                ", url='" + url + '\'' +
+                '}';
+    }
 }

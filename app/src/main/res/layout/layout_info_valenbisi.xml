@@ -16,6 +16,13 @@
         android:layout_centerInParent="true"
         android:layout_margin="10dp">
 
+        <Button
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/close"
+            android:layout_gravity="right"
+            android:id="@+id/btnClose" />
+
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:orientation="vertical"
             android:layout_width="match_parent"
@@ -94,26 +101,6 @@
                         android:id="@+id/txtPlazasdisponibles" />
                 </LinearLayout>
 
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="bottom">
-
-                    <Button
-                        style="@style/ShadowText"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="15dp"
-                        android:background="@drawable/button_background_states"
-                        android:gravity="center"
-                        android:padding="10dp"
-                        android:textColor="@color/text"
-                        android:textSize="20sp"
-                        android:textStyle="bold"
-                        android:text="@string/aceptar"
-                        android:id="@+id/btnAceptar" />
-                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

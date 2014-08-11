@@ -1,6 +1,6 @@
 package upv.welcomeincoming.app;
 
-import android.app.Activity;
+import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -12,7 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public class Activity_Info_UPV extends Activity {
+public class Activity_Info_UPV extends ListActivity {
 
 
     @Override
@@ -46,15 +46,14 @@ public class Activity_Info_UPV extends Activity {
             linearLayout.removeView(imageView);
         }
         //final String[] info = UpvMarkersHashMap.get(marker).getInformacion().split(";");
-        ListView listaInfo = (ListView) findViewById(R.id.listaInfor);
+        ListView listaInfo = getListView();
         listaInfo.setDivider(getResources().getDrawable(R.drawable.divisor));
         listaInfo.setTextAlignment(View.TEXT_ALIGNMENT_INHERIT);
         listaInfo.setAdapter(new ArrayAdapter<String>(getApplicationContext(), R.layout.item_lista_info_upv, info));
 
-        Button btnAceptar = (Button) findViewById(R.id.btnAceptar);
-        Button btnCancelar = (Button) findViewById(R.id.btnCancelar);
+        Button btnCerrar = (Button) findViewById(R.id.btnClose);
 
-        btnAceptar.setOnClickListener(new View.OnClickListener() {
+        btnCerrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 finish();

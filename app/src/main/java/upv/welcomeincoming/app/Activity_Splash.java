@@ -2,51 +2,37 @@ package upv.welcomeincoming.app;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
 import android.os.Bundle;
-import android.os.Handler;
-import android.view.Window;
-import android.widget.ImageView;
+import android.widget.ProgressBar;
 
-public class Activity_Splash extends Activity {
+import util.LoadingTask;
 
-    // Set the duration of the splash screen
-    private static final long SPLASH_SCREEN_DELAY = 1500;
-
-    final Handler handler = new Handler();
+public class Activity_Splash extends Activity implements LoadingTask.LoadingTaskFinishedListener {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        // Set portrait orientation
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        // Hide title bar
+        // Show the splash screen
         setContentView(R.layout.splash_screen);
-        final ImageView imageView = (ImageView) this.findViewById(R.id.imageSplash);
+        // Find the progress bar
+        ProgressBar progressBar = (ProgressBar) findViewById(R.id.progressBar);
+        new LoadingTask(progressBar, this, getResources(), getApplicationContext()).execute("NORMAL"); // Pass in whatever you need a url is just an example we don't use it in this tutorial
+    }
 
-        final int[] imageArray = {R.drawable.screen_splash1, R.drawable.screen_splash, R.drawable.screen_splash3, R.drawable.screen_splash4, R.drawable.screen_splash5};
+    // This is the callback for when your async task has finished
+    @Override
+    public void onTaskFinished() {
+        completeSplash();
+    }
 
-        int i = 0;
-        Runnable runnable = new Runnable() {
-            int i = 0;
 
-            public void run() {
-                imageView.setImageResource(imageArray[i]);
-                i++;
-                if (i > imageArray.length - 1) {
-                    Intent mainIntent = new Intent().setClass(
-                            Activity_Splash.this, Activity_Home.class);
-                    startActivity(mainIntent);
-                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
-                    finish();
-                }
-                if (i < imageArray.length)
-                    handler.postDelayed(this, 200);  //for interval...
-            }
-        };
-        handler.postDelayed(runnable, 50); //for initial delay..
+    private void completeSplash() {
+        startApp();
+        finish(); // Don't forget to finish this Splash Activity so the user can't return to it!
+    }
+
+    private void startApp() {
+        Intent intent = new Intent(this, Activity_Home.class);
+        startActivity(intent);
     }
 }

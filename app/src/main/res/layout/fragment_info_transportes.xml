@@ -1,77 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/linearLayout"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent">
 
-    <LinearLayout
+    <android.support.v4.view.ViewPager xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/pager"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="fill_parent">
 
-        <ScrollView
-            android:id="@+id/scrollView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <Button
-                android:id="@+id/imAvion"
-                android:layout_width="fill_parent"
-                android:layout_height="80dp"
-                android:adjustViewBounds="true"
-                android:background="@drawable/avionback"
-                android:text="@string/btnAvion"
-                android:textAlignment="center"
-                android:textColor="#FFF"
-                android:textSize="50dp" />
-
-            <Button
-                android:id="@+id/imTaxi"
-                android:layout_width="fill_parent"
-                android:layout_height="80dp"
-                android:adjustViewBounds="true"
-                android:background="@drawable/taxiback"
-                android:text="@string/btnTaxi"
-                android:textAlignment="center"
-                android:textColor="#FFF"
-                android:textSize="50dp" />
-
-            <Button
-                android:id="@+id/imMetro"
-                android:layout_width="fill_parent"
-                android:layout_height="80dp"
-                android:adjustViewBounds="true"
-                android:background="@drawable/metroback"
-                android:text="@string/btnMetro"
-                android:textAlignment="center"
-                android:textColor="#FFF"
-                android:textSize="50dp" />
-
-            <Button
-                android:id="@+id/imMar"
-                android:layout_width="fill_parent"
-                android:layout_height="80dp"
-                android:adjustViewBounds="true"
-                android:background="@drawable/metroback"
-                android:text="@string/btnMar"
-                android:textAlignment="center"
-                android:textColor="#FFF"
-                android:textSize="50dp" />
-
-            <Button
-                android:id="@+id/imBus"
-                android:layout_width="fill_parent"
-                android:layout_height="80dp"
-                android:adjustViewBounds="true"
-                android:background="@drawable/metroback"
-                android:text="@string/btnBus"
-                android:textAlignment="center"
-                android:textColor="#FFF"
-                android:textSize="50dp" />
-
-        </ScrollView>
-    </LinearLayout>
-
+        <android.support.v4.view.PagerTabStrip
+            android:id="@+id/pager_tab_strip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:background="#c21b1b"
+            android:textColor="#fff"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp" />
+    </android.support.v4.view.ViewPager>
 </LinearLayout>

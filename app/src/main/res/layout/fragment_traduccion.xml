@@ -11,18 +11,18 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1">
+        android:layout_weight="2"
+        android:background="#222">
 
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:background="@drawable/edit_text_background_text"
             android:layout_marginBottom="0dp"
-            android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
-            android:layout_marginRight="10dp">
+            android:layout_marginRight="20dp"
+            android:background="@drawable/edit_text_background_traductor">
 
             <LinearLayout
                 android:orientation="horizontal"
@@ -71,10 +71,23 @@
                         android:id="@+id/iv_top_flag"
                         android:layout_alignParentEnd="true"
                         android:background="@drawable/es"
-                        android:layout_centerVertical="true" />
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dp" />
 
                 </RelativeLayout>
 
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageView"
+                    android:src="@drawable/divisor" />
             </LinearLayout>
 
             <EditText
@@ -85,8 +98,7 @@
                 android:textColor="@color/table_text"
                 android:padding="2dp"
                 android:textCursorDrawable="@drawable/edit_text_cursor"
-                android:textSize="16sp"
-                android:background="@drawable/edit_text_background_text"
+                android:textSize="20sp"
                 android:inputType="textMultiLine" />
 
         </LinearLayout>
@@ -95,8 +107,8 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp">
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp">
 
             <LinearLayout
                 android:orientation="horizontal"
@@ -108,8 +120,10 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="4"
-                    android:background="@drawable/translate_spinner_to_background"
-                    android:layout_marginTop="5dp">
+                    android:layout_marginTop="5dp"
+                    android:focusable="false"
+                    android:clickable="false"
+                    android:background="#ff4186f9">
 
                     <Spinner
                         android:layout_width="match_parent"
@@ -117,7 +131,8 @@
                         android:id="@+id/spinner_language_to"
                         android:layout_marginLeft="10dp"
                         android:layout_gravity="center"
-                        android:layout_marginRight="20dp" />
+                        android:layout_marginRight="20dp"
+                        android:layout_centerInParent="true" />
 
                 </RelativeLayout>
 
@@ -125,14 +140,15 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:id="@+id/button_change_language"
-                    android:layout_weight="2"
-                    android:background="@drawable/selector_button_change_language" />
+                    android:layout_weight="1"
+                    android:background="@drawable/selector_button_change_language"
+                    android:adjustViewBounds="false" />
 
                 <RelativeLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="4"
-                    android:background="@drawable/translate_spinner_from_background"
+                    android:background="@android:color/white"
                     android:layout_marginBottom="5dp">
 
                     <Spinner
@@ -141,7 +157,8 @@
                         android:id="@+id/spinner_language_from"
                         android:layout_marginLeft="10dp"
                         android:layout_gravity="center"
-                        android:layout_marginRight="20dp" />
+                        android:layout_marginRight="20dp"
+                        android:layout_centerInParent="true" />
                 </RelativeLayout>
 
             </LinearLayout>
@@ -153,10 +170,9 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:background="@drawable/edit_text_background_text"
+            android:background="#ff4186f9"
             android:layout_marginTop="0dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
+            android:layout_marginLeft="20dp"
             android:layout_marginBottom="10dp">
 
 
@@ -165,13 +181,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scrollbars="vertical"
-                android:textColor="@color/table_text"
+                android:textColor="#FEFEFE"
                 android:padding="2dp"
                 android:editable="false"
                 android:textCursorDrawable="@drawable/edit_text_cursor"
                 android:textSize="16sp"
-                android:background="@drawable/edit_text_background_text"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:clickable="false" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView2"
+                android:src="@drawable/divisor" />
 
             <LinearLayout
                 android:orientation="horizontal"
@@ -181,7 +203,8 @@
                 <RelativeLayout
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-                    android:paddingLeft="5dp">
+                    android:paddingLeft="5dp"
+                    android:background="#ffd8dff7">
 
                     <LinearLayout
                         android:orientation="horizontal"
@@ -228,9 +251,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/button_translate"
-        android:layout_weight="8"
-        android:src="@drawable/ic_action_translate_upv"
-        android:enabled="false" />
-
+        android:layout_weight="20"
+        android:src="@drawable/google_translate"
+        android:enabled="false"
+        android:background="#ff4186f9" />
 
 </LinearLayout>

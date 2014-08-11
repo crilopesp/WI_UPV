@@ -14,7 +14,8 @@
         android:layout_alignParentLeft="false"
         android:layout_alignParentTop="false"
         android:layout_centerInParent="true"
-        android:layout_margin="10dp">
+        android:layout_margin="10dp"
+        android:id="@+id/linearLayout3">
 
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:orientation="vertical"
@@ -22,6 +23,13 @@
             android:layout_height="match_parent"
             android:id="@+id/linearLayout2"
             android:baselineAligned="true">
+
+            <Button
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/close"
+                android:layout_gravity="right"
+                android:id="@+id/btnClose" />
 
             <LinearLayout
                 android:orientation="vertical"
@@ -77,47 +85,23 @@
                     android:orientation="vertical"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:padding="5dp"
-                    android:layout_marginBottom="10dp"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/background_progressdialog"
                     android:id="@+id/linear">
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                    <Button
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/informaciononline"
-                        android:id="@+id/textView4" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/blackly"
+                        android:textSize="20dp"
                         android:id="@+id/txtDireccionWeb"
-                        android:autoLink="web" />
+                        android:background="@drawable/background_progressdialog"
+                        android:layout_gravity="center" />
+
                 </LinearLayout>
 
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="bottom">
-
-                    <Button
-                        style="@style/ShadowText"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="15dp"
-                        android:background="@drawable/button_background_states"
-                        android:gravity="center"
-                        android:padding="10dp"
-                        android:textColor="@color/text"
-                        android:textSize="20sp"
-                        android:textStyle="bold"
-                        android:text="@string/aceptar"
-                        android:id="@+id/btnAceptar" />
-                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
+
     </LinearLayout>
+
 </RelativeLayout>

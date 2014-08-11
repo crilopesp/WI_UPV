@@ -59,7 +59,6 @@ public class CalendarICAL {
         while (iterator.hasNext()) {
 
             eventICAL = new EventICAL(iterator.next());
-            today = "20131201";
             String descripcion = eventICAL.getDescription();
             String nombreAsig = descripcion.substring(0, descripcion.indexOf(")") + 1);
             descripcion = descripcion.substring(descripcion.indexOf(":") + 1);
@@ -127,7 +126,7 @@ public class CalendarICAL {
         Evento evento = null;
         while (itCal.hasNext()) {
             evento = itCal.next();
-            String sqlEvento = "INSERT OR IGNORE INTO \"main\".\"Evento\" (\"nombre\",\"profesor\",\"ubicacion\",\"fecha\",\"alertado\",\"idHorario\") VALUES (\"" + evento.getNombre() + "\",\"" + evento.getProfesor() + "\",\"" + evento.getUbicacion() + "\",\"" + evento.getFecha() + "\"," + 1 + ",\"" + uid + "\")";
+            String sqlEvento = "INSERT OR IGNORE INTO \"main\".\"Evento\" (\"nombre\",\"profesor\",\"ubicacion\",\"fecha\",\"alertado\",\"idHorario\") VALUES (\"" + evento.getNombre() + "\",\"" + evento.getProfesor() + "\",\"" + evento.getUbicacion() + "\",\"" + evento.getFecha() + "\"," + 0 + ",\"" + uid + "\")";
             db.execSQL(sqlEvento);
         }
     }

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <ExpandableListView
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/multiexpandableListView"
-    android:background="@color/light_pink"
+    android:background="@color/text"
     android:divider="@drawable/divisor"
     android:childDivider="@drawable/divisor"
     android:paddingBottom="5dp"

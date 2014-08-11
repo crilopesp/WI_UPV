@@ -48,7 +48,7 @@
     <string name="txt_8_en">Where is the Office of International Exchange Programs?</string>
     <string name="btnAvion">Plane</string>
     <string name="btnTaxi">Taxi</string>
-    <string name="btnMetro">Underground</string>
+    <string name="btnMetro">Subway</string>
     <string name="btnBus">Bus</string>
     <string name="btnCarretera">Roads</string>
     <string name="btnTren">Train</string>
@@ -194,7 +194,7 @@
     <string name="encontrarEdificio">Find the building</string>
     <string name="UPV_map">UPV building map</string>
     <string name="valenbisi_map">Valenbisi map</string>
-    <string name="metro_map">Underground map</string>
+    <string name="metro_map">Subway map</string>
     <string name="emt_map">EMT map</string>
     <string name="interes_map">Important sites map</string>
     <string name="tutorial_drawer_title">Functions panel</string>
@@ -202,6 +202,31 @@
     <string name="tutorial_options_title">Log in</string>
     <string name="tutorial_options_message">This option allows you to log in or log out if you already logged</string>
     <string name="lineas">Lines</string>
-    <string name="informaciononline">Station web:</string>
-
+    <string name="informaciononline">Go to the station web</string>
+    <string name="emt">EMT</string>
+    <string name="metrovalencia">Metrovalencia</string>
+    <string name="mapa_estatico">Static Map</string>
+    <string name="googlemaps">Google maps</string>
+    <string name="title_activity_activity__full_screen__image">Activity_FullScreen_Image</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="noresults">No results</string>
+    <string name="conexionInternet">Internet connection</string>
+    <string name="internet1">Seems like you haven\'t internet connection on your phone.</string>
+    <string name="internet2">In order to have full functionality you need to connect to the internet.</string>
+    <string name="gotosettings">Go to settings</string>
+    <string name="noInetCalendar">If you downloaded calendars once, you will see you calendars without internet. Otherwise you need to connect to the internet to be able to download contect. It is recommended to have internet connection</string>
+    <string name="noInetBlock">To access to this feature, you need internet connection. Please, connect to the internet:</string>
+    <string name="noInetMaps">If you have openned the map functionallity before, you will be able to look the maps without updated content. We recommend you to connect to internet for a better experience.</string>
+    <string name="noInetValenbisi">There is no internet connection to obtain updated information about Valenbisi stations. Please connect to the internet to access full functionallity.</string>
+    <string name="alarm">Alarm</string>
+    <string name="ordenarAlarm">Show events with alarm</string>
+    <string name="clasecomienza">The class is about to start</string>
+    <string name="maps">Mapas</string>
+    <string name="title_activity_activity__notificacion__evento">Event</string>
+    <string name="ocultar">Hide</string>
+    <string name="search">Search</string>
+    <string name="ayuntamiento">City Hall</string>
+    <string name="police">Police</string>
+    <string name="bomberos">Firefighters</string>
 </resources>

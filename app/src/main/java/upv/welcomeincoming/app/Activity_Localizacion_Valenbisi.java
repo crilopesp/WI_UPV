@@ -50,8 +50,10 @@ public class Activity_Localizacion_Valenbisi extends FragmentActivity {
         db = helper.getWritableDatabase();
         setContentView(R.layout.activity_localizacion_noinfo);
 
+        getActionBar().setDisplayHomeAsUpEnabled(true);
         progress = new ProgressDialog_Custom(this, getString(R.string.loading));
-        linear = (LinearLayout) findViewById(R.id.lineaerlayout_info_valenbisi);
+        progress.setCanceledOnTouchOutside(false);
+        progress.show();
         // Initialize the HashMap for Markers and MyMarker object
         int status = GooglePlayServicesUtil.isGooglePlayServicesAvailable(getBaseContext());
 
@@ -68,6 +70,7 @@ public class Activity_Localizacion_Valenbisi extends FragmentActivity {
             setUpMap();
             plotMarkers(VBMarkersArray);
         }
+        progress.dismiss();
     }
 
     private void plotMarkers(ArrayList<MarcadorValenbisi> markers) {
@@ -76,7 +79,7 @@ public class Activity_Localizacion_Valenbisi extends FragmentActivity {
 
                 // Create user marker with custom icon and other options
                 MarkerOptions markerOption = new MarkerOptions().position(new LatLng(Double.parseDouble(myMarker.getLatitud()), (Double.parseDouble(myMarker.getLongitud()))));
-                markerOption.icon(BitmapDescriptorFactory.fromResource(R.drawable.marker_valenbici));
+                markerOption.icon(BitmapDescriptorFactory.fromResource(R.drawable.bike));
 
                 Marker currentMarker = mMap.addMarker(markerOption);
                 VBMarkersHashMap.put(currentMarker, myMarker);
@@ -103,8 +106,14 @@ public class Activity_Localizacion_Valenbisi extends FragmentActivity {
                         if (new InternetConnectionChecker().checkInternetConnection(getApplicationContext())) {
                             RetrieveFeedTask plazas = new RetrieveFeedTask(marker, linear);
                             plazas.execute();
+                        } else {
+                            MarcadorValenbisi mvb = obtenerMarcadorVB(VBMarkersHashMap.get(current).getNumero());
+                            Intent intent = new Intent(getApplicationContext(), Activity_Info_Valenbisi.class);
+                            intent.putExtra("nombre", mvb.getDireccion());
+                            intent.putExtra("total", mvb.getNumeroPlazas());
+                            intent.putExtra("disponible", mvb.getPlazasDisponibles());
+                            startActivity(intent);
                         }
-
                         return true;
                     }
                 });
@@ -112,7 +121,6 @@ public class Activity_Localizacion_Valenbisi extends FragmentActivity {
                 Toast.makeText(getApplicationContext(), "Unable to create Maps", Toast.LENGTH_SHORT).show();
         }
     }
-
 
     private MarcadorValenbisi obtenerMarcadorVB(int numero) {
         String sql = "SELECT * FROM Valenbisi WHERE num=" + numero + ";";

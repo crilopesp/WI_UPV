@@ -52,8 +52,10 @@ public class Activity_Localizacion_Metro extends FragmentActivity {
         db = helper.getWritableDatabase();
         setContentView(R.layout.activity_localizacion_noinfo);
 
+        getActionBar().setDisplayHomeAsUpEnabled(true);
         progress = new ProgressDialog_Custom(this, getString(R.string.loading));
-        linear = (LinearLayout) findViewById(R.id.lineaerlayout_info_valenbisi);
+        progress.setCanceledOnTouchOutside(false);
+        progress.show();
         // Initialize the HashMap for Markers and MyMarker object
         int status = GooglePlayServicesUtil.isGooglePlayServicesAvailable(getBaseContext());
 
@@ -70,13 +72,14 @@ public class Activity_Localizacion_Metro extends FragmentActivity {
             setUpMap();
             plotMarkers(MarkersArray);
         }
+        progress.dismiss();
     }
 
     private void plotMarkers(ArrayList<Metro> markers) {
         if (markers.size() > 0) {
             for (Metro myMarker : markers) {
                 MarkerOptions markerOption = new MarkerOptions().position(new LatLng(Double.parseDouble(myMarker.getLatitud()), (Double.parseDouble(myMarker.getLongitud()))));
-                markerOption.icon(BitmapDescriptorFactory.fromResource(R.drawable.parada_metro));
+                markerOption.icon(BitmapDescriptorFactory.fromResource(R.drawable.metro));
 
                 Marker currentMarker = mMap.addMarker(markerOption);
                 MarkersHashMap.put(currentMarker, myMarker);
@@ -100,14 +103,10 @@ public class Activity_Localizacion_Metro extends FragmentActivity {
                 mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
                     @Override
                     public boolean onMarkerClick(final Marker marker) {
-                        LatLng posicionUPV = new LatLng(Double.parseDouble(MarkersHashMap.get(marker).getLongitud()), Double.parseDouble(MarkersHashMap.get(marker).getLatitud()));
-                        CameraUpdate cameraUpdate = CameraUpdateFactory.newCameraPosition(new CameraPosition(posicionUPV, 17, 0, 20));
-                        mMap.animateCamera(cameraUpdate);
-
                         String nombre = MarkersHashMap.get(marker).getNombre();
-                        String[] lineas = MarkersHashMap.get(marker).getLineasString();
+                        String lineas = MarkersHashMap.get(marker).getLineas();
                         int id = MarkersHashMap.get(marker).getId();
-                        Intent intent = new Intent(getApplicationContext(), Activity_Info_UPV.class);
+                        Intent intent = new Intent(getApplicationContext(), Activity_Info_Metro.class);
                         intent.putExtra("nombre", nombre);
                         intent.putExtra("lineas", lineas);
                         intent.putExtra("id", id);

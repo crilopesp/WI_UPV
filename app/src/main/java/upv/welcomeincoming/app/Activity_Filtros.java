@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.view.MenuItem;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.ArrayAdapter;
@@ -30,7 +30,7 @@ public class Activity_Filtros extends Activity {
         helper = new DBHandler_Horarios(this);
         db = helper.getWritableDatabase();
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.activity_activity_filtros);
+        setContentView(R.layout.activity_filtros);
 
         spinner = (Spinner) findViewById(R.id.spinnerAsignaturas);
         ArrayAdapter adapter = new ArrayAdapter<String>(this, R.layout.item_lista_spinner_filtros, obtenerAsignaturas());
@@ -43,6 +43,7 @@ public class Activity_Filtros extends Activity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent();
+                Log.e("asignatura", (String) spinner.getSelectedItem());
                 intent.putExtra("RESULT_STRING", (String) spinner.getSelectedItem());
                 setResult(1, intent);
                 finish();
@@ -55,18 +56,6 @@ public class Activity_Filtros extends Activity {
                 finish();
             }
         });
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
     }
 
     public List<String> obtenerAsignaturas() {

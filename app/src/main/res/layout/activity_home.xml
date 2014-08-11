@@ -2,7 +2,7 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#222">
+    android:background="@color/blackly">
 
     <!--	Contenido	Principal	(Main	content	View)	-->
     <FrameLayout
@@ -18,7 +18,7 @@
         android:layout_width="290dp"
         android:id="@+id/panel_drawer"
         android:layout_height="fill_parent"
-        android:background="#ffb10211"
+        android:background="@color/redly"
         android:layout_gravity="start"
         android:orientation="vertical">
 
@@ -37,10 +37,12 @@
                 android:layout_width="fill_parent"
                 android:layout_height="110dp"
                 android:id="@+id/imageView"
-                android:background="@drawable/icon_upvhorizontalnegro"
+                android:background="@color/blackly"
                 android:baselineAlignBottom="false"
                 android:layout_gravity="bottom"
-                android:layout_alignParentBottom="true" />
+                android:layout_alignParentBottom="true"
+                android:src="@drawable/upv_logo_blanco_transp"
+                android:adjustViewBounds="true" />
         </RelativeLayout>
 
     </LinearLayout>

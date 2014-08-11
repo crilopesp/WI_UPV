@@ -4,6 +4,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 /**
@@ -56,7 +57,11 @@ public class Calendario {
     }
 
     public List<Evento> obtenerEventosDB(SQLiteDatabase db) {
-        String sql = "SELECT * FROM Evento WHERE fecha>=\"2013-12-01 00:00:00\" and idHorario = \"" + uid + "\";";
+        //poner fecha actual
+        Calendar c = Calendar.getInstance();
+        //String fecha = new SimpleDateFormat("yyyy-MM-dd HH:MM:ss").format(c.getTime());
+        String fecha = "2014-02-30 00:00:00";
+        String sql = "SELECT * FROM Evento WHERE fecha>=\"" + fecha + "\" and idHorario = \"" + uid + "\";";
         Cursor cursor = db.rawQuery(sql, null);
         List<Evento> eventos = new ArrayList<Evento>();
         while (cursor.moveToNext()) {

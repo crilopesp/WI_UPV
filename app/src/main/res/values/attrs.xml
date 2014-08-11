@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <declare-styleable name="SmoothProgressBar">
         <attr name="spbStyle" format="reference" />
         <attr name="spb_color" format="color" />
@@ -23,4 +24,9 @@
         <attr name="spb_generate_background_with_colors" format="boolean" />
         <attr name="spb_gradients" format="boolean" />
     </declare-styleable>
+    <declare-styleable name="ButtonBarContainerTheme">
+        <attr name="metaButtonBarStyle" format="reference" />
+        <attr name="metaButtonBarButtonStyle" format="reference" />
+    </declare-styleable>
+
 </resources>

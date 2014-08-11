@@ -11,121 +11,249 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="#FEFEFE"
+        android:layout_weight="20">
 
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/scrollView">
 
-            <Button
+            <LinearLayout
+                android:orientation="vertical"
                 android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/UPV_map"
-                android:id="@+id/btn_upvmap"
-                android:background="@drawable/button_background_states_maps"
-                style="@style/ShadowText"
-                android:textColor="@color/text"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:layout_margin="10dp" />
+                android:layout_height="fill_parent">
 
-            <Button
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/valenbisi_map"
-                android:id="@+id/btn_valenbisi"
-                android:background="@drawable/button_background_states_maps_valenbisi"
-                style="@style/ShadowText"
-                android:textColor="@color/text"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:layout_margin="10dp" />
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/linearUpvmap"
+                    android:background="@drawable/selector_button_back">
 
-            <Button
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/metro_map"
-                android:id="@+id/btn_metro"
-                android:background="@drawable/button_background_states_maps_metro"
-                style="@style/ShadowText"
-                android:textColor="@color/text"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:layout_margin="10dp" />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/imageView6"
+                        android:src="@drawable/ic_upv" />
 
-            <Button
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/interes_map"
-                android:id="@+id/btn_interes"
-                android:textColor="@color/text"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                style="@style/ShadowText"
-                android:background="@drawable/button_background_states_maps_interes"
-                android:layout_margin="10dp" />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/divisor_vertical"
+                        android:id="@+id/imageView7"
+                        android:adjustViewBounds="true" />
 
-            <Button
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/emt_map"
-                android:id="@+id/btn_emt"
-                android:textColor="@color/text"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                style="@style/ShadowText"
-                android:background="@drawable/button_background_states_maps_metro"
-                android:layout_margin="10dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/UPV_map"
+                        android:id="@+id/textView"
+                        android:layout_gravity="center_vertical"
+                        android:textSize="16dp" />
 
-        </LinearLayout>
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/divisor"
+                    android:id="@+id/imageView5" />
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/linearValenbisimap"
+                    android:background="@drawable/selector_button_back">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/imageView8"
+                        android:src="@drawable/ic_bike" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/divisor_vertical"
+                        android:id="@+id/imageView9"
+                        android:adjustViewBounds="true" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/valenbisi_map"
+                        android:id="@+id/textView3"
+                        android:layout_gravity="center_vertical"
+                        android:textSize="16dp" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/divisor"
+                    android:id="@+id/imageView4" />
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/linearMetromap"
+                    android:background="@drawable/selector_button_back">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/imageView10"
+                        android:src="@drawable/ic_metro" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/divisor_vertical"
+                        android:id="@+id/imageView11"
+                        android:adjustViewBounds="true" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/metro_map"
+                        android:id="@+id/textView4"
+                        android:layout_gravity="center_vertical"
+                        android:textSize="16dp" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/divisor"
+                    android:id="@+id/imageView3" />
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/linearInteresmap"
+                    android:background="@drawable/selector_button_back">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/imageView12"
+                        android:src="@drawable/ic_interes" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/divisor_vertical"
+                        android:id="@+id/imageView13"
+                        android:adjustViewBounds="true" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/interes_map"
+                        android:id="@+id/textView5"
+                        android:layout_gravity="center_vertical"
+                        android:textSize="16dp" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/divisor"
+                    android:id="@+id/imageView2" />
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/linearEmtmap"
+                    android:background="@drawable/selector_button_back">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/imageView14"
+                        android:src="@drawable/ic_bus" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/divisor_vertical"
+                        android:id="@+id/imageView15"
+                        android:adjustViewBounds="true" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/emt_map"
+                        android:id="@+id/textView6"
+                        android:layout_gravity="center_vertical"
+                        android:textSize="16dp" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/divisor"
+                    android:id="@+id/imageView" />
+
+            </LinearLayout>
+        </ScrollView>
 
     </LinearLayout>
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/divisor"
-        android:id="@+id/imageView" />
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp">
+        android:layout_marginBottom="10dp"
+        android:minHeight="130dp"
+        android:longClickable="false"
+        android:layout_gravity="bottom"
+        android:layout_weight="1">
 
-        <TextView
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="5dp"
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="@string/selecInfo"
-            android:id="@+id/textView2"
-            android:textColor="#FEFEFE"
-            android:layout_gravity="center_horizontal" />
+            android:layout_height="fill_parent"
+            android:id="@+id/linearLayout">
 
-        <Spinner
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/spinnerEdificios"
-            android:layout_gravity="right"
-            android:background="#FEFEFE"
-            android:layout_margin="10dp" />
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/selecInfo"
+                android:id="@+id/textView2"
+                android:textColor="#FEFEFE"
+                android:layout_gravity="center_horizontal" />
 
-        <Button
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            style="@style/ShadowText"
-            android:text="@string/encontrarEdificio"
-            android:id="@+id/btn_enc"
-            android:textColor="@color/text"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:background="@drawable/button_background_states"
-            android:layout_margin="10dp" />
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/spinnerEdificios"
+                android:layout_gravity="right"
+                android:background="#FEFEFE"
+                android:layout_margin="10dp" />
 
+            <Button
+                style="@style/ShadowText"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/encontrarEdificio"
+                android:id="@+id/btn_enc"
+                android:textColor="@color/text"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:background="@drawable/button_background_states"
+                android:layout_margin="10dp" />
+        </LinearLayout>
     </LinearLayout>
 
 </LinearLayout>

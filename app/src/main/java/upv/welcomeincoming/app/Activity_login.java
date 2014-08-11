@@ -25,12 +25,12 @@ public class Activity_login extends Activity implements Observer {
     TextView tv_datosIncorrectos;
     Button btn_login;
     ProgressDialog_Custom progressDialog;
+    IntranetConnection intranetConnection;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
         initViews();
         comprobarCampos();
     }
@@ -81,9 +81,9 @@ public class Activity_login extends Activity implements Observer {
 
         progressDialog = new ProgressDialog_Custom(this, getString(R.string.connecting));
         progressDialog.show();
-        IntranetConnection ic = new IntranetConnection(dni, pin, this);
+        intranetConnection = new IntranetConnection(dni, pin, this);
         Log.e("login", "Conecto ic");
-        ic.connect();
+        intranetConnection.connect();
     }
 
 
@@ -101,14 +101,24 @@ public class Activity_login extends Activity implements Observer {
                 tv_datosIncorrectos.setVisibility(View.VISIBLE);
             }
             return;
+
         }
         if (data.equals("login")) {
-            Log.e("login", "Entro en login");
+
+            progressDialog.setMessage(getString(R.string.downloading));
             Preferencias.setDNI(getApplicationContext(), et_dni.getText().toString());
             Preferencias.setPIN(getApplicationContext(), et_pin.getText().toString());
+            intranetConnection.getCalendars();
+
+        } else if (data.equals("calendars")) {
+            Preferencias.setUsername(this, outPutParamsIntranetConnection.getCalendars().getUsername());
+            setResult(RESULT_OK);
             progressDialog.dismiss();
-            this.setResult(RESULT_OK);
-            this.finish();
+            finish();
         }
+
     }
+        /*public String registrarUsuario(String user,String pin,String nombre,String apellidos, String codLenguaje){
+
+        }*/
 }

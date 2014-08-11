@@ -72,6 +72,11 @@ public class Activity_Filtros_Fecha extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
     public List<String> obtenerAsignaturas() {
         String sql = "SELECT nombre FROM Evento;";
         Cursor cursor = db.rawQuery(sql, null);

@@ -1,6 +1,7 @@
 package upv.welcomeincoming.app;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -8,6 +9,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -15,7 +19,11 @@ import android.widget.TextView;
 import com.github.amlcurran.showcaseview.ShowcaseView;
 import com.github.amlcurran.showcaseview.targets.ViewTarget;
 
+import java.util.Locale;
+
+import upv.welcomeincoming.app.calendarAlarm.AlarmReceiver;
 import util.DBHandler_Horarios;
+import util.InternetConnectionChecker;
 import util.Preferencias;
 
 
@@ -26,6 +34,7 @@ public class Fragment_Opciones extends Fragment {
 
     private LinearLayout linearLista;
     private LayoutInflater inflater;
+    InternetConnectionChecker icc;
     ShowcaseView sv;
 
     @Override
@@ -33,7 +42,7 @@ public class Fragment_Opciones extends Fragment {
         View view = inflater.inflate(R.layout.fragment_settings, container, false);
         this.inflater = inflater;
 
-
+        icc = new InternetConnectionChecker();
         linearLista = (LinearLayout) view.findViewById(R.id.linearOpciones);
 
 
@@ -50,8 +59,14 @@ public class Fragment_Opciones extends Fragment {
             public void onClick(View view) {
                 sv.hide();
                 if (Preferencias.getDNI(getActivity()) == "") {
-                    Intent i = new Intent(getActivity(), Activity_login.class);
-                    startActivity(i);
+                    if (icc.checkInternetConnection(getActivity())) {
+                        Intent i = new Intent(getActivity(), Activity_login.class);
+                        startActivity(i);
+                    } else {
+                        Intent intent = new Intent(getActivity(), Activity_no_connection.class);
+                        intent.putExtra("case", getString(R.string.noInetBlock));
+                        startActivity(intent);
+                    }
                 } else {
                     Preferencias.setDNI(getActivity(), "");
                     Preferencias.setPIN(getActivity(), "");
@@ -68,7 +83,7 @@ public class Fragment_Opciones extends Fragment {
         addDividier();
 
         //Alertas
-        View itemAlertas = generateItemAlerta(getString(R.string.alertaCalendar));
+        View itemAlertas = generateItemAlerta(getString(R.string.alertaCalendar), "Calendar");
         itemAlertas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -78,7 +93,7 @@ public class Fragment_Opciones extends Fragment {
         linearLista.addView(itemAlertas);
         addDividier();
 
-        View itemAlertaForum = generateItemAlerta(getString(R.string.alertaForum));
+        View itemAlertaForum = generateItemAlerta(getString(R.string.alertaForum), "Forum");
         itemAlertaForum.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -123,6 +138,7 @@ public class Fragment_Opciones extends Fragment {
             tvv.setText(getString(R.string.login));
         } else {
             tvi.setText(getString(R.string.sisesion));
+            tvv.setText(Preferencias.getUsername(getActivity()));
         }
         ViewTarget target = new ViewTarget(tvv);
 
@@ -135,20 +151,67 @@ public class Fragment_Opciones extends Fragment {
         return item;
     }
 
-    private View generateItemAlerta(String string) {
+    private View generateItemAlerta(String string, final String tipo) {
         View viewAlerta = inflater.inflate(R.layout.item_settings_alerta, null);
         TextView txtAlerta = (TextView) viewAlerta.findViewById(R.id.textAlerta);
         txtAlerta.setText(string);
+        CheckBox check = (CheckBox) viewAlerta.findViewById(R.id.checkAlertCalendar);
+        check.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b) {
+                    if (tipo.equals("Calendar")) {
+
+                        Preferencias.setCalendarAlerts(getActivity(), true);
+                        startService();
+                    } else if (tipo.equals("Forum")) {
+                    }
+                } else if (!b) {
+                    if (tipo.equals("Calendar")) {
+
+                    } else if (tipo.equals("Forum")) {
+                        Preferencias.setCalendarAlerts(getActivity(), false);
+                        stopService();
+                    }
+                }
+            }
+        });
+
         return viewAlerta;
     }
 
     private View generateItemLanguage() {
-        View viewSpinner = inflater.inflate(R.layout.item_settings_idioma, null);
-        Spinner spinner = (Spinner) viewSpinner.findViewById(R.id.options_lenguage_spinner);
+        final View viewSpinner = inflater.inflate(R.layout.item_settings_idioma, null);
+        final Spinner spinner = (Spinner) viewSpinner.findViewById(R.id.options_lenguage_spinner);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(),
                 R.array.lenguages, R.layout.item_lista_spinner);
         adapter.setDropDownViewResource(R.layout.item_lista_spinner);
         spinner.setAdapter(adapter);
+        Locale locale1 = getActivity().getApplicationContext().getResources().getConfiguration().locale;
+        if (locale1.getCountry().equals("ES")) spinner.setSelection(1);
+        else if (locale1.getCountry().equals("US")) spinner.setSelection(0);
+
+        ImageButton btn_accept = (ImageButton) viewSpinner.findViewById(R.id.btn_accept);
+        btn_accept.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (spinner.getSelectedItemPosition() == 0) {
+                    Locale locale = new Locale("en_US");
+                    Locale.setDefault(locale);
+                    Configuration config = new Configuration();
+                    config.locale = locale;
+                    getActivity().getApplicationContext().getResources().updateConfiguration(config, null);
+                    getActivity().recreate();
+                } else if (spinner.getSelectedItemPosition() == 1) {
+                    Locale locale = new Locale("es_ES");
+                    Locale.setDefault(locale);
+                    Configuration config = new Configuration();
+                    config.locale = locale;
+                    getActivity().getApplicationContext().getResources().updateConfiguration(config, null);
+                    getActivity().recreate();
+                }
+            }
+        });
         return viewSpinner;
     }
 
@@ -157,6 +220,18 @@ public class Fragment_Opciones extends Fragment {
         linearLista.addView(v);
     }
 
+    //start the service
+    public void startService() {
+        //start the service from here //MyService is your service class name
+        getActivity().startService(new Intent(getActivity(), AlarmReceiver.class));
+    }
+
+    //Stop the started service
+    public void stopService() {
+        //Stop the running service from here//MyService is your service class name
+        //Service will only stop if it is already running.
+        getActivity().stopService(new Intent(getActivity(), AlarmReceiver.class));
+    }
 
     private void borrarDatosUsuario() {
         SQLiteDatabase db = new DBHandler_Horarios(getActivity()).getWritableDatabase();

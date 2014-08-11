@@ -72,6 +72,19 @@ public class Evento implements Comparable {
         this.alertado = alertado;
     }
 
+
+    @Override
+    public String toString() {
+        return "Evento{" +
+                "nombre='" + nombre + '\'' +
+                ", profesor='" + profesor + '\'' +
+                ", ubicacion='" + ubicacion + '\'' +
+                ", fecha='" + fecha + '\'' +
+                ", edificio='" + edificio + '\'' +
+                ", alertado=" + alertado +
+                '}';
+    }
+
     @Override
     public int compareTo(Object o) {
         Date tfecha = null;

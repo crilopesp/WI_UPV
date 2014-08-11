@@ -7,12 +7,23 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <!-- Necesario para text to speech,ACTION_INSTALL_TTS_DATA -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_GPS" />
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+
+    <permission
+        android:name="upv.welcomeincoming.app.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="upv.welcomeincoming.app.permission.C2D_MESSAGE" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
 
     <uses-feature
         android:name="android.hardware.camera"
@@ -36,7 +47,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/icon_aplicacion"
+        android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
         <activity
@@ -44,7 +55,7 @@
             android:label="Welcome Incoming"
             android:screenOrientation="portrait"
             android:theme="@style/NoActionBar">
-            <intent-filter>
+        <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
 
                 <action android:name="android.intent.action.MAIN" />
@@ -55,20 +66,10 @@
             android:label="@string/app_name"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Activity_Traduccion"
-            android:label="@string/title_activity_translate"
-            android:parentActivityName=".Activity_Home"
-            android:screenOrientation="portrait">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="Home" />
-        </activity>
-        <activity
             android:name=".Activity_Speaker"
             android:label="@string/title_activity_speaker"
-            android:parentActivityName=".Activity_Traduccion"
             android:screenOrientation="portrait">
-            <meta-data
+        <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="TranslateActivity" />
         </activity>
@@ -77,7 +78,7 @@
             android:configChanges="screenSize|orientation"
             android:label="Augmented reality"
             android:parentActivityName=".Activity_Home">
-            <meta-data
+        <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="Home" />
         </activity>
@@ -88,31 +89,63 @@
         <activity
             android:name=".Activity_Filtros_Fecha"
             android:label="@string/title_activity_activity_filtros_fecha"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+            android:theme="@android:style/Theme.Dialog" />
         <activity
             android:name=".Activity_Localizacion_Valenbisi"
-            android:label="@string/location_client_powered_by_google" />
+            android:label="@string/location_client_powered_by_google"
+            android:parentActivityName=".Activity_Home" />
         <activity
             android:name=".Activity_Info_Valenbisi"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity
             android:name=".Activity_Localizacion_UPV"
-            android:label="@string/location_client_powered_by_google" />
+            android:label="@string/location_client_powered_by_google"
+            android:parentActivityName=".Activity_Home" />
         <activity
             android:name=".Activity_Info_UPV"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity
             android:name=".Activity_Localizacion_Interes"
-            android:label="@string/location_client_powered_by_google" />
+            android:label="@string/location_client_powered_by_google"
+            android:parentActivityName=".Activity_Home" />
         <activity
             android:name=".Activity_Localizacion_EMT"
-            android:label="@string/location_client_powered_by_google" />
+            android:label="@string/location_client_powered_by_google"
+            android:parentActivityName=".Activity_Home" />
         <activity
             android:name=".Activity_Localizacion_Metro"
-            android:label="@string/location_client_powered_by_google" />
+            android:label="@string/location_client_powered_by_google"
+            android:parentActivityName=".Activity_Home" />
+        <activity
+            android:name=".Activity_Info_Metro"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity
             android:name=".Activity_login"
             android:label="@string/title_activity_activity_login"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name=".infoFragments.Activity_Upv"
+            android:label="@string/info"
+            android:parentActivityName=".Activity_Home" />
+        <activity
+            android:name=".infoFragments.Activity_Valencia"
+            android:label="@string/info"
+            android:parentActivityName=".Activity_Home" />
+        <activity
+            android:name=".infoFragments.Activity_Asignaturas"
+            android:label="@string/asignaturas"
+            android:parentActivityName=".Activity_Home" />
+        <activity
+            android:name=".infoFragments.Activity_Escuelas"
+            android:label="@string/escuelas"
+            android:parentActivityName=".Activity_Home" />
+        <activity
+            android:name=".infoFragments.Activity_Transportes"
+            android:label="@string/transporte"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".Activity_Home" />
+        <activity
+            android:name=".Activity_no_connection"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
 
         <meta-data
@@ -122,6 +155,45 @@
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
+        <activity
+            android:name=".infoFragments.Activity_FullScreen_Image"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_activity__full_screen__image"
+            android:theme="@style/FullscreenTheme"></activity>
+
+        <receiver
+            android:name=".GCM.GcmBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+
+                <!-- Receives the actual messages. -->
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+
+                <category android:name="com.google.android.gcm.demo.app" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name=".GCM.GcmIntentService" />
+
+        <receiver android:name=".calendarAlarm.AlarmReceiver">
+            <intent-filter>
+                <action android:name="alarmReceiver" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name=".calendarAlarm.AlarmIntentService"
+            android:enabled="true" />
+
+        <activity
+            android:name=".Activity_Notificacion_Evento"
+            android:label="@string/title_activity_activity__notificacion__evento"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"></activity>
     </application>
+
+
+    <uses-permission android:name="com.example.gcm.permission.C2D_MESSAGE" />
 
 </manifest>

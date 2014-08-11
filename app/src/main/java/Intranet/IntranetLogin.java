@@ -1,6 +1,7 @@
 package intranet;
 
 import android.os.AsyncTask;
+import android.util.Log;
 
 import java.io.DataOutputStream;
 import java.net.URL;
@@ -47,6 +48,7 @@ public class IntranetLogin extends AsyncTask<String, Void, InputParamsIntranetCo
                     .getDefault();
 
             java.net.URL url = new URL(urlPath);
+            Log.e("url", urlPath);
             HttpsURLConnection request = (HttpsURLConnection) url.openConnection();
 
             request.setSSLSocketFactory(sslsocketfactory);

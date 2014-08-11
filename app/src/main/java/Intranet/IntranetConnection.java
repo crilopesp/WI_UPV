@@ -15,6 +15,7 @@ public class IntranetConnection implements Observer {
 
     private String user;
     private String pass;
+    private String username;
     private List<String> cookieList;
 
     private OutPutParamsIntranetConnection outPutParamsIntranetConnection;
@@ -126,7 +127,6 @@ public class IntranetConnection implements Observer {
 
             this.outPutParamsIntranetConnection.setChanged();
             this.outPutParamsIntranetConnection.notifyObservers("login");
-
         } else if (data.equals("calendars")) {
             //calendars...
 

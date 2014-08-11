@@ -45,7 +45,10 @@ public class Activity_Localizacion_EMT extends FragmentActivity {
         db = helper.getWritableDatabase();
         setContentView(R.layout.activity_localizacion_noinfo);
 
+        getActionBar().setDisplayHomeAsUpEnabled(true);
         progress = new ProgressDialog_Custom(this, getString(R.string.loading));
+        progress.setCanceledOnTouchOutside(false);
+        progress.show();
         // Initialize the HashMap for Markers and MyMarker object
         int status = GooglePlayServicesUtil.isGooglePlayServicesAvailable(getBaseContext());
 
@@ -62,6 +65,7 @@ public class Activity_Localizacion_EMT extends FragmentActivity {
             setUpMap();
             plotMarkers(MarkersArray);
         }
+        progress.dismiss();
     }
 
     private void plotMarkers(ArrayList<EMT> markers) {
@@ -70,10 +74,12 @@ public class Activity_Localizacion_EMT extends FragmentActivity {
 
                 // Create user marker with custom icon and other options
                 MarkerOptions markerOption = new MarkerOptions().position(new LatLng(Double.parseDouble(myMarker.getLatitud()), (Double.parseDouble(myMarker.getLongitud()))));
-                markerOption.icon(BitmapDescriptorFactory.fromResource(R.drawable.parada_emt));
+                markerOption.icon(BitmapDescriptorFactory.fromResource(R.drawable.bus));
 
                 Marker currentMarker = mMap.addMarker(markerOption);
                 MarkersHashMap.put(currentMarker, myMarker);
+
+                mMap.setInfoWindowAdapter(new MarkerInfoWindowAdapter());
             }
         }
     }
@@ -138,9 +144,13 @@ public class Activity_Localizacion_EMT extends FragmentActivity {
 
             TextView markerLabel = (TextView) v.findViewById(R.id.marker_label);
 
-            markerIcon.setImageResource(R.drawable.parada_emt);
+            markerIcon.setImageResource(R.drawable.bus);
 
-            markerLabel.setText(myMarker.getNombre());
+            markerLabel.setText(getString(R.string.emt));
+
+
+            TextView anotherLabel = (TextView) v.findViewById(R.id.info_label);
+            anotherLabel.setText(myMarker.getNombre().toUpperCase());
             return v;
         }
     }

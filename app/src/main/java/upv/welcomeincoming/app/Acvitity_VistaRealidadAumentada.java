@@ -132,7 +132,6 @@ public class Acvitity_VistaRealidadAumentada extends Activity {
         try {
             this.architectView.load("upv/index_" + lang + "_" + building + ".html");
         } catch (IOException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }

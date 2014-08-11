@@ -1,49 +1,61 @@
 package upv.welcomeincoming.app;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.view.PagerTabStrip;
-import android.support.v4.view.ViewPager;
-import android.support.v4.view.ViewPager.PageTransformer;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
-import upv.welcomeincoming.app.infoFragments.FragmentPagerAdapter_Info;
-import upv.welcomeincoming.app.infoFragments.Fragment_Asignaturas;
-import upv.welcomeincoming.app.infoFragments.Fragment_Escuelas;
-import upv.welcomeincoming.app.infoFragments.Fragment_Transportes;
-import upv.welcomeincoming.app.infoFragments.Fragment_Upv;
+import upv.welcomeincoming.app.infoFragments.Activity_Asignaturas;
+import upv.welcomeincoming.app.infoFragments.Activity_Escuelas;
+import upv.welcomeincoming.app.infoFragments.Activity_Upv;
+import upv.welcomeincoming.app.infoFragments.Activity_Valencia;
 
 
 public class Fragment_Info extends Fragment {
 
-    ViewPager pager = null;
-    PagerTabStrip tabStrip;
-    FragmentPagerAdapter_Info pagerAdapter;
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_info, container, false);
-        this.pager = (ViewPager) view.findViewById(R.id.pager);
-        this.tabStrip = (PagerTabStrip) view.findViewById(R.id.pager_tab_strip);
-        pager.setPageTransformer(false, new PageTransformer() {
+
+        LinearLayout infoupv = (LinearLayout) view.findViewById(R.id.linearInfoUpv);
+        infoupv.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void transformPage(View page, float position) {
-                final float normalizedposition = Math.abs(Math.abs(position) - 1);
-                page.setAlpha(normalizedposition);
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(), Activity_Upv.class));
             }
         });
-        pagerAdapter = new FragmentPagerAdapter_Info(getActivity().getSupportFragmentManager(), getActivity().getApplicationContext());
-        pagerAdapter.addFragment(new Fragment_Upv());
-        pagerAdapter.addFragment(new Fragment_Transportes());
-        pagerAdapter.addFragment(new Fragment_Escuelas());
-        pagerAdapter.addFragment(new Fragment_Asignaturas());
-        pager.setAdapter(pagerAdapter);
-
+        LinearLayout asignaturas = (LinearLayout) view.findViewById(R.id.linearAsignaturas);
+        asignaturas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(), Activity_Asignaturas.class));
+            }
+        });
+        LinearLayout escuelas = (LinearLayout) view.findViewById(R.id.linearEscuelas);
+        escuelas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(), Activity_Escuelas.class));
+            }
+        });
+        LinearLayout infovalencia = (LinearLayout) view.findViewById(R.id.linearInfo);
+        infovalencia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(), Activity_Valencia.class));
+            }
+        });
+        LinearLayout transportes = (LinearLayout) view.findViewById(R.id.linearTransporte);
+        transportes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(), Activity_Upv.class));
+            }
+        });
         return view;
     }
-
-
 }

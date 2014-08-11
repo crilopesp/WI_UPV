@@ -27,8 +27,9 @@ public class Activity_Info_Valenbisi extends Activity {
         textTotal.setText("" + total);
         TextView textDisponibles = (TextView) findViewById(R.id.txtPlazasdisponibles);
         textDisponibles.setText("" + disponibles);
-        Button btnAceptar = (Button) findViewById(R.id.btnAceptar);
-        btnAceptar.setOnClickListener(new View.OnClickListener() {
+        Button btnCerrar = (Button) findViewById(R.id.btnClose);
+
+        btnCerrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 finish();

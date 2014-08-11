@@ -34,8 +34,10 @@ public class CalendarsJSON {
                 try {
 
                     DiaryJSON diaryJSON = new DiaryJSON(agendasArray.getJSONObject(i));
-                    calendarios.add(new Calendario(diaryJSON.getUid(), diaryJSON.getNombre(), diaryJSON.getUrl()));
-
+                    if (diaryJSON.getNombre().contains("Horario de Clases")) {
+                        calendarios.add(new Calendario(diaryJSON.getUid(), diaryJSON.getNombre(), diaryJSON.getUrl()));
+                        Log.e("uid", diaryJSON.getUid());
+                    }
                 } catch (JSONException e) {
                     Log.w(((Object) this).getClass().getName(), "Exception", e);
                 }

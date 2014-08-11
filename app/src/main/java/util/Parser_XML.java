@@ -138,13 +138,7 @@ public class Parser_XML {
                         nuevo.setNombre(parseado.getName());
                         nuevo.setUrl(parseado.getAttributeValue(null, "url"));
                         nuevo.setDescripcion(parseado.getAttributeValue(null, "descripcion"));
-                    /*El stributo telefono del objeto transporte es un vectos*/
-                        String[] telefonos = new String[3];
-                        for (int i = 0; i < 3; i++) {
-                            auxiliar = "telefono" + (i + 1);
-                            telefonos[i] = parseado.getAttributeValue(null, auxiliar);
-                        }
-                        nuevo.setTelefono(telefonos);
+                        nuevo.setTelefono(parseado.getAttributeValue(null, "telefono"));
                         resultado.add(nuevo);
                         parseado.next();
                         tipoevento = parseado.getEventType();

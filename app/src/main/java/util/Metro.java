@@ -7,7 +7,6 @@
 package util;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 
 /**
  * @author Cristian
@@ -17,10 +16,10 @@ public class Metro implements Serializable {
     private int id;
     private String latitud;
     private String longitud;
-    private ArrayList<Integer> lineas = new ArrayList<Integer>();
-    private String[] lineasString;
+    private String lineas;
 
-    public Metro(int id, String nombre, String latitud, String longitud, ArrayList<Integer> lineas) {
+
+    public Metro(int id, String nombre, String latitud, String longitud, String lineas) {
         this.nombre = nombre;
         this.id = id;
         this.latitud = latitud;
@@ -28,28 +27,9 @@ public class Metro implements Serializable {
         this.lineas = lineas;
     }
 
-    public Metro(int id, String nombre, String latitud, String longitud, String lineas) {
-        this.nombre = nombre;
-        this.id = id;
-        this.latitud = latitud;
-        this.longitud = longitud;
-        String[] lineasArray = lineas.split(",");
-        lineasString = lineasArray;
-        for (int i = 0; i < lineasArray.length; i++) {
-            this.lineas.add(Integer.parseInt(lineasArray[i]));
-        }
-    }
-
     public Metro() {
     }
 
-    public String[] getLineasString() {
-        return lineasString;
-    }
-
-    public void setLineasString(String[] lineasString) {
-        this.lineasString = lineasString;
-    }
 
     public String getNombre() {
         return nombre;
@@ -83,11 +63,11 @@ public class Metro implements Serializable {
         this.longitud = longitud;
     }
 
-    public ArrayList<Integer> getLineas() {
+    public String getLineas() {
         return lineas;
     }
 
-    public void setLineas(ArrayList<Integer> lineas) {
+    public void setLineas(String lineas) {
         this.lineas = lineas;
     }
 }

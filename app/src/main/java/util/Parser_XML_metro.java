@@ -34,7 +34,6 @@ public class Parser_XML_metro {
         while (eventType != XmlPullParser.END_DOCUMENT) {
 
             String name = null;
-            String lineas = null;
             switch (eventType) {
                 case XmlPullParser.START_DOCUMENT:
                     break;
@@ -54,7 +53,7 @@ public class Parser_XML_metro {
                         } else if (name.equals("longitud")) {
                             metro.setLongitud(parser.nextText());
                         } else if (name.equals("lineas")) {
-                            lineas = parser.nextText();
+                            metro.setLineas(parser.nextText());
                         }
                     }
                     break;
@@ -62,7 +61,7 @@ public class Parser_XML_metro {
                     name = parser.getName();
                     if (name.equalsIgnoreCase("metro") && metro != null) {
                         try {
-                            db.execSQL("INSERT OR IGNORE INTO Metro (id,nombre,latitud,longitud,lineas) VALUES ('" + metro.getId() + "','" + metro.getNombre() + "','" + metro.getLatitud() + "','" + metro.getLongitud() + "','" + lineas + "');");
+                            db.execSQL("INSERT OR IGNORE INTO Metro (id,nombre,latitud,longitud,lineas) VALUES ('" + metro.getId() + "','" + metro.getNombre() + "','" + metro.getLatitud() + "','" + metro.getLongitud() + "','" + metro.getLineas() + "');");
                         } catch (SQLiteException e) {
                             Log.e("error", e.getMessage());
                         }

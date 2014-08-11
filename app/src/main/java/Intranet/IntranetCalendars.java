@@ -1,6 +1,7 @@
 package intranet;
 
 import android.os.AsyncTask;
+import android.util.Log;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -34,7 +35,7 @@ public class IntranetCalendars extends AsyncTask<List<String>, Void, InputParams
     protected InputParamsIntranetConnection doInBackground(List<String>... params) {
 
         String urlPath = String.format("https://www.upv.es/pls/soalu/est_intranet.NI_app?p_idioma=%1$s&p_cua=%2$s", "c", "icalmovil");
-
+        Log.e("url", urlPath);
         try {
 
             SSLSocketFactory sslsocketfactory = (SSLSocketFactory) SSLSocketFactory
@@ -81,7 +82,7 @@ public class IntranetCalendars extends AsyncTask<List<String>, Void, InputParams
             in.close();
 
             this.inputParamsIntranetConnection.setResult(sw.toString());
-
+            Log.e("result", sw.toString());
         } catch (Exception e) {
             inputParamsIntranetConnection.setException(e);
         }

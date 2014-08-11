@@ -47,7 +47,10 @@ public class Activity_Localizacion_Interes extends FragmentActivity {
         db = helper.getWritableDatabase();
         setContentView(R.layout.activity_localizacion_noinfo);
 
+        getActionBar().setDisplayHomeAsUpEnabled(true);
         progress = new ProgressDialog_Custom(this, getString(R.string.loading));
+        progress.setCanceledOnTouchOutside(false);
+        progress.show();
         // Initialize the HashMap for Markers and MyMarker object
         int status = GooglePlayServicesUtil.isGooglePlayServicesAvailable(getBaseContext());
 
@@ -64,6 +67,7 @@ public class Activity_Localizacion_Interes extends FragmentActivity {
             setUpMap();
             plotMarkers(MarkersArray);
         }
+        progress.dismiss();
     }
 
     private void plotMarkers(ArrayList<Interes> markers) {
@@ -76,6 +80,8 @@ public class Activity_Localizacion_Interes extends FragmentActivity {
 
                 Marker currentMarker = mMap.addMarker(markerOption);
                 MarkersHashMap.put(currentMarker, myMarker);
+
+                mMap.setInfoWindowAdapter(new MarkerInfoWindowAdapter());
             }
         }
     }
@@ -138,7 +144,9 @@ public class Activity_Localizacion_Interes extends FragmentActivity {
 
             markerIcon.setImageResource(R.drawable.interes);
 
-            markerLabel.setText(myMarker.getNombre());
+            markerLabel.setText(R.string.interes_map);
+            TextView anotherLabel = (TextView) v.findViewById(R.id.info_label);
+            anotherLabel.setText(myMarker.getNombre());
             return v;
         }
     }
