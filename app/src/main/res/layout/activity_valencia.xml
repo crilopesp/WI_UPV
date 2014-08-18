@@ -169,7 +169,7 @@
                         style="@style/TextAppearance.AppCompat.Base.SearchResult.Title"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/ayuntamiento"
+                        android:text="@string/police"
                         android:id="@+id/textView"
                         android:gravity="center_horizontal" />
                 </LinearLayout>

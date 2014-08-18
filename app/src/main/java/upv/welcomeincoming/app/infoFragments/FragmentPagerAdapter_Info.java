@@ -22,7 +22,7 @@ public class FragmentPagerAdapter_Info extends android.support.v4.app.FragmentPa
         this.fragments = new ArrayList<Fragment>();
         titulos = new String[]{
                 contexto.getString(R.string.metrovalencia),
-                contexto.getString(R.string.emt),
+                contexto.getString(R.string.btnBus),
                 contexto.getString(R.string.btnAvion),
                 contexto.getString(R.string.btnTren),
                 contexto.getString(R.string.btnTaxi)

@@ -10,6 +10,13 @@ public class Transporte {
     private String telefono;
     private String url;
 
+    public Transporte(String nombre, String descripcion, String telefono, String url) {
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.telefono = telefono;
+        this.url = url;
+    }
+
     public Transporte() {
 
     }

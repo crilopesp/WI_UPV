@@ -23,6 +23,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import util.DBHandler_Horarios;
 import util.ProgressDialog_Custom;
 import util.RSS.FeedParser;
 import util.RSS.FeedParserFactory;
@@ -36,13 +37,24 @@ public class Fragment_Home extends ListFragment implements OnShowcaseEventListen
     private List<Noticia> noticias = new ArrayList<Noticia>();
     ShowcaseView sv;
 
-    public Fragment_Home(SQLiteDatabase db) {
-        this.db = db;
+    public Fragment_Home() {
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
+        this.db = new DBHandler_Horarios(getActivity()).getReadableDatabase();
+        /*final AdView adView = new AdView(getActivity());
+        adView.setAdUnitId("ca-app-pub-6220506863859131/2069085608");
+        adView.setAdSize(AdSize.BANNER);
+
+        final LinearLayout adLinLay = (LinearLayout) view.findViewById(R.id.linearAD);
+        adLinLay.addView(adView);
+
+        final AdRequest.Builder adReq = new AdRequest.Builder();
+        final AdRequest adRequest = adReq.build();
+        adView.loadAd(adRequest);*/
         if (estaVaciaNoticias()) {
             new RetrieveFeedTask().execute();
         } else {

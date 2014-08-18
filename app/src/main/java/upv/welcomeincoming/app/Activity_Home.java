@@ -2,14 +2,13 @@ package upv.welcomeincoming.app;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Typeface;
-import android.os.AsyncTask;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.ActionBarDrawerToggle;
@@ -21,6 +20,7 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -30,14 +30,10 @@ import android.widget.TextView;
 import com.github.amlcurran.showcaseview.OnShowcaseEventListener;
 import com.github.amlcurran.showcaseview.ShowcaseView;
 import com.github.amlcurran.showcaseview.targets.ActionViewTarget;
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.gcm.GoogleCloudMessaging;
 
-import java.io.IOException;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import upv.welcomeincoming.app.GCM.MessageSender;
 import util.DBHandler_Horarios;
 import util.InternetConnectionChecker;
 import util.Preferencias;
@@ -69,7 +65,7 @@ public class Activity_Home extends ActionBarActivity implements Fragment_Calenda
     TextView mDisplay;
     GoogleCloudMessaging gcm;
     AtomicInteger msgId = new AtomicInteger();
-
+    Menu menu;
     String regid;
 
     @Override
@@ -81,7 +77,7 @@ public class Activity_Home extends ActionBarActivity implements Fragment_Calenda
         icc = new InternetConnectionChecker();
         db = helper.getWritableDatabase();
         overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
-        opcionesMenu = new String[]{getString(R.string.menu_option1), getString(R.string.menu_option2), getString(R.string.menu_option3), getString(R.string.menu_option4), getString(R.string.menu_option5), getString(R.string.menu_option6), getString(R.string.menu_option7)};
+        opcionesMenu = new String[]{getString(R.string.menu_option1), getString(R.string.menu_option2), getString(R.string.menu_option3), getString(R.string.menu_option4), getString(R.string.menu_option5), getString(R.string.menu_option6), getString(R.string.menu_option7), getString(R.string.sugerencias)};
 
         setContentView(R.layout.activity_home);
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -89,33 +85,32 @@ public class Activity_Home extends ActionBarActivity implements Fragment_Calenda
         panelDrawer = (LinearLayout) findViewById(R.id.panel_drawer);
         getWindow().setUiOptions(ActivityInfo.UIOPTION_SPLIT_ACTION_BAR_WHEN_NARROW);
         tx = getSupportFragmentManager().beginTransaction();
-        tx.replace(R.id.contenedor_fragment, new Fragment_Home(db));
+        tx.replace(R.id.contenedor_fragment, new Fragment_Home());
         tx.commit();
         fragmentActual = 0;
         // Check device for Play Services APK. If check succeeds, proceed with
         //  upv.welcomeincoming.app.GCM registration.
-        if (checkPlayServices()) {
-            gcm = GoogleCloudMessaging.getInstance(this);
-            regid = getRegistrationId(getApplicationContext());
 
-            if (regid.isEmpty()) {
-                Log.e("error", "Sin reg ID");
-                registerInBackground();
-            }
-        } else {
-            Log.i(TAG, "No valid Google Play Services APK found.");
-        }
         inicializarElementos();
 
         ActionViewTarget target = new ActionViewTarget(this, ActionViewTarget.Type.HOME);
 
-        sv = new ShowcaseView.Builder(this)
-                .setTarget(target)
-                .setContentTitle(R.string.tutorial_drawer_title)
-                .setContentText(R.string.tutorial_drawer_message)
-                .setStyle(R.style.ShowCaseTheme)
-                .hideOnTouchOutside()
-                .build();
+        if (Preferencias.getFirstHome(this) == 1) {
+            sv = new ShowcaseView.Builder(this)
+                    .setTarget(target)
+                    .setContentTitle(R.string.tutorial_drawer_title)
+                    .setContentText(R.string.tutorial_drawer_message)
+                    .setStyle(R.style.ShowCaseTheme)
+                    .build();
+            Preferencias.setFirstHome(this, 0);
+        }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        super.onCreateOptionsMenu(menu);
+        this.menu = menu;
+        return true;
     }
 
     @Override
@@ -143,7 +138,7 @@ public class Activity_Home extends ActionBarActivity implements Fragment_Calenda
             }
         });
         drawerList.addView(itemHome);
-        //addDividier();
+        addDividier();
 
         //Calendar
         View itemFind = generateItem(getString(R.string.menu_option2), R.drawable.ic_action_collections_go_to_today);
@@ -168,7 +163,7 @@ public class Activity_Home extends ActionBarActivity implements Fragment_Calenda
             }
         });
         drawerList.addView(itemFind);
-        //addDividier();
+        addDividier();
 
         //Info
         View itemInfo = generateItem(getString(R.string.menu_option3), R.drawable.ic_action_about);
@@ -179,7 +174,7 @@ public class Activity_Home extends ActionBarActivity implements Fragment_Calenda
             }
         });
         drawerList.addView(itemInfo);
-        //addDividier();
+        addDividier();
 
         //Traduccion
         View itemTraduce = generateItem(getString(R.string.menu_option4), R.drawable.ic_action_device_access_mic);
@@ -196,7 +191,7 @@ public class Activity_Home extends ActionBarActivity implements Fragment_Calenda
             }
         });
         drawerList.addView(itemTraduce);
-        //addDividier();
+        addDividier();
 
         //Locate
         View itemLocate = generateItem(getString(R.string.menu_option5), R.drawable.ic_action_location_map);
@@ -214,7 +209,7 @@ public class Activity_Home extends ActionBarActivity implements Fragment_Calenda
             }
         });
         drawerList.addView(itemLocate);
-        //addDividier();
+        addDividier();
         //Forum
         View itemForum = generateItem(getString(R.string.menu_option7), R.drawable.ic_action_social_group);
         itemForum.setOnClickListener(new View.OnClickListener() {
@@ -230,7 +225,7 @@ public class Activity_Home extends ActionBarActivity implements Fragment_Calenda
             }
         });
         drawerList.addView(itemForum);
-        //addDividier();
+        addDividier();
 
         //Option
         View itemOption = generateItem(getString(R.string.menu_option6), R.drawable.ic_action_action_settings);
@@ -241,7 +236,17 @@ public class Activity_Home extends ActionBarActivity implements Fragment_Calenda
             }
         });
         drawerList.addView(itemOption);
-        //addDividier();
+        addDividier();
+
+        View itemSugerencias = generateItem(getString(R.string.menu_option8), R.drawable.ic_action_social_share_light);
+        itemSugerencias.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://plus.google.com/u/0/communities/108206313507760393761")));
+            }
+        });
+        drawerList.addView(itemSugerencias);
+        addDividier();
 
 
 
@@ -255,8 +260,8 @@ public class Activity_Home extends ActionBarActivity implements Fragment_Calenda
             }
 
             public void onDrawerOpened(View drawerView) {
-                getActionBar().setTitle(tituloApp);
-                sv.hide();
+                if (sv != null)
+                    sv.hide();
                 // ActivityCompat.invalidateOptionsMenu(MainActivity.this); //invoca a onPrepareOptionsMenu()
             }
         };
@@ -289,10 +294,10 @@ public class Activity_Home extends ActionBarActivity implements Fragment_Calenda
         Fragment fragment = null;
         switch (position) {
             case 0:
-                fragment = new Fragment_Home(db);
+                fragment = new Fragment_Home();
                 break;
             case 1:
-                fragment = new Fragment_Calendar(db);
+                fragment = new Fragment_Calendar();
                 break;
             case 2:
                 fragment = new Fragment_Info();
@@ -301,13 +306,13 @@ public class Activity_Home extends ActionBarActivity implements Fragment_Calenda
                 fragment = new Fragment_Traduccion();
                 break;
             case 4:
-                fragment = new Fragment_Localizacion(db);
+                fragment = new Fragment_Localizacion();
                 break;
             case 5:
                 fragment = new Fragment_Opciones();
                 break;
             case 6:
-                sendRegistrationIdToBackend();
+                fragment = new Fragment_Foro();
                 break;
         }
 
@@ -407,130 +412,9 @@ public class Activity_Home extends ActionBarActivity implements Fragment_Calenda
 
     }
 
-    /**
-     * Gets the current registration ID for application on upv.welcomeincoming.app.GCM service.
-     * <p/>
-     * If result is empty, the app needs to register.
-     *
-     * @return registration ID, or empty string if there is no existing
-     * registration ID.
-     */
-    private String getRegistrationId(Context context) {
-        String registrationId = Preferencias.getGCMID(this);
-        if (registrationId.isEmpty()) {
-            Log.i(TAG, "Registration not found.");
-            return "";
-        }
-        // Check if app was updated; if so, it must clear the registration ID
-        // since the existing regID is not guaranteed to work with the new
-        // app version.
-        /*int registeredVersion = prefs.getInt(PROPERTY_APP_VERSION, Integer.MIN_VALUE);
-        int currentVersion = getAppVersion(context);
-        if (registeredVersion != currentVersion) {
-            Log.i(TAG, "App version changed.");
-            return "";
-        }*/
-        return registrationId;
-    }
-
-    /**
-     * Registers the application with upv.welcomeincoming.app.GCM servers asynchronously.
-     * <p/>
-     * Stores the registration ID and app versionCode in the application's
-     * shared preferences.
-     */
-    private void registerInBackground() {
-        new AsyncTask() {
-            @Override
-            protected Object doInBackground(Object[] objects) {
-                String msg = "";
-                try {
-                    if (gcm == null) {
-                        gcm = GoogleCloudMessaging.getInstance(getApplicationContext());
-                    }
-                    regid = gcm.register(SENDER_ID);
-                    msg = "Device registered, registration ID=" + regid;
-                    Log.e("regID", regid);
-                    // You should send the registration ID to your server over HTTP,
-                    // so it can use upv.welcomeincoming.app.GCM/HTTP or CCS to send messages to your app.
-                    // The request to your server should be authenticated if your app
-                    // is using accounts.
-                    sendRegistrationIdToBackend();
-
-                    // For this demo: we don't need to send it because the device
-                    // will send upstream messages to a server that echo back the
-                    // message using the 'from' address in the message.
-
-                    // Persist the regID - no need to register again.
-                    storeRegistrationId(getApplicationContext(), regid);
-                } catch (IOException ex) {
-                    msg = "Error :" + ex.getMessage();
-                    // If there is an error, don't just keep trying to register.
-                    // Require the user to click a button again, or perform
-                    // exponential back-off.
-
-                    Log.e("error", msg);
-                }
-                return msg;
-            }
-        }.execute(null, null, null);
-    }
-
-    /**
-     * Sends the registration ID to your server over HTTP, so it can use upv.welcomeincoming.app.GCM/HTTP
-     * or CCS to send messages to your app. Not needed for this demo since the
-     * device sends upstream messages to a server that echoes back the message
-     * using the 'from' address in the message.
-     */
-    private void sendRegistrationIdToBackend() {
-        if (!regid.isEmpty()) {
-            MessageSender messageSender = new MessageSender();
-            Bundle dataBundle = new Bundle();
-            dataBundle.putString("action", "ECHO");
-            dataBundle.putString("Mensaje", Preferencias.getUsername(this));
-            messageSender.sendMessage(dataBundle, gcm);
-            Log.e("gcm", "Succeded!");
-        } else {
-            Log.e("gcm", "no registration id");
-        }
-    }
-
-    /**
-     * Stores the registration ID and app versionCode in the application's
-     * {@code SharedPreferences}.
-     *
-     * @param context application's context.
-     * @param regId   registration ID
-     */
-    private void storeRegistrationId(Context context, String regId) {
-        Log.i(TAG, "Saving regId on app version ");
-        Preferencias.setGCMID(context, regId);
-    }
-
     // You need to do the Play Services APK check here too.
     @Override
     protected void onResume() {
         super.onResume();
-        checkPlayServices();
-    }
-
-    /**
-     * Check the device to make sure it has the Google Play Services APK. If
-     * it doesn't, display a dialog that allows users to download the APK from
-     * the Google Play Store or enable it in the device's system settings.
-     */
-    private boolean checkPlayServices() {
-        int resultCode = GooglePlayServicesUtil.isGooglePlayServicesAvailable(this);
-        if (resultCode != ConnectionResult.SUCCESS) {
-            if (GooglePlayServicesUtil.isUserRecoverableError(resultCode)) {
-                GooglePlayServicesUtil.getErrorDialog(resultCode, this,
-                        PLAY_SERVICES_RESOLUTION_REQUEST).show();
-            } else {
-                Log.i(TAG, "This device is not supported.");
-                finish();
-            }
-            return false;
-        }
-        return true;
     }
 }

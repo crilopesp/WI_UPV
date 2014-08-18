@@ -1,15 +1,16 @@
-<FrameLayout
+<RelativeLayout
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:orientation="vertical"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:background="@color/text"
         android:id="@+id/linearLayout"
-        android:weightSum="5">
+        android:weightSum="5"
+        android:layout_above="@+id/linearLayout2">
 
         <TextView
             android:layout_width="match_parent"
@@ -23,7 +24,7 @@
 
         <ListView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:id="@android:id/list"
             android:listSelector="@drawable/selector_button_back"
             android:dividerHeight="2dp"
@@ -36,4 +37,13 @@
             android:text="@string/noresults" />
 
     </LinearLayout>
-</FrameLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/linearAD"></LinearLayout>
+</RelativeLayout>

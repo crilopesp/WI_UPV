@@ -11,6 +11,7 @@ import android.widget.LinearLayout;
 
 import upv.welcomeincoming.app.infoFragments.Activity_Asignaturas;
 import upv.welcomeincoming.app.infoFragments.Activity_Escuelas;
+import upv.welcomeincoming.app.infoFragments.Activity_Transportes;
 import upv.welcomeincoming.app.infoFragments.Activity_Upv;
 import upv.welcomeincoming.app.infoFragments.Activity_Valencia;
 
@@ -53,7 +54,7 @@ public class Fragment_Info extends Fragment {
         transportes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getActivity(), Activity_Upv.class));
+                startActivity(new Intent(getActivity(), Activity_Transportes.class));
             }
         });
         return view;

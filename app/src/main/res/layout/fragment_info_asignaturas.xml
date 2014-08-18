@@ -2,11 +2,10 @@
 
 <ExpandableListView
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/multiexpandableListView"
     android:background="@color/text"
-    android:divider="@drawable/divisor"
     android:childDivider="@drawable/divisor"
     android:paddingBottom="5dp"
     android:paddingTop="5dp">

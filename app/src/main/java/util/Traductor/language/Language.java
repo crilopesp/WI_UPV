@@ -63,9 +63,9 @@ public enum Language {
     TURKISH("tr"),
     UKRAINIAN("uk");
 
-    private static String[] ArrayNameLanguage = {"CATALAN", "ENGLISH", "FRENCH", "GERMAN", "ITALIAN", "PORTUGUESE", "SPANISH"};
-    private static String[] ArrayLanguageCode = {"ca", "en", "fr", "de", "it", "pt", "es"};
-    private static int[] ArrayLanguageDrawable = {R.drawable.ca, R.drawable.en, R.drawable.fr, R.drawable.de, R.drawable.it, R.drawable.pt, R.drawable.es};
+    public static String[] ArrayNameLanguage = {"CATALAN", "ENGLISH", "FRENCH", "GERMAN", "ITALIAN", "PORTUGUESE", "SPANISH"};
+    public static String[] ArrayLanguageCode = {"ca", "en", "fr", "de", "it", "pt", "es"};
+    public static int[] ArrayLanguageDrawable = {R.drawable.ca, R.drawable.en, R.drawable.fr, R.drawable.de, R.drawable.it, R.drawable.pt, R.drawable.es};
     private static Locale[] ArrayLocaleLanguage = {new Locale("ca", "ES"), new Locale("en", "GB"), new Locale("fr", "FR"), new Locale("de", "DE"), new Locale("it", "IT"), new Locale("pt", "PT"), new Locale("es", "ES")};
 
 
@@ -102,7 +102,7 @@ public enum Language {
         return language;
     }
 
-    //Devuelve un array de strings con los nombres de los lenguajes que puede traducir el traductor
+    //Devuelve una lista de strings con los nombres de los lenguajes que puede traducir el traductor
     public static List<String> getArrayStringNameLanguages() {
         List<String> list = new ArrayList<String>();
         for (int i = 0; i < ArrayNameLanguage.length; i++) {
@@ -150,6 +150,15 @@ public enum Language {
         Locale res = new Locale("en", "GB");
         for (int i = 0; i < ArrayLanguageCode.length; i++) {
             if (ArrayLanguageCode[i].equals(code)) return ArrayLocaleLanguage[i];
+        }
+        return res;
+    }
+
+    public static Drawable getFlagResourcebyCode(String languageCode, Context mContext) {
+        Drawable res = null;
+        for (int i = 0; i < ArrayLanguageCode.length; i++) {
+            if (ArrayLanguageCode[i].equals(languageCode))
+                return mContext.getResources().getDrawable(ArrayLanguageDrawable[i]);
         }
         return res;
     }

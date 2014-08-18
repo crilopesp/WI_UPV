@@ -48,6 +48,7 @@ import calendarupv.ComparadorEventos;
 import calendarupv.Evento;
 import intranet.IntranetConnection;
 import intranet.OutPutParamsIntranetConnection;
+import util.DBHandler_Horarios;
 import util.Preferencias;
 import util.ProgressDialog_Custom;
 
@@ -65,15 +66,15 @@ public class Fragment_Calendar extends ListFragment implements Observer {
     private TextView textViewName;
     private TextView textViewGroup;
     private TextView textViewInfo;
-    private TextView textViewEventos;
     private SQLiteDatabase db;
     private ArrayAdapterCalendarDiaryItemList adapter;
     private List<Calendario> diaryJSONList;
     private HashMap<Evento, Integer> eventosConAlerta = new HashMap<Evento, Integer>();
 
-    public Fragment_Calendar(SQLiteDatabase db) {
-        this.db = db;
+    public Fragment_Calendar() {
+
     }
+
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode == 1) {
@@ -94,6 +95,7 @@ public class Fragment_Calendar extends ListFragment implements Observer {
         }
 
     }
+
     private List<Evento> obtenerEventosPorAsignatura(String asignatura) {
         String sql = "SELECT * FROM Evento WHERE nombre=\"" + asignatura + "\";";
         Cursor cursor = db.rawQuery(sql, null);
@@ -124,6 +126,7 @@ public class Fragment_Calendar extends ListFragment implements Observer {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        this.db = new DBHandler_Horarios(getActivity()).getWritableDatabase();
         textViewName = (TextView) this.getView().findViewById(R.id.textViewCalendarName);
         if (!estaVaciaDB()) {
             eventos = obtenerEventosDB(db);
@@ -238,6 +241,7 @@ public class Fragment_Calendar extends ListFragment implements Observer {
         cursor.close();
         return eventos;
     }
+
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
 
@@ -316,10 +320,7 @@ public class Fragment_Calendar extends ListFragment implements Observer {
             this.adapter = new ArrayAdapterCalendarDiaryItemList(this.getActivity(), eventos);
             this.setListAdapter(adapter);
 
-        } else {
-            textViewEventos.setText(getString(R.string.noevents));
         }
-
         if (progressDialog != null)
             progressDialog.dismiss();
     }
@@ -382,6 +383,7 @@ public class Fragment_Calendar extends ListFragment implements Observer {
             this.context = context;
             this.values = values;
         }
+
         public List<Evento> getValues() {
             return values;
         }
@@ -417,6 +419,7 @@ public class Fragment_Calendar extends ListFragment implements Observer {
         public long getItemId(int pos) {
             return pos;
         }
+
         @Override
         public int getCount() {
             if (values == null)

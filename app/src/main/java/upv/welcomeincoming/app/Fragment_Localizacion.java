@@ -9,41 +9,30 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
-import android.widget.Toast;
 
+import util.DBHandler_Horarios;
 import util.ProgressDialog_Custom;
 
 public class Fragment_Localizacion extends Fragment {
     private SQLiteDatabase db;
     private ProgressDialog_Custom pg;
 
-    public Fragment_Localizacion(SQLiteDatabase db) {
-        this.db = db;
+    public Fragment_Localizacion() {
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_localizacion, container, false);
         final Spinner spinner = (Spinner) view.findViewById(R.id.spinnerEdificios);
+        this.db = new DBHandler_Horarios(getActivity()).getReadableDatabase();
         Button btn_enc = (Button) view.findViewById(R.id.btn_enc);
         ArrayAdapter adapter = ArrayAdapter.createFromResource(getActivity(), R.array.edificios, R.layout.item_lista_spinner_filtros);
         spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(adapterView.getContext(), "Has seleccionado el edificio " + adapterView.getItemAtPosition(i).toString(), Toast.LENGTH_LONG).show();
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });
         btn_enc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -8,22 +8,14 @@
     android:weightSum="10"
     android:background="@color/text">
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageView"
-        android:layout_weight="1"
-        android:src="@drawable/ic_action_navigation_next_item"
-        android:layout_gravity="center"
-        android:layout_marginLeft="30dp" />
-
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:id="@+id/linearLayout"
-        android:layout_weight="9">
+        android:layout_weight="9"
+        android:layout_marginLeft="40dp">
 
         <RelativeLayout
             android:orientation="horizontal"
@@ -54,7 +46,8 @@
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
                 android:src="@drawable/ic_action_location_web_site"
-                android:background="@drawable/selector_button_back" />
+                android:background="@drawable/selector_button_back"
+                android:adjustViewBounds="false" />
         </RelativeLayout>
 
         <LinearLayout

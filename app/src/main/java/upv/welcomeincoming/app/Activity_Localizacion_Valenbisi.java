@@ -8,6 +8,8 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.Gravity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -50,6 +52,7 @@ public class Activity_Localizacion_Valenbisi extends FragmentActivity {
         db = helper.getWritableDatabase();
         setContentView(R.layout.activity_localizacion_noinfo);
 
+        getActionBar().setHomeButtonEnabled(true);
         getActionBar().setDisplayHomeAsUpEnabled(true);
         progress = new ProgressDialog_Custom(this, getString(R.string.loading));
         progress.setCanceledOnTouchOutside(false);
@@ -71,6 +74,22 @@ public class Activity_Localizacion_Valenbisi extends FragmentActivity {
             plotMarkers(VBMarkersArray);
         }
         progress.dismiss();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        super.onCreateOptionsMenu(menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                this.onBackPressed();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     private void plotMarkers(ArrayList<MarcadorValenbisi> markers) {

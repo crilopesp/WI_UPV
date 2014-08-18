@@ -5,12 +5,12 @@ import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
-import android.widget.ProgressBar;
 
 import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.IOException;
 
+import fr.castorflex.android.smoothprogressbar.SmoothProgressBar;
 import upv.welcomeincoming.app.R;
 
 public class LoadingTask extends AsyncTask<String, Integer, Integer> {
@@ -22,7 +22,7 @@ public class LoadingTask extends AsyncTask<String, Integer, Integer> {
     }
 
     // This is the progress bar you want to update while the task is in progress
-    private final ProgressBar progressBar;
+    private final SmoothProgressBar progressBar;
     // This is the listener that will be told when this task is finished
     private final LoadingTaskFinishedListener finishedListener;
     private final Resources resources;
@@ -34,7 +34,7 @@ public class LoadingTask extends AsyncTask<String, Integer, Integer> {
      * @param progressBar      - the progress bar you want to update while the task is in progress
      * @param finishedListener - the listener that will be told when this task is finished
      */
-    public LoadingTask(ProgressBar progressBar, LoadingTaskFinishedListener finishedListener, Resources resources, Context context) {
+    public LoadingTask(SmoothProgressBar progressBar, LoadingTaskFinishedListener finishedListener, Resources resources, Context context) {
         this.progressBar = progressBar;
         this.finishedListener = finishedListener;
         this.resources = resources;

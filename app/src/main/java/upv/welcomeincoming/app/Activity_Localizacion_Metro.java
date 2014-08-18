@@ -11,6 +11,8 @@ import android.graphics.Canvas;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.util.DisplayMetrics;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.LinearLayout;
@@ -51,7 +53,7 @@ public class Activity_Localizacion_Metro extends FragmentActivity {
         DBHandler_Horarios helper = new DBHandler_Horarios(this);
         db = helper.getWritableDatabase();
         setContentView(R.layout.activity_localizacion_noinfo);
-
+        getActionBar().setHomeButtonEnabled(true);
         getActionBar().setDisplayHomeAsUpEnabled(true);
         progress = new ProgressDialog_Custom(this, getString(R.string.loading));
         progress.setCanceledOnTouchOutside(false);
@@ -73,6 +75,22 @@ public class Activity_Localizacion_Metro extends FragmentActivity {
             plotMarkers(MarkersArray);
         }
         progress.dismiss();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        super.onCreateOptionsMenu(menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                this.onBackPressed();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     private void plotMarkers(ArrayList<Metro> markers) {

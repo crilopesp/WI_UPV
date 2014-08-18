@@ -1,13 +1,18 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/loadingPanel"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:gravity="center"
-    android:background="@drawable/screen_splash">
+    android:background="@drawable/screen_splash1">
 
-    <ProgressBar
-        android:layout_width="wrap_content"
+    <fr.castorflex.android.smoothprogressbar.SmoothProgressBar
+        android:id="@+id/progressbar"
+        style="@style/GNowProgressBar"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:indeterminate="false"
-        android:id="@+id/progressBar" />
-</RelativeLayout>
+        android:indeterminateOnly="false"
+        android:indeterminate="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="bottom" />
+</LinearLayout>

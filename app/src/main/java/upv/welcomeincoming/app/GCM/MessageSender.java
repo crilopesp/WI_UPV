@@ -26,7 +26,7 @@ public class MessageSender {
 
                 try {
                     Log.d(TAG, "messageid: " + id);
-                    gcm.send(Config.GOOGLE_PROJECT_ID + "@gcm.googleapis.com", id,
+                    gcm.send(GCMConfig.GOOGLE_PROJECT_ID + "@gcm.googleapis.com", id,
                             data);
                     Log.d(TAG, "After gcm.send successful.");
                 } catch (Exception e) {

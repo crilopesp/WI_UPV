@@ -1,6 +1,7 @@
 package upv.welcomeincoming.app;
 
 import android.app.Activity;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -15,6 +16,7 @@ import java.util.Observer;
 
 import intranet.IntranetConnection;
 import intranet.OutPutParamsIntranetConnection;
+import upv.welcomeincoming.app.foro.Controlador;
 import util.Preferencias;
 import util.ProgressDialog_Custom;
 
@@ -111,10 +113,30 @@ public class Activity_login extends Activity implements Observer {
             intranetConnection.getCalendars();
 
         } else if (data.equals("calendars")) {
-            Preferencias.setUsername(this, outPutParamsIntranetConnection.getCalendars().getUsername());
-            setResult(RESULT_OK);
-            progressDialog.dismiss();
-            finish();
+            String usuario = outPutParamsIntranetConnection.getCalendars().getUsername();
+            Preferencias.setApellidos(this, usuario.substring(0, usuario.indexOf(",")));
+            Preferencias.setNombre(this, usuario.substring(usuario.indexOf(",") + 1));
+            final Activity contexto = this;
+            new AsyncTask() {
+
+                @Override
+                protected Object doInBackground(Object[] objects) {
+                    try {
+                        Log.e("", "insertando usuario...");
+                        Controlador.dameControlador().insertarUsuario(contexto, Preferencias.getNombre(contexto), Preferencias.getApellidos(contexto), "es");
+                        setResult(RESULT_OK);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    return null;
+                }
+
+                @Override
+                protected void onPostExecute(Object object) {
+                    progressDialog.dismiss();
+                    contexto.finish();
+                }
+            }.execute(null, null, null);
         }
 
     }

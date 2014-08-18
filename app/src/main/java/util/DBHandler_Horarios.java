@@ -23,6 +23,7 @@ public class DBHandler_Horarios extends SQLiteOpenHelper {
         db.execSQL("CREATE  TABLE \"Metro\" (\"id\" INTEGER PRIMARY KEY NOT NULL UNIQUE ,\"nombre\" VARCHAR NOT NULL, \"latitud\" VARCHAR NOT NULL, \"longitud\" VARCHAR NOT NULL, \"lineas\" VARCHAR NOT NULL);");
         db.execSQL("CREATE  TABLE \"Emt\" (\"id\" INTEGER PRIMARY KEY NOT NULL UNIQUE ,\"nombre\" VARCHAR NOT NULL, \"latitud\" VARCHAR NOT NULL, \"longitud\" VARCHAR NOT NULL);");
         db.execSQL("CREATE  TABLE \"Interes\" (\"id\" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE ,\"nombre\" VARCHAR NOT NULL, \"latitud\" VARCHAR NOT NULL, \"longitud\" VARCHAR NOT NULL);");
+        db.execSQL("CREATE  TABLE \"Transporte\" (\"id\" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE ,\"nombre\" VARCHAR NOT NULL, \"descripcion\" VARCHAR NOT NULL, \"telefono\" VARCHAR NOT NULL, \"url\" VARCHAR NOT NULL);");
     }
 
     @Override

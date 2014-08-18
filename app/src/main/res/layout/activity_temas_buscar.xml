@@ -1,0 +1,59 @@
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/foro_buscar_tema_background"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp">
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/layout_buscar"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/foro_ic_search_selector">
+
+            </FrameLayout>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/et_buscarTema"
+                android:layout_alignParentEnd="false"
+                android:background="@drawable/foro_edittext_buscar_background"
+                android:layout_marginRight="50dp"
+                android:layout_marginLeft="10dp"
+                android:layout_centerVertical="true"
+                android:hint="@string/escribaTextoaBuscar"
+                android:singleLine="true" />
+
+        </RelativeLayout>
+
+        <ListView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/listaTemas"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/empty"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/noTemas"
+            android:textColor="#6c6c6c"
+            android:gravity="center"
+            android:background="#cdc7d0" />
+
+    </LinearLayout>
+</RelativeLayout>

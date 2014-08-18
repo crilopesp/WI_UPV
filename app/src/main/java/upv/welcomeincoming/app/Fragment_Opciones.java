@@ -57,7 +57,8 @@ public class Fragment_Opciones extends Fragment {
         itemSesion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                sv.hide();
+                if (sv != null)
+                    sv.hide();
                 if (Preferencias.getDNI(getActivity()) == "") {
                     if (icc.checkInternetConnection(getActivity())) {
                         Intent i = new Intent(getActivity(), Activity_login.class);
@@ -83,11 +84,11 @@ public class Fragment_Opciones extends Fragment {
         addDividier();
 
         //Alertas
-        View itemAlertas = generateItemAlerta(getString(R.string.alertaCalendar), "Calendar");
+        final View itemAlertas = generateItemAlerta(getString(R.string.alertaCalendar), "Calendar");
         itemAlertas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Intent intentAlerta = new Intent(getActivity(),AlertaActivity.class);
+                Preferencias.setForumAlerts(getActivity(), false);
             }
         });
         linearLista.addView(itemAlertas);
@@ -97,7 +98,7 @@ public class Fragment_Opciones extends Fragment {
         itemAlertaForum.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Intent intentAlerta = new Intent(getActivity(),AlertaActivity.class);
+                Preferencias.setForumAlerts(getActivity(), false);
             }
         });
         linearLista.addView(itemAlertaForum);
@@ -108,7 +109,8 @@ public class Fragment_Opciones extends Fragment {
         itemPerfil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Intent intentAlerta = new Intent(getActivity(),AlertaActivity.class);
+                Intent intentPerfil = new Intent(getActivity(), Activity_Profile.class);
+                startActivity(intentPerfil);
             }
         });
         linearLista.addView(itemPerfil);
@@ -119,7 +121,8 @@ public class Fragment_Opciones extends Fragment {
         itemAbout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Intent intentAlerta = new Intent(getActivity(),AlertaActivity.class);
+                Intent intentAbout = new Intent(getActivity(), Activity_Acercade.class);
+                startActivity(intentAbout);
             }
         });
         linearLista.addView(itemAbout);
@@ -136,18 +139,21 @@ public class Fragment_Opciones extends Fragment {
         if (Preferencias.getDNI(getActivity()) == "") {
             tvi.setText(getString(R.string.nosesion));
             tvv.setText(getString(R.string.login));
+            tvv.setBackgroundResource(R.drawable.selector_button_back);
         } else {
             tvi.setText(getString(R.string.sisesion));
-            tvv.setText(Preferencias.getUsername(getActivity()));
+            tvv.setText(Preferencias.getNombre(getActivity()) + " " + Preferencias.getApellidos(getActivity()));
         }
         ViewTarget target = new ViewTarget(tvv);
-
-        sv = new ShowcaseView.Builder(getActivity())
-                .setTarget(target)
-                .setContentTitle(R.string.tutorial_options_title)
-                .setContentText(R.string.tutorial_options_message)
-                .setStyle(R.style.ShowCaseTheme)
-                .build();
+        if (Preferencias.getFirstOptions(getActivity()) == 1) {
+            sv = new ShowcaseView.Builder(getActivity())
+                    .setTarget(target)
+                    .setContentTitle(R.string.tutorial_options_title)
+                    .setContentText(R.string.tutorial_options_message)
+                    .setStyle(R.style.ShowCaseTheme)
+                    .build();
+            Preferencias.setFirstOptions(getActivity(), 0);
+        }
         return item;
     }
 

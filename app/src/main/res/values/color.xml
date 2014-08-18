@@ -60,4 +60,8 @@
     <color name="nav_button_pressed">#1fb6ed</color>
     <color name="nav_button_disabled">#646464</color>
     <color name="nav_button_text_disabled">#464646</color>
+    <color name="orange_translate">#ffff810c</color>
+
+    <color name="button_background_pressed_start">#f76500</color>
+    <color name="button_background_pressed_end">#fb812c</color>
 </resources>
