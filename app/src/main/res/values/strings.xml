@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">WelcomeIncoming</string>
+    <string name="app_name">UPV Welcome Incoming</string>
     <string name="title_section1">Section 1</string>
     <string name="title_section2">Section 2</string>
     <string name="title_section3">Section 3</string>
@@ -158,7 +158,12 @@
         <item>@color/light_grey</item>
         <item>@color/yellowly</item>
     </integer-array>
-
+    <integer-array name="gplus_colors_foro">
+        <item>@color/redly</item>
+        <item>@color/blackly</item>
+        <item>@color/redly</item>
+        <item>@color/blackly</item>
+    </integer-array>
     <string name="title_activity_activity__filtros">Filters</string>
     <string name="selecAsignatura">Select a subject</string>
     <string name="aceptar">Ok</string>
@@ -168,6 +173,7 @@
     <string name="title_activity_activity_filtros_asignatura">Filter by subject</string>
     <string name="title_activity_activity_filtros_fecha">Filter by date</string>
     <string name="mapa_upv">UPV Map</string>
+    <string name="infoupv">Info UPV</string>
     <string name="info">Info</string>
     <string name="bicistotal">Total</string>
     <string name="bicisdisponibles">Available</string>
@@ -227,63 +233,82 @@
     <string name="cristian">Cristian López Espejo</string>
     <string name="marcos">Marcos Perelló Soto</string>
     <string name="sugerencias">Sugerencia y errores</string>
-    <string name="menu_option8">Sugerencias</string>
-    <string name="title_activity_activity__temas_todos">Temas</string>
-    <string name="loading_temas">Cargando temas...</string>
-    <string name="errorConexion">Se produjo un error en la conexión. Por favor inténtelo más tarde.</string>
-    <string name="title_activity_activity__temas_by_me">Mis Temas</string>
-    <string name="title_activity_activity_coment_me">Temas</string>
+    <string name="menu_option8">Feedback</string>
+    <string name="title_activity_activity__temas_todos">Topics</string>
+    <string name="loading_temas">Loading topics...</string>
+    <string name="errorConexion">There was an error with the conection. Please, try again later.</string>
+    <string name="title_activity_activity__temas_by_me">My topics</string>
+    <string name="title_activity_activity_coment_me">Topics</string>
     <string name="title_activity_activity__tema__buscar">Activity_Tema_Buscar</string>
-    <string name="title_activity_activity__temas__language">Temas</string>
-    <string name="title_activity_activity__nuevo__tema">Nuevo Tema</string>
-    <string name="titulo">Título</string>
-    <string name="cuerpo">Cuerpo</string>
-    <string name="title_activity_activity__ver__tema">Ver Tema</string>
-    <string name="title_activity_ver_foto">Ver foto</string>
+    <string name="title_activity_activity__temas__language">Topics</string>
+    <string name="title_activity_activity__nuevo__tema">New topic</string>
+    <string name="titulo">Title</string>
+    <string name="cuerpo">Body</string>
+    <string name="title_activity_activity__ver__tema">Show topic</string>
+    <string name="title_activity_ver_foto">Check photo</string>
     <string name="preparing_card">Preparing card</string>
     <string name="no_storage_card">No storage card</string>
-    <string name="camera">Camara</string>
-    <string name="traduccion_personalizada">Personaliza tu propia traducción...</string>
-    <string name="traductor">Traductor</string>
-    <string name="temascomentados">Comentados</string>
-    <string name="temasBuscar">Buscar</string>
-    <string name="temasLanguage">Por idioma</string>
-    <string name="nuevoTema">Nuevo tema...</string>
-    <string name="todos">Todos</string>
-    <string name="creadosPorMi">Mis temas</string>
-    <string name="forum">Foro</string>
-    <string name="por">por</string>
-    <string name="titulo_hint">Escribe aquí el titulo del tema...</string>
-    <string name="cuerpo_tema_hint">Escriba aquí el cuerpo del mensaje...</string>
-    <string name="falloPublicarTema">No se ha podido publicar el tema. Inténtelo de nuevo más tarde.</string>
-    <string name="PublicarTema">Publicar</string>
-    <string name="temaPublicadoOk">¡Se ha publicado su tema correctamente!</string>
-    <string name="verTema">Ver Tema</string>
-    <string name="escribaTituloTema">El campo titulo no puede estar vacío.</string>
-    <string name="escribaDescripcionTema">Debe escribir un mensaje para el tema.</string>
-    <string name="escribeuncomentario">Escribe un comentario...</string>
-    <string name="traducir">Traducir...</string>
-    <string name="traducido">TRADUCIDO</string>
-    <string name="noTemas">No hay temas</string>
-    <string name="ver_tema_title">Tema</string>
-    <string name="photoPerfilActualizada">Su foto de perfil ha sido actualizada</string>
-    <string name="selectpicture">Selecciona una foto</string>
-    <string name="title_activity_activity__profile">Perfil</string>
-    <string name="textoEstadisticasForo">Has publicado %%s temas y %%s comentarios desde %%s</string>
-    <string name="title_activity_activity_edit__photo_profile">Editar foto perfil</string>
-    <string name="saving_image">Guardando imagen</string>
-    <string name="not_enough_space">No hay espacio suficiente</string>
-    <string name="title_activity_crop">Recorta la imagen</string>
-    <string name="gallery">Galeria</string>
-    <string name="deletPhoto">Eliminar photo</string>
-    <string name="compartir">Compartir</string>
-    <string name="msgNotificacionRegistro">Hola %s, ahora que te has registrado puedes hacer uso del foro, calendario, notificaciones... y mucho mas!</string>
-    <string name="bienvenido">Bienvenido!</string>
-    <string name="NotificacionPublicadoEnTuTema">ha comentado en tu tema:</string>
-    <string name="NotificacionPublicadoEnComentario">tambien ha comentado el tema:</string>
-    <string name="noHayTemas">No hay temas que mostrar</string>
-    <string name="temas_title">Temas</string>
-    <string name="temas_me_title">Mis Temas</string>
-    <string name="temas_coment_title">Mis Temas Comentados</string>
-    <string name="escribaTextoaBuscar">Escriba el texto a buscar...</string>
+    <string name="camera">Camera</string>
+    <string name="traduccion_personalizada">Custom your own translated phrase...</string>
+    <string name="traductor">Translate</string>
+    <string name="temascomentados">Commented</string>
+    <string name="temasBuscar">Search</string>
+    <string name="temasLanguage">By language</string>
+    <string name="nuevoTema">New topic...</string>
+    <string name="todos">All topics</string>
+    <string name="creadosPorMi">My topics</string>
+    <string name="forum">Forum - Welcome Incoming</string>
+    <string name="por">by</string>
+    <string name="titulo_hint">Write here the title of the topic...</string>
+    <string name="cuerpo_tema_hint">Write here the body of the message...</string>
+    <string name="falloPublicarTema">We couldnt publish your topic. Try again later.</string>
+    <string name="PublicarTema">Publish</string>
+    <string name="temaPublicadoOk">You topic has been published!</string>
+    <string name="verTema">Show topic</string>
+    <string name="temas_title_new">New topic</string>
+    <string name="escribaTituloTema">The title cant be blank.</string>
+    <string name="escribaDescripcionTema">You must write the description of the topic.</string>
+    <string name="escribeuncomentario">Write a comment...</string>
+    <string name="traducir">Translate...</string>
+    <string name="traducido">TRANSLATED</string>
+    <string name="noTemas">There is no topics</string>
+    <string name="ver_tema_title">Topic</string>
+    <string name="photoPerfilActualizada">Your profile pic has been updated</string>
+    <string name="selectpicture">Choose a photo</string>
+    <string name="title_activity_activity__profile">Profile</string>
+    <string name="textoEstadisticasForo">You have published %%s topics and %%s comments since %%s</string>
+    <string name="title_activity_activity_edit__photo_profile">Edit photo</string>
+    <string name="saving_image">Saving image</string>
+    <string name="not_enough_space">There is no space</string>
+    <string name="title_activity_crop">Crop the image</string>
+    <string name="gallery">Gallery</string>
+    <string name="deletPhoto">Delete photo</string>
+    <string name="compartir">Share</string>
+    <string name="msgNotificacionRegistro">Hi %s, now that you are registered you can use the forum, calendar, notifications... and more!</string>
+    <string name="bienvenido">Welcome!</string>
+    <string name="NotificacionPublicadoEnTuTema">commented in your topic:</string>
+    <string name="NotificacionPublicadoEnComentario">has commented the topic too:</string>
+    <string name="noHayTemas">There is no topics to show</string>
+    <string name="temas_title">Topics</string>
+    <string name="temas_me_title">My topics</string>
+    <string name="temas_coment_title">Commented topics</string>
+    <string name="escribaTextoaBuscar">Write the text you want to search...</string>
+    <string name="cerrandoSesion">Loging off...</string>
+    <string name="hasCerradoSesion">You logged off</string>
+    <string name="noHasCerradoSesion">We couldnt log you off</string>
+    <string name="textoNotificacionDeslogueo">You logged on other device.</string>
+    <string name="sesionCerradaNotificationtitle">Logged off</string>
+    <string name="infovlc">Info Valencia</string>
+    <string name="llamartelefono">Phone call</string>
+    <string name="confirmaciondeslogueo">Do you want to log off?</string>
+    <string name="confirmacionCambioIdiaoma">Do you want to change APP language?</string>
+    <string name="ActivarTodasNotificaciones">Activate all notifications</string>
+    <string name="confirmacionBorrarTodasNotificaciones">The topics notifications will be activated again. Do you really want to?</string>
+    <string name="todasNotificacionesActivadas">Notifications have been activated.</string>
+    <string name="idiomacomentario">Comment language</string>
+    <string name="hoy">Today</string>
+    <string name="ayer">Yesterday</string>
+    <string name="loadingpage">Loading resources. Please wait.</string>
+    <string name="nosensor">You cant use this feature cause your device doesnt support it.</string>
 </resources>
+

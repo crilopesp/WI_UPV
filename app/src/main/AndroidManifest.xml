@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="upv.welcomeincoming.app">
+    package="upv.welcomeincoming.com">
 
     <!-- InternetConnectionChecker. Para permitir a la aplicación el acceso a internet y al estado de la red -->
     <uses-permission android:name="android.permission.INTERNET" />
@@ -15,14 +15,12 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
-    <uses-permission android:name="android.permission.CAMERA" />
 
-    <uses-feature android:name="android.hardware.camera" />
-    <uses-feature android:name="android.hardware.camera.autofocus" />
 
     <permission
-        android:name="upv.welcomeincoming.app.permission.C2D_MESSAGE"
+        android:name="upv.welcomeincoming.com.permission.C2D_MESSAGE"
         android:protectionLevel="signature" />
+
     <uses-permission android:name="upv.welcomeincoming.app.permission.C2D_MESSAGE" />
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
@@ -36,12 +34,25 @@
         android:required="true" />
     <uses-feature
         android:name="android.hardware.sensor.compass"
-        android:required="true" />
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
     <uses-feature
         android:glEsVersion="0x00020000"
         android:required="true" />
 
+    <supports-screens
+        android:smallScreens="true"
+        android:normalScreens="true"
+        android:largeScreens="true"
+        android:xlargeScreens="true"
+        android:anyDensity="true" />
 
+    <uses-feature
+        android:name="android.hardware.camera.front"
+        android:required="false" />
     <uses-feature
         android:glEsVersion="0x00020000"
         android:required="true" />
@@ -56,20 +67,20 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".Activity_Splash"
+            android:name="upv.welcomeincoming.com.Activity_Splash"
             android:screenOrientation="portrait"
             android:theme="@style/NoActionBar">
             <intent-filter>
-            <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER" />
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".Activity_Home"
+            android:name="upv.welcomeincoming.com.Activity_Home"
             android:label="@string/app_name"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Activity_Speaker"
+            android:name="upv.welcomeincoming.com.Activity_Speaker"
             android:label="@string/title_activity_speaker"
             android:screenOrientation="portrait">
             <meta-data
@@ -77,83 +88,83 @@
                 android:value="TranslateActivity" />
         </activity>
         <activity
-            android:name=".Acvitity_VistaRealidadAumentada"
+            android:name="upv.welcomeincoming.com.Acvitity_VistaRealidadAumentada"
             android:configChanges="screenSize|orientation"
             android:label="@string/title_activity_ra_activity"
-            android:parentActivityName=".Activity_Home">
+            android:parentActivityName="upv.welcomeincoming.com.Activity_Home">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="Home" />
         </activity>
         <activity
-            android:name=".Activity_Filtros"
+            android:name="upv.welcomeincoming.com.Activity_Filtros"
             android:label="@string/title_activity_activity_filtros_asignatura"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity
-            android:name=".Activity_Filtros_Fecha"
+            android:name="upv.welcomeincoming.com.Activity_Filtros_Fecha"
             android:label="@string/title_activity_activity_filtros_fecha"
             android:theme="@android:style/Theme.Dialog" />
         <activity
-            android:name=".Activity_Localizacion_Valenbisi"
+            android:name="upv.welcomeincoming.com.Activity_Localizacion_Valenbisi"
             android:label="@string/valenbisi_map"
             android:configChanges="orientation|screenSize"
-            android:parentActivityName=".Activity_Home" />
+            android:parentActivityName="upv.welcomeincoming.com.Activity_Home" />
         <activity
-            android:name=".Activity_Info_Valenbisi"
+            android:name="upv.welcomeincoming.com.Activity_Info_Valenbisi"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity
-            android:name=".Activity_Localizacion_UPV"
+            android:name="upv.welcomeincoming.com.Activity_Localizacion_UPV"
             android:label="@string/UPV_map"
             android:configChanges="orientation|screenSize"
-            android:parentActivityName=".Activity_Home" />
+            android:parentActivityName="upv.welcomeincoming.com.Activity_Home" />
         <activity
-            android:name=".Activity_Info_UPV"
+            android:name="upv.welcomeincoming.com.Activity_Info_UPV"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity
-            android:name=".Activity_Localizacion_Interes"
+            android:name="upv.welcomeincoming.com.Activity_Localizacion_Interes"
             android:label="@string/interes_map"
             android:configChanges="orientation|screenSize"
-            android:parentActivityName=".Activity_Home" />
+            android:parentActivityName="upv.welcomeincoming.com.Activity_Home" />
         <activity
-            android:name=".Activity_Localizacion_EMT"
+            android:name="upv.welcomeincoming.com.Activity_Localizacion_EMT"
             android:label="@string/emt_map"
             android:configChanges="orientation|screenSize"
-            android:parentActivityName=".Activity_Home" />
+            android:parentActivityName="upv.welcomeincoming.com.Activity_Home" />
         <activity
-            android:name=".Activity_Localizacion_Metro"
+            android:name="upv.welcomeincoming.com.Activity_Localizacion_Metro"
             android:label="@string/metro_map"
             android:configChanges="orientation|screenSize"
-            android:parentActivityName=".Activity_Home" />
+            android:parentActivityName="upv.welcomeincoming.com.Activity_Home" />
         <activity
-            android:name=".Activity_Info_Metro"
+            android:name="upv.welcomeincoming.com.Activity_Info_Metro"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity
-            android:name=".Activity_login"
+            android:name="upv.welcomeincoming.com.Activity_login"
             android:label="@string/title_activity_activity_login"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity
-            android:name=".infoFragments.Activity_Upv"
+            android:name="upv.welcomeincoming.com.infoFragments.Activity_Upv"
             android:label="@string/info"
-            android:parentActivityName=".Activity_Home" />
+            android:parentActivityName="upv.welcomeincoming.com.Activity_Home" />
         <activity
-            android:name=".infoFragments.Activity_Valencia"
+            android:name="upv.welcomeincoming.com.infoFragments.Activity_Valencia"
             android:label="@string/info"
-            android:parentActivityName=".Activity_Home" />
+            android:parentActivityName="upv.welcomeincoming.com.Activity_Home" />
         <activity
-            android:name=".infoFragments.Activity_Asignaturas"
+            android:name="upv.welcomeincoming.com.infoFragments.Activity_Asignaturas"
             android:label="@string/asignaturas"
-            android:parentActivityName=".Activity_Home" />
+            android:parentActivityName="upv.welcomeincoming.com.Activity_Home" />
         <activity
-            android:name=".infoFragments.Activity_Escuelas"
+            android:name="upv.welcomeincoming.com.infoFragments.Activity_Escuelas"
             android:label="@string/escuelas"
-            android:parentActivityName=".Activity_Home" />
+            android:parentActivityName="upv.welcomeincoming.com.Activity_Home" />
         <activity
-            android:name=".infoFragments.Activity_Transportes"
+            android:name="upv.welcomeincoming.com.infoFragments.Activity_Transportes"
             android:label="@string/transporte"
-            android:parentActivityName=".Activity_Home"
+            android:parentActivityName="upv.welcomeincoming.com.Activity_Home"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Activity_no_connection"
+            android:name="upv.welcomeincoming.com.Activity_no_connection"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
 
         <meta-data
@@ -164,43 +175,47 @@
             android:value="@integer/google_play_services_version" />
 
         <activity
-            android:name=".infoFragments.Activity_FullScreen_Image"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:theme="@style/FullscreenTheme" />
-
-        <activity
-            android:name="upv.welcomeincoming.app.foro.Activity_Temas_todos"
+            android:name="upv.welcomeincoming.com.foro.Activity_Temas_todos"
+            android:configChanges="screenSize|orientation"
             android:label="@string/title_activity_activity__temas_todos"></activity>
         <activity
-            android:name="upv.welcomeincoming.app.foro.Activity_Temas_byMe"
+            android:name="upv.welcomeincoming.com.foro.Activity_Temas_byMe"
+            android:configChanges="screenSize|orientation"
             android:label="@string/title_activity_activity__temas_by_me"></activity>
         <activity
-            android:name="upv.welcomeincoming.app.foro.Activity_Temas_comentMe"
+            android:name="upv.welcomeincoming.com.foro.Activity_Temas_comentMe"
+            android:configChanges="screenSize|orientation"
             android:label="@string/title_activity_activity_coment_me"></activity>
         <activity
-            android:name="upv.welcomeincoming.app.foro.Activity_Temas_Buscar"
+            android:name="upv.welcomeincoming.com.foro.Activity_Temas_Buscar"
+            android:configChanges="screenSize|orientation"
             android:label="@string/title_activity_activity__tema__buscar"></activity>
         <activity
-            android:name="upv.welcomeincoming.app.foro.Activity_Temas_Language"
+            android:name="upv.welcomeincoming.com.foro.Activity_Temas_Language"
+            android:configChanges="screenSize|orientation"
             android:label="@string/title_activity_activity__temas__language"></activity>
         <activity
-            android:name="upv.welcomeincoming.app.foro.Activity_Nuevo_Tema"
+            android:name="upv.welcomeincoming.com.foro.Activity_Nuevo_Tema"
+            android:configChanges="screenSize|orientation"
             android:label="@string/title_activity_activity__nuevo__tema"></activity>
         <activity
-            android:name="upv.welcomeincoming.app.foro.Activity_Ver_Tema"
+            android:name="upv.welcomeincoming.com.foro.Activity_Ver_Tema"
+            android:configChanges="screenSize|orientation"
             android:label="@string/title_activity_activity__ver__tema"></activity>
         <activity
-            android:name="upv.welcomeincoming.app.foro.Activity_ver_foto"
+            android:name="upv.welcomeincoming.com.foro.Activity_ver_foto"
+            android:configChanges="screenSize|orientation"
             android:label="@string/title_activity_ver_foto"></activity>
         <activity
-            android:name="upv.welcomeincoming.app.Activity_Profile"
+            android:name="upv.welcomeincoming.com.Activity_Profile"
+            android:configChanges="screenSize|orientation"
             android:label="@string/title_activity_activity__profile"></activity>
         <activity
             android:name="eu.janmuller.android.simplecropimage.CropImage"
             android:label="@string/title_activity_crop"></activity>
         <!-- NECESARIO PARA GOOGLE CLOUD MESSAGE -->
         <receiver
-            android:name=".GCM.GcmBroadcastReceiver"
+            android:name="upv.welcomeincoming.com.GCM.GcmBroadcastReceiver"
             android:permission="com.google.android.c2dm.permission.SEND">
             <intent-filter>
 
@@ -211,10 +226,10 @@
             </intent-filter>
         </receiver>
 
-        <service android:name=".GCM.GcmIntentService" />
+        <service android:name="upv.welcomeincoming.com.GCM.GcmIntentService" />
 
-        <receiver android:name=".calendarAlarm.AlarmReceiver">
-        <intent-filter>
+        <receiver android:name="upv.welcomeincoming.com.calendarAlarm.AlarmReceiver">
+            <intent-filter>
                 <action android:name="alarmReceiver" />
 
                 <category android:name="android.intent.category.DEFAULT" />
@@ -222,19 +237,26 @@
         </receiver>
 
         <service
-            android:name=".calendarAlarm.AlarmIntentService"
+            android:name="upv.welcomeincoming.com.calendarAlarm.AlarmIntentService"
             android:enabled="true" />
 
         <activity
-            android:name=".Activity_Notificacion_Evento"
+            android:name="upv.welcomeincoming.com.Activity_Notificacion_Evento"
             android:label="@string/title_activity_activity__notificacion__evento"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity
-            android:name=".Activity_Acercade"
+            android:name="upv.welcomeincoming.com.Activity_Acercade"
+            android:screenOrientation="portrait"
+            android:configChanges="screenSize|orientation"
             android:label="@string/title_activity_activity__acercade"></activity>
         <activity
             android:name="com.google.android.gms.ads.AdActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
+        <activity
+            android:name="upv.welcomeincoming.com.Activity_Traduccion"
+            android:screenOrientation="portrait"
+            android:configChanges="screenSize|orientation"
+            android:label="@string/traductor"></activity>
     </application>
 
     <uses-permission android:name="com.example.gcm.permission.C2D_MESSAGE" />

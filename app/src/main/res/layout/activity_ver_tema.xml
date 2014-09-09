@@ -1,295 +1,344 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="upv.welcomeincoming.app.foro.Activity_Ver_Tema"
-    tools:ignore="MergeRootFrame"
-    android:background="@color/light_pink">
+    tools:context="upv.welcomeincoming.com.foro.Activity_Ver_Tema"
+    tools:ignore="MergeRootFrame">
 
-    <ScrollView
+    <util.ScrollViewExt
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/scrollView">
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView"
+        android:layout_alignParentTop="false"
+        android:fillViewport="true"
+        android:layout_centerInParent="true">
 
-        <RelativeLayout
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/linear_main"
+            android:layout_alignParentBottom="false"
+            android:layout_alignParentTop="false"
+            android:measureWithLargestChild="false"
+            android:layout_centerInParent="true">
 
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/linear_main">
+                android:layout_height="wrap_content"
+                android:id="@+id/linearLayout2"
+                android:background="@color/grey_back">
 
                 <LinearLayout
-                    android:orientation="vertical"
+                    android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="#ffeed6">
+                    android:layout_height="wrap_content"
+                    android:weightSum="10">
 
                     <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:text="New Text"
                         android:id="@+id/titulo"
                         android:layout_margin="5dp"
                         android:textStyle="bold"
-                        android:textSize="20dp" />
+                        android:textSize="18dp"
+                        android:layout_weight="1" />
 
-                    <LinearLayout
-                        android:orientation="horizontal"
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent">
-
-                        <LinearLayout
-                            android:orientation="vertical"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:layout_gravity="center_vertical"
-                            android:background="#cecece"
-                            android:gravity="center_horizontal|top">
-
-                            <ImageView
-                                android:layout_width="50dp"
-                                android:layout_height="50dp"
-                                android:id="@+id/iv_photoUser_tema"
-                                android:layout_marginBottom="3dp"
-                                android:layout_marginTop="3dp"
-                                android:src="@drawable/photo_user_no"
-                                android:background="@drawable/abc_list_selector_holo_light" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Marcos"
-                                android:id="@+id/tv_user_nombreTema"
-                                android:textSize="10dp" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Perello Soto"
-                                android:id="@+id/tv_user_apellidos_tema"
-                                android:textSize="8dp" />
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:orientation="vertical"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
-
-                            <RelativeLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content">
-
-                                <ImageView
-                                    android:layout_width="35dp"
-                                    android:layout_height="20dp"
-                                    android:id="@+id/iv_flag_tema"
-                                    android:layout_alignParentTop="true"
-                                    android:layout_alignParentRight="true"
-                                    android:layout_marginRight="3dp"
-                                    android:src="@drawable/es" />
-
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="New Text"
-                                    android:id="@+id/tv_descripcion"
-                                    android:layout_marginRight="40dp"
-                                    android:layout_marginTop="10dp"
-                                    android:layout_marginLeft="10dp"
-                                    android:minLines="5"
-                                    android:textSize="12dp" />
-
-                            </RelativeLayout>
-
-                            <RelativeLayout
-                                android:orientation="horizontal"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="5dp">
-
-                                <RelativeLayout
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_alignParentTop="true"
-                                    android:layout_alignParentLeft="true"
-                                    android:id="@+id/relativeLayout"
-                                    android:layout_centerVertical="true">
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="@string/traducido"
-                                        android:id="@+id/tv_verOriginal"
-                                        android:textSize="9dp"
-                                        android:layout_alignParentLeft="true"
-                                        android:layout_marginLeft="0dp"
-                                        android:layout_alignParentTop="true"
-                                        android:layout_marginTop="0dp"
-                                        android:visibility="gone"
-                                        android:background="@drawable/background_traducido"
-                                        android:padding="3dp"
-                                        android:textColor="@color/orange_translate" />
-
-                                    <ProgressBar
-                                        style="?android:attr/progressBarStyleSmall"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:id="@+id/progreso_trans"
-                                        android:layout_centerInParent="true"
-                                        android:visibility="gone" />
-                                </RelativeLayout>
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="New Text"
-                                    android:id="@+id/tv_fechaTema"
-                                    android:textSize="9dp"
-                                    android:layout_alignParentLeft="false"
-                                    android:layout_alignParentTop="false"
-                                    android:layout_alignParentRight="true"
-                                    android:layout_marginRight="3dp" />
-
-                            </RelativeLayout>
-                        </LinearLayout>
-
-                    </LinearLayout>
-
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/iv_flag_tema"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="3dp"
+                        android:src="@drawable/es"
+                        android:layout_weight="9" />
                 </LinearLayout>
 
-                <FrameLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:id="@+id/layout_barra_separadora"
-                    android:minHeight="25dp"
-                    android:background="#8b0e0c"></FrameLayout>
-
-                <RelativeLayout
+                <LinearLayout
+                    android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="wrap_content"
+                    android:weightSum="20">
 
                     <LinearLayout
                         android:orientation="vertical"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:animateLayoutChanges="true"
-                        android:id="@+id/lista_comentarios"></LinearLayout>
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center_horizontal|top"
+                        android:layout_weight="16">
 
-                    <ProgressBar
-                        style="?android:attr/progressBarStyleLarge"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/progreso"
-                        android:layout_centerInParent="true"
-                        android:layout_margin="20dp"
-                        android:visibility="gone" />
-
-                </RelativeLayout>
-
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="#eae8e2"
-                    android:layout_gravity="bottom">
-
-                    <RelativeLayout
-                        android:orientation="horizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:minHeight="40dp"
-                        android:id="@+id/layout_escribirComent">
+                        <util.CircularImageView
+                            app:border="true"
+                            app:border_color="@color/text"
+                            app:border_width="2dp"
+                            app:shadow="true"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:id="@+id/iv_photoUser_tema"
+                            android:layout_marginBottom="3dp"
+                            android:layout_marginTop="3dp"
+                            android:src="@drawable/photo_user_no"
+                            android:background="@drawable/abc_list_selector_holo_light" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/escribeuncomentario"
-                            android:id="@+id/textView"
-                            android:layout_gravity="center_vertical"
-                            android:layout_alignParentLeft="true"
-                            android:layout_alignParentTop="false"
-                            android:layout_alignWithParentIfMissing="false"
-                            android:layout_centerVertical="true"
-                            android:layout_marginLeft="20dp" />
+                            android:text="Marcos"
+                            android:id="@+id/tv_user_nombreTema"
+                            android:textSize="12dp" />
 
-                        <ImageView
+                        <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:id="@+id/iv_writecoment_deploy"
-                            android:layout_marginRight="20dp"
-                            android:layout_alignParentRight="true"
-                            android:layout_centerVertical="true"
-                            android:rotation="270"
-                            android:src="@drawable/abc_ic_ab_back_holo_light" />
+                            android:text="Perello Soto"
+                            android:id="@+id/tv_user_apellidos_tema"
+                            android:textSize="9dp" />
 
-                    </RelativeLayout>
+                    </LinearLayout>
 
-                    <RelativeLayout
+                    <LinearLayout
+                        android:orientation="vertical"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="#eae8e2"
-                        android:id="@+id/layout_write_coment">
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/iv_flag_writecoment"
-                            android:src="@drawable/es"
-                            android:layout_marginLeft="10dp"
-                            android:layout_alignParentBottom="true"
-                            android:paddingBottom="10dp" />
-
-                        <EditText
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/et_writecoment"
-                            android:layout_marginRight="50dp"
-                            android:layout_marginLeft="50dp"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginBottom="5dp"
-                            android:focusableInTouchMode="true" />
+                        android:layout_weight="4">
 
                         <RelativeLayout
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:layout_alignParentRight="true"
-                            android:layout_alignParentBottom="true">
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
 
-                            <ProgressBar
-                                android:layout_width="wrap_content"
+                            <TextView
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:id="@+id/progres_send"
-                                android:visibility="gone"
-                                android:padding="5dp" />
+                                android:text="New Text"
+                                android:id="@+id/tv_descripcion"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginLeft="10dp"
+                                android:minLines="5"
+                                android:textSize="12dp"
+                                android:layout_marginRight="10dp" />
 
-                            <ImageButton
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:id="@+id/btn_send"
-                                android:src="@drawable/ic_action_send"
-                                android:background="@drawable/abc_list_selector_holo_light"
-                                android:visibility="visible" />
-
-                            <ImageButton
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:id="@+id/btn_send_ok"
-                                android:cropToPadding="false"
-                                android:src="@drawable/ic_action_navigation_accept"
-                                android:background="@drawable/abc_list_selector_holo_light"
-                                android:visibility="gone" />
                         </RelativeLayout>
 
-                    </RelativeLayout>
+                        <RelativeLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp">
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_alignParentLeft="true"
+                                android:id="@+id/relativeLayout"
+                                android:layout_centerVertical="true">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/traducido"
+                                    android:id="@+id/tv_verOriginal"
+                                    android:textSize="9dp"
+                                    android:layout_alignParentLeft="true"
+                                    android:layout_marginLeft="0dp"
+                                    android:layout_alignParentTop="true"
+                                    android:layout_marginTop="0dp"
+                                    android:visibility="gone"
+                                    android:background="@drawable/background_traducido"
+                                    android:padding="3dp"
+                                    android:textColor="@color/orange_translate" />
+
+                                <ProgressBar
+                                    style="?android:attr/progressBarStyleSmall"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/progreso_trans"
+                                    android:layout_centerInParent="true"
+                                    android:visibility="gone" />
+                            </RelativeLayout>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="New Text"
+                                android:id="@+id/tv_fechaTema"
+                                android:textSize="12dp"
+                                android:layout_alignParentLeft="false"
+                                android:layout_alignParentTop="false"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginRight="3dp"
+                                android:textColor="#b1b5bb" />
+
+                        </RelativeLayout>
+                    </LinearLayout>
+
                 </LinearLayout>
 
             </LinearLayout>
 
-        </RelativeLayout>
-    </ScrollView>
-</FrameLayout>
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:id="@+id/layout_barra_separadora"
+                android:minHeight="25dp"
+                android:background="#8b0e0c"
+                android:layout_below="@+id/linearLayout2"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"></FrameLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <fr.castorflex.android.smoothprogressbar.SmoothProgressBar
+                    android:id="@+id/progressbar"
+                    style="@style/GNowProgressBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:indeterminateOnly="false"
+                    android:indeterminate="true" />
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:animateLayoutChanges="true"
+                    android:id="@+id/lista_comentarios"></LinearLayout>
+
+            </RelativeLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"></FrameLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/text_title"
+                android:baselineAligned="false"
+                android:id="@+id/linearLayout4"
+                android:layout_alignParentBottom="true"
+                android:measureWithLargestChild="false">
+
+                <RelativeLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="40dp"
+                    android:id="@+id/layout_escribirComent"
+                    android:layout_gravity="bottom">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/escribeuncomentario"
+                        android:id="@+id/textView"
+                        android:layout_gravity="center_vertical"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="false"
+                        android:layout_alignWithParentIfMissing="false"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="20dp" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/iv_writecoment_deploy"
+                        android:layout_marginRight="20dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:rotation="270"
+                        android:src="@drawable/abc_ic_ab_back_holo_light" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@color/text_title"
+                    android:id="@+id/layout_write_coment"
+                    android:visibility="visible"
+                    android:layout_gravity="bottom">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/et_writecoment"
+                        android:focusableInTouchMode="true"
+                        android:layout_gravity="bottom"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginBottom="3dp"
+                        android:layout_weight="2"
+                        android:maxLines="9"
+                        android:maxHeight="300dp" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/iv_flag_writecoment"
+                        android:src="@drawable/es"
+                        android:layout_gravity="bottom"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginBottom="10dp" />
+
+                    <RelativeLayout
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:id="@+id/relativeLayout2"
+                        android:layout_gravity="bottom">
+
+                        <ProgressBar
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/progres_send"
+                            android:visibility="gone"
+                            android:padding="5dp" />
+
+                        <ImageButton
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:id="@+id/btn_send"
+                            android:src="@drawable/ic_action_send"
+                            android:background="@android:color/transparent"
+                            android:visibility="visible"
+                            android:layout_alignParentBottom="false"
+                            android:layout_marginBottom="3dp" />
+
+                        <ImageButton
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:id="@+id/btn_send_ok"
+                            android:cropToPadding="false"
+                            android:src="@drawable/ic_action_ok"
+                            android:background="@drawable/abc_list_selector_holo_light"
+                            android:visibility="gone" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </util.ScrollViewExt>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/iv_scrolldown"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:src="@android:drawable/ic_menu_more"
+        android:visibility="gone" />
+
+</RelativeLayout>

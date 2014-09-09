@@ -27,7 +27,7 @@ import android.graphics.Region;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 
-import upv.welcomeincoming.app.R;
+import upv.welcomeincoming.com.R;
 
 // This class is used by CropImage to display a highlighted cropping rectangle
 // overlayed with the image. There are two coordinate spaces in use. One is
@@ -285,7 +285,6 @@ class HighlightView {
 
         Rect r = computeLayout();
         if (edge == GROW_NONE) {
-            return;
         } else if (edge == MOVE) {
             // Convert to image space before sending to moveBy().
             moveBy(dx * (mCropRect.width() / r.width()),

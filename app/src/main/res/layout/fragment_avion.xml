@@ -1,23 +1,22 @@
 <RelativeLayout
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="@color/text">
+    android:background="@color/main_background_end">
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/scrollView"
-        android:layout_alignParentEnd="false"
-        android:layout_alignEnd="@id/linearLayout"
-        android:layout_alignParentStart="true"
-        android:layout_above="@+id/linearLayout">
+        android:layout_above="@+id/linearLayout2"
+        android:layout_alignParentBottom="false"
+        android:layout_margin="5dp"
+        android:background="@drawable/abs__dialog_full_holo_light">
 
         <LinearLayout
             android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/text">
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -31,16 +30,9 @@
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="Large Text"
                 android:id="@+id/txtDescripcion"
-                android:layout_marginLeft="5dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="New Text"
-                android:id="@+id/txtTelefono"
-                android:autoLink="phone"
                 android:layout_marginLeft="5dp"
-                android:layout_gravity="center" />
+                android:textSize="18sp" />
+
         </LinearLayout>
     </ScrollView>
 
@@ -48,30 +40,69 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/linearLayout"
-        android:background="@color/main_background_start"
-        android:baselineAligned="false"
-        android:layout_alignParentEnd="false"
-        android:layout_alignParentBottom="true">
+        android:background="@color/text_title"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/linearLayout2"
+        android:layout_centerInParent="true">
 
-        <TextView
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/web"
-            android:id="@+id/textView"
-            android:textSize="15dp"
-            android:background="@color/redly"
-            android:clickable="true"
-            android:paddingLeft="5dp"
-            android:textColor="@color/text" />
+            android:layout_gravity="bottom">
 
-        <ImageButton
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/llamartelefono"
+                android:id="@+id/btnTelf"
+                android:layout_gravity="center"
+                android:background="@drawable/abs__list_selector_holo_light" />
+        </LinearLayout>
+
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/imageWeb"
-            android:padding="5dp"
-            android:adjustViewBounds="true"
-            android:src="@drawable/avionweb"
-            android:layout_gravity="center" />
+            android:id="@+id/imageView2"
+            android:background="@drawable/divisor" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:id="@+id/linearLayout">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/googlemaps"
+                android:id="@+id/btnGooglemap"
+                android:layout_gravity="center"
+                android:background="@drawable/abs__list_selector_holo_light" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView"
+            android:background="@drawable/divisor" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:id="@+id/linearLayout3">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/web"
+                android:id="@+id/btnWeb"
+                android:layout_gravity="center"
+                android:background="@drawable/abs__list_selector_holo_light" />
+        </LinearLayout>
     </LinearLayout>
+
 </RelativeLayout>

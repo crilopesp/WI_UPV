@@ -50,7 +50,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.concurrent.CountDownLatch;
 
-import upv.welcomeincoming.app.R;
+import upv.welcomeincoming.com.R;
 
 /**
  * The activity can crop specific region of interest from an image.
@@ -77,7 +77,6 @@ public class CropImage extends MonitoredActivity {
     // These are various options can be specified in the intent.
     private final Bitmap.CompressFormat mOutputFormat = Bitmap.CompressFormat.JPEG;
     private Uri mSaveUri = null;
-    private final boolean mDoFaceDetection = true;
     private boolean mCircleCrop = false;
     private final Handler mHandler = new Handler();
 
@@ -567,6 +566,7 @@ public class CropImage extends MonitoredActivity {
             Bitmap faceBitmap = prepareBitmap();
 
             mScale = 1.0F / mScale;
+            boolean mDoFaceDetection = true;
             if (faceBitmap != null && mDoFaceDetection) {
                 FaceDetector detector = new FaceDetector(faceBitmap.getWidth(), faceBitmap.getHeight(), mFaces.length);
                 mNumFaces = detector.findFaces(faceBitmap, mFaces);
@@ -637,8 +637,8 @@ public class CropImage extends MonitoredActivity {
     public static int calculatePicturesRemaining(Activity activity) {
 
         try {
-			/*
-			 * if (!ImageManager.hasStorage()) { return NO_STORAGE_ERROR; } else
+            /*
+             * if (!ImageManager.hasStorage()) { return NO_STORAGE_ERROR; } else
 			 * {
 			 */
             String storageDirectory = "";

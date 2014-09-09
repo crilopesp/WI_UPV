@@ -82,7 +82,6 @@ public class IntranetCalendars extends AsyncTask<List<String>, Void, InputParams
             in.close();
 
             this.inputParamsIntranetConnection.setResult(sw.toString());
-            Log.e("result", sw.toString());
         } catch (Exception e) {
             inputParamsIntranetConnection.setException(e);
         }

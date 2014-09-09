@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-import upv.welcomeincoming.app.R;
+import upv.welcomeincoming.com.R;
 
 /**
  * Language - an enum of language codes supported by the Yandex API

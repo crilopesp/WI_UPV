@@ -16,10 +16,11 @@ import java.io.FileOutputStream;
 /**
  * Created by Marcos on 15/08/14.
  */
+
 public class MyPhotoUtil {
 
-    final private static int bitmapWidth = 131;
-    final private static int bitmapHeight = 164;
+    final private static int bitmapWidth = 154;
+    final private static int bitmapHeight = 154;
 
     public static Bitmap decodeBase64(String input) {
         byte[] decodedByte = Base64.decode(input, 0);
@@ -127,3 +128,4 @@ public class MyPhotoUtil {
 
 
 }
+

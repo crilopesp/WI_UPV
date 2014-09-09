@@ -1,0 +1,722 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<edificios>
+    <edificio>
+        <id>1G</id>
+        <longitud>39.482631</longitud>
+        <latitud>-0.346547</latitud>
+        <info>Escuela Técnica Superior de Ingeniería Informática;Dpto. de Informática de Sistemas y
+            Computadores
+        </info>
+    </edificio>
+    <edificio>
+        <id>1E</id>
+        <longitud>39.482665</longitud>
+        <latitud>-0.348242</latitud>
+        <info>ETS de Ingenieria Informatica;Museo de informatica</info>
+    </edificio>
+    <edificio>
+        <id>1H</id>
+        <longitud>39.482905</longitud>
+        <latitud>-0.347685</latitud>
+        <info>Escuela Técnica Superior de Ingeniería Informática;Colegio Oficial de Bibliotecarios y
+            Documentalistas de la Comunidad Valenciana
+        </info>
+    </edificio>
+    <edificio>
+        <id>1B</id>
+        <longitud>39.481994</longitud>
+        <latitud>-0.348039</latitud>
+        <info>Escuela Técnica Superior de Ingeniería de Edificación;Escuela Infantil;Fórum
+            UNESCO;Cafetería La Vella;Reprografía Zona Oeste
+        </info>
+    </edificio>
+    <edificio>
+        <id>1C</id>
+        <longitud>39.481083</longitud>
+        <latitud>-0.347164</latitud>
+        <info>Escuela Técnica Superior de Ingeniería de Edificación</info>
+    </edificio>
+    <edificio>
+        <id>1F</id>
+        <longitud>39.482408</longitud>
+        <latitud>-0.346998</latitud>
+        <info>Dpto. de Sistemas Informáticos y Computación;Centro de Investigación en Métodos de
+            Producción de Software
+        </info>
+    </edificio>
+    <edificio>
+        <id>2E</id>
+        <longitud>39.481972</longitud>
+        <latitud>-0.345852</latitud>
+        <info>Escuela de Doctorado;Oficina de la Secretaría General;Servicio de Abogacía;Servicio de
+            Alumnado;Servicio de Asuntos Generales;Servicio de Contratación;Servicio de Financiación
+            y Presupuestos;Servicio de Fiscalización;Servicio de Gestión Económica;Servicio de
+            Infraestructuras;Servicio de Mantenimiento;Servicio de Recursos Humanos
+        </info>
+    </edificio>
+    <edificio>
+        <id>2F</id>
+        <longitud>39.481436</longitud>
+        <latitud>-0.344947</latitud>
+        <info>Escuela Técnica Superior de Arquitectura;Dpto. de Composición Arquitectónica;Dpto. de
+            Expresión Gráfica Arquitectónica;Dpto. de Proyectos Arquitectónicos;Editorial
+            UPV;Reprografía Zona Este
+        </info>
+    </edificio>
+    <edificio>
+        <id>2B</id>
+        <longitud>39.481026</longitud>
+        <latitud>-0.345274</latitud>
+        <info>ETS de Arquitectura</info>
+    </edificio>
+    <edificio>
+        <id>2A</id>
+        <longitud>39.480380</longitud>
+        <latitud>-0.344577</latitud>
+        <info>Dpto. de Construcciones Arquitectónicas;Dpto. de Urbanismo</info>
+    </edificio>
+    <edificio>
+        <id>2C</id>
+        <longitud>39.480748</longitud>
+        <latitud>-0.344438</latitud>
+        <info>ETS de Arquitectura</info>
+    </edificio>
+    <edificio>
+        <id>2D</id>
+        <longitud>39.481080</longitud>
+        <latitud>-0.344239</latitud>
+        <info>Cafetería Ágora;Quiosco de prensa</info>
+    </edificio>
+    <edificio>
+        <id>2G</id>
+        <longitud>39.481382</longitud>
+        <latitud>-0.344126</latitud>
+        <info>Bankia;Centro de atención al cliente Metrovalencia</info>
+    </edificio>
+    <edificio>
+        <id>3A</id>
+        <longitud>39.482742</longitud>
+        <latitud>-0.345423</latitud>
+        <info>Consejo Social;Dirección Delegada de Eficiencia Energética y Medio Ambiente;Gabinete
+            del Rector;Gerencia;Rectorado;Secretaría General;Vicerrectorado de Alumnado y Extensión
+            Universitaria;Vicerrectorado de Asuntos Económicos y Planificación;Vicerrectorado de
+            Estudios, Calidad y Acreditación;Vicerrectorado de Investigación, Innovación y
+            Transferencia;Vicerrectorado de las Tecnologías de la Información y de las
+            Comunicaciones;Vicerrectorado de los Campus e Infraestructuras
+        </info>
+    </edificio>
+    <edificio>
+        <id>3F</id>
+        <longitud>39.482818</longitud>
+        <latitud>-0.344867</latitud>
+        <info>Dpto. de Ingeniería Rural y Agroalimentaria;Dpto. de Tecnología de Alimentos;Defensor
+            Universitario;Oficina de Correos;Registro General
+        </info>
+    </edificio>
+    <edificio>
+        <id>3Q</id>
+        <longitud>39.483220</longitud>
+        <latitud>-0.345537</latitud>
+        <info>Servicio de Promoción y Normalización Lingüística;Unidad de Formación para la
+            Administración y los Servicios Universitarios
+        </info>
+    </edificio>
+    <edificio>
+        <id>3P</id>
+        <longitud>39.483613</longitud>
+        <latitud>-0.345001</latitud>
+        <info>Escuela Técnica Superior de Ingeniería Agronómica y del Medio Natural;Dpto. de
+            Ingeniería Rural y Agroalimentaria
+        </info>
+    </edificio>
+    <edificio>
+        <id>3B</id>
+        <longitud>39.482292</longitud>
+        <latitud>-0.344717</latitud>
+        <info>Dpto. de Ingeniería Gráfica;Dpto. de Ingeniería Rural y Agroalimentaria</info>
+    </edificio>
+    <edificio>
+        <id>3C</id>
+        <longitud>39.482201</longitud>
+        <latitud>-0.344111</latitud>
+        <info>Dpto. de Ingeniería Rural y Agroalimentaria;Área de Intercambio Académico;Oficina de
+            Programas Internacionales de Intercambio;Servicio de Promoción y Normalización
+            Lingüística
+        </info>
+    </edificio>
+    <edificio>
+        <id>3G</id>
+        <longitud>39.482201</longitud>
+        <latitud>-0.344111</latitud>
+        <info></info>
+    </edificio>
+    <edificio>
+        <id>3D</id>
+        <longitud>39.482127</longitud>
+        <latitud>-0.343660</latitud>
+        <info>Papelería;Tarongeria</info>
+    </edificio>
+    <edificio>
+        <id>3H</id>
+        <longitud>39.482375</longitud>
+        <latitud>-0.343585</latitud>
+        <info>Escuela Técnica Superior de Ingeniería Agronómica y del Medio Natural;Área de
+            Comunicación;Taller de bicicletas;Asociación Española de Valoración Agraria;Centralita
+        </info>
+    </edificio>
+    <edificio>
+        <id>3J</id>
+        <longitud>39.482682</longitud>
+        <latitud>-0.343446</latitud>
+        <info>Dpto. de Biotecnología;Dpto. de Ecosistemas Agroforestales</info>
+    </edificio>
+    <edificio>
+        <id>3I</id>
+        <longitud>39.482822</longitud>
+        <latitud>-0.343843</latitud>
+        <info>Dpto. de Producción Vegetal</info>
+    </edificio>
+    <edificio>
+        <id>3K</id>
+        <longitud>39.483046</longitud>
+        <latitud>-0.343274</latitud>
+        <info>Servicio de Promoción y Normalización Lingüística;Unidad de Formación para la
+            Administración y los Servicios Universitarios
+        </info>
+    </edificio>
+    <edificio>
+        <id>3M</id>
+        <longitud>39.483990</longitud>
+        <latitud>-0.343435</latitud>
+        <info>Facultad de Bellas Artes;Laboratorio de Luz</info>
+    </edificio>
+    <edificio>
+        <id>3N</id>
+        <longitud>39.484450</longitud>
+        <latitud>-0.344808</latitud>
+        <info>Facultad de Bellas Artes;Dpto. de Comunicación Audiovisual, Documentación e Historia
+            del Arte;Dpto. de Conservación y Restauración de Bienes Culturales;Dpto. de Dibujo;Dpto.
+            de Escultura;Dpto. de Pintura;Cafetería BBAA;Tienda de productos de bellas artes
+        </info>
+    </edificio>
+    <edificio>
+        <id>4M</id>
+        <longitud>39.481146</longitud>
+        <latitud>-0.343596</latitud>
+        <info>Agencia de Viajes El Corte Inglés;Librería Inter Técnica, S.L.;Santander Central
+            Hispano
+        </info>
+    </edificio>
+    <edificio>
+        <id>4H</id>
+        <longitud>39.480922</longitud>
+        <latitud>-0.343821</latitud>
+        <info>Escuela Técnica Superior de Ingenieros de Caminos, Canales y Puertos;Área de Sistemas
+            de la Información y las Comunicaciones
+        </info>
+    </edificio>
+    <edificio>
+        <id>4E</id>
+        <longitud>39.480574</longitud>
+        <latitud>-0.343794</latitud>
+        <info>Dpto. de Ingeniería Hidráulica y Medio Ambiente</info>
+    </edificio>
+    <edificio>
+        <id>4A</id>
+        <longitud>39.480255</longitud>
+        <latitud>-0.344025</latitud>
+        <info>Dpto. de Ingeniería e Infraestructura de los Transportes;Instituto del Transporte y
+            Territorio
+        </info>
+    </edificio>
+    <edificio>
+        <id>4P</id>
+        <longitud>39.480123</longitud>
+        <latitud>-0.343558</latitud>
+        <info>Escuela Técnica Superior de Ingenieros de Telecomunicación;Dpto. de
+            Comunicaciones;Dpto. de Lingüística Aplicada;Área de Centro de Lenguas;Subdirección del
+            Centro de Lenguas para el Asesoramiento Lingüístico
+        </info>
+    </edificio>
+    <edificio>
+        <id>4F</id>
+        <longitud>39.480312</longitud>
+        <latitud>-0.343057</latitud>
+        <info></info>
+    </edificio>
+    <edificio>
+        <id>4I</id>
+        <longitud>39.480771</longitud>
+        <latitud>-0.343325</latitud>
+        <info>Dpto. de Ingeniería del Terreno</info>
+    </edificio>
+    <edificio>
+        <id>4Q</id>
+        <longitud>39.480713</longitud>
+        <latitud>-0.342826</latitud>
+        <info>Escuela Técnica Superior de Ingenieros de Caminos, Canales y Puertos</info>
+    </edificio>
+    <edificio>
+        <id>4L</id>
+        <longitud>39.481111</longitud>
+        <latitud>-0.342923</latitud>
+        <info>Área de Sistemas de la Información y las Comunicaciones;Biblioteca y Documentación
+            Científica
+        </info>
+    </edificio>
+    <edificio>
+        <id>4J</id>
+        <longitud>39.480492</longitud>
+        <latitud>-0.342351</latitud>
+        <info>Laboratorio de Puertos y Costas</info>
+    </edificio>
+    <edificio>
+        <id>4K</id>
+        <longitud>39.480707</longitud>
+        <latitud>-0.341713</latitud>
+        <info>Casa del Alumno;Delegación de Alumnos;Delegación IAESTE Valencia</info>
+    </edificio>
+    <edificio>
+        <id>4G</id>
+        <longitud>39.480144</longitud>
+        <latitud>-0.342255</latitud>
+        <info>Escuela Técnica Superior de Ingenieros de Caminos, Canales y Puertos;Dpto. de
+            Ingeniería de la Construcción y de Proyectos de Ingeniería Civil
+        </info>
+    </edificio>
+    <edificio>
+        <id>4D</id>
+        <longitud>39.479606</longitud>
+        <latitud>-0.342544</latitud>
+        <info>Escuela Técnica Superior de Ingenieros de Telecomunicación</info>
+    </edificio>
+    <edificio>
+        <id>5B</id>
+        <longitud>39.482024</longitud>
+        <latitud>-0.343210</latitud>
+        <info>Farmàcia Politècnic;Óptica Politécnica;Pizzeria Tony's</info>
+    </edificio>
+    <edificio>
+        <id>5C</id>
+        <longitud>39.481813</longitud>
+        <latitud>-0.342732</latitud>
+        <info>Dpto. de Ingeniería de Sistemas y Automática;Centro de Medio Ambiente
+            Industrial;FLUING - IMM;Instituto Tecnológico del Agua
+        </info>
+    </edificio>
+    <edificio>
+        <id>5D</id>
+        <longitud>39.481639</longitud>
+        <latitud>-0.342308</latitud>
+        <info>Laboratorio de Acústica Industrial</info>
+    </edificio>
+    <edificio>
+        <id>5E</id>
+        <longitud>39.481457</longitud>
+        <latitud>-0.341659</latitud>
+        <info>Dpto. de Ingeniería Eléctrica;Dpto. de Ingeniería Mecánica y de Materiales;Centro de
+            Investigación de Tecnología de Vehículos;Instituto de Tecnología de
+            Materiales;Laboratorio de Metrología Dimensional
+        </info>
+    </edificio>
+    <edificio>
+        <id>5R</id>
+        <longitud>39.481705</longitud>
+        <latitud>-0.341515</latitud>
+        <info>Área de Deportes</info>
+    </edificio>
+    <edificio>
+        <id>5G</id>
+        <longitud>39.481958</longitud>
+        <latitud>-0.342148</latitud>
+        <info>Dpto. de Ingeniería Hidráulica y Medio Ambiente</info>
+    </edificio>
+    <edificio>
+        <id>5F</id>
+        <longitud>39.482256</longitud>
+        <latitud>-0.343102</latitud>
+        <info></info>
+    </edificio>
+    <edificio>
+        <id>5S</id>
+        <longitud>39.482045</longitud>
+        <latitud>-0.340828</latitud>
+        <info>Autoescuela Jordá;Bazar de deportes;Floristería CEDAT;Peluquería;Tienda de electrónica
+            e informática
+        </info>
+    </edificio>
+    <edificio>
+        <id>5I</id>
+        <longitud>39.482305</longitud>
+        <latitud>-0.342137</latitud>
+        <info>Dpto. de Ingeniería Química y Nuclear;Laboratorio de Radiactividad Ambiental;Servicio
+            de Radiaciones
+        </info>
+    </edificio>
+    <edificio>
+        <id>5H</id>
+        <longitud>39.482537</longitud>
+        <latitud>-0.342882</latitud>
+        <info>Dpto. de Mecánica de los Medios Continuos y Teoría de Estructuras;Instituto de
+            Seguridad Industrial, Radiofísica y Medioambiental
+        </info>
+    </edificio>
+    <edificio>
+        <id>5J</id>
+        <longitud>39.482947</longitud>
+        <latitud>-0.342781</latitud>
+        <info>Dpto. de Proyectos de Ingeniería;Dpto. de Termodinámica Aplicada</info>
+    </edificio>
+    <edificio>
+        <id>5K</id>
+        <longitud>39.482604</longitud>
+        <latitud>-0.341804</latitud>
+        <info>Dpto. de Ingeniería Química y Nuclear;Instituto de Seguridad Industrial, Radiofísica y
+            Medioambiental
+        </info>
+    </edificio>
+    <edificio>
+        <id>5L</id>
+        <longitud>39.483034</longitud>
+        <latitud>-0.342131</latitud>
+        <info></info>
+    </edificio>
+    <edificio>
+        <id>5M</id>
+        <longitud>39.482935</longitud>
+        <latitud>-0.341665</latitud>
+        <info>Dpto. de Química;Centro de Reconocimiento Molecular y Desarrollo Tecnológico</info>
+    </edificio>
+    <edificio>
+        <id>5N</id>
+        <longitud>39.482736</longitud>
+        <latitud>-0.341048</latitud>
+        <info>Escuela Técnica Superior de Ingenieros Industriales</info>
+    </edificio>
+    <edificio>
+        <id>5O</id>
+        <longitud>39.483883</longitud>
+        <latitud>-0.342459</latitud>
+        <info>Seguridad;Servicio de Mantenimiento</info>
+    </edificio>
+    <edificio>
+        <id>5P</id>
+        <longitud>39.483539</longitud>
+        <latitud>-0.341278</latitud>
+        <info>Invernaderos</info>
+    </edificio>
+    <edificio>
+        <id>5Q</id>
+        <longitud>39.483357</longitud>
+        <latitud>-0.340324</latitud>
+        <info></info>
+    </edificio>
+    <edificio>
+        <id>6A</id>
+        <longitud>39.479266</longitud>
+        <latitud>-0.341195</latitud>
+        <info>Pabellón polideportivo</info>
+    </edificio>
+    <edificio>
+        <id>6B</id>
+        <longitud>39.479174</longitud>
+        <latitud>-0.340379</latitud>
+        <info></info>
+    </edificio>
+    <edificio>
+        <id>6C</id>
+        <longitud>39.478750</longitud>
+        <latitud>-0.339634</latitud>
+        <info>Instituto Universitario Mixto de Tecnología Química;Instituto de Tecnología
+            Eléctrica
+        </info>
+    </edificio>
+    <edificio>
+        <id>6D</id>
+        <longitud>39.478502</longitud>
+        <latitud>-0.338545</latitud>
+        <info>Dpto. de Máquinas y Motores Térmicos;Instituto Universitario CMT - Motores
+            Térmicos;Centro de Tecnologías Físicas: Acústica, Materiales y Astrofísica;Centro
+            Tecnológico de Ondas Unidad Asociada CSIC-UPV;Instituto de Infraestructura del
+            Transporte y del Material Móvil;GEM Biosoft, S.L.;Principiatech Valencia
+        </info>
+    </edificio>
+    <edificio>
+        <id>6E</id>
+        <longitud>39.479524</longitud>
+        <latitud>-0.340841</latitud>
+        <info>Centro de Salud Juana Portaceli;Servicio Integrado de Prevención de Riesgos
+            Laborales;Clínica dental UPV;Sección Sindical de Comisiones Obreras de la UPV
+            (CCOO);Sindicato de Trabajadores de la Enseñanza del País Valenciano
+        </info>
+    </edificio>
+    <edificio>
+        <id>6F</id>
+        <longitud>39.479992</longitud>
+        <latitud>-0.341173</latitud>
+        <info>Piscina cubierta;Pistas de Tenis</info>
+    </edificio>
+    <edificio>
+        <id>6G</id>
+        <longitud>39.479133</longitud>
+        <latitud>-0.338861</latitud>
+        <info>Dirección Delegada de Emprendimiento y Empleo;Alumni UPV;Área de Acción
+            Internacional;Área de Centro de Formación Permanente;Área de Comunicación;Área de
+            Instituto de Ciencias de la Educación;Área de Nuevas Iniciativas de Investigación;Centro
+            de Apoyo a la Innovación, la Investigación y la Transferencia de Tecnología;Centro de
+            Cooperación al Desarrollo;Oficina de Acción Internacional;Programa de Cátedras de
+            Empresas;Servicio Integrado de Empleo
+        </info>
+    </edificio>
+    <edificio>
+        <id>7A</id>
+        <longitud>39.480661</longitud>
+        <latitud>-0.338875</latitud>
+        <info>Dpto. de Estadística e Investigación Operativa Aplicadas y Calidad;Dpto. de Matemática
+            Aplicada;Área de Sistemas de la Información y las Comunicaciones;Universidad Sénior
+        </info>
+    </edificio>
+    <edificio>
+        <id>7B</id>
+        <longitud>39.480371</longitud>
+        <latitud>-0.337957</latitud>
+        <info>Escuela Técnica Superior de Ingeniería del Diseño;Museo del Juguete</info>
+    </edificio>
+    <edificio>
+        <id>7C</id>
+        <longitud>39.481899</longitud>
+        <latitud>-0.340425</latitud>
+        <info>Área de Deportes;Escola d'Estiu;Campo de Futbol/Rugby;Gimnasio;Pistas de Atletismo
+        </info>
+    </edificio>
+    <edificio>
+        <id>7D</id>
+        <longitud>39.481062</longitud>
+        <latitud>-0.338660</latitud>
+        <info>Dpto. de Organización de Empresas</info>
+    </edificio>
+    <edificio>
+        <id>7E</id>
+        <longitud>39.480793</longitud>
+        <latitud>-0.337700</latitud>
+        <info></info>
+    </edificio>
+    <edificio>
+        <id>7F</id>
+        <longitud>39.481518</longitud>
+        <latitud>-0.338456</latitud>
+        <info>Dpto. de Ingeniería Electrónica;Laboratorio Integrado de Bioingeniería;Radio Club
+        </info>
+    </edificio>
+    <edificio>
+        <id>7G</id>
+        <longitud>39.481940</longitud>
+        <latitud>-0.338242</latitud>
+        <info>Dpto. de Ciencia Animal;Instituto de Ciencia y Tecnología Animal</info>
+    </edificio>
+    <edificio>
+        <id>7H</id>
+        <longitud>39.482727</longitud>
+        <latitud>-0.339218</latitud>
+        <info>Granjas</info>
+    </edificio>
+    <edificio>
+        <id>7I</id>
+        <longitud>39.481245</longitud>
+        <latitud>-0.337458</latitud>
+        <info>Escuela Técnica Superior de Ingeniería Geodésica, Cartográfica y Topográfica;Dpto. de
+            Ingeniería Cartográfica Geodesia y Fotogrametría;Laboratorio de Calibración
+        </info>
+    </edificio>
+    <edificio>
+        <id>7J</id>
+        <longitud>39.481655</longitud>
+        <latitud>-0.337212</latitud>
+        <info>Facultad de Administración y Dirección de Empresas;Dpto. de Economía y Ciencias
+            Sociales;Centro de Investigación de Ingeniería Económica;Centro de Investigación en
+            Gestión de Empresas (CEGEA)
+        </info>
+    </edificio>
+    <edificio>
+        <id>7K</id>
+        <longitud>39.482292</longitud>
+        <latitud>-0.337534</latitud>
+        <info></info>
+    </edificio>
+    <edificio>
+        <id>8A</id>
+        <longitud>39.478185</longitud>
+        <latitud>-0.337925</latitud>
+        <info>Pabellón polideportivo</info>
+    </edificio>
+    <edificio>
+        <id>8B</id>
+        <longitud>39.477395</longitud>
+        <latitud>-0.334488</latitud>
+        <info>Instituto para la Creación y el Desarrollo de Empresas - Programa IDEAS;Instituto
+            Universitario de Restauración del Patrimonio;Centro de Investigación Arte y
+            Entorno;Centro de Investigación en Gestión e Ingeniería de Producción;Instituto de
+            Instrumentación para Imagen Molecular;Instituto Interuniversitario de Investigación en
+            Bioingeniería y Tecnología Orientada al Ser Humano;Restaurante Cafetería KUBE
+            (CPI);CDD-Centre de Documentació IMPIVA disseny
+        </info>
+    </edificio>
+    <edificio>
+        <id>8C</id>
+        <longitud>39.478389</longitud>
+        <latitud>-0.337852</latitud>
+        <info></info>
+    </edificio>
+    <edificio>
+        <id>8D</id>
+        <longitud>39.478558</longitud>
+        <latitud>-0.337755</latitud>
+        <info>Dpto. de Física Aplicada;Servicio de Microscopía Electrónica</info>
+    </edificio>
+    <edificio>
+        <id>8E</id>
+        <longitud>39.477983</longitud>
+        <latitud>-0.334156</latitud>
+        <info>Instituto Universitario de Conservación y Mejora de la Agrodiversidad
+            Valenciana;Instituto Universitario de Ingeniería de Alimentos para el
+            Desarrollo;Instituto Universitario de Matemática Pura y Aplicada;Instituto Universitario
+            Mixto de Biología Molecular y Celular de Plantas;Centro de Biomateriales e Ingeniería
+            Tisular;Instituto Agroforestal Mediterráneo;Instituto de Ingeniería Energética;Instituto
+            de Gestión de la Innovación y del Conocimiento;Laboratorio de Automóviles
+        </info>
+    </edificio>
+    <edificio>
+        <id>8F</id>
+        <longitud>39.478732</longitud>
+        <latitud>-0.337530</latitud>
+        <info>Instituto Universitario de Tecnología Nanofotónica;Analog Devices, S.L.;DAS Photonics,
+            S.L.
+        </info>
+    </edificio>
+    <edificio>
+        <id>8G</id>
+        <longitud>39.478550</longitud>
+        <latitud>-0.333834</latitud>
+        <info>Área de la Ciudad Politécnica de la Innovación;Instituto Universitario de Aplicaciones
+            de las Tecnologías de la Información;Instituto Universitario de Automática e Informática
+            Industrial;Instituto Universitario de Ingeniería del Agua y del Medio Ambiente;Instituto
+            Universitario de Matemática Multidisciplinar;Instituto Universitario de Telecomunicación
+            y Aplicaciones Multimedia;Instituto Universitario Mixto de Tecnología de
+            Informática;Centro de Investigación Pattern Recognition and Human Language
+            Technology;Centro Valenciano de Estudios sobre el Riego;Instituto de Diseño para la
+            Fabricación y Producción Automatizada;Centro CIM;Fundación de la Comunitat Valenciana
+            Ciudad Politécnica de la Innovación
+        </info>
+    </edificio>
+    <edificio>
+        <id>8H</id>
+        <longitud>39.479374</longitud>
+        <latitud>-0.337058</latitud>
+        <info>Área de Sistemas de la Información y las Comunicaciones;Unidad de Medio
+            Ambiente;Fundación Servipoli de la Comunitat Valenciana;Central Sindical Independiente y
+            de Funcionarios (CSIF)-,Sección Sindical de UGT de la UPV (UGT)
+        </info>
+    </edificio>
+    <edificio>
+        <id>8I</id>
+        <longitud>39.478269</longitud>
+        <latitud>-0.337128</latitud>
+        <info></info>
+    </edificio>
+    <edificio>
+        <id>8J</id>
+        <longitud>39.478608</longitud>
+        <latitud>-0.336709</latitud>
+        <info></info>
+    </edificio>
+    <edificio>
+        <id>8K</id>
+        <longitud>39.479204</longitud>
+        <latitud>-0.336591</latitud>
+        <info>Centro de Gestión de la Calidad y del Cambio;Instituto de Iberoamérica y el
+            Mediterráneo;Instituto Intercultural para la Autogestión y Acción Comunal;Laboratorio de
+            Idiomas;Asociación de Empresas Innovadoras Valencianas AVANT i+e;Aula Atenea de
+            Humanidades;Delegación I.A.E.S.T.E. España
+        </info>
+    </edificio>
+    <edificio>
+        <id>8L</id>
+        <longitud>39.479689</longitud>
+        <latitud>-0.337010</latitud>
+        <info>Centro de Investigación en Tecnologías Gráficas</info>
+    </edificio>
+    <edificio>
+        <id>8N</id>
+        <longitud>39.479010</longitud>
+        <latitud>-0.337337</latitud>
+        <info></info>
+    </edificio>
+    <edificio>
+        <id>8P</id>
+        <longitud>39.478148</longitud>
+        <latitud>-0.335593</latitud>
+        <info>Laboratorio de Investigación en Plantas Propulsivas de los Sistemas de Transporte
+        </info>
+    </edificio>
+    <edificio>
+        <id>8Q</id>
+        <longitud>39.478560</longitud>
+        <latitud>-0.334794</latitud>
+        <info></info>
+    </edificio>
+    <edificio>
+        <id>9A</id>
+        <longitud>39.479838</longitud>
+        <latitud>-0.336202</latitud>
+        <info>Área de Deportes</info>
+    </edificio>
+    <edificio>
+        <id>9B</id>
+        <longitud>39.479395</longitud>
+        <latitud>-0.334840</latitud>
+        <info>Centro Avanzado de Microbiología de Alimentos;Laboratorio de Ingenieria de
+            Compatibilidad Electromagnética;ams R and D Spain, SL;Aurora Software and Testing,
+            SL;BALMART Sistemas Electrónicos y de Comunicaciones S.L.;Bienetec, SL;Comunitat
+            Valenciana Business Angels Network;Electronic Research and Development S.L.;Feasa
+            Valencia;Fent Innovative Software Solutions S.L.;Grupo Buscalia;Open Kode SL
+        </info>
+    </edificio>
+    <edificio>
+        <id>9C</id>
+        <longitud>39.479022</longitud>
+        <latitud>-0.333681</latitud>
+        <info>Instituto Universitario Mixto de Biomecánica de Valencia;Centro en Red de Prevención
+            de Riesgos Laborales
+        </info>
+    </edificio>
+    <edificio>
+        <id>9D</id>
+        <longitud>39.480376</longitud>
+        <latitud>-0.336846</latitud>
+        <info>Cafetería El Trinquet</info>
+    </edificio>
+    <edificio>
+        <id>9E</id>
+        <longitud>39.480906</longitud>
+        <latitud>-0.336519</latitud>
+        <info>Fundación CEDAT</info>
+    </edificio>
+    <edificio>
+        <id>9H</id>
+        <longitud>39.481192</longitud>
+        <latitud>-0.336352</latitud>
+        <info></info>
+    </edificio>
+    <edificio>
+        <id>9I</id>
+        <longitud>39.481357</longitud>
+        <latitud>-0.336417</latitud>
+        <info></info>
+    </edificio>
+    <edificio>
+        <id>9J</id>
+        <longitud>39.481535</longitud>
+        <latitud>-0.336320</latitud>
+        <info>Pabellón polideportivo</info>
+    </edificio>
+</edificios>

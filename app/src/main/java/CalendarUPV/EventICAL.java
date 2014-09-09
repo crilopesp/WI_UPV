@@ -89,11 +89,8 @@ public class EventICAL implements Comparable {
         //Matcher matcherStart = DATE_PATTERN.matcher(this.dtstartFormat);
         //Matcher matcherEnd = DATE_PATTERN.matcher(this.dtendFormat);
 
-        if (this.dtstartOriginal.contains("T000000") && this.dtendOriginal.contains("T000000")) {
-            return true;
-        }
+        return this.dtstartOriginal.contains("T000000") && this.dtendOriginal.contains("T000000");
 
-        return false;
     }
 
     private String parseBuilding(String string) {

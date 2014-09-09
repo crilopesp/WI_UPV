@@ -12,6 +12,7 @@ public class Preferencias {
     private static final String USER_FILE = "USER_PREFERENCES";
     private static final String USER_DNI = "DNI";
     private static final String USER_PIN = "PIN";
+    private static final String USER_PIN_CALENDAR = "PIN_CALENDAR";
     private static final String APP_LENGUAGE = "LENGUAGE";
     private static final String USER_LANGUAGE = "LANGUAGE";
     private static final String APP_CALENDAR_ALERTS = "CALENDAR_ALERTS";
@@ -25,6 +26,15 @@ public class Preferencias {
     private static final String REGISTRADO = "REGISTRADO";
     private static final String USER_USERNAME = "USERNAME";
 
+
+    public static void desloguearse(Context context) {
+        context.getSharedPreferences(USER_FILE, Activity.MODE_PRIVATE).edit().clear().commit();
+
+    }
+
+    public static boolean logeado(Context context) {
+        return !getDNI(context).isEmpty();
+    }
 
     //USER PREFERENCES
     public static String getDNI(Context context) {
@@ -49,6 +59,25 @@ public class Preferencias {
         try {
             SharedPreferences.Editor editor = context.getSharedPreferences(USER_FILE, Activity.MODE_PRIVATE).edit();
             editor.putString(USER_PIN, pass);
+            editor.commit();
+        } catch (Exception e) {
+            Log.d(Preferencias.class.getSimpleName(), "Exception", e);
+        }
+    }
+
+    public static String getPINCalendar(Context context) {
+        try {
+            return context.getSharedPreferences(USER_FILE, Activity.MODE_PRIVATE).getString(USER_PIN_CALENDAR, "");
+        } catch (Exception e) {
+            Log.d(Preferencias.class.getSimpleName(), "Exception", e);
+        }
+        return null;
+    }
+
+    public static void setPINCalendar(Context context, String pass) {
+        try {
+            SharedPreferences.Editor editor = context.getSharedPreferences(USER_FILE, Activity.MODE_PRIVATE).edit();
+            editor.putString(USER_PIN_CALENDAR, pass);
             editor.commit();
         } catch (Exception e) {
             Log.d(Preferencias.class.getSimpleName(), "Exception", e);
@@ -105,7 +134,7 @@ public class Preferencias {
 
     public static void setGCMID(Context context, String id) {
         try {
-            SharedPreferences.Editor editor = context.getSharedPreferences(USER_FILE, Activity.MODE_PRIVATE).edit();
+            SharedPreferences.Editor editor = context.getSharedPreferences(APP_FILE, Activity.MODE_PRIVATE).edit();
             editor.putString(PROPERTY_REG_ID, id);
             editor.commit();
         } catch (Exception e) {
@@ -115,7 +144,7 @@ public class Preferencias {
 
     public static String getGCMID(Context context) {
         try {
-            return context.getSharedPreferences(USER_FILE, Activity.MODE_PRIVATE).getString(PROPERTY_REG_ID, "");
+            return context.getSharedPreferences(APP_FILE, Activity.MODE_PRIVATE).getString(PROPERTY_REG_ID, "");
         } catch (Exception e) {
             Log.d(Preferencias.class.getSimpleName(), "Exception", e);
         }
@@ -124,7 +153,7 @@ public class Preferencias {
 
     public static boolean getCalendarAlerts(Context context) {
         try {
-            return context.getSharedPreferences(USER_FILE, Activity.MODE_PRIVATE).getBoolean(APP_CALENDAR_ALERTS, false);
+            return context.getSharedPreferences(APP_FILE, Activity.MODE_PRIVATE).getBoolean(APP_CALENDAR_ALERTS, false);
         } catch (Exception e) {
             Log.d(Preferencias.class.getSimpleName(), "Exception", e);
         }
@@ -133,7 +162,7 @@ public class Preferencias {
 
     public static boolean getForumAlerts(Context context) {
         try {
-            return context.getSharedPreferences(USER_FILE, Activity.MODE_PRIVATE).getBoolean(APP_FORUM_ALERTS, false);
+            return context.getSharedPreferences(APP_FILE, Activity.MODE_PRIVATE).getBoolean(APP_FORUM_ALERTS, true);
         } catch (Exception e) {
             Log.d(Preferencias.class.getSimpleName(), "Exception", e);
         }
@@ -142,7 +171,7 @@ public class Preferencias {
 
     public static void setForumAlerts(Context context, boolean id) {
         try {
-            SharedPreferences.Editor editor = context.getSharedPreferences(USER_FILE, Activity.MODE_PRIVATE).edit();
+            SharedPreferences.Editor editor = context.getSharedPreferences(APP_FILE, Activity.MODE_PRIVATE).edit();
             editor.putBoolean(APP_FORUM_ALERTS, id);
             editor.commit();
         } catch (Exception e) {
@@ -152,7 +181,7 @@ public class Preferencias {
 
     public static void setCalendarAlerts(Context context, boolean id) {
         try {
-            SharedPreferences.Editor editor = context.getSharedPreferences(USER_FILE, Activity.MODE_PRIVATE).edit();
+            SharedPreferences.Editor editor = context.getSharedPreferences(APP_FILE, Activity.MODE_PRIVATE).edit();
             editor.putBoolean(APP_CALENDAR_ALERTS, id);
             editor.commit();
         } catch (Exception e) {
@@ -200,7 +229,7 @@ public class Preferencias {
 
     public static String getLanguage(Context context) {
         try {
-            return context.getSharedPreferences(USER_FILE, Activity.MODE_PRIVATE).getString(USER_LANGUAGE, "es");
+            return context.getSharedPreferences(APP_FILE, Activity.MODE_PRIVATE).getString(USER_LANGUAGE, "es");
         } catch (Exception e) {
             Log.d(Preferencias.class.getSimpleName(), "Exception", e);
         }
@@ -209,7 +238,7 @@ public class Preferencias {
 
     public static void setLanguage(Context context, String language_code) {
         try {
-            SharedPreferences.Editor editor = context.getSharedPreferences(USER_FILE, Activity.MODE_PRIVATE).edit();
+            SharedPreferences.Editor editor = context.getSharedPreferences(APP_FILE, Activity.MODE_PRIVATE).edit();
             editor.putString(USER_LANGUAGE, language_code);
             editor.commit();
         } catch (Exception e) {
@@ -249,7 +278,7 @@ public class Preferencias {
 
     public static void registrado(Context context) {
         try {
-            SharedPreferences.Editor editor = context.getSharedPreferences(USER_FILE, Activity.MODE_PRIVATE).edit();
+            SharedPreferences.Editor editor = context.getSharedPreferences(APP_FILE, Activity.MODE_PRIVATE).edit();
             editor.putBoolean(REGISTRADO, true);
             editor.commit();
         } catch (Exception e) {
@@ -260,10 +289,13 @@ public class Preferencias {
     public static boolean isPrimerRegistro(Context context) {
         boolean registrado = false;
         try {
-            registrado = context.getSharedPreferences(USER_FILE, Activity.MODE_PRIVATE).getBoolean(REGISTRADO, false);
+            registrado = context.getSharedPreferences(APP_FILE, Activity.MODE_PRIVATE).getBoolean(REGISTRADO, false);
         } catch (Exception e) {
             Log.d(Preferencias.class.getSimpleName(), "Exception", e);
         }
         return !registrado;
     }
 }
+
+
+

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">WelcomeIncoming</string>
+    <string name="app_name">UPV Welcome Incoming</string>
     <string name="title_section1">Seccion 1</string>
     <string name="title_section2">Seccion 2</string>
     <string name="title_section3">Seccion 3</string>
@@ -158,6 +158,7 @@
     <string name="title_activity_activity_filtros_asignatura">Filtrar por asignaturas</string>
     <string name="title_activity_activity_filtros_fecha">Filtrar por fecha</string>
     <string name="mapa_upv">UPV Map</string>
+    <string name="infoupv">Info UPV</string>
     <string name="info">Información</string>
     <string name="bicistotal">Total bicis</string>
     <string name="bicisdisponibles">Bicis disponibles</string>
@@ -289,4 +290,21 @@
     <string name="creadosPorMi">Mis temas</string>
     <string name="forum">Foro</string>
     <string name="por">por</string>
+    <string name="cerrandoSesion">Cerrando sesión...</string>
+    <string name="hasCerradoSesion">Has cerrado sesión</string>
+    <string name="noHasCerradoSesion">No se pudo cerrar sesión</string>
+    <string name="textoNotificacionDeslogueo">Iniciaste sesión desde otro dispositivo.</string>
+    <string name="sesionCerradaNotificationtitle">Sesión cerrada</string>
+    <string name="infovlc">Info Valencia</string>
+    <string name="llamartelefono">Llamada telefónica</string>
+    <string name="confirmaciondeslogueo">¿Desea cerrar sesión?</string>
+    <string name="confirmacionCambioIdiaoma">¿Desea cambiar el idioma de la aplicación?</string>
+    <string name="ActivarTodasNotificaciones">Activar todas las notificaciones</string>
+    <string name="confirmacionBorrarTodasNotificaciones">Se volverán a activar de nuevo todas las notificaciones de los temas. ¿Desea continuar?</string>
+    <string name="todasNotificacionesActivadas">Se han activado todas las notificaciones.</string>
+    <string name="idiomacomentario">Idioma del comentario</string>
+    <string name="hoy">Hoy</string>
+    <string name="ayer">Ayer</string>
+    <string name="loadingpage">Cargando archivos necesarios. Por favor espere.</string>
+    <string name="nosensor">No puedes utilizar esta funcionalidad porque tu dispositivo no cuenta con sensor de orientación.</string>
 </resources>

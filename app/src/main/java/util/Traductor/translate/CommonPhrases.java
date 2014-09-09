@@ -3,7 +3,7 @@ package util.Traductor.translate;
 import android.content.Context;
 import android.content.res.Resources;
 
-import upv.welcomeincoming.app.R;
+import upv.welcomeincoming.com.R;
 
 /**
  * Created by Marcos on 20/07/14.

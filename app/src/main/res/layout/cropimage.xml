@@ -28,7 +28,9 @@
             android:layout_alignParentLeft="true"
             android:text="@string/cancelar"
             android:layout_weight="1"
-            android:background="@android:drawable/btn_default" />
+            android:clickable="true"
+            android:textColor="#ffffff"
+            android:background="@android:color/background_dark" />
 
         <ImageButton
             android:id="@+id/rotateLeft"
@@ -62,8 +64,9 @@
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/rotateRight"
             android:text="@string/aceptar"
-            android:background="@android:drawable/btn_default"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:background="@drawable/selector_buttons_black"
+            android:textColor="#ffffff" />
     </LinearLayout>
 
 </RelativeLayout>

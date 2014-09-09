@@ -13,7 +13,7 @@ import android.view.animation.Interpolator;
 import android.view.animation.LinearInterpolator;
 import android.widget.ProgressBar;
 
-import upv.welcomeincoming.app.R;
+import upv.welcomeincoming.com.R;
 
 /**
  * Created by castorflex on 11/10/13.

@@ -6,7 +6,8 @@
     android:layout_height="wrap_content"
     android:padding="20dp"
     android:weightSum="10"
-    android:background="@color/text">
+    android:background="@drawable/abs__list_selector_holo_light"
+    android:id="@+id/linearAcerca">
 
     <ImageView
         android:layout_width="wrap_content"

@@ -3,16 +3,51 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:gravity="center"
-    android:background="@drawable/screen_splash1">
+    android:background="@drawable/screen_splash1"
+    android:orientation="vertical">
 
-    <fr.castorflex.android.smoothprogressbar.SmoothProgressBar
-        android:id="@+id/progressbar"
-        style="@style/GNowProgressBar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:indeterminateOnly="false"
-        android:indeterminate="true"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_gravity="bottom" />
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="bottom">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/loadingpage"
+                android:id="@+id/textView"
+                android:layout_gravity="center"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentStart="true"
+                android:layout_above="@+id/progressbar"
+                android:layout_alignParentLeft="false"
+                android:layout_alignParentRight="false"
+                android:textColor="@color/blackly"
+                android:layout_alignParentBottom="false"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/card_background_splash"
+                android:padding="20dp" />
+        </LinearLayout>
+
+        <fr.castorflex.android.smoothprogressbar.SmoothProgressBar
+            android:id="@+id/progressbar"
+            style="@style/GNowProgressBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:indeterminateOnly="false"
+            android:indeterminate="true"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="false"
+            android:layout_gravity="bottom"
+            android:layout_alignParentRight="true" />
+    </RelativeLayout>
+
 </LinearLayout>

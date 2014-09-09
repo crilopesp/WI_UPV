@@ -5,82 +5,38 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="#222"
-    android:baselineAligned="true">
+    android:background="@color/light_pink">
+
+    <ImageButton
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/button_translate"
+        android:layout_weight="8"
+        android:src="@drawable/ic_action_translate_upv"
+        android:enabled="false"
+        android:background="@drawable/button_background_states" />
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="2"
-        android:background="#222">
+        android:layout_weight="1">
 
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="5dp"
-            android:background="@drawable/white_background"
-            android:layout_marginLeft="5dp"
             android:layout_weight="1"
-            android:layout_marginBottom="5dp">
+            android:background="@drawable/translate_spinner_from_background"
+            android:layout_marginBottom="0dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp">
 
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:id="@+id/linearLayout">
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:paddingRight="5dp"
-                    android:layout_gravity="right"
-                    android:gravity="right">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/iv_top_flag"
-                        android:layout_alignParentEnd="true"
-                        android:layout_centerVertical="true"
-                        android:layout_marginRight="5dp"
-                        android:adjustViewBounds="true"
-                        android:src="@drawable/es" />
-                </RelativeLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/imageView"
-                    android:src="@drawable/divisor" />
-            </LinearLayout>
-
-            <EditText
-                android:id="@+id/etTrad"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:scrollbars="vertical"
-                android:textColor="@color/table_text"
-                android:padding="2dp"
-                android:textCursorDrawable="@drawable/edit_text_cursor"
-                android:textSize="20sp"
-                android:inputType="textMultiLine"
-                android:layout_weight="15" />
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="25dp"
-                android:layout_weight="1"
-                android:baselineAligned="false">
+                android:layout_height="35dp">
 
 
                 <RelativeLayout
@@ -90,9 +46,8 @@
 
                     <LinearLayout
                         android:orientation="horizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:weightSum="3">
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp">
 
                         <ImageView
                             android:layout_width="wrap_content"
@@ -101,56 +56,56 @@
                             android:layout_alignParentStart="true"
                             android:layout_alignParentEnd="false"
                             android:src="@drawable/ic_action_altavoz_hueco"
-                            android:background="@drawable/abc_list_selector_holo_dark"
-                            android:layout_weight="1" />
-
-                        <ImageView
-                            android:layout_width="10dp"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/imageView3"
-                            android:background="@drawable/divisor_vertical"
-                            android:adjustViewBounds="true" />
+                            android:background="@drawable/abc_list_selector_holo_dark" />
 
                         <ImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:id="@+id/iv_top_mic"
                             android:src="@drawable/ic_action_mic_grey_hueco"
-                            android:background="@drawable/abc_list_selector_holo_dark"
-                            android:layout_weight="1" />
-
-                        <ImageView
-                            android:layout_width="10dp"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/imageView4"
-                            android:background="@drawable/divisor_vertical"
-                            android:adjustViewBounds="true" />
+                            android:background="@drawable/abc_list_selector_holo_dark" />
 
                         <ImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:id="@+id/iv_top_clear"
-                            android:src="@drawable/ic_action_navigation_cancel_dark"
-                            android:background="@drawable/abc_list_selector_holo_dark"
-                            android:layout_weight="1" />
+                            android:src="@android:drawable/ic_menu_close_clear_cancel"
+                            android:background="@drawable/abc_list_selector_holo_dark" />
 
                     </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/iv_top_flag"
+                        android:layout_alignParentEnd="true"
+                        android:background="@drawable/es"
+                        android:layout_centerVertical="true" />
 
                 </RelativeLayout>
 
             </LinearLayout>
+
+            <EditText
+                android:id="@+id/etTrad"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="vertical"
+                android:textColor="@color/table_text"
+                android:padding="2dp"
+                android:textCursorDrawable="@drawable/edit_text_cursor"
+                android:textSize="16sp"
+                android:background="@drawable/translate_spinner_from_background"
+                android:inputType="textMultiLine" />
 
         </LinearLayout>
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:background="@drawable/white_background"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp">
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
 
             <LinearLayout
                 android:orientation="horizontal"
@@ -162,51 +117,40 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="4"
-                    android:focusable="false"
-                    android:clickable="false">
+                    android:background="@drawable/translate_spinner_to_background_rounded"
+                    android:layout_marginTop="5dp">
 
                     <Spinner
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:id="@+id/spinner_language_from"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/spinner_language_to"
+                        android:layout_marginLeft="10dp"
                         android:layout_gravity="center"
-                        android:layout_alignParentEnd="false"
-                        android:layout_alignParentStart="false" />
-                </RelativeLayout>
+                        android:layout_marginRight="20dp" />
 
-                <ImageView
-                    android:layout_width="10dp"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/imageView2"
-                    android:background="@drawable/divisor_vertical"
-                    android:adjustViewBounds="true" />
+                </RelativeLayout>
 
                 <ImageButton
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:id="@+id/button_change_language"
-                    android:layout_weight="1"
-                    android:background="@drawable/selector_button_change_language"
-                    android:adjustViewBounds="false" />
-
-                <ImageView
-                    android:layout_width="10dp"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/imageView12"
-                    android:background="@drawable/divisor_vertical"
-                    android:adjustViewBounds="true" />
+                    android:layout_weight="2"
+                    android:background="@drawable/selector_button_change_language" />
 
                 <RelativeLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="4"
-                    android:layout_gravity="center_vertical">
+                    android:background="@drawable/translate_spinner_from_background_rounded"
+                    android:layout_marginBottom="5dp">
 
                     <Spinner
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:id="@+id/spinner_language_to"
-                        android:layout_gravity="center" />
+                        android:layout_height="wrap_content"
+                        android:id="@+id/spinner_language_from"
+                        android:layout_marginLeft="10dp"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="20dp" />
                 </RelativeLayout>
 
             </LinearLayout>
@@ -217,57 +161,31 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:background="@drawable/focus_background"
-            android:layout_marginLeft="5dp"
-            android:layout_marginBottom="5dp"
-            android:layout_marginRight="5dp"
             android:layout_weight="1"
-            android:layout_marginTop="5dp">
+            android:background="@drawable/translate_spinner_to_background"
+            android:layout_marginTop="0dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp">
 
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:id="@+id/linearLayout3">
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:paddingLeft="5dp"
-                    android:layout_gravity="right"
-                    android:gravity="right">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/iv_bottom_flag"
-                        android:layout_centerVertical="true"
-                        android:layout_alignParentEnd="true"
-                        android:layout_marginRight="10dp"
-                        android:src="@drawable/en"
-                        android:adjustViewBounds="true" />
-                </RelativeLayout>
-            </LinearLayout>
 
             <EditText
                 android:id="@+id/tvTrad"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scrollbars="vertical"
-                android:textColor="#FEFEFE"
+                android:textColor="@color/table_text"
                 android:padding="2dp"
                 android:editable="false"
                 android:textCursorDrawable="@drawable/edit_text_cursor"
                 android:textSize="16sp"
-                android:layout_weight="15"
-                android:clickable="false" />
+                android:background="@drawable/translate_spinner_to_background"
+                android:layout_weight="1" />
 
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="25dp"
-                android:layout_marginBottom="5dp">
+                android:layout_height="35dp">
 
                 <RelativeLayout
                     android:layout_width="fill_parent"
@@ -276,57 +194,44 @@
 
                     <LinearLayout
                         android:orientation="horizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_alignParentEnd="true"
-                        android:weightSum="3"
-                        android:minHeight="200dp">
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true">
 
                         <ImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:id="@+id/iv_bottom_altavoz"
                             android:background="@drawable/abc_list_selector_holo_dark"
-                            android:src="@drawable/ic_action_device_access_volume_on_light"
-                            android:layout_weight="1" />
-
-                        <ImageView
-                            android:layout_width="10dp"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/imageView10"
-                            android:background="@drawable/divisor_vertical"
-                            android:adjustViewBounds="true" />
+                            android:src="@drawable/ic_action_altavoz_hueco" />
 
                         <ImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:id="@+id/iv_bottom_copy"
-                            android:src="@drawable/ic_action_content_copy_light"
-                            android:background="@drawable/abc_list_selector_holo_dark"
-                            android:layout_weight="1" />
-
-                        <ImageView
-                            android:layout_width="10dp"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/imageView11"
-                            android:background="@drawable/divisor_vertical"
-                            android:adjustViewBounds="true" />
+                            android:src="@drawable/ic_action_content_copy_grey"
+                            android:background="@drawable/abc_list_selector_holo_dark" />
 
                         <ImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:id="@+id/iv_bottom_share"
-                            android:src="@drawable/ic_action_social_share_light"
-                            android:background="@drawable/abc_list_selector_holo_dark"
-                            android:layout_weight="1" />
+                            android:src="@drawable/ic_action_share_grey_hueco"
+                            android:background="@drawable/abc_list_selector_holo_dark" />
                     </LinearLayout>
 
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/iv_bottom_flag"
+                        android:background="@drawable/en"
+                        android:layout_margin="2dp"
+                        android:layout_centerVertical="true" />
                 </RelativeLayout>
 
             </LinearLayout>
-
         </LinearLayout>
-
     </LinearLayout>
+
 
 </LinearLayout>

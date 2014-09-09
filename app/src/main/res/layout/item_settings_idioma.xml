@@ -4,7 +4,7 @@
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/text">
+    android:background="@drawable/abs__list_selector_holo_light">
 
     <ImageView
         android:layout_width="wrap_content"
@@ -20,9 +20,11 @@
         android:id="@+id/options_lenguage_spinner"
         android:layout_width="wrap_content"
         android:layout_weight="10"
+        android:background="@drawable/spinner_background_holo_light"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:layout_gravity="center" />
+        android:layout_gravity="center"
+        android:layout_marginRight="15dp" />
 
     <ImageButton
         android:layout_width="wrap_content"
@@ -32,6 +34,7 @@
         android:id="@+id/btn_accept"
         android:src="@drawable/ic_action_navigation_accept"
         android:background="@android:color/transparent"
-        android:layout_gravity="center" />
+        android:layout_gravity="center"
+        android:visibility="gone" />
 
 </LinearLayout>

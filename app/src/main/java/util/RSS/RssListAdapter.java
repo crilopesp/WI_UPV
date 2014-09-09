@@ -9,15 +9,14 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import upv.welcomeincoming.app.R;
+import upv.welcomeincoming.com.R;
 
 public class RssListAdapter extends ArrayAdapter<Noticia> {
-    private Context _context;
     private List<Noticia> noticias;
 
     public RssListAdapter(Context context, int textViewResourceId) {
         super(context, textViewResourceId);
-        _context = context;
+        Context _context = context;
     }
 
     public RssListAdapter(Context context, int resource, List<Noticia> items) {

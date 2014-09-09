@@ -15,7 +15,7 @@ import android.os.SystemClock;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.Interpolator;
 
-import upv.welcomeincoming.app.R;
+import upv.welcomeincoming.com.R;
 
 /**
  * Created by castorflex on 11/10/13.

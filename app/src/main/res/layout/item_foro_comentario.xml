@@ -1,22 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#939095">
+    android:background="@color/grey_back">
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/linearLayout">
+        android:id="@+id/linearLayout"
+        android:background="@color/grey_back"
+        android:layout_marginLeft="10dp">
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:background="@android:color/white"
             android:layout_marginRight="1dp"
             android:layout_marginTop="1dp"
             android:layout_marginLeft="1dp"
@@ -28,10 +30,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_gravity="center_vertical"
-                android:background="#cecece"
                 android:gravity="center_horizontal|top">
 
-                <ImageView
+                <util.CircularImageView
+                    app:border="true"
+                    app:border_color="@color/text"
+                    app:border_width="2dp"
+                    app:shadow="true"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:id="@+id/iv_photoUser_tema"
@@ -60,30 +65,34 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <ImageView
-                        android:layout_width="35dp"
-                        android:layout_height="20dp"
-                        android:id="@+id/iv_flag_tema"
-                        android:layout_alignParentTop="true"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginRight="3dp"
-                        android:src="@drawable/es" />
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:weightSum="20">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="New Text"
                         android:id="@+id/tv_descripcion"
-                        android:layout_marginRight="40dp"
                         android:layout_marginTop="10dp"
                         android:layout_marginLeft="10dp"
                         android:minLines="5"
-                        android:textSize="12dp" />
-                </RelativeLayout>
+                        android:textSize="12dp"
+                        android:layout_weight="3" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/iv_flag_tema"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="3dp"
+                        android:src="@drawable/es"
+                        android:layout_weight="17"
+                        android:layout_gravity="top" />
+                </LinearLayout>
 
                 <RelativeLayout
                     android:orientation="horizontal"
@@ -126,15 +135,25 @@
                         android:layout_height="wrap_content"
                         android:text="New Text"
                         android:id="@+id/tv_fechaTema"
-                        android:textSize="9dp"
+                        android:textSize="11dp"
                         android:layout_alignParentLeft="false"
                         android:layout_alignParentTop="false"
                         android:layout_alignParentRight="true"
-                        android:layout_marginRight="3dp" />
+                        android:layout_marginRight="3dp"
+                        android:textColor="#b1b5bb" />
 
                 </RelativeLayout>
+
             </LinearLayout>
         </LinearLayout>
 
     </LinearLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:layout_alignParentBottom="false"
+        android:layout_below="@+id/linearLayout"
+        android:background="@drawable/divisor" />
 </RelativeLayout>

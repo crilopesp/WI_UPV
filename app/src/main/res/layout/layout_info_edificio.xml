@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#80000000"
-    android:orientation="vertical">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="#80000000">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,36 +17,48 @@
         android:layout_centerInParent="true"
         android:layout_margin="10dp">
 
+        <Button
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/close"
+            android:layout_gravity="top|right"
+            android:id="@+id/btnClose" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_margin="10dp">
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp">
 
-            <Button
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:background="@drawable/close"
-                android:layout_gravity="right"
-                android:id="@+id/btnClose" />
-
-            <LinearLayout
-                android:id="@+id/linearEdificio"
-                android:fillViewport="true"
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
+            <RelativeLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/background_progressdialog"
-                android:padding="10dp">
+                android:id="@+id/relativeLayout">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="New Text"
                     android:id="@+id/txtDireccion"
-                    android:layout_gravity="center" />
-            </LinearLayout>
+                    android:layout_gravity="center"
+                    android:layout_alignParentLeft="true"
+                    android:layout_toLeftOf="@+id/imgra"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@color/text"
+                    android:textSize="20dp" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imgra"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/ic_action_ic_a_reality2_1"
+                    android:background="@drawable/background_progressdialog"
+                    android:layout_centerInParent="true" />
+            </RelativeLayout>
 
             <LinearLayout
                 android:orientation="horizontal"
@@ -70,7 +83,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="#FFF"
-                        android:id="@android:id/list" />
+                        android:id="@android:id/list"
+                        android:textAlignment="textStart"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginBottom="5dp" />
 
                     <TextView
                         android:id="@android:id/empty"

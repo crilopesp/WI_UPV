@@ -13,7 +13,7 @@ import android.widget.TextView;
 import java.util.HashMap;
 import java.util.List;
 
-import upv.welcomeincoming.app.R;
+import upv.welcomeincoming.com.R;
 
 public class ExpandableListAdapter_Asignaturas extends BaseExpandableListAdapter {
 

@@ -3,8 +3,11 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="upv.welcomeincoming.app.ArchitectView"
-    tools:ignore="MergeRootFrame" >
-	<com.wikitude.architect.ArchitectView android:id="@+id/architectView"
-   		android:layout_width="fill_parent" android:layout_height="fill_parent"/>
+    tools:context="upv.welcomeincoming.com.ArchitectView"
+    tools:ignore="MergeRootFrame">
+
+    <com.wikitude.architect.ArchitectView
+        android:id="@+id/architectView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
 </FrameLayout>

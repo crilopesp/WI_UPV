@@ -34,8 +34,6 @@ public final class Translate extends YandexTranslatorAPI {
     private Translate() {
     }
 
-    ;
-
     /**
      * Translates text from a given Language to another given Language using Yandex.
      *

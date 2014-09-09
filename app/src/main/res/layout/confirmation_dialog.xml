@@ -1,0 +1,51 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_margin="20dp"
+    android:orientation="vertical"
+    android:background="@drawable/background_white_rounded">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginBottom="15dp"
+        android:text="New Text"
+        android:id="@+id/textDialog"
+        android:textSize="16dp"
+        android:layout_marginTop="15dp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:background="@color/light_grey"
+        android:layout_height="wrap_content"
+        android:minHeight="50dp"
+        android:weightSum="2"
+        android:layout_alignParentBottom="false"
+        android:layout_centerInParent="true"
+        android:id="@+id/linearLayout">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/aceptar"
+            android:id="@+id/btnAceptar"
+            android:background="@drawable/abs__list_selector_holo_light_notrans"
+            android:layout_marginRight="0.2dp"
+            android:layout_weight="1"
+            android:layout_marginTop="1dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/cancelar"
+            android:id="@+id/btnCancelar"
+            android:layout_marginLeft="0.2dp"
+            android:background="@drawable/abs__list_selector_holo_light_notrans"
+            android:layout_weight="1"
+            android:layout_marginTop="1dp" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="light_grey">#cccccc</color>
-    <color name="light_pink">#fffff6f6</color>
+    <color name="light_pink">#FFFFFF</color>
     <color name="blackly">#222</color>
     <color name="redly">#ffbc2121</color>
     <color name="yellowly">#b5d85200</color>
@@ -61,7 +61,7 @@
     <color name="nav_button_disabled">#646464</color>
     <color name="nav_button_text_disabled">#464646</color>
     <color name="orange_translate">#ffff810c</color>
-
+    <color name="blue_clicked_item">#0099cc</color>
     <color name="button_background_pressed_start">#f76500</color>
     <color name="button_background_pressed_end">#fb812c</color>
 </resources>

@@ -13,8 +13,9 @@ import android.widget.TextView;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 
-import upv.welcomeincoming.app.R;
+import upv.welcomeincoming.com.R;
 
 public class MultiExpandableListAdapter_Escuelas extends BaseExpandableListAdapter {
 
@@ -57,13 +58,16 @@ public class MultiExpandableListAdapter_Escuelas extends BaseExpandableListAdapt
         TextView tv_desc = (TextView) convertView.findViewById(R.id.tv_description);
         ImageButton btn_url = (ImageButton) convertView.findViewById(R.id.im_url);
         Asignatura asig = (Asignatura) getChild(groupPosition, childPosition);
-
         String nCodigo = "Code";
+        String idioma = "i";
+        Locale locale1 = _context.getResources().getConfiguration().locale;
+        if (locale1.getCountry().equals("ES")) idioma = "c";
+        final String url = "http://www.upv.es/pls/oalu/sic_asi.Busca_Asi?P_VISTA=ANDP_IDIOMA%3DiANDp_codi%3D" + asig.getCodigo() + "ANDp_caca%3Dact&P_IDIOMA=" + idioma + "&p_codi=" + asig.getCodigo() + "&p_caca=act";
+
         String nSemestre = "Semestre";
         String nCredits = "Credits";
         String codigo = asig.getCodigo();
         String semestre = asig.getSemestre();
-        final String url = "http://" + asig.getUrl();
         String creditos = asig.getCreditos();
 
         String separator = "<br></br>"; //<br></br> para nueva linea

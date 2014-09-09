@@ -4,12 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#80000000">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/main_background"
+        android:background="@drawable/main_background_metro"
         android:orientation="vertical"
         android:layout_alignParentLeft="false"
         android:layout_alignParentTop="false"
@@ -17,19 +18,19 @@
         android:layout_margin="10dp"
         android:id="@+id/linearLayout3">
 
+        <Button
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/close"
+            android:layout_gravity="right"
+            android:id="@+id/btnClose" />
+
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/linearLayout2"
             android:baselineAligned="true">
-
-            <Button
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:background="@drawable/close"
-                android:layout_gravity="right"
-                android:id="@+id/btnClose" />
 
             <LinearLayout
                 android:orientation="vertical"
@@ -40,7 +41,6 @@
                 android:background="@drawable/background_progressdialog"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:layout_marginBottom="20dp"
                 android:padding="10dp">
 
                 <TextView
@@ -70,7 +70,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/lineas"
-                        android:id="@+id/textView2" />
+                        android:id="@+id/textView2"
+                        android:textColor="@color/blackly" />
 
                     <LinearLayout
                         android:orientation="horizontal"
@@ -95,7 +96,9 @@
                         android:textSize="20dp"
                         android:id="@+id/txtDireccionWeb"
                         android:background="@drawable/background_progressdialog"
-                        android:layout_gravity="center" />
+                        android:layout_gravity="center"
+                        android:paddingBottom="10dip"
+                        android:paddingTop="10dip" />
 
                 </LinearLayout>
 

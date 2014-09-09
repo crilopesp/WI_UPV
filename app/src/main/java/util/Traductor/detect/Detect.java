@@ -34,8 +34,6 @@ public final class Detect extends YandexTranslatorAPI {
     private Detect() {
     }
 
-    ;
-
     /**
      * Detects the language of a supplied String.
      *

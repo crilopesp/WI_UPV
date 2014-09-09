@@ -3,23 +3,24 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="upv.welcomeincoming.app.foro.Activity_Nuevo_Tema"
+    tools:context="upv.welcomeincoming.com.foro.Activity_Nuevo_Tema"
     tools:ignore="MergeRootFrame"
     android:background="#f7ddc8">
 
     <RelativeLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/scrollView">
+            android:id="@+id/scrollView"
+            android:background="@color/grey_back">
 
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="fill_parent"
-                android:layout_height="fill_parent">
+                android:layout_height="wrap_content">
 
                 <LinearLayout
                     android:orientation="vertical"
@@ -56,9 +57,10 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/et_titulo"
                         android:singleLine="true"
-                        android:background="@drawable/edittext_background_selector_rojo"
+                        android:background="@drawable/selector_edit"
                         android:maxLength="60"
-                        android:hint="@string/titulo_hint" />
+                        android:hint="@string/titulo_hint"
+                        android:padding="10dp" />
 
                 </LinearLayout>
 
@@ -96,10 +98,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:id="@+id/et_descripcion"
-                        android:background="@drawable/edittext_background_selector_rojo"
+                        android:background="@drawable/selector_edit"
                         android:minLines="3"
                         android:maxLength="300"
-                        android:hint="@string/cuerpo_tema_hint" />
+                        android:hint="@string/cuerpo_tema_hint"
+                        android:padding="5dp" />
 
                 </LinearLayout>
 
@@ -124,7 +127,8 @@
                         android:paddingTop="8dp"
                         android:paddingBottom="8dp"
                         android:id="@+id/layout_spinner"
-                        android:background="@drawable/edittext_background_normal">
+                        android:background="@drawable/selector_edit"
+                        android:padding="5dp">
 
                         <FrameLayout
                             android:layout_width="wrap_content"

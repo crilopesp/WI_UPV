@@ -11,11 +11,9 @@ import org.xmlpull.v1.XmlPullParserException;
 import java.io.IOException;
 
 import fr.castorflex.android.smoothprogressbar.SmoothProgressBar;
-import upv.welcomeincoming.app.R;
+import upv.welcomeincoming.com.R;
 
 public class LoadingTask extends AsyncTask<String, Integer, Integer> {
-
-    private final Context context;
 
     public interface LoadingTaskFinishedListener {
         void onTaskFinished();
@@ -38,7 +36,7 @@ public class LoadingTask extends AsyncTask<String, Integer, Integer> {
         this.progressBar = progressBar;
         this.finishedListener = finishedListener;
         this.resources = resources;
-        this.context = context;
+        Context context1 = context;
         this.db = new DBHandler_Horarios(context).getReadableDatabase();
     }
 

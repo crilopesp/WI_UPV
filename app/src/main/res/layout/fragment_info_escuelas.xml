@@ -5,5 +5,5 @@
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/expandableListView"
-    android:background="@color/text"
+    android:background="@color/text_title"
     android:childDivider="@drawable/divisor"></ExpandableListView>
